@@ -1,0 +1,16 @@
+<!doctype html>
+<meta charset="utf-8">
+
+<title>Все спектакли Харькова на одной странице</title>
+
+<link type="text/css" rel="stylesheet" href="{{base}}/assets/css/theatres.css" >
+
+<h1>Все спектакли Харькова на одной странице</h1>
+
+<h2>Декабрь</h2>
+
+<ul>
+{% for play in plays %}
+    <li><a href="{{ play.link }}">{{ play.title }}</a></li>
+{% endfor %}
+</ul>

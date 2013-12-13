@@ -1,0 +1,13 @@
+{
+    "require": {
+        "silex/silex": "~1.1",
+        "sensio/buzz-bundle": "1.0.*@dev",
+        "gabordemooij/redbean": "dev-master",
+        "twig/twig": "1.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Theatres": "src/"
+        }
+    }
+}
