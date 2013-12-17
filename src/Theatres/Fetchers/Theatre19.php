@@ -95,10 +95,10 @@ class Theatre19 extends Fetcher
         if ($hasScene) {
             switch($match[0]) {
                 case 'на малой сцене':
-                    $scene = Play::SCENE_SMALL; break;
+                    $scene = 'small'; break;
                 case 'на основной сцене':
                 default:
-                    $scene = Play::SCENE_MAIN; break;
+                    $scene = 'main'; break;
             }
         }
 

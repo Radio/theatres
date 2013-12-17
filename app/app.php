@@ -13,6 +13,8 @@ $twig = new Twig_Environment($twigLoader, array(
     'debug' => $debug
 ));
 
+$twig->addFilter('dayOfWeekName', new Twig_Filter_Function('\Theatres\Helpers\Date::getDayOfWeekName'));
+
 // 2. Configure ORM
 R::setup('mysql:host=localhost;dbname=theatres', 'root', 'root');
 //R::freeze(true);

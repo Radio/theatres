@@ -1,3 +1,89 @@
+.container {
+    width: 96%;
+}
 a {
-    text-decoration: underline;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(66, 139, 202, 0.5); /* #428bca */
+}
+a:hover,
+a:active {
+    text-decoration: none;
+    border-bottom: 1px solid rgba(66, 139, 202, 0.5); /* #428bca */
+}
+h1 {
+    background: #28a4c9;
+    color: #fff;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: 2em;
+    padding: 0 1.5em;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+h2 {
+    text-align: center;
+}
+header {
+    text-align: center;
+}
+.month {
+    clear: both;
+    margin: 20px 0 0;
+    padding: 1em 0;
+    border-top: 1px solid #ccc;
+    overflow: hidden;
+}
+.month li {
+    list-style-type: none;
+}
+.day {
+    float: left;
+    width: 14.2%;
+    /*border-left: 1px solid #ccc;*/
+    /*border-top: 1px solid #ccc;*/
+    padding: .5em .7em;
+}
+.day.previous,
+.day.next {
+    color: #ccc;
+}
+.day.sat,
+.day.sun{
+    border-left: 3px solid #ddb2a6;
+}
+.day.today {
+    border-left: 3px solid #28a4c9;
+}
+
+.day-number {
+    font-size: 1.8em;
+    margin-bottom: .6em;
+}
+.day-of-week-name {
+    font-size: 0.5em;
+    color: #888;
+    position: relative;
+    /*top: -1em;*/
+}
+.play-info {
+    clear: both;
+    overflow: hidden;
+}
+.play-info.theatre19 {
+
+}
+.play-time {
+    float: left;
+    margin-right: 5px;
+    width: 3em;
+}
+.play-title {
+    float: left;
+    width: 78%;
+}
+.play-scene {
+    font-size: .8em;
+    color: #666;
 }

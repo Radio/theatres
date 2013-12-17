@@ -14,15 +14,37 @@
 <![endif]-->
 
 <div class="container">
-    <h1>Все спектакли Харькова на одной странице</h1>
+    <header>
+        <h1>Все спектакли Харькова на одной странице</h1>
+    </header>
 
     <h2>Декабрь</h2>
 
-    <ul>
-    {% for play in plays %}
-        <li><a href="{{ play.link }}">{{ play.title }}</a></li>
-    {% endfor %}
+    {% for week in cal %}
+    <ul class="month">
+        {% for day in week %}
+            <li class="day {{ day.month }} {{ day.date.format('D') | lower }} {% if day.today %} today {% endif %}">
+                <p class="day-number">
+                    {{ day.date.format('j') }}
+                    <span class="day-of-week-name">{{day.date | dayOfWeekName }}  {% if day.today %} (сегодня) {% endif %}</span>
+                </p>
+
+                {% for play in day.plays %}
+                <p class="play-info {{ play.theatre }}">
+                    <span class="play-time">{{ play.getDateTime.format('H:i') }}</span>
+                    <span class="play-title">
+                        <a href="{{ play.link }}">{{ play.title }}</a>
+                        <br>
+                        <span class="play-scene"><abbr class="play-theatre-abbr {{ play.getTheatreTitle() }}" title="{{ play.getTheatreTitle() }}">{{ play.getTheatreAbbr() }}</abbr>, {{ play.getSceneTitle() }}{% if play.price %}, {{ play.price }} {% endif %}</span>
+                    </span>
+
+                </p>
+                {% endfor %}
+                {% if day.plays | length ==  0 %} — {% endif %}
+            </li>
+        {% endfor %}
     </ul>
+    {% endfor %}
 </div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
