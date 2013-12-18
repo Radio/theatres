@@ -1,0 +1,7 @@
+a {
+    text-decoration: none;
+    border: 0 none;
+}
+a[href]:after {
+  content: none !important;
+}
