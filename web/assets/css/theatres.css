@@ -26,6 +26,9 @@ h2 {
 header {
     text-align: center;
 }
+.nobr {
+    white-space: nowrap;
+}
 .month {
 
 }
@@ -59,9 +62,9 @@ header {
 }
 
 .day-number {
-    font-size: 1.8em;
     margin-bottom: .6em;
 }
+
 .day.sat .day-number,
 .day.sun .day-number {
     border-left: 3px solid #dd7d70;
@@ -71,9 +74,11 @@ header {
     border-left: 3px solid #28a4c9;
     position: relative;
 }
-
+.day-number-number {
+    font-size: 1.8em;
+}
 .day-of-week-name {
-    font-size: 0.5em;
+    font-size: 0.9em;
     color: #888;
     position: relative;
     /*top: -1em;*/
@@ -98,6 +103,10 @@ header {
 .play-scene {
     font-size: .8em;
     color: #666;
+}
+.play-theatre-title {
+    color: inherit;
+    border-bottom-color: rgba(96, 96, 96, 0.3);
 }
 .play-separator {
     margin: 0 .2em;

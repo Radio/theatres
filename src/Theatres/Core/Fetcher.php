@@ -12,8 +12,14 @@ abstract class Fetcher implements Fetcher_Interface
     protected $pageContentsStart  = '';
     protected $pageContentsFinish = '';
 
-    public function fetch()
+    protected $month;
+    protected $year;
+
+    public function fetch($month, $year)
     {
+        $this->month = $month;
+        $this->year  = $year;
+
         $html = $this->getPageContents();
         $schedule = $this->parseSchedule($html);
 
@@ -21,6 +27,7 @@ abstract class Fetcher implements Fetcher_Interface
     }
 
     abstract protected function parseSchedule($html);
+
     protected function getPageContents()
     {
         $browser = new Browser();
@@ -28,14 +35,29 @@ abstract class Fetcher implements Fetcher_Interface
 
         $html = (string) $response;
 
-        $start  = strpos($html, $this->pageContentsStart);
-        $finish = strpos($html, $this->pageContentsFinish, $start);
+        $start  = $this->getStartPosition($html);
+        $finish = $this->getFinishPosition($html, $start);
 
         $table = substr($html, $start, $finish - $start);
 
-        $table = iconv('cp1251', 'utf-8//IGNORE', $table);
+        $table = $this->convertCharset($table);
 
         return $table;
+    }
+
+    protected function getStartPosition($html)
+    {
+        return stripos($html, $this->pageContentsStart);
+    }
+
+    protected function getFinishPosition($html, $start = 0)
+    {
+        return stripos($html, $this->pageContentsFinish, $start) + strlen($this->pageContentsFinish);
+    }
+
+    protected function convertCharset($html)
+    {
+        return $html;
     }
 
     /**

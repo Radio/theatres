@@ -5,12 +5,13 @@
     Т19
 - «Post Scriptum» (http://ps-teatr.com.ua)
     PS
-- Театр им. Шевченка (http://www.theatre-shevchenko.com.ua/)
+- Театр им. Шевченка (http://www.theatre-shevchenko.com.ua)
     ТШ
-- Театр им. Пушкина
+- Театр им. Пушкина (http://rusdrama.kh.ua)
     ТП
-- Дом Актера
+- Дом Актера (http://domaktera.com.ua)
     ДА
+    (Театры: http://domaktera.com.ua/theaters)
 - Кукольный театр
     КТ
 - Театр «Мадригал»
@@ -19,9 +20,9 @@
     П
 - Театр DADA
     DD
-- Театр «Котелок»
+- Театр «Котелок» (ДА)
     К
-- Театр «Может быть»
+- Театр «Может быть» (ДА)
     МБ
 - Театр музыкальной комедии
     МК

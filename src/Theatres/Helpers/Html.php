@@ -6,7 +6,7 @@ class Html
 {
     public static function stripTags($html, $exclude = null)
     {
-        $html = str_replace('&nbsp;', '', $html);
+        $html = str_replace('&nbsp;', ' ', $html);
         $text = trim(strip_tags($html, $exclude));
 
         return $text;

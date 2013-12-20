@@ -3,15 +3,19 @@
 namespace Theatres\Controllers;
 
 use Silex\Application;
+use Symfony\Component\HttpFoundation\Request;
 use RedBean_Facade as R;
 
 class Homepage
 {
-    public function index(Application $app)
+    public function index(Request $request, Application $app)
     {
         $plays = R::findAll('play', 'order by `date`');
 
-        $cal = $this->generateCalendar($plays);
+        $month = $request->query->getInt('month', (int) date('n'));
+        $year  = $request->query->getInt('year', (int) date('Y'));
+
+        $cal = $this->generateCalendar($month, $year);
         $this->fillCalWithPlays($cal, $plays);
 
         $context = array(
@@ -25,14 +29,12 @@ class Homepage
         return $twig->render('homepage.html', $context);
     }
 
-    private function generateCalendar()
+    private function generateCalendar($month, $year)
     {
         $cal = array();
 
         $today = (int) date('j');
-        $month = (int) date('n');
-        $year  = (int) date('Y');
-        $daysInMonth = (int) date('t');
+        $daysInMonth = (int) cal_days_in_month(CAL_GREGORIAN, $month, $year);
 
         $week = 1;
         $firstDay = new \DateTime("$year-$month-1");

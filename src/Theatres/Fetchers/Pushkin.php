@@ -6,39 +6,39 @@ use Theatres\Core\Fetcher;
 use Theatres\Helpers;
 use Theatres\Models\Play;
 
-class Theatre19 extends Fetcher
+class Pushkin extends Fetcher
 {
-    protected $theatreId = 'theatre19';
-    //protected $source = 'http://www.theatre19.com.ua/scena.php';
-    protected $source = 'http://127.0.0.2/theatres/resources/theatre19.html';
+    protected $theatreId = 'pushkin';
+    //protected $source = 'http://rusdrama.kh.ua/tekushij-sezon/shedule?tmpl=component&print=1';
+    protected $source = 'http://127.0.0.2/theatres/resources/pushkin.html';
 
-    protected $pageContentsStart  = '<table width="549"';
+    protected $pageContentsStart  = '<table';
     protected $pageContentsFinish = '</table>';
-
-    protected function convertCharset($html)
-    {
-        return iconv('cp1251', 'utf-8//IGNORE', $html);
-    }
 
     protected function parseSchedule($html)
     {
         $schedule = array();
 
+        $html = Helpers\Html::stripTags($html, '<table><tr><td><a><strong>');
+
         $matched = preg_match_all('/<tr.*?<\/tr>/is', $html, $lines);
         foreach ($lines[0] as $line) {
             $matched = preg_match_all('/<td.*?<\/td>/is', $line, $cells);
             $dateHtml = $cells[0][0];
-            $titleHtml = $cells[0][1];
-            $date  = $this->parseDate($dateHtml);
+            $timeHtml = $cells[0][1];
+            $titleHtml = $cells[0][2];
+            $date  = $this->parseDate($dateHtml, $timeHtml);
+            $link  = $this->parseLink($titleHtml);
             $title = $this->parseTitle($titleHtml);
-            $scene = $this->parseScene($titleHtml);
+            $scene = $this->parseScene();
+
             $play = array(
                 'theatre' => $this->theatreId,
                 'date' => $date,
                 'title' => $title,
                 'scene' => $scene,
                 'price' => null,
-                'link' => $this->source, // На сайте нет отдельной страницы для каждого спектакля.
+                'link' => $link ? $link : $this->source,
             );
             $schedule[] = $play;
         }
@@ -49,21 +49,23 @@ class Theatre19 extends Fetcher
     }
 
     /**
-     * @param string $html
+     * @param string $dateHtml
+     * @param string $timeHtml
      * @return \DateTime|null
      */
-    private function parseDate($html)
+    private function parseDate($dateHtml, $timeHtml)
     {
         $date = null;
 
-        $text = Helpers\Html::stripTags($html);
+        $text = Helpers\Html::stripTags($dateHtml);
         $hasDate = preg_match('/\d+/', $text, $match);
+        $isDaily = mb_strpos($timeHtml, 'день');
 
         if ($hasDate) {
             $d = (int) $match[0];
             $m = (int) $this->month;
             $y = (int) $this->year;
-            $h = 19; // Время указано на сайте и одинаково для всех спектаклей
+            $h = $isDaily ? 12 : 19; // Время указано на сайте и одинаково для всех спектаклей
             $i = 0;
             $date = new \DateTime("$y-$m-$d $h:$i");
         }
@@ -79,7 +81,7 @@ class Theatre19 extends Fetcher
     {
         $title = '';
 
-        $hasTitle = preg_match('/<strong.*?<\/strong>/is', $html, $match);
+        $hasTitle = preg_match('/<a.*?<\/a>/is', $html, $match);
         if ($hasTitle) {
             $titleHtml = $match[0];
             $title = Helpers\Html::fixSpaces(Helpers\Html::stripTags($titleHtml));
@@ -92,21 +94,25 @@ class Theatre19 extends Fetcher
      * @param string $html
      * @return string
      */
-    private function parseScene($html)
+    private function parseLink($html)
     {
-        $scene = '';
+        $link = null;
 
-        $hasScene = preg_match('/(на основной сцене|на малой сцене)/', $html, $match);
-        if ($hasScene) {
-            switch($match[0]) {
-                case 'на малой сцене':
-                    $scene = 'small'; break;
-                case 'на основной сцене':
-                default:
-                    $scene = 'main'; break;
-            }
+        $hasLink = preg_match('/href="([^"]+)"/', $html, $match);
+        if ($hasLink) {
+            $link = $match[1];
+            $link = Helpers\Html::fixUrl($link, $this->source);
         }
 
-        return $scene;
+        return $link;
+    }
+
+    /**
+     * @param string $html
+     * @return string
+     */
+    private function parseScene($html = null)
+    {
+        return 'main';
     }
 }

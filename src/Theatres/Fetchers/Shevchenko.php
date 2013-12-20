@@ -17,9 +17,13 @@ class Shevchenko extends Fetcher
 
     public function __construct()
     {
-        $this->source .= date('n'); // Add current month to url query
+        $this->source .= $this->month; // Add current month to url query
     }
 
+    protected function convertCharset($html)
+    {
+        return iconv('cp1251', 'utf-8//IGNORE', $html);
+    }
 
     protected function parseSchedule($html)
     {
@@ -74,8 +78,8 @@ class Shevchenko extends Fetcher
 
         if ($hasDate) {
             $d = (int) $match[1];
-            $m = (int) date('n');
-            $y = (int) date('Y');
+            $m = (int) $this->month;
+            $y = (int) $this->year;
             $h = (int) $match[2];
             $i = (int) $match[3];
             $date = new \DateTime("$y-$m-$d $h:$i");
@@ -130,12 +134,12 @@ class Shevchenko extends Fetcher
         if ($hasScene) {
             switch($match[0]) {
                 case 'Мала сцена':
-                    $scene = Play::SCENE_SMALL; break;
+                    $scene = 'small'; break;
                 case 'Експериментальна сцена':
-                    $scene = Play::SCENE_EXP; break;
+                    $scene = 'exp'; break;
                 case 'Велика сцена':
                 default:
-                    $scene = Play::SCENE_BIG; break;
+                    $scene = 'big'; break;
             }
         }
 
@@ -156,6 +160,8 @@ class Shevchenko extends Fetcher
         if ($hasLink) {
             $price = $match[1];
         }
+        $price = preg_replace('/([^ ])грн/is', '$1 грн', $price);
+        $price = preg_replace('/\s[-–−]\s/is', '–', $price);
 
         return $price;
     }

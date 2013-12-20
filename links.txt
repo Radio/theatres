@@ -9,3 +9,9 @@ http://twig.sensiolabs.org/documentation
 
 Bootstrap
 http://getbootstrap.com/css
+
+Schema
+http://schema.org/TheaterEvent
+
+Schema Validator
+http://www.google.com/webmasters/tools/richsnippets

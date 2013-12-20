@@ -30,21 +30,22 @@
             {% for day in week %}
                 <div class="day row {{ day.month }} {{ day.date.format('D') | lower }} {% if day.today %} today {% endif %}">
                     <p class="day-number col-xs-3">
-                        {{ day.date.format('j') }}
+                        <span class="day-number-number">{{ day.date.format('j') }}</span>
                         <span class="day-of-week-name">{{day.date | dayOfWeekName }}  {% if day.today %} (сегодня) {% endif %}</span>
                     </p>
 
                     <div class="plays col-xs-9">
                         {% for play in day.plays %}
-                        <p class="play-info {{ play.theatre }}">
+                        <p class="play-info {{ play.theatre }}" itemscope itemtype="http://schema.org/TheaterEvent">
+                            <meta itemprop="startDate" content="{{ play.getDateTime.format('Y-m-d\\TH:i:sO') }}">
                             <span class="play-time">{{ play.getDateTime.format('H:i') }}</span>
                             <span class="play-title">
-                                <a href="{{ play.link }}">{{ play.title }}</a>
+                                <a href="{{ play.link }}" itemprop="url"><span itemprop="name">{{ play.title }}</span></a>
                                 <br class="on-month-view">
                                 <span class="play-scene">
                                     <span class="on-week-view play-separator">&middot;</span>
-                                    <abbr class="on-month-view play-theatre-abbr {{ play.theatre }}" title="{{ play.getTheatreTitle() }}">{{ play.getTheatreAbbr() }}</abbr><span class="on-week-view play-theatre-title">{{ play.getTheatreTitle() }}</span>,
-                                    {{ play.getSceneTitle() }}{% if play.price %}, {{ play.price }} {% endif %}
+                                    <abbr class="on-month-view play-theatre-abbr {{ play.theatre }}" title="{{ play.getTheatreTitle() }}">{{ play.getTheatreAbbr() }}</abbr><span class="on-week-view" itemprop="performer"><a itemprop="url" href="{{ play.getTheatreLink() }}" class="play-theatre-title">{{ play.getTheatreTitle() }}</a></span>,
+                                    <span class="nobr">{{ play.getSceneTitle() }}</span>{% if play.price %}, {{ play.price }} {% endif %}
                                 </span>
                             </span>
 

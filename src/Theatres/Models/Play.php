@@ -22,6 +22,16 @@ class Play extends \RedBean_SimpleModel
             'abbr' => 'ТШ',
             'link' => 'http://www.theatre-shevchenko.com.ua'
         ),
+        'postscriptum' => array(
+            'title' => 'Театр «PostScriptum»',
+            'abbr' => 'PS',
+            'link' => 'http://ps-teatr.com.ua'
+        ),
+        'pushkin' => array(
+            'title' => 'Театр им. Пушкина',
+            'abbr' => 'ТП',
+            'link' => 'http://rusdrama.kh.ua'
+        ),
     );
 
     public function update()
