@@ -59,6 +59,11 @@ abstract class Collection implements Collection_Interface, \IteratorAggregate, \
         return reset($this->items);
     }
 
+    public function addItem($item)
+    {
+        $this->items[] = $item;
+    }
+
     public function isLoaded()
     {
         return $this->isLoaded;

@@ -31,28 +31,28 @@ abstract class Fetcher implements Fetcher_Interface
     protected function getPageContents()
     {
         $browser = new Browser();
-        $response = $browser->get($this->source);
+        $response = $browser->get($this->getSource());
 
-        $html = (string) $response;
+        $html = $response->getContent();
 
-        $start  = $this->getStartPosition($html);
-        $finish = $this->getFinishPosition($html, $start);
+        $htmlInUtf8 = $this->convertCharset($html);
 
-        $table = substr($html, $start, $finish - $start);
+        $start  = $this->getStartPosition($htmlInUtf8);
+        $finish = $this->getFinishPosition($htmlInUtf8, $start);
 
-        $table = $this->convertCharset($table);
+        $table = mb_substr($htmlInUtf8, $start, $finish - $start);
 
         return $table;
     }
 
     protected function getStartPosition($html)
     {
-        return stripos($html, $this->pageContentsStart);
+        return mb_stripos($html, $this->pageContentsStart);
     }
 
     protected function getFinishPosition($html, $start = 0)
     {
-        return stripos($html, $this->pageContentsFinish, $start) + strlen($this->pageContentsFinish);
+        return mb_stripos($html, $this->pageContentsFinish, $start) + mb_strlen($this->pageContentsFinish);
     }
 
     protected function convertCharset($html)
@@ -66,5 +66,13 @@ abstract class Fetcher implements Fetcher_Interface
     public function getTheatreId()
     {
         return $this->theatreId;
+    }
+
+    /**
+     * @return string
+     */
+    protected function getSource()
+    {
+        return $this->source;
     }
 }

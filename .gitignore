@@ -7,3 +7,4 @@
 /.idea/dataSources.xml
 /tmp
 /logs
+/app/config.php

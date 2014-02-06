@@ -15,6 +15,7 @@ class Admin_Fetch
     public function index(Application $app)
     {
         $theatres = new Theatres();
+        $theatres->setConditions('fetcher is not null and fetcher != ""');
         $theatres->setOrder('id');
 
         $context = array(

@@ -5,6 +5,20 @@ namespace Theatres\Models;
 use Theatres\Collections\Theatres;
 use Theatres\Collections\Scenes;
 
+/**
+ * Class Play
+ *
+ * @property $id
+ * @property $theatre
+ * @property $date
+ * @property $title
+ * @property $scene
+ * @property $link
+ * @property $hash
+ * @property $price
+ *
+ * @package Theatres\Models
+ */
 class Play extends \RedBean_SimpleModel
 {
     /** @var \Theatres\Collections\Scenes */
@@ -66,6 +80,9 @@ class Play extends \RedBean_SimpleModel
         return $this->scene;
     }
 
+    /**
+     * @return Theatre
+     */
     public function getTheatre()
     {
         self::loadTheatres();
@@ -75,14 +92,14 @@ class Play extends \RedBean_SimpleModel
         return null;
     }
 
-    public function getTheatreTitle()
+    public function getTheatreTitle($full = false)
     {
-        return ($theatre = $this->getTheatre()) ? $theatre->title : '';
+        return ($theatre = $this->getTheatre()) ? $theatre->getTitle($full) : '';
     }
 
-    public function getTheatreAbbr()
+    public function getTheatreAbbr($full = false)
     {
-        return ($theatre = $this->getTheatre()) ? $theatre->abbr : '';
+        return ($theatre = $this->getTheatre()) ? $theatre->getAbbr($full) : '';
     }
 
     public function getTheatreLink()

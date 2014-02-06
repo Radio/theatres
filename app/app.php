@@ -60,6 +60,8 @@ define('REDBEAN_MODEL_PREFIX', '\\Theatres\\Models\\');
 RedBean_Facade::setup(sprintf('mysql:host=%s;dbname=%s', $db['host'], $db['name']), $db['user'], $db['pass']);
 //RedBean_Facade::freeze(true);
 //RedBean_Facade::debug($debug);
+RedBean_Facade::exec('SET NAMES utf8');
+//RedBean_Facade::exec('SET CHARACTER_SET utf8');
 
 if ($debug) {
     $queryLogger = RedBean_Plugin_QueryLogger::getInstanceAndAttach(

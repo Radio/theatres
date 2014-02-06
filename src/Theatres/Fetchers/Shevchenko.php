@@ -8,15 +8,18 @@ use Theatres\Helpers;
 class Shevchenko extends Fetcher
 {
     protected $theatreId = 'shevchenko';
-    //protected $source = 'http://www.theatre-shevchenko.com.ua/repertuar/month.php?id=';
-    protected $source = 'http://127.0.0.2/theatres/resources/shevchenko.html?id=';
+    protected $source = 'http://www.theatre-shevchenko.com.ua/repertuar/month.php?id=';
+//    protected $source = 'http://127.0.0.2/theatres/resources/shevchenko.html?id=';
 
     protected $pageContentsStart  = '<ul class="primer-list">';
     protected $pageContentsFinish = '</ul>';
 
-    public function __construct()
+    /**
+     * @return string
+     */
+    protected function getSource()
     {
-        $this->source .= $this->month; // Add current month to url query
+        return $this->source . $this->month;
     }
 
     protected function convertCharset($html)
@@ -26,17 +29,18 @@ class Shevchenko extends Fetcher
 
     protected function parseSchedule($html)
     {
+//        var_dump($html);
         $schedule = array();
 
-        $matched = preg_match_all('/<li.*?<\/li>/is', $html, $lines);
+        $matched = preg_match_all('/<li.*?<\/li>/isu', $html, $lines);
         foreach ($lines[0] as $line) {
-            preg_match('/<span\s+class="date">.*?<\/span>/is', $line, $match);
+            preg_match('/<span\s+class="date">.*?<\/span>/isu', $line, $match);
             $dateHtml = $match[0];
 
-            preg_match('/<h3.*?<\/h3>/is', $line, $match);
+            preg_match('/<h3.*?<\/h3>/isu', $line, $match);
             $titleHtml = $match[0];
 
-            preg_match('/<em.*?<\/em>/is', $line, $match);
+            preg_match('/<em.*?<\/em>/isu', $line, $match);
             $detailsHtml = $match[0];
 
             $date  = $this->parseDate($dateHtml);
@@ -73,7 +77,7 @@ class Shevchenko extends Fetcher
         $date = null;
 
         $text = Helpers\Html::stripTags($html);
-        $hasDate = preg_match('/(\d+).+(\d\d)[\.\:](\d\d)/', $text, $match);
+        $hasDate = preg_match('/(\d+).+(\d\d)[\.\:](\d\d)/u', $text, $match);
 
         if ($hasDate) {
             $d = (int) $match[1];
@@ -110,7 +114,7 @@ class Shevchenko extends Fetcher
     {
         $link = null;
 
-        $hasLink = preg_match('/href="([^"]+)"/', $html, $match);
+        $hasLink = preg_match('/href="([^"]+)"/u', $html, $match);
         if ($hasLink) {
             $link = $match[1];
             $link = Helpers\Html::fixUrl($link, $this->source);
@@ -129,7 +133,7 @@ class Shevchenko extends Fetcher
     {
         $scene = '';
 
-        $hasScene = preg_match('/(Мала сцена|Велика сцена|Експериментальна сцена)/', $html, $match);
+        $hasScene = preg_match('/(Мала сцена|Велика сцена|Експериментальна сцена)/u', $html, $match);
         if ($hasScene) {
             switch($match[0]) {
                 case 'Мала сцена':
@@ -155,12 +159,12 @@ class Shevchenko extends Fetcher
     {
         $price = null;
 
-        $hasLink = preg_match('/квиток\s+коштує\s+([^<]+)/', $html, $match);
+        $hasLink = preg_match('/квиток\s+коштує\s+([^<]+)/u', $html, $match);
         if ($hasLink) {
             $price = $match[1];
         }
-        $price = preg_replace('/([^ ])грн/is', '$1 грн', $price);
-        $price = preg_replace('/\s[-–−]\s/is', '–', $price);
+        $price = preg_replace('/([^ ])грн/isu', '$1 грн', $price);
+        $price = preg_replace('/\s[-–−]\s/isu', '–', $price);
 
         return $price;
     }

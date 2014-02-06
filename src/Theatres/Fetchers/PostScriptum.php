@@ -14,8 +14,8 @@ use Theatres\Helpers;
 class PostScriptum extends Fetcher
 {
     protected $theatreId = 'postscriptum';
-    //protected $source = 'http://ps-teatr.com.ua';
-    protected $source = 'http://127.0.0.2/theatres/resources/postscriptum.html';
+    protected $source = 'http://ps-teatr.com.ua';
+//    protected $source = 'http://127.0.0.2/theatres/resources/postscriptum.html';
 
     protected $pageContentsStart  = '<div class="post">';
     protected $pageContentsFinish = '</div> <!-- Closes Post -->';

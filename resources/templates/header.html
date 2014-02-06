@@ -1,7 +1,12 @@
 <!doctype html>
 <meta charset="utf-8" lang="ru">
 
-<title>Все спектакли Харькова на одной странице</title>
+<title>
+    {{ appTitle }} /
+    {% if query.theatre %} {{ query.theatre | theatreTitle }} / {% endif %}
+    {{ query.month | monthName | title }}
+    {% if show_year %} {{ query.year }} {% endif %}
+</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 

@@ -5,12 +5,13 @@ namespace Theatres\Fetchers;
 use Theatres\Collections\Theatres;
 use Theatres\Core\Fetcher;
 use Theatres\Helpers;
+use RedBean_Facade as R;
 
 class House extends Fetcher
 {
     protected $theatreId = 'house';
-    //protected $source = 'http://domaktera.com.ua/afisha';
-    protected $source = 'http://127.0.0.2/theatres/resources/house.html';
+    protected $source = 'http://domaktera.com.ua/afisha';
+    //protected $source = 'http://127.0.0.2/theatres/resources/house.html';
 
     protected $pageContentsStart  = '<table class="afisha">';
     protected $pageContentsFinish = '</table>';
@@ -69,7 +70,7 @@ class House extends Fetcher
         }
         Helpers\Schedule::sortByDate($schedule);
 
-        var_dump($schedule);
+        //var_dump($schedule);
 
         return $schedule;
 //        return array();
@@ -129,7 +130,30 @@ class House extends Fetcher
         $slug = substr($link, strrpos($link, '/') + 1);
         $theatre = self::$theatres->findWith('house_slug', $slug);
 
+        if ($theatre) {
+            return $theatre->key;
+        } else {
+            $theatre = $this->createTheatre(array(
+                'title' => $title,
+                'key' => $slug,
+                'link' => $link,
+                'house_slug' => $slug,
+            ));
+            if ($theatre) {
+                self::$theatres->addItem($theatre);
+            }
+        }
+
         return $theatre ? $theatre->key : null;
+    }
+
+    private function createTheatre($data)
+    {
+        $theatre = R::dispense('theatre');
+        $theatre->import($data);
+        R::store($theatre);
+
+        return $theatre;
     }
 
 }

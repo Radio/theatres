@@ -8,8 +8,8 @@ use Theatres\Helpers;
 class Theatre19 extends Fetcher
 {
     protected $theatreId = 'theatre19';
-    //protected $source = 'http://www.theatre19.com.ua/scena.php';
-    protected $source = 'http://127.0.0.2/theatres/resources/theatre19.html';
+    protected $source = 'http://www.theatre19.com.ua/scena.php';
+//    protected $source = 'http://127.0.0.2/theatres/resources/theatre19.html';
 
     protected $pageContentsStart  = '<table width="549"';
     protected $pageContentsFinish = '</table>';

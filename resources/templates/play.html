@@ -1,0 +1,20 @@
+<p class="play-info {{ play.theatre }}" itemscope itemtype="http://schema.org/TheaterEvent">
+    <meta itemprop="startDate" content="{{ play.getDateTime.format('Y-m-d\\TH:i:sO') }}">
+    <span class="play-time">{{ play.getDateTime.format('H:i') }}</span>
+    <span class="play-title">
+        <a href="{{ play.link }}" itemprop="url"><span itemprop="name">{{ play.title }}</span></a>
+        <br class="on-month-view">
+        <span class="play-scene">
+            <span class="on-week-view play-separator">&middot;</span>
+            {% spaceless %}
+            <abbr class="on-month-view play-theatre-abbr {{ play.theatre }}"
+                  title="{{ play.getTheatreTitle(true) }}">{{ play.getTheatreAbbr(true) }}</abbr>
+            <span class="on-week-view" itemprop="performer">
+                <a itemprop="url" href="{{ play.getTheatreLink() }}"
+                   class="play-theatre-title">{{ play.getTheatreTitle() }}</a>{% if play.getTheatre().isInHouse() %}, Дом Актера{% endif %}</span>,
+            {% endspaceless %}
+            <span class="nobr">{{ play.getSceneTitle() }}</span>{% if play.price %}, <span class="price nobr">{{ play.price }}</span> {% endif %}
+        </span>
+    </span>
+
+</p>
