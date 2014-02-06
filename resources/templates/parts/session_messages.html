@@ -1,0 +1,8 @@
+{% set messages = app.session.getFlashBag.get('message') %}
+{% if messages|length %}
+<div class="messages">
+{% for message in messages  %}
+    <p class="alert alert-{{ message.getStatus() }}">{{ message }}</p>
+{% endfor %}
+</div>
+{% endif %}

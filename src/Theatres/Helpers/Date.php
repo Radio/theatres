@@ -14,8 +14,28 @@ class Date
              'воскресение',
     );
 
+    private static $monthNames = array(
+        1 => 'январь',
+             'февраль',
+             'март',
+             'апрель',
+             'май',
+             'июнь',
+             'июль',
+             'август',
+             'сентябрь',
+             'октябрь',
+             'ноябрь',
+             'декабрь',
+    );
+
     public static function getDayOfWeekName(\DateTime $date)
     {
         return self::$dayOfWeekNames[$date->format('N')];
+    }
+
+    public static function getMonthName($monthNumber)
+    {
+        return self::$monthNames[$monthNumber];
     }
 }

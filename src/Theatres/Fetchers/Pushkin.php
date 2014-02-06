@@ -4,7 +4,6 @@ namespace Theatres\Fetchers;
 
 use Theatres\Core\Fetcher;
 use Theatres\Helpers;
-use Theatres\Models\Play;
 
 class Pushkin extends Fetcher
 {

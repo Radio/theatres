@@ -3,7 +3,9 @@
         "silex/silex": "~1.1",
         "sensio/buzz-bundle": "1.0.*@dev",
         "gabordemooij/redbean": "dev-master",
-        "twig/twig": "1.*"
+        "twig/twig": "1.*",
+        "symfony/security": "~2.3",
+        "electrolinux/phpquery": "dev-master"
     },
     "autoload": {
         "psr-0": {

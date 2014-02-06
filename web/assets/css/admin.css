@@ -1,0 +1,42 @@
+.admin h2 {
+    text-align: left;
+}
+.breadcrumb h2,
+.breadcrumb h3 {
+    display: inline;
+    vertical-align: sub;
+}
+.breadcrumb .sep {
+    margin: 0 10px;
+}
+.nav li {
+    margin-right: 20px;
+}
+.hidden-form {
+    display: none;
+}
+.admin-form {
+    margin-top: 20px;
+}
+.messages p {
+    padding: 5px 10px;
+}
+.cat {
+    background: url(../img/cat.png) no-repeat scroll center center transparent;
+    width: 24px;
+    height: 24px;
+}
+#theatre-new .cat {
+    margin: 5px;
+}
+
+.col-title input[type="text"] {
+    width: 90%;
+    float: right;
+}
+.col-title label {
+    padding: .5em 0 0;
+}
+.fetch-area .row {
+    margin-bottom: 10px;
+}

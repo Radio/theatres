@@ -4,24 +4,38 @@ namespace Theatres\Controllers;
 
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
-use RedBean_Facade as R;
+use Theatres\Collections\Plays;
 
 class Homepage
 {
     public function index(Request $request, Application $app)
     {
-        $plays = R::findAll('play', 'order by `date`');
+        $month   = $request->query->getInt('month', date('n'));
+        $year    = $request->query->getInt('year', date('Y'));
+        $theatre = $request->query->get('theatre');
 
-        $month = $request->query->getInt('month', (int) date('n'));
-        $year  = $request->query->getInt('year', (int) date('Y'));
+        $plays = new Plays();
+        $conditions = 'month(`date`) = ? and year(`date`) = ?';
+        $bindings = array($month, $year);
+        if ($theatre) {
+            $conditions .= ' and theatre = ?';
+            $bindings[] = $theatre;
+        }
+        $plays->setConditions($conditions, $bindings);
+        $plays->setOrder('`date`');
 
         $cal = $this->generateCalendar($month, $year);
         $this->fillCalWithPlays($cal, $plays);
 
         $context = array(
-            'base' => '/theatres/web',
             'plays' => $plays,
-            'cal' => $cal
+            'cal'   => $cal,
+            'query' => array(
+                'month'   => $month,
+                'year'    => $year,
+                'theatre' => $theatre,
+            ),
+            'show_year' => ($year != date('Y'))
         );
 
         /** @var \Twig_Environment $twig */
@@ -95,7 +109,7 @@ class Homepage
      * @param \Theatres\Models\Play[] $plays
      * @return array
      */
-    private function fillCalWithPlays(&$cal, array $plays)
+    private function fillCalWithPlays(&$cal, $plays)
     {
         foreach ($cal as &$week) {
             foreach ($week as &$day) {
@@ -109,7 +123,7 @@ class Homepage
      * @param \Theatres\Models\Play[] $plays
      * @return \Theatres\Models\Play[]
      */
-    private function getPlaysAtDate(\DateTime $date, array $plays)
+    private function getPlaysAtDate(\DateTime $date, $plays)
     {
         $playsAtDate = array();
         $date->setTime(0, 0);

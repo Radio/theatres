@@ -4,7 +4,6 @@ namespace Theatres\Fetchers;
 
 use Theatres\Core\Fetcher;
 use Theatres\Helpers;
-use Theatres\Models\Play;
 
 /**
  * @todo: Parse plays urls

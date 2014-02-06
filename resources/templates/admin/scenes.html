@@ -1,0 +1,61 @@
+{% include "header.html" %}
+<div class="container admin" id="admin">
+    <div class="row">
+        <div class="col-md-12">
+            <header>
+                <h1>
+                    <a href="{{ app.url_generator.generate('homepage') }}">{{ appTitle }}</a>
+                </h1>
+            </header>
+            <div class="breadcrumb">
+                <a href="{{ app.url_generator.generate('admin') }}">Панель управления</a>
+                <span class="sep">→</span>
+                <h2>Сцены</h2>
+            </div>
+
+            {% include "parts/session_messages.html" %}
+
+            <form id="edit-scenes-form" class="admin-form" action="" method="post">
+            {% for scene in scenes %}
+                <fieldset class="row form-group scene-row" id="scene-{{ scene.key }}">
+                    <div class="col-md-3 col-title">
+                        <label for="scene-title-{{ scene.id }}">{{ scene.id }}</label>
+                        <input type="text" id="scene-title-{{ scene.id }}" class="form-control"
+                               name="scenes[{{ scene.id }}][title]" value="{{ scene.title }}" placeholder="Название"/>
+                    </div>
+                    <div class="col-md-2">
+                        <input class="form-control"
+                               type="text" name="scenes[{{ scene.id }}][key]" value="{{ scene.key }}" placeholder="Ключ"/>
+                    </div>
+                    <div class="col-md-1">
+                        <button type="button" class="btn btn-danger delete-scene" data-id="{{ scene.id }}" title="Удалить">&times;</button>
+                    </div>
+                </fieldset>
+            {% endfor %}
+                <fieldset class="row form-group scene-row" id="scene-new">
+                    <div class="col-md-3 col-title">
+                        <label for="scene-title-new">+</label>
+                        <input type="text" id="scene-title-new" class="form-control"
+                               name="scenes[new][title]" value="" placeholder="Название"/>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="text" class="form-control"
+                               name="scenes[new][key]" value="" placeholder="Ключ"/>
+                    </div>
+                    <div class="col-md-1">
+                        <div class="cat" title="Мяу"></div>
+                    </div>
+                </fieldset>
+                <fieldset class="row buttons-row">
+                    <div class="col-md-2">
+                        <button type="submit" class="btn btn-primary">Сохранить</button>
+                    </div>
+                </fieldset>
+            </form>
+            <form id="delete-scene-form" class="hidden-form" action="{{ app.url_generator.generate('admin_scenes_delete') }}" method="post">
+                <input type="hidden" name="id" value="">
+            </form>
+        </div>
+    </div>
+</div>
+{% include "footer.html" %}

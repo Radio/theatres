@@ -2,37 +2,30 @@
 
 namespace Theatres\Models;
 
+use Theatres\Collections\Theatres;
+use Theatres\Collections\Scenes;
+
 class Play extends \RedBean_SimpleModel
 {
-    private static $scenes = array(
-        'main'  => 'главная сцена',
-        'small' => 'малая сцена',
-        'big'   => 'большая сцена',
-        'exp'   => 'экспериментальная сцена',
-    );
+    /** @var \Theatres\Collections\Scenes */
+    private static $scenes;
 
-    private static $theatres = array(
-        'theatre19' => array(
-            'title' => 'Театр 19',
-            'abbr' => 'Т19',
-            'link' => 'http://www.theatre19.com.ua'
-        ),
-        'shevchenko' => array(
-            'title' => 'Театр им. Шевченко',
-            'abbr' => 'ТШ',
-            'link' => 'http://www.theatre-shevchenko.com.ua'
-        ),
-        'postscriptum' => array(
-            'title' => 'Театр «PostScriptum»',
-            'abbr' => 'PS',
-            'link' => 'http://ps-teatr.com.ua'
-        ),
-        'pushkin' => array(
-            'title' => 'Театр им. Пушкина',
-            'abbr' => 'ТП',
-            'link' => 'http://rusdrama.kh.ua'
-        ),
-    );
+    /** @var \Theatres\Collections\Theatres */
+    private static $theatres;
+
+    private static function loadTheatres()
+    {
+        if (is_null(self::$theatres)) {
+            self::$theatres = new Theatres();
+        }
+    }
+
+    private static function loadScenes()
+    {
+        if (is_null(self::$scenes)) {
+            self::$scenes = new Scenes();
+        }
+    }
 
     public function update()
     {
@@ -63,26 +56,37 @@ class Play extends \RedBean_SimpleModel
 
     public function getSceneTitle()
     {
-        return isset(self::$scenes[$this->scene]) ? self::$scenes[$this->scene] : $this->scene;
+        self::loadScenes();
+        if (self::$scenes) {
+            $scene = self::$scenes->findWith('key', $this->scene);
+            if ($scene) {
+                return $scene->title;
+            }
+        }
+        return $this->scene;
     }
 
     public function getTheatre()
     {
-        return isset(self::$theatres[$this->theatre]) ? self::$theatres[$this->theatre] : null;
+        self::loadTheatres();
+        if (self::$theatres) {
+            return self::$theatres->findWith('key', $this->theatre);
+        }
+        return null;
     }
 
     public function getTheatreTitle()
     {
-        return ($theatre = $this->getTheatre()) ? $theatre['title'] : '';
+        return ($theatre = $this->getTheatre()) ? $theatre->title : '';
     }
 
     public function getTheatreAbbr()
     {
-        return ($theatre = $this->getTheatre()) ? $theatre['abbr'] : '';
+        return ($theatre = $this->getTheatre()) ? $theatre->abbr : '';
     }
 
     public function getTheatreLink()
     {
-        return ($theatre = $this->getTheatre()) ? $theatre['link'] : '';
+        return ($theatre = $this->getTheatre()) ? $theatre->link : '';
     }
 }
