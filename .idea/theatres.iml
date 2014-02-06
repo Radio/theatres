@@ -22,36 +22,10 @@
     <orderEntry type="module-library">
       <library name="PHP">
         <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/symfony/routing" />
-          <root url="file://$MODULE_DIR$/vendor/psr/log" />
-          <root url="file://$MODULE_DIR$/vendor/symfony/http-kernel" />
-          <root url="file://$MODULE_DIR$/vendor/composer" />
-          <root url="file://$MODULE_DIR$/vendor/symfony/debug" />
           <root url="file://$MODULE_DIR$/vendor/gabordemooij/redbean" />
-          <root url="file://$MODULE_DIR$/vendor/kriswallsmith/buzz" />
-          <root url="file://$MODULE_DIR$/vendor/symfony/security" />
-          <root url="file://$MODULE_DIR$/vendor/pimple/pimple" />
-          <root url="file://$MODULE_DIR$/vendor/symfony/http-foundation" />
-          <root url="file://$MODULE_DIR$/vendor/sensio/buzz-bundle" />
-          <root url="file://$MODULE_DIR$/vendor/symfony/event-dispatcher" />
-          <root url="file://$MODULE_DIR$/vendor/twig/twig" />
-          <root url="file://$MODULE_DIR$/vendor/silex/silex" />
         </CLASSES>
         <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/symfony/routing" />
-          <root url="file://$MODULE_DIR$/vendor/psr/log" />
-          <root url="file://$MODULE_DIR$/vendor/symfony/http-kernel" />
-          <root url="file://$MODULE_DIR$/vendor/composer" />
-          <root url="file://$MODULE_DIR$/vendor/symfony/debug" />
           <root url="file://$MODULE_DIR$/vendor/gabordemooij/redbean" />
-          <root url="file://$MODULE_DIR$/vendor/kriswallsmith/buzz" />
-          <root url="file://$MODULE_DIR$/vendor/symfony/security" />
-          <root url="file://$MODULE_DIR$/vendor/pimple/pimple" />
-          <root url="file://$MODULE_DIR$/vendor/symfony/http-foundation" />
-          <root url="file://$MODULE_DIR$/vendor/sensio/buzz-bundle" />
-          <root url="file://$MODULE_DIR$/vendor/symfony/event-dispatcher" />
-          <root url="file://$MODULE_DIR$/vendor/twig/twig" />
-          <root url="file://$MODULE_DIR$/vendor/silex/silex" />
         </SOURCES>
       </library>
     </orderEntry>
