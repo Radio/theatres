@@ -75,46 +75,6 @@ if ($debug) {
 
 // 4. Define Routes
 
-$app->get('/', 'Theatres\\Controllers\\Homepage::index')
-    ->bind('homepage');
-
-// 4.2 Admin
-
-$app->get('/admin', 'Theatres\\Controllers\\Admin_Homepage::index')
-    ->bind('admin');
-
-$app->get('/admin/setup', 'Theatres\\Controllers\\Admin_Setup::index')
-    ->bind('admin_setup');
-
-// 4.2.1 Admin → Theatres
-
-$app->get('/admin/theatres', 'Theatres\\Controllers\\Admin_Theatres::index')
-    ->bind('admin_theatres_list');
-
-$app->post('/admin/theatres', 'Theatres\\Controllers\\Admin_Theatres::save')
-    ->bind('admin_theatres_save');
-
-$app->post('/admin/theatres/delete', 'Theatres\\Controllers\\Admin_Theatres::delete')
-    ->bind('admin_theatres_delete');
-
-// 4.2.2 Admin → Scenes
-
-$app->get('/admin/scenes', 'Theatres\\Controllers\\Admin_Scenes::index')
-    ->bind('admin_scenes_list');
-
-$app->post('/admin/scenes', 'Theatres\\Controllers\\Admin_Scenes::save')
-    ->bind('admin_scenes_save');
-
-$app->post('/admin/scenes/delete', 'Theatres\\Controllers\\Admin_Scenes::delete')
-    ->bind('admin_scenes_delete');
-
-
-// 4.2.2 Admin → Fetch
-
-$app->get('/admin/fetch', 'Theatres\\Controllers\\Admin_Fetch::index')
-    ->bind('admin_fetch');
-
-$app->get('/admin/fetch/{theatreKey}', 'Theatres\\Controllers\\Admin_Fetch::fetch')
-    ->bind('admin_fetch_theatre');
+require_once __DIR__ . '/routes.php';
 
 return $app;

@@ -17,10 +17,6 @@ abstract class Collection_Beans extends Collection
 
         $sql = $this->buildSql();
 
-        if (!is_array($this->bindings)) {
-            $this->bindings = array();
-        }
-
         return R::findAll($this->beanType, $sql, $this->bindings);
     }
 
@@ -28,7 +24,7 @@ abstract class Collection_Beans extends Collection
     {
         $sql = ' ';
         if ($this->conditions) {
-            $sql .= $this->conditions . ' ';
+            $sql .= implode(' AND ', $this->conditions) . ' ';
         }
         if ($this->order) {
             $sql .= 'order by ' . $this->order . ' ';
@@ -65,5 +61,11 @@ abstract class Collection_Beans extends Collection
             }
         }
         return null;
+    }
+
+    public function toArray()
+    {
+        $this->load();
+        return R::beansToArray($this->items);
     }
 }

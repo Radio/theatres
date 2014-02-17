@@ -10,8 +10,8 @@ abstract class Collection implements Collection_Interface, \IteratorAggregate, \
 
     // Filters
     protected $order;
-    protected $conditions;
-    protected $bindings;
+    protected $conditions = array();
+    protected $bindings = array();
     protected $offset;
     protected $limit;
 
@@ -80,9 +80,23 @@ abstract class Collection implements Collection_Interface, \IteratorAggregate, \
      */
     public function setConditions($conditions, $bindings = null)
     {
+        if (!is_array($conditions)) {
+            $conditions = (array) $conditions;
+        }
         $this->conditions = $conditions;
         if (!is_null($bindings)) {
             $this->setBindings($bindings);
+        }
+    }
+
+    public function addConditions($conditions, $bindings = null)
+    {
+        if (!is_array($conditions)) {
+            $conditions = (array) $conditions;
+        }
+        $this->conditions = array_merge($this->conditions, $conditions);
+        if (!is_null($bindings)) {
+            $this->addBindings($bindings);
         }
     }
 
@@ -100,6 +114,11 @@ abstract class Collection implements Collection_Interface, \IteratorAggregate, \
     public function setBindings($bindings)
     {
         $this->bindings = $bindings;
+    }
+
+    public function addBindings($bindings)
+    {
+        $this->bindings = array_merge($this->bindings, $bindings);
     }
 
     /**
@@ -156,5 +175,10 @@ abstract class Collection implements Collection_Interface, \IteratorAggregate, \
     public function getOrder()
     {
         return $this->order;
+    }
+
+    public function toArray()
+    {
+        return $this->items;
     }
 }
