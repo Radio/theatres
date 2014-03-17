@@ -1,0 +1,16 @@
+-
+    id: '1'
+    title: 'главная сцена'
+    key: main
+-
+    id: '2'
+    title: 'малая сцена'
+    key: small
+-
+    id: '3'
+    title: 'большая сцена'
+    key: big
+-
+    id: '4'
+    title: 'экспериментальная сцена'
+    key: exp

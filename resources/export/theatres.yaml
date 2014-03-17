@@ -1,0 +1,152 @@
+-
+    id: '9'
+    title: 'Театр 19'
+    abbr: Т19
+    link: 'http://www.theatre19.com.ua'
+    fetcher: Theatre19
+    key: theatre19
+    house_slug: teatr-19
+-
+    id: '10'
+    title: 'Театр им. Шевченко'
+    abbr: ТШ
+    link: 'http://www.theatre-shevchenko.com.ua'
+    fetcher: Shevchenko
+    key: shevchenko
+    house_slug: ''
+-
+    id: '11'
+    title: 'Театр «PostScriptum»'
+    abbr: PS
+    link: 'http://ps-teatr.com.ua'
+    fetcher: PostScriptum
+    key: postscriptum
+    house_slug: ''
+-
+    id: '12'
+    title: 'Театр им. Пушкина'
+    abbr: ТП
+    link: 'http://rusdrama.kh.ua'
+    fetcher: Pushkin
+    key: pushkin
+    house_slug: ''
+-
+    id: '13'
+    title: 'Дом Актера'
+    abbr: ДА
+    link: 'http://domaktera.com.ua'
+    fetcher: House
+    key: house
+    house_slug: ''
+-
+    id: '14'
+    title: 'Театр «Прекрасные Цветы»'
+    abbr: ПЦ
+    link: 'http://vk.com/club33804478'
+    fetcher: ''
+    key: flowers
+    house_slug: teatr-prekrasny-e-tsvety
+-
+    id: '15'
+    title: 'Театр «Может быть»'
+    abbr: МБ
+    link: 'http://domaktera.com.ua/theaters/teatr-mozhet-byit'
+    fetcher: ''
+    key: teatr-mozhet-byit
+    house_slug: teatr-mozhet-byit
+-
+    id: '16'
+    title: 'Театр в театре'
+    abbr: ТвТ
+    link: 'http://domaktera.com.ua/theaters/teatr-v-teatre'
+    fetcher: ''
+    key: teatr-v-teatre
+    house_slug: teatr-v-teatre
+-
+    id: '17'
+    title: 'ЦСИ «Новая Сцена»'
+    abbr: НС
+    link: 'http://domaktera.com.ua/theaters/novascena'
+    fetcher: ''
+    key: novascena
+    house_slug: novascena
+-
+    id: '18'
+    title: 'Театр Французской Комедии «Дель Пьеро»'
+    abbr: ДП
+    link: 'http://domaktera.com.ua/theaters/del-pjero'
+    fetcher: ''
+    key: del-pjero
+    house_slug: del-pjero
+-
+    id: '19'
+    title: 'Театр «Forte»'
+    abbr: F
+    link: 'http://domaktera.com.ua/theaters/teatr-forte'
+    fetcher: ''
+    key: teatr-forte
+    house_slug: teatr-forte
+-
+    id: '20'
+    title: 'Малый Театр Марионеток'
+    abbr: МТМ
+    link: 'http://domaktera.com.ua/theaters/teatral-ny-j-kollektiv-marionette'
+    fetcher: ''
+    key: teatral-ny-j-kollektiv-marionette
+    house_slug: teatral-ny-j-kollektiv-marionette
+-
+    id: '21'
+    title: 'Театр «Сахалин»'
+    abbr: Сx
+    link: 'http://domaktera.com.ua/theaters/teatr-sahalin'
+    fetcher: ''
+    key: teatr-sahalin
+    house_slug: teatr-sahalin
+-
+    id: '22'
+    title: 'Театр Up'
+    abbr: Up
+    link: 'http://domaktera.com.ua/theaters/teatr-up'
+    fetcher: ''
+    key: teatr-up
+    house_slug: teatr-up
+-
+    id: '23'
+    title: 'Творческий Центр «Апарте»'
+    abbr: ТЦА
+    link: 'http://domaktera.com.ua/theaters/aparte'
+    fetcher: ''
+    key: aparte
+    house_slug: aparte
+-
+    id: '24'
+    title: 'Творческое объединение «Green Magic»'
+    abbr: GM
+    link: 'http://domaktera.com.ua/theaters/teatr-green-magic'
+    fetcher: ''
+    key: teatr-green-magic
+    house_slug: teatr-green-magic
+-
+    id: '25'
+    title: 'Харьковский Открытый Театр'
+    abbr: ХОТ
+    link: 'http://domaktera.com.ua/theaters/hoteatr'
+    fetcher: ''
+    key: hoteatr
+    house_slug: hoteatr
+-
+    id: '26'
+    title: 'Театр «Ланжеронъ»'
+    abbr: Лъ
+    link: 'http://domaktera.com.ua/theaters/teatr-lanzheron'
+    fetcher: ''
+    key: teatr-lanzheron
+    house_slug: teatr-lanzheron
+-
+    id: '27'
+    title: 'Новый театр'
+    abbr: НТ
+    link: 'http://domaktera.com.ua/theaters/novyi-teat'
+    fetcher: ''
+    key: novyi-teat
+    house_slug: novyi-teat
