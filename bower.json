@@ -1,0 +1,13 @@
+{
+    "name": "theatres",
+    "version": "1.0.0",
+    "dependencies": {
+        "jquery": "2.1.x",
+        "angular": "1.2.x",
+        "bootstrap": "3.1.x",
+        "html5shiv": "3.7.x",
+        "respond": "1.4.x"
+    },
+    "devDependencies": {
+    }
+}
