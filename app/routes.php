@@ -15,8 +15,14 @@ $app->get('/', 'Theatres\\Controllers\\Homepage::index')
 $app->get('/admin', 'Theatres\\Controllers\\Admin_Homepage::index')
     ->bind('admin');
 
-$app->get('/admin/setup', 'Theatres\\Controllers\\Admin_Setup::index')
-    ->bind('admin_setup');
+$app->get('/admin/system/setup', 'Theatres\\Controllers\\Admin_System_Setup::index')
+    ->bind('admin_system_setup');
+
+$app->get('/admin/system/export', 'Theatres\\Controllers\\Admin_System_Export::index')
+    ->bind('admin_system_export');
+
+$app->get('/admin/system/import', 'Theatres\\Controllers\\Admin_System_Import::index')
+    ->bind('admin_system_import');
 
 // 2.1 Admin → Theatres
 

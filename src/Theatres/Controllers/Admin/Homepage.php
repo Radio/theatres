@@ -14,8 +14,9 @@ class Admin_Homepage
             ''
         );
 
-
-        $context = array();
+        $context = array(
+            'is_admin' => true
+        );
 
         /** @var \Twig_Environment $twig */
         $twig = $app['twig'];

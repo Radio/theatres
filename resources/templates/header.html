@@ -4,8 +4,9 @@
 <title>
     {{ appTitle }} /
     {% if query.theatre %} {{ query.theatre | theatreTitle }} / {% endif %}
-    {{ query.month | monthName | title }}
-    {% if show_year %} {{ query.year }} {% endif %}
+    {% if query.month %} {{ query.month | monthName | title }} {% endif %}
+    {% if show_year and query.year %} {{ query.year }} {% endif %}
+    {% if is_admin %} Панель управления {% endif %}
 </title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">

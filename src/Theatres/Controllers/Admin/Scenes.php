@@ -18,6 +18,7 @@ class Admin_Scenes
         $scenes->setOrder('id');
 
         $context = array(
+            'is_admin' => true,
             'scenes' => $scenes,
         );
 

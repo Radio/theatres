@@ -1,5 +1,9 @@
 <?php
 
+if (!is_readable(__DIR__  . '/config.php')) {
+    die('Configuration file is not available.');
+}
+
 require_once __DIR__ . '/config.php';
 require_once __DIR__ . '/bootstrap.php';
 
@@ -25,11 +29,14 @@ if ($secure) {
 }
 
 $app['debug'] = $debug;
+$app['root'] = realpath(__DIR__ . '/..');
 
 // 1.1 Set error handler
 
 $errorHandler = new \Theatres\Core\ErrorHandler();
-//$app->error(array($errorHandler, 'handleKernelException'));
+if (!$debug) {
+    $app->error(array($errorHandler, 'handleKernelException'));
+}
 
 // 2. Configure Twig
 

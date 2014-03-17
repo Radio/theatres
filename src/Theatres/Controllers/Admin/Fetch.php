@@ -19,6 +19,7 @@ class Admin_Fetch
         $theatres->setOrder('id');
 
         $context = array(
+            'is_admin' => true,
             'theatres' => $theatres,
         );
 

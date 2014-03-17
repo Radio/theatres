@@ -36,6 +36,6 @@ class Date
 
     public static function getMonthName($monthNumber)
     {
-        return self::$monthNames[$monthNumber];
+        return isset(self::$monthNames[$monthNumber]) ? self::$monthNames[$monthNumber] : '';
     }
 }
