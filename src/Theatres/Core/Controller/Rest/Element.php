@@ -4,9 +4,9 @@ namespace Theatres\Core;
 
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
-use Theatres\Core\Exceptions\Api_NotSupported;
 use Theatres\Helpers\Api;
 use Theatres\Helpers\Api_Request;
+use RedBean_Facade as R;
 
 /**
  * API abstract elements/element resource controller.
@@ -28,11 +28,15 @@ abstract class Controller_Rest_Element extends Controller_Rest
      * Load element.
      *
      * @param int $id Element ID.
+     * @throws Exceptions\Api_NotFound
      * @return void
      */
     protected function loadElement($id)
     {
-        $this->element = \RedBean_Facade::load($this->type, $id);
+        $this->element = R::load($this->type, $id);
+        if ($id && !$this->element->getID()) {
+            throw new Exceptions\Api_NotFound(ucfirst($this->type) . ' was not found');
+        }
     }
 
     /**
@@ -41,7 +45,7 @@ abstract class Controller_Rest_Element extends Controller_Rest
      *
      * @param Application $app Application instance.
      * @param Request $request Request instance.
-     * @return array
+     * @return array|null
      */
     public function get(Application $app, Request $request)
     {
@@ -54,12 +58,12 @@ abstract class Controller_Rest_Element extends Controller_Rest
      *
      * @param Application $app Application instance.
      * @param Request $request Request instance.
-     * @throws \Theatres\Core\Exceptions\Api_NotSupported
+     * @throws Exceptions\Api_NotSupported
      * @return void
      */
     public function post(Application $app, Request $request)
     {
-        throw new Api_NotSupported();
+        throw new Exceptions\Api_NotSupported();
     }
 
     /**
@@ -68,7 +72,7 @@ abstract class Controller_Rest_Element extends Controller_Rest
      *
      * @param Application $app Application instance.
      * @param Request $request Request instance.
-     * @return string
+     * @return null
      */
     public function put(Application $app, Request $request)
     {
@@ -81,8 +85,23 @@ abstract class Controller_Rest_Element extends Controller_Rest
         }
 
         if ($this->element->isTainted()) {
-            \RedBean_Facade::store($this->element);
+            R::store($this->element);
         }
+
+        return null;
+    }
+
+    /**
+     * Delete element.
+     * DELETE request handler.
+     *
+     * @param Application $app Application instance.
+     * @param Request $request Request instance.
+     * @return null
+     */
+    public function delete(Application $app, Request $request)
+    {
+        R::trash($this->element);
 
         return null;
     }

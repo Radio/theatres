@@ -4,6 +4,8 @@ namespace Theatres\Core;
 
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
+use Theatres\Core\Exceptions\Api;
+use Theatres\Core\Exceptions\Api_NotFound;
 use Theatres\Core\Exceptions\Api_NotImplemented;
 use Theatres\Core\Exceptions\Api_NotSupported;
 
@@ -22,17 +24,23 @@ abstract class Controller_Rest
             }
 
             $data = $this->$handler($app, $request);
-            return $this->output($data, $app);
+            return $this->output($data, 200, $app);
 
         } catch (Api_NotImplemented $e) {
             $message = ucfirst($method) . ' method is not implemented. ' . $e->getMessage();
-            return $this->error($message, $app);
+            return $this->error($message, 500, $app);
         } catch (Api_NotSupported $e) {
             $message = ucfirst($method) . ' method is not supported. ' . $e->getMessage();
-            return $this->error($message, $app);
+            return $this->error($message, 500, $app);
+        } catch (Api_NotFound $e) {
+            $message = $e->getMessage();
+            return $this->error($message, 404, $app);
+        } catch (Api $e) {
+            $message = $e->getMessage();
+            return $this->error($message, 500, $app);
         } catch (\Exception $e) {
             $message = 'Unknown exception: "' . $e->getMessage() . '"';
-            return $this->error($message, $app);
+            return $this->error($message, 500, $app);
         }
     }
 
@@ -61,25 +69,25 @@ abstract class Controller_Rest
         throw new Api_NotImplemented();
     }
 
-    protected function output($data, Application $app, $format = self::DEFAULT_FORMAT)
+    protected function output($data, $status = 200, Application $app, $format = self::DEFAULT_FORMAT)
     {
         switch ($format) {
             case 'json':
-                return $this->outputJson($data, $app);
+                return $this->outputJson($data, $status, $app);
                 break;
         }
         throw new Api_NotSupported(ucfirst($format) . ' format is not supported.');
     }
 
-    protected function outputJson($data, Application $app)
+    protected function outputJson($data, $status = 200, Application $app)
     {
-        return $app->json($data);
+        return $app->json($data, $status);
     }
 
-    protected function error($message, $app)
+    protected function error($message, $status = 500, Application $app)
     {
         return $this->output(array(
             'message' => $message
-        ), $app);
+        ), $status, $app);
     }
 }
