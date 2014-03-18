@@ -10,6 +10,16 @@ use \Theatres\Controllers;
 $app->get('/', 'Theatres\\Controllers\\Homepage::index')
     ->bind('homepage');
 
+$app->get('/cal', 'Theatres\\Controllers\\Cal::index')
+    ->bind('cal');
+
+$app->get('/templates/{tpl}', 'Theatres\\Controllers\\AngularTemplates::index')
+    ->assert('tpl', '.+?\.html')
+    ->convert('tpl', function($tpl) {
+        return substr($tpl, 0, -5);
+    })
+    ->bind('templates');
+
 // 2. Admin
 
 $app->get('/admin', 'Theatres\\Controllers\\Admin_Homepage::index')

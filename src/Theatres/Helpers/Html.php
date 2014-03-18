@@ -2,6 +2,11 @@
 
 namespace Theatres\Helpers;
 
+/**
+ * Help to deal with html routine.
+ *
+ * @package Theatres\Helpers
+ */
 class Html
 {
     public static function stripTags($html, $exclude = null)
@@ -28,5 +33,23 @@ class Html
             $url = sprintf('%s://%s%s/%s', $base['scheme'], $base['host'], $path, $url);
         }
         return $url;
+    }
+
+    public static function renderStyleTag($url, $media, $condition = null)
+    {
+        $html = sprintf('<link href="%s" rel="stylesheet" media="%s">', $url, $media);
+        if ($condition) {
+            $html = sprintf("<!--[if %s]>\n%s\n<![endif]-->", $condition, $html);
+        }
+        return $html;
+    }
+
+    public static function renderScriptTag($url, $condition = null)
+    {
+        $html = sprintf('<script src="%s"></script>', $url);
+        if ($condition) {
+            $html = sprintf("<!--[if %s]>\n%s\n<![endif]-->", $condition, $html);
+        }
+        return $html;
     }
 }

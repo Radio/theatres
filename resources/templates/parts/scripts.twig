@@ -1,0 +1,3 @@
+{% for script in app.assets.getScripts %}
+{{ app.assets.renderScript(script.url, script.condition) | raw }}
+{% endfor %}

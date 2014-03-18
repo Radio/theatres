@@ -1,0 +1,90 @@
+{% include "header.twig" %}
+<div class="container admin" id="admin">
+    <div class="row">
+        <div class="col-md-12">
+            <header>
+                <h1>
+                    <a href="{{ app.url_generator.generate('homepage') }}">{{ appTitle }}</a>
+                </h1>
+            </header>
+
+            <div class="breadcrumb">
+                <a href="{{ app.url_generator.generate('admin') }}">Панель управления</a>
+                <span class="sep">→</span>
+                <h2>Театры</h2>
+            </div>
+
+            {% include "parts/session_messages.twig" %}
+
+            <form id="edit-theatres-form" class="admin-form" action="" method="post">
+            {% for theatre in theatres %}
+                <fieldset class="row form-group theatre-row" id="theatre-{{ theatre.key }}">
+                    <div class="col-md-3 col-title">
+                        <label for="theatre-title-{{ theatre.id }}">{{ theatre.id }}</label>
+                        <input type="text" id="theatre-title-{{ theatre.id }}" class="form-control"
+                               name="theatres[{{ theatre.id }}][title]" value="{{ theatre.title }}" placeholder="Название"/>
+                    </div>
+                    <div class="col-md-1">
+                        <input type="text" class="form-control"
+                               name="theatres[{{ theatre.id }}][abbr]" value="{{ theatre.abbr }}" placeholder="Аббр."/>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control"
+                               name="theatres[{{ theatre.id }}][link]" value="{{ theatre.link }}" placeholder="Ссылка"/>
+                        <input type="text" class="form-control"
+                               name="theatres[{{ theatre.id }}][house_slug]" value="{{ theatre.house_slug }}" placeholder="Слаг в ДА"/>
+                    </div>
+                    <div class="col-md-2">
+                        <input class="form-control"
+                               type="text" name="theatres[{{ theatre.id }}][key]" value="{{ theatre.key }}" placeholder="Ключ"/>
+                    </div>
+                    <div class="col-md-2">
+                        <input class="form-control"
+                               type="text" name="theatres[{{ theatre.id }}][fetcher]" value="{{ theatre.fetcher }}" placeholder="Fetcher"/>
+                    </div>
+                    <div class="col-md-1">
+                        <button type="button" class="btn btn-danger delete-theatre" data-id="{{ theatre.id }}" title="Удалить">&times;</button>
+                    </div>
+                </fieldset>
+            {% endfor %}
+                <fieldset class="row form-group theatre-row" id="theatre-new">
+                    <div class="col-md-3 col-title">
+                        <label for="theatre-title-new">+</label>
+                        <input type="text" id="theatre-title-new" class="form-control"
+                               name="theatres[new][title]" value="" placeholder="Название"/>
+                    </div>
+                    <div class="col-md-1">
+                        <input type="text" class="form-control"
+                               name="theatres[new][abbr]" value="" placeholder="Аббр."/>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control"
+                               name="theatres[new][link]" value="" placeholder="Ссылка"/>
+                        <input type="text" class="form-control"
+                               name="theatres[new][house_slug]" value="" placeholder="Слаг в ДА"/>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="text" class="form-control"
+                               name="theatres[new][key]" value="" placeholder="Ключ"/>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="text" class="form-control"
+                               name="theatres[new][fetcher]" value="" placeholder="Fetcher" />
+                    </div>
+                    <div class="col-md-1">
+                        <div class="cat" title="Мяу"></div>
+                    </div>
+                </fieldset>
+                <fieldset class="row buttons-row">
+                    <div class="col-md-2">
+                        <button type="submit" class="btn btn-primary">Сохранить</button>
+                    </div>
+                </fieldset>
+            </form>
+            <form id="delete-theatre-form" class="hidden-form" action="{{ app.url_generator.generate('admin_theatres_delete') }}" method="post">
+                <input type="hidden" name="id" value="">
+            </form>
+        </div>
+    </div>
+</div>
+{% include "footer.twig" %}

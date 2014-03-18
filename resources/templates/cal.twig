@@ -1,0 +1,43 @@
+<div class="container view-month" id="main">
+    <header>
+        <h1>{{ appTitle }}</h1>
+    </header>
+
+    <div class="page-header">
+        <h2>
+            {{ query.month | monthName | title }}
+            {% if show_year %} {{ query.year }} {% endif %}
+        </h2>
+        {% if query.theatre %}
+        <h3>{{ query.theatre | theatreTitle }}</h3>
+        {% endif %}
+    </div>
+
+    <div class="month">
+        <p class="month-links">
+            <a href="#" class="show-month">← Показать весь месяц</a>
+        </p>
+        {% for week in cal %}
+        <div class="week week-{{ loop.index }}" data-index="{{ loop.index }}" data-title="{{ loop.index }} неделя">
+            {% for day in week %}
+                <div class="day row {{ day.month }} {{ day.date.format('D') | lower }} {% if day.today %} today {% endif %}">
+                    <p class="day-number col-xs-3">
+                        <span class="day-number-number">{{ day.date.format('j') }}</span>
+                        <span class="day-of-week-name">{{day.date | dayOfWeekName }}  {% if day.today %} (сегодня) {% endif %}</span>
+                    </p>
+
+                    <div class="plays col-xs-9">
+                        {% for play in day.plays %}
+                        {% include "cal/play.twig" %}
+                        {% endfor %}
+                        {% if day.plays | length ==  0 %} — {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+            <p class="week-links">
+                <a href="#" class="show-week">Показать только эту неделю</a>
+            </p>
+        </div>
+        {% endfor %}
+    </div>
+</div>

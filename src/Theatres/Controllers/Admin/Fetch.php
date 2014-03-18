@@ -9,9 +9,12 @@ use Theatres\Core\Exceptions\Fetchers_UndefinedFetcher;
 use Theatres\Models\Theatre;
 use RedBean_Facade as R;
 use Theatres\Helpers\Date as DateHelper;
+use Theatres\Core\Controller_Templatable as Templatable;
 
 class Admin_Fetch
 {
+    use Templatable;
+
     public function index(Application $app)
     {
         $theatres = new Theatres();
@@ -23,9 +26,8 @@ class Admin_Fetch
             'theatres' => $theatres,
         );
 
-        /** @var \Twig_Environment $twig */
-        $twig = $app['twig'];
-        return $twig->render('admin/fetch.html', $context);
+        $this->useLayout('admin');
+        return $this->renderTemplate('admin/fetch.twig', $context, $app);
     }
 
     public function fetch(Request $request, Application $app, $theatreKey)

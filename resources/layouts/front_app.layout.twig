@@ -1,0 +1,12 @@
+{% spaceless %}
+    {{- app.assets.addScript("assets/js/theatres.js") -}}
+    {{- app.assets.addScript("assets/js/modules/front.js") -}}
+    {{- app.assets.addScript("assets/js/modules/front/controllers/month.js") -}}
+    {{- app.assets.addScript("assets/js/modules/front/controllers/play.js") -}}
+
+    {{- app.assets.addStyle("assets/css/theatres.css") -}}
+    {{- app.assets.addStyle("assets/css/theatres-print.css", "print") -}}
+{% endspaceless %}
+{% include "parts/header.twig" %}
+{% include template %}
+{% include "parts/footer.twig" %}

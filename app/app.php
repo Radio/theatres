@@ -31,6 +31,10 @@ if ($secure) {
 $app['debug'] = $debug;
 $app['root'] = realpath(__DIR__ . '/..');
 
+$app['assets'] = $app->share(function() use ($siteBase) {
+    return new \Theatres\Helpers\Assets($siteBase);
+});
+
 // 1.1 Set error handler
 
 $errorHandler = new \Theatres\Core\ErrorHandler();
@@ -40,7 +44,10 @@ if (!$debug) {
 
 // 2. Configure Twig
 
-$twigLoader = new Twig_Loader_Filesystem(__DIR__.'/../resources/templates');
+$twigLoader = new Twig_Loader_Filesystem(array(
+    __DIR__.'/../resources/layouts',
+    __DIR__.'/../resources/templates',
+));
 $twig = new Twig_Environment($twigLoader, array(
     'cache' => $debug ? false : __DIR__.'/../resources/templates_cache',
     'debug' => $debug

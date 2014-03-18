@@ -9,9 +9,12 @@ use Symfony\Component\Routing\Generator\UrlGenerator;
 use Theatres\Collections\Scenes;
 use Theatres\Core\Message;
 use RedBean_Facade as R;
+use Theatres\Core\Controller_Templatable as Templatable;
 
 class Admin_Scenes
 {
+    use Templatable;
+
     public function index(Application $app)
     {
         $scenes = new Scenes();
@@ -22,9 +25,8 @@ class Admin_Scenes
             'scenes' => $scenes,
         );
 
-        /** @var \Twig_Environment $twig */
-        $twig = $app['twig'];
-        return $twig->render('admin/scenes.html', $context);
+        $this->useLayout('admin');
+        return $this->renderTemplate('admin/scenes.twig', $context, $app);
     }
 
     public function save(Request $request, Application $app)
