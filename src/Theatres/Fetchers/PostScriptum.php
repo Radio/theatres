@@ -70,7 +70,7 @@ class PostScriptum extends Fetcher
     {
         $date = null;
 
-        $year = date('Y') + 1;
+        $year = date('Y');
         list($day, $month) = explode('.', $datePart);
         list($hour, $minute) = explode(':', $timePart);
 

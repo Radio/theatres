@@ -5,38 +5,50 @@ namespace Theatres\Controllers;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 use Theatres\Collections\Theatres;
-use Theatres\Core\Controller_Rest;
+use Theatres\Core\Collection;
+use Theatres\Core\Controller_Rest_Collection;
 use Theatres\Helpers\Api;
 
-class Api_Theatres extends Controller_Rest
+/**
+ * API theatres resource controller.
+ *
+ * @package Theatres\Controllers
+ */
+class Api_Theatres extends Controller_Rest_Collection
 {
-    const DEFAULT_ORDER = 'title';
-
-    private static $allowedOrders = array(
+    /** @var array List of allowed orders. */
+    protected $allowedOrders = array(
         'id', 'title'
     );
 
-    public function get(Application $app, Request $request)
+    /**
+     * Get Theatres Collection.
+     *
+     * @return Theatres
+     */
+    protected function getCollection()
+    {
+        return new Theatres();
+    }
+
+    /**
+     * Apply 'fetchable' filter.
+     * Fetch and apply filters to collection.
+     *
+     * @param Collection $collection Collection instance.
+     * @param Request $request Request instance.
+     */
+    protected function applyFilters(Collection $collection, Request $request)
     {
         $fetchable = Api::toBool($request->query->get('fetchable'));
-        $order = $request->query->get('order', self::DEFAULT_ORDER);
-        if (!Api::isAllowed($order, self::$allowedOrders)) {
-            $order = self::DEFAULT_ORDER;
-        }
-
-        $theatres = new Theatres();
-
-        if (!is_null($fetchable)) {
+        if ($fetchable !== null) {
             if ($fetchable) {
-                $theatres->addConditions('fetcher is not null and fetcher != ""');
+                $collection->addConditions('fetcher is not null and fetcher != ""');
             } else {
-                $theatres->addConditions('(fetcher is null or fetcher = "")');
+                $collection->addConditions('(fetcher is null or fetcher = "")');
             }
         }
-        if ($order) {
-            $theatres->setOrder($order);
-        }
 
-        return $theatres->toArray();
+        parent::applyFilters($collection, $request);
     }
 }
