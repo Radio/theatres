@@ -19,6 +19,7 @@ class Admin_System_Import
 
         $this->importTheatres();
         $this->importScenes();
+        $this->importPlays();
 
         return 'Import was successful.';
     }
@@ -31,6 +32,11 @@ class Admin_System_Import
     protected function importScenes()
     {
         $this->importItems('scene', 'scenes.yaml');
+    }
+
+    protected function importPlays()
+    {
+        $this->importItems('play', 'plays.yaml');
     }
 
     protected function importItems($type, $fileName)

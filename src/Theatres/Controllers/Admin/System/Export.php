@@ -3,8 +3,7 @@
 namespace Theatres\Controllers;
 
 use Silex\Application;
-use Theatres\Collections\Scenes;
-use Theatres\Collections\Theatres;
+use RedBean_Facade as R;
 use Symfony\Component\Yaml\Yaml;
 use Theatres\Exceptions\Export as ExportException;
 
@@ -20,30 +19,33 @@ class Admin_System_Export
 
         $this->exportTheatres();
         $this->exportScenes();
+        $this->exportPlays();
 
         return 'Export was successful.';
     }
 
     protected function exportTheatres()
     {
-        $theatres = new Theatres();
-        $theatres->setOrder('id');
-
-        $yaml = Yaml::dump($theatres->toArray());
-
-        $filePath = $this->getExportPath() . DIRECTORY_SEPARATOR . 'theatres.yaml';
-        file_put_contents($filePath, $yaml);
+        return $this->exportItems('theatre', 'theatres.yaml');
     }
 
     protected function exportScenes()
     {
-        $scenes = new Scenes();
-        $scenes->setOrder('id');
+        return $this->exportItems('scene', 'scenes.yaml');
+    }
 
-        $yaml = Yaml::dump($scenes->toArray());
+    protected function exportPlays()
+    {
+        return $this->exportItems('play', 'plays.yaml');
+    }
 
-        $filePath = $this->getExportPath() . DIRECTORY_SEPARATOR . 'scenes.yaml';
-        file_put_contents($filePath, $yaml);
+    protected function exportItems($type, $fileName)
+    {
+        $items = R::findAll($type, 'order by id');
+        $yaml = Yaml::dump(R::beansToArray($items));
+        $filePath = $this->getExportPath() . DIRECTORY_SEPARATOR . $fileName;
+
+        return file_put_contents($filePath, $yaml);
     }
 
     protected function validateExportPath()

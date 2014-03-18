@@ -1,0 +1,792 @@
+-
+    id: '13'
+    theatre: shevchenko
+    date: '2014-03-01 18:00:00'
+    title: 'З Тобою І Без Тебе'
+    scene: big
+    price: '20–50 грн'
+    link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=54'
+    hash: 8b2c25c9f22782164ea2bdcc6fcf3c8c
+-
+    id: '14'
+    theatre: shevchenko
+    date: '2014-03-02 18:00:00'
+    title: Примадонни
+    scene: big
+    price: '20–50 грн'
+    link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=30'
+    hash: 30d862698f546947fa17f928d9cb8dcc
+-
+    id: '15'
+    theatre: shevchenko
+    date: '2014-03-05 18:00:00'
+    title: 'Дуже проста історія'
+    scene: big
+    price: '20–50 грн'
+    link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=7'
+    hash: 5297ad9f48420ac3f84d93cef31db793
+-
+    id: '16'
+    theatre: shevchenko
+    date: '2014-03-06 18:00:00'
+    title: 'Лев Гурич Синичка, або Бенефіс дебютантки'
+    scene: big
+    price: '20–50 грн'
+    link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=41'
+    hash: ee4ba252fe35746bea4f926cebf900cd
+-
+    id: '17'
+    theatre: shevchenko
+    date: '2014-03-07 18:00:00'
+    title: 'Смішні гроші'
+    scene: big
+    price: '20–50 грн'
+    link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=20'
+    hash: a9fe9fc947fb6fc0759861eb9c21229d
+-
+    id: '18'
+    theatre: shevchenko
+    date: '2014-03-08 18:00:00'
+    title: 'Божевільний Журден'
+    scene: big
+    price: '20–50 грн'
+    link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=37'
+    hash: 9e626c70b219a8a724feb5b84a456ce2
+-
+    id: '19'
+    theatre: shevchenko
+    date: '2014-03-09 16:00:00'
+    title: '"Мені однаково, чи буду..."'
+    scene: small
+    price: '30 грн'
+    link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=63'
+    hash: 2d26dd7dda8b5b37a3f9749fb405c720
+-
+    id: '20'
+    theatre: shevchenko
+    date: '2014-03-09 18:00:00'
+    title: Шельменко-денщик
+    scene: big
+    price: '20–50 грн'
+    link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=24'
+    hash: e858fa6b1714fa127a7d5d57451f0b63
+-
+    id: '21'
+    theatre: shevchenko
+    date: '2014-03-11 18:00:00'
+    title: Примадонни
+    scene: big
+    price: '20–50 грн'
+    link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=30'
+    hash: 9d1b97d1f8ffca75530902ffc3eaedd2
+-
+    id: '22'
+    theatre: shevchenko
+    date: '2014-03-12 19:00:00'
+    title: 'Безіменна зірка'
+    scene: small
+    price: '70 грн'
+    link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=61'
+    hash: 1f0c9655bd47d10622baacd5355fe765
+-
+    id: '23'
+    theatre: shevchenko
+    date: '2014-03-13 18:00:00'
+    title: 'Зойчина квартира'
+    scene: big
+    price: '20–50 грн'
+    link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=32'
+    hash: 367cd8f381baa82f04211959304a34b5
+-
+    id: '24'
+    theatre: shevchenko
+    date: '2014-03-14 18:00:00'
+    title: Язичники
+    scene: big
+    price: '20–50 грн'
+    link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=59'
+    hash: b5a9c2a742112ea4aae15dad1bc7ea91
+-
+    id: '25'
+    theatre: shevchenko
+    date: '2014-03-15 18:00:00'
+    title: 'Продавець дощу'
+    scene: big
+    price: '20–50 грн'
+    link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=57'
+    hash: f448ab074ac4b6492b6ef40b02bb96af
+-
+    id: '26'
+    theatre: shevchenko
+    date: '2014-03-16 19:00:00'
+    title: 'Королева краси'
+    scene: small
+    price: '60 грн'
+    link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=53'
+    hash: 9e878fb43528e6d8afe7aa114e1aa562
+-
+    id: '27'
+    theatre: shevchenko
+    date: '2014-03-18 18:00:00'
+    title: 'Гроші (Сто тисяч)'
+    scene: small
+    price: '60 грн'
+    link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=5'
+    hash: 854da6cb900a29ecc5bccad16e3d71e9
+-
+    id: '28'
+    theatre: shevchenko
+    date: '2014-03-19 19:00:00'
+    title: 'Гроші (Сто тисяч)'
+    scene: small
+    price: '60 грн'
+    link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=5'
+    hash: 4f9a62df896d44936dad0aed7070b57a
+-
+    id: '29'
+    theatre: shevchenko
+    date: '2014-03-20 18:00:00'
+    title: 'Закон, або Любов панни Інни'
+    scene: big
+    price: '20–50 грн'
+    link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=9'
+    hash: 0810c2519f63cc06be30c5cea3f0c6ee
+-
+    id: '30'
+    theatre: shevchenko
+    date: '2014-03-21 18:00:00'
+    title: 'РеVIзоР. Містична комедія'
+    scene: big
+    price: '20–50 грн'
+    link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=18'
+    hash: 4b0feabc649403fee57824fda6ba1832
+-
+    id: '31'
+    theatre: shevchenko
+    date: '2014-03-22 18:00:00'
+    title: Примадонни
+    scene: big
+    price: '20–50 грн'
+    link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=30'
+    hash: 05b5f365ed5673e143bd416c84ed3ca0
+-
+    id: '32'
+    theatre: shevchenko
+    date: '2014-03-23 12:00:00'
+    title: 'Веселі пригоди Піфа'
+    scene: big
+    price: '20, 25 грн'
+    link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=26'
+    hash: 92a8cccd6d3964d61d0b364a7c01f7a8
+-
+    id: '33'
+    theatre: shevchenko
+    date: '2014-03-23 19:00:00'
+    title: 'Прощай, Юдо…'
+    scene: small
+    price: '70 грн'
+    link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=58'
+    hash: 3a1fa88422e960f75a98629807a62435
+-
+    id: '34'
+    theatre: shevchenko
+    date: '2014-03-25 11:00:00'
+    title: 'Веселі пригоди Піфа'
+    scene: big
+    price: '20, 25 грн'
+    link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=26'
+    hash: 4f3759fb63f257ebf62969a365c3a809
+-
+    id: '35'
+    theatre: shevchenko
+    date: '2014-03-25 19:00:00'
+    title: 'Мина Мазайло'
+    scene: small
+    price: '60 грн'
+    link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=13'
+    hash: 5720a6066fb70a657b54f6af1d389e62
+-
+    id: '36'
+    theatre: shevchenko
+    date: '2014-03-26 11:00:00'
+    title: 'Кіт у чоботях'
+    scene: big
+    price: '20, 25 грн'
+    link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=36'
+    hash: 52587ea8a034722da77e2322447e7f0f
+-
+    id: '37'
+    theatre: shevchenko
+    date: '2014-03-26 19:00:00'
+    title: 'Безіменна зірка'
+    scene: small
+    price: '70 грн'
+    link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=61'
+    hash: b59a437b148a330b6cd9da72e53cd90d
+-
+    id: '38'
+    theatre: shevchenko
+    date: '2014-03-27 18:00:00'
+    title: 'Сон літньої ночі'
+    scene: big
+    price: '20–50 грн'
+    link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=21'
+    hash: 89d111fd4880f6ae24845a2156dff519
+-
+    id: '39'
+    theatre: shevchenko
+    date: '2014-03-28 18:00:00'
+    title: 'Смішні гроші'
+    scene: big
+    price: '20–50 грн'
+    link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=20'
+    hash: b53a28a1eb39efba253f06c9593958ed
+-
+    id: '40'
+    theatre: shevchenko
+    date: '2014-03-29 18:00:00'
+    title: 'Украдене щастя'
+    scene: big
+    price: '20–50 грн'
+    link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=23'
+    hash: 862aaa3758aef717f4bbda02bf908d8b
+-
+    id: '41'
+    theatre: shevchenko
+    date: '2014-03-30 18:00:00'
+    title: 'Маленькі подружні злочини'
+    scene: small
+    price: '60 грн'
+    link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=27'
+    hash: 6dc4dbc1c4b01683acadda37c28f8bcf
+-
+    id: '42'
+    theatre: postscriptum
+    date: '2015-01-05 18:00:00'
+    title: 'ЧОЛОВІК МОЄЇ ДРУЖИНИ'
+    scene: main
+    price: '70–120 грн'
+    link: 'http://ps-teatr.com.ua'
+    hash: 02a1734c37d1956fa837ea04ad090ed3
+-
+    id: '43'
+    theatre: postscriptum
+    date: '2015-01-16 19:00:00'
+    title: 'ВІЧНІ ФРАНЦУЗЬКІ ФАРСИ ПРО ЦЕ…'
+    scene: main
+    price: '70–120 грн'
+    link: 'http://ps-teatr.com.ua'
+    hash: 9038f89dccca35be7df4bc633345527f
+-
+    id: '44'
+    theatre: postscriptum
+    date: '2015-01-19 18:00:00'
+    title: 'СОЙЧИНЕ КРИЛО'
+    scene: main
+    price: '60–110 грн'
+    link: 'http://ps-teatr.com.ua'
+    hash: 2656744c7379768783af2797cb547665
+-
+    id: '45'
+    theatre: postscriptum
+    date: '2015-01-22 19:00:00'
+    title: 'НУ,НАРЕШТІ'
+    scene: main
+    price: '60–110 грн'
+    link: 'http://ps-teatr.com.ua'
+    hash: 1f7bb1006cd3cf12e1cc4cdf477d08e2
+-
+    id: '46'
+    theatre: postscriptum
+    date: '2015-01-25 19:00:00'
+    title: 'ЦИГАНСЬКА МУЗА'
+    scene: main
+    price: '60–110 грн'
+    link: 'http://ps-teatr.com.ua'
+    hash: e2941ed7909001fed82f57dcd9c4adb4
+-
+    id: '47'
+    theatre: postscriptum
+    date: '2015-01-26 18:00:00'
+    title: 'ЧОЛОВІК МОЄЇ ДРУЖИНИ'
+    scene: main
+    price: null
+    link: 'http://ps-teatr.com.ua'
+    hash: e6a2f72af9475415f6a9316f043a0979
+-
+    id: '48'
+    theatre: postscriptum
+    date: '2015-01-28 19:00:00'
+    title: 'ЧОЛОВІК МОЄЇ ДРУЖИНИ'
+    scene: main
+    price: '70–120 грн'
+    link: 'http://ps-teatr.com.ua'
+    hash: 879f865da5ae6a18aace87c122fcc832
+-
+    id: '49'
+    theatre: postscriptum
+    date: '2015-01-31 19:00:00'
+    title: 'УКРАДЕНЕ ЩАСТЯ'
+    scene: main
+    price: '60–110 грн'
+    link: 'http://ps-teatr.com.ua'
+    hash: 3ec6659f0bb2671057a3f4fcbb9a7a40
+-
+    id: '50'
+    theatre: pushkin
+    date: '2014-03-18 19:00:00'
+    title: ДУЭНЬЯ
+    scene: main
+    price: null
+    link: 'http://rusdrama.kh.ua/tekushij-sezon/spektakli/27-duehnja'
+    hash: 5d5238426812f898c0cd2062d2fd09b9
+-
+    id: '51'
+    theatre: pushkin
+    date: '2014-03-19 19:00:00'
+    title: 'МАСТЕР И МАРГАРИТА'
+    scene: main
+    price: null
+    link: 'http://rusdrama.kh.ua/tekushij-sezon/spektakli/18-master-i-margarita'
+    hash: 2c5f3ecd22ee825dc9cbb4d60f36347b
+-
+    id: '52'
+    theatre: pushkin
+    date: '2014-03-20 19:00:00'
+    title: 'ШУТ БАЛАКИРЕВ, или Придворная комедия'
+    scene: main
+    price: null
+    link: 'http://rusdrama.kh.ua/tekushij-sezon/spektakli/24-shut-balakirev'
+    hash: 986f13f33afd24c228f3c08918616b47
+-
+    id: '53'
+    theatre: pushkin
+    date: '2014-03-21 19:00:00'
+    title: 'БЕЛЫЙ ДЖАЗ КАРОЛИНЫ'
+    scene: main
+    price: null
+    link: 'http://rusdrama.kh.ua/tekushij-sezon/spektakli/2-belij-djaz-karolini'
+    hash: a3fee9d07967667a25025981839961cd
+-
+    id: '54'
+    theatre: pushkin
+    date: '2014-03-22 19:00:00'
+    title: 'ФИЛУМЕНА МАРТУРАНО, ИЛИ БРАК ПО-ИТАЛЬЯНСКИ'
+    scene: main
+    price: null
+    link: 'http://rusdrama.kh.ua/tekushij-sezon/spektakli/21-filumena-marturano'
+    hash: 56d4d543bcf1c33d28596976849e9178
+-
+    id: '55'
+    theatre: pushkin
+    date: '2014-03-23 19:00:00'
+    title: РОХЛЯ
+    scene: main
+    price: null
+    link: 'http://rusdrama.kh.ua/tekushij-sezon/spektakli/193-roxlya'
+    hash: cae03a07c0fe19f8cee5d61f1fae0fe1
+-
+    id: '56'
+    theatre: pushkin
+    date: '2014-03-23 19:00:00'
+    title: 'ДВЕРИ ХЛОПАЮТ'
+    scene: main
+    price: null
+    link: 'http://rusdrama.kh.ua/tekushij-sezon/spektakli/184-dveri-xlopayut'
+    hash: 8c4a76163df80b919d0943c1542050e6
+-
+    id: '57'
+    theatre: pushkin
+    date: '2014-03-25 19:00:00'
+    title: 'СЛИШКОМ ЖЕНАТЫЙ ТАКСИСТ'
+    scene: main
+    price: null
+    link: 'http://rusdrama.kh.ua/tekushij-sezon/spektakli/17-slishkom-zhenatij-taksist'
+    hash: 1cf0b87bd5369cc8714747184b7c81cc
+-
+    id: '58'
+    theatre: pushkin
+    date: '2014-03-26 19:00:00'
+    title: 'ГЛАЗА ДНЯ (Мата Хари)'
+    scene: main
+    price: null
+    link: 'http://rusdrama.kh.ua/tekushij-sezon/spektakli/144-glaza-dnya'
+    hash: 50b1f4d489ef23459da0a3991ed05cc5
+-
+    id: '59'
+    theatre: pushkin
+    date: '2014-03-27 19:00:00'
+    title: 'ПОМИНАЛЬНАЯ МОЛИТВА'
+    scene: main
+    price: null
+    link: 'http://rusdrama.kh.ua/tekushij-sezon/spektakli/1-pominalnaya-molinva'
+    hash: 44fd830145260098ce6d2bde4b4e6197
+-
+    id: '60'
+    theatre: pushkin
+    date: '2014-03-28 19:00:00'
+    title: 'УСАДЬБА "ПЕНЬКИ"'
+    scene: main
+    price: null
+    link: 'http://rusdrama.kh.ua/tekushij-sezon/spektakli/188-usadba-penki'
+    hash: e12b59147b4396b957c2a80f2f42d5ad
+-
+    id: '61'
+    theatre: pushkin
+    date: '2014-03-29 19:00:00'
+    title: 'ФРЕДЕРИК, ИЛИ БУЛЬВАР ПРЕСТУПЛЕНИЙ'
+    scene: main
+    price: null
+    link: 'http://rusdrama.kh.ua/tekushij-sezon/spektakli/196-frederik-ili-bulvar-prestuplenij'
+    hash: 527774d1bb6af4d2245e2acf6295dd15
+-
+    id: '62'
+    theatre: pushkin
+    date: '2014-03-30 12:00:00'
+    title: 'ПАПА В ПАУТИНЕ'
+    scene: main
+    price: null
+    link: 'http://rusdrama.kh.ua/tekushij-sezon/spektakli/16-papa-v-pautine'
+    hash: 292ee7fefaf9d8370889cfeceea22d01
+-
+    id: '63'
+    theatre: pushkin
+    date: '2014-03-30 19:00:00'
+    title: МЫШЕЛОВКА
+    scene: main
+    price: null
+    link: 'http://rusdrama.kh.ua/tekushij-sezon/spektakli/199-myshelovka'
+    hash: 9c948abccbc8f144b2de357c7cdc5617
+-
+    id: '64'
+    theatre: theatre19
+    date: '2014-03-12 19:00:00'
+    title: Двери
+    scene: main
+    price: null
+    link: 'http://domaktera.com.ua/shows/dveri'
+    hash: 0809ba7918e52b01349979809f8bd4d8
+-
+    id: '65'
+    theatre: aparte
+    date: '2014-03-13 19:00:00'
+    title: 'Не покидай меня'
+    scene: main
+    price: null
+    link: 'http://domaktera.com.ua/shows/ne-pokidaj-menya'
+    hash: ac37887ae489a3a6851eb1b25f999567
+-
+    id: '66'
+    theatre: theatre19
+    date: '2014-03-14 19:00:00'
+    title: '(Cамый) легкий способ бросить курить'
+    scene: main
+    price: null
+    link: 'http://domaktera.com.ua/shows/camy-j-legkij-sposob-brosit-kurit'
+    hash: 80f23bdd7e64864bf215f8f7b2245540
+-
+    id: '67'
+    theatre: teatr-up
+    date: '2014-03-15 19:00:00'
+    title: Любовь
+    scene: small
+    price: null
+    link: 'http://domaktera.com.ua/shows/lyubov'
+    hash: 71adb073c0d50c840cd158d5420114bc
+-
+    id: '68'
+    theatre: theatre19
+    date: '2014-03-15 19:00:00'
+    title: ЧМО
+    scene: main
+    price: null
+    link: 'http://domaktera.com.ua/shows/chmo-2'
+    hash: b2c70dba2a101dfacb6ecda3f8ddc6a2
+-
+    id: '69'
+    theatre: theatre19
+    date: '2014-03-16 19:00:00'
+    title: Кароль
+    scene: small
+    price: null
+    link: 'http://domaktera.com.ua/shows/karol'
+    hash: 2dbe2fcd9eaa01b7d904b48c2b8475c1
+-
+    id: '70'
+    theatre: novascena
+    date: '2014-03-16 19:00:00'
+    title: 'Валентинов день'
+    scene: main
+    price: null
+    link: 'http://domaktera.com.ua/shows/valentinov-den'
+    hash: 12cdf520f4a32ebca151812e06441978
+-
+    id: '71'
+    theatre: teatr-mozhet-byit
+    date: '2014-03-17 19:00:00'
+    title: 'Мужики не плачут'
+    scene: small
+    price: null
+    link: 'http://domaktera.com.ua/shows/muzhiki-ne-plachut'
+    hash: 989d8f1f73de654588eea80d4e937610
+-
+    id: '72'
+    theatre: novascena
+    date: '2014-03-17 19:00:00'
+    title: 'Девичник. (Осторожно! Женщины!!!)'
+    scene: main
+    price: null
+    link: 'http://domaktera.com.ua/shows/devichnik-ostorozhno-zhenshhiny'
+    hash: dcf565391a634e5c056513796bf3bf17
+-
+    id: '73'
+    theatre: teatr-mozhet-byit
+    date: '2014-03-18 19:00:00'
+    title: 'Город знакомств'
+    scene: small
+    price: null
+    link: 'http://domaktera.com.ua/shows/gorod-znakomstv'
+    hash: 34cafa7f7a5b4bad65d4c948958fd86d
+-
+    id: '74'
+    theatre: flowers
+    date: '2014-03-18 19:00:00'
+    title: Крыса
+    scene: main
+    price: null
+    link: 'http://domaktera.com.ua/shows/kry-sa'
+    hash: 6995420cd702ab15ce87407fb751eb76
+-
+    id: '75'
+    theatre: theatre19
+    date: '2014-03-19 19:00:00'
+    title: 'Но все-таки'
+    scene: small
+    price: null
+    link: 'http://domaktera.com.ua/shows/no-vse-taki'
+    hash: 51fb7cf68f57b85eff4b1b1019b2659d
+-
+    id: '76'
+    theatre: flowers
+    date: '2014-03-19 19:00:00'
+    title: Жир
+    scene: main
+    price: null
+    link: 'http://domaktera.com.ua/shows/prem-era-zhir'
+    hash: 22551bede387295b16aeade0c7150b82
+-
+    id: '77'
+    theatre: teatr-mozhet-byit
+    date: '2014-03-20 19:00:00'
+    title: 'Город знакомств'
+    scene: small
+    price: null
+    link: 'http://domaktera.com.ua/shows/gorod-znakomstv'
+    hash: 8d2fac701c58cb7bea3fe08d312892ff
+-
+    id: '78'
+    theatre: hoteatr
+    date: '2014-03-20 19:00:00'
+    title: 'Сублимация любви'
+    scene: main
+    price: null
+    link: 'http://domaktera.com.ua/shows/sublimatsiya-lyubvi'
+    hash: 863d062de6ef379962e9c4f094c21534
+-
+    id: '79'
+    theatre: aparte
+    date: '2014-03-21 19:00:00'
+    title: Сестры
+    scene: small
+    price: null
+    link: 'http://domaktera.com.ua/shows/sestry'
+    hash: 1e1be0f2a383bc83bf6baa0a0796b213
+-
+    id: '80'
+    theatre: theatre19
+    date: '2014-03-21 19:00:00'
+    title: 'Ищу работу'
+    scene: main
+    price: null
+    link: 'http://domaktera.com.ua/shows/prem-era'
+    hash: 31cd1b2595e09e746b8dc20c08322e46
+-
+    id: '81'
+    theatre: tk-yunona
+    date: '2014-03-22 19:00:00'
+    title: 'Как стать МИЛЛИОНЕРом'
+    scene: small
+    price: null
+    link: 'http://domaktera.com.ua/shows/kak-stat-millionerom'
+    hash: e71fc4cf4710477e265984ef69f4d0a0
+-
+    id: '82'
+    theatre: novascena
+    date: '2014-03-22 19:00:00'
+    title: 'Черное молоко'
+    scene: main
+    price: null
+    link: 'http://domaktera.com.ua/shows/chernoe-moloko'
+    hash: 4681a29fa8f05482e3913edc2c378ad6
+-
+    id: '83'
+    theatre: teatr-forte
+    date: '2014-03-23 19:00:00'
+    title: Взаперти
+    scene: small
+    price: null
+    link: 'http://domaktera.com.ua/shows/vzaperti'
+    hash: 6a044ff4959f61239ac4dfd12a48affe
+-
+    id: '84'
+    theatre: novascena
+    date: '2014-03-23 19:00:00'
+    title: 'Любовь с видом на озеро'
+    scene: main
+    price: null
+    link: 'http://domaktera.com.ua/shows/lyubov-s-vidom-na-ozero'
+    hash: 5b89efd92d262e02dd0a07b7b16a2cc2
+-
+    id: '85'
+    theatre: teatr-v-teatre
+    date: '2014-03-24 19:00:00'
+    title: 'Академия смеха'
+    scene: small
+    price: null
+    link: 'http://domaktera.com.ua/shows/akademiya-smeha'
+    hash: 7bdb43e5800f3c90ed3266e6e01e1cca
+-
+    id: '86'
+    theatre: teatr-sahalin
+    date: '2014-03-24 19:00:00'
+    title: 'Мужчины, способные на это…'
+    scene: main
+    price: null
+    link: 'http://domaktera.com.ua/shows/geroi'
+    hash: 9ba1a9256276d900a6b70ffc07dd5e00
+-
+    id: '87'
+    theatre: teatr-lanzheron
+    date: '2014-03-25 19:00:00'
+    title: 'Вы меня улыбнули…'
+    scene: small
+    price: null
+    link: 'http://domaktera.com.ua/shows/vy-menya-uly-bnuli'
+    hash: 746129a77ca4118ef9aed9d5c2dd38e2
+-
+    id: '88'
+    theatre: hoteatr
+    date: '2014-03-25 19:00:00'
+    title: 'Сублимация любви'
+    scene: main
+    price: null
+    link: 'http://domaktera.com.ua/shows/sublimatsiya-lyubvi'
+    hash: 0d24ea1b8dcfc0fce7ea993272436809
+-
+    id: '89'
+    theatre: kotelok
+    date: '2014-03-26 19:00:00'
+    title: 'Класс Бенто Бончева'
+    scene: small
+    price: null
+    link: 'http://domaktera.com.ua/shows/klass-bento-boncheva'
+    hash: e45d67d67bcb00592cb61063e8c90d80
+-
+    id: '90'
+    theatre: novascena
+    date: '2014-03-26 19:00:00'
+    title: Пум-па-па
+    scene: main
+    price: null
+    link: 'http://domaktera.com.ua/shows/pum-pa-pa'
+    hash: 7aa3627b79b1563838b2123ebaab6e88
+-
+    id: '91'
+    theatre: novascena
+    date: '2014-03-27 19:00:00'
+    title: 'Мужчины на грани нервного срыва'
+    scene: small
+    price: null
+    link: 'http://domaktera.com.ua/shows/muzhchiny-na-grani-nervnogo-sry-va'
+    hash: cac92610f05789e94dc94f47ef297d19
+-
+    id: '92'
+    theatre: flowers
+    date: '2014-03-27 19:00:00'
+    title: Красный
+    scene: main
+    price: null
+    link: 'http://domaktera.com.ua/shows/krasny-j'
+    hash: 951c618b5f90e54cabb8fe24d1c90c76
+-
+    id: '93'
+    theatre: teatr-forte
+    date: '2014-03-28 19:00:00'
+    title: Zельда
+    scene: small
+    price: null
+    link: 'http://domaktera.com.ua/shows/zel-da'
+    hash: a35de437c18f319261e4732eca028307
+-
+    id: '94'
+    theatre: novyi-teat
+    date: '2014-03-28 19:00:00'
+    title: 'Моя единственная 1325-я'
+    scene: main
+    price: null
+    link: 'http://domaktera.com.ua/shows/moya-edinstvennaya-1325-ya'
+    hash: 2ed7218d858b45c93e9037c4d0edd707
+-
+    id: '95'
+    theatre: theatre19
+    date: '2014-03-29 19:00:00'
+    title: 'Но все-таки'
+    scene: small
+    price: null
+    link: 'http://domaktera.com.ua/shows/no-vse-taki'
+    hash: 037f67ea9583206e707c30688057303e
+-
+    id: '96'
+    theatre: novascena
+    date: '2014-03-29 19:00:00'
+    title: 'Девичник. (Осторожно! Женщины!!!)'
+    scene: main
+    price: null
+    link: 'http://domaktera.com.ua/shows/devichnik-ostorozhno-zhenshhiny'
+    hash: 806f7d06fcde05d5980f65108bb5ea08
+-
+    id: '97'
+    theatre: novascena
+    date: '2014-03-30 19:00:00'
+    title: 'Укрощение Сьюзен'
+    scene: small
+    price: null
+    link: 'http://domaktera.com.ua/shows/ukroshhenie-s-yuzen'
+    hash: 6185a62d383589a5f5dd0cebf08cb386
+-
+    id: '98'
+    theatre: theatre19
+    date: '2014-03-30 19:00:00'
+    title: '(Cамый) легкий способ бросить курить'
+    scene: main
+    price: null
+    link: 'http://domaktera.com.ua/shows/camy-j-legkij-sposob-brosit-kurit'
+    hash: 22ff7fdc0c9c39a1c67f8a96718db96b
+-
+    id: '99'
+    theatre: teatr-sahalin
+    date: '2014-03-31 19:00:00'
+    title: 'Над пропастью во ржи'
+    scene: small
+    price: null
+    link: 'http://domaktera.com.ua/shows/nad-propast-yu-vo-rzhi'
+    hash: d26b60d79d956dd7dc636bcab243e370
+-
+    id: '100'
+    theatre: teatr-mozhet-byit
+    date: '2014-03-31 19:00:00'
+    title: Стаккато
+    scene: main
+    price: null
+    link: 'http://domaktera.com.ua/shows/stakkato'
+    hash: a65f0d5154e33a4eeda63c35ce8135ce
