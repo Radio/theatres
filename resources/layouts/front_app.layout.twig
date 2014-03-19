@@ -1,8 +1,18 @@
 {% spaceless %}
+    {{- app.assets.addScript("assets/vendor/jquery/dist/jquery.min.js") -}}
+    {{- app.assets.addScript("assets/vendor/bootstrap/dist/js/bootstrap.min.js") -}}
+    {{- app.assets.addScript("assets/vendor/angular/angular.min.js") -}}
+    {{- app.assets.addScript("assets/vendor/angular/angular-route.min.js") -}}
+    {{- app.assets.addScript("assets/vendor/angular/angular-resource.min.js") -}}
+
     {{- app.assets.addScript("assets/js/theatres.js") -}}
     {{- app.assets.addScript("assets/js/modules/front.js") -}}
     {{- app.assets.addScript("assets/js/modules/front/controllers/month.js") -}}
     {{- app.assets.addScript("assets/js/modules/front/controllers/play.js") -}}
+    {{- app.assets.addScript("assets/js/modules/helper.js") -}}
+    {{- app.assets.addScript("assets/js/modules/helper/date.js") -}}
+    {{- app.assets.addScript("assets/js/modules/api.js") -}}
+    {{- app.assets.addScript("assets/js/modules/api/theatres.js") -}}
 
     {{- app.assets.addStyle("assets/css/theatres.css") -}}
     {{- app.assets.addStyle("assets/css/theatres-print.css", "print") -}}

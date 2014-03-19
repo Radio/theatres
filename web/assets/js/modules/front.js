@@ -20,4 +20,4 @@ angular.module('frontApp', [
             });
     }]);
 
-angular.module('frontApp.controllers', []);
+angular.module('frontApp.controllers', ['helper', 'api']);

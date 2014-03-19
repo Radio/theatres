@@ -1,8 +1,16 @@
-{{- app.assets.addScript("assets/js/theatres.js") -}}
-{{- app.assets.addScript("assets/js/theatres_admin.js") -}}
-{{- app.assets.addStyle("assets/css/theatres.css") -}}
-{{- app.assets.addStyle("assets/css/theatres-print.css", "print") -}}
-{{- app.assets.addStyle("assets/css/admin.css") -}}
+{% spaceless %}
+    {#{{- app.assets.addScript("http://code.jquery.com/jquery-2.1.0.min.js") -}}#}
+    {{- app.assets.addScript("assets/vendor/jquery/dist/jquery.min.js") -}}
+    {#{{- app.assets.addScript("//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js") -}}#}
+    {{- app.assets.addScript("assets/vendor/bootstrap/dist/js/bootstrap.min.js") -}}
+    {{- app.assets.addScript("assets/js/theatres.js") -}}
+    {{- app.assets.addScript("assets/js/theatres_admin.js") -}}
+    {{- app.assets.addScript("assets/vendor/flying-focus/standalone/flying-focus.js") -}}
+
+    {{- app.assets.addStyle("assets/css/theatres.css") -}}
+    {{- app.assets.addStyle("assets/css/theatres-print.css", "print") -}}
+    {{- app.assets.addStyle("assets/css/admin.css") -}}
+{% endspaceless %}
 {% include "parts/header.twig" %}
 {% include template %}
 {% include "parts/footer.twig" %}
