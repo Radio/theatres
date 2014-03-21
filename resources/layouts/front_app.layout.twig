@@ -2,8 +2,9 @@
     {{- app.assets.addScript("assets/vendor/jquery/dist/jquery.min.js") -}}
     {{- app.assets.addScript("assets/vendor/bootstrap/dist/js/bootstrap.min.js") -}}
     {{- app.assets.addScript("assets/vendor/angular/angular.min.js") -}}
-    {{- app.assets.addScript("assets/vendor/angular/angular-route.min.js") -}}
-    {{- app.assets.addScript("assets/vendor/angular/angular-resource.min.js") -}}
+    {{- app.assets.addScript("assets/vendor/angular-route/angular-route.min.js") -}}
+    {{- app.assets.addScript("assets/vendor/angular-resource/angular-resource.min.js") -}}
+    {{- app.assets.addScript("assets/js/angular-locale_ru-ru.js") -}}
 
     {{- app.assets.addScript("assets/js/theatres.js") -}}
     {{- app.assets.addScript("assets/js/modules/front.js") -}}
@@ -13,9 +14,13 @@
     {{- app.assets.addScript("assets/js/modules/helper/date.js") -}}
     {{- app.assets.addScript("assets/js/modules/api.js") -}}
     {{- app.assets.addScript("assets/js/modules/api/theatres.js") -}}
+    {{- app.assets.addScript("assets/js/modules/api/plays.js") -}}
+    {{- app.assets.addScript("assets/js/modules/api/scenes.js") -}}
 
+    {{- app.assets.addStyle("http://fonts.googleapis.com/css?family=Roboto:400,300,500,700&subset=latin,cyrillic-ext") -}}
     {{- app.assets.addStyle("assets/css/theatres.css") -}}
     {{- app.assets.addStyle("assets/css/theatres-print.css", "print") -}}
+    {{- app.assets.addStyle("assets/css/front_app.css") -}}
 {% endspaceless %}
 {% include "parts/header.twig" %}
 {% include template %}

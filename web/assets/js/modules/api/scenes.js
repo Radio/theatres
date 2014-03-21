@@ -1,12 +1,12 @@
 angular.module('api')
-    .factory('Theatres', ['$resource', '$q', 'API_URL', function($resource, $q, API_URL) {
-        var resource = $resource(API_URL + '/theatres');
+    .factory('Scenes', ['$resource', '$q', 'API_URL', function($resource, $q, API_URL) {
+        var resource = $resource(API_URL + '/scenes');
 
         return {
             get: function(query) {
                 var deferred = $q.defer();
-                resource.query(query, function(theatres) {
-                    deferred.resolve(theatres);
+                resource.query(query, function(scenes) {
+                    deferred.resolve(scenes);
                 }, function(response) {
                     deferred.reject(response);
                 });

@@ -31,13 +31,6 @@ class Cal
         $cal = $this->generateCalendar($month, $year);
         $this->fillCalWithPlays($cal, $plays);
 
-        /** @var Assets $assets */
-        $assets = $app['assets'];
-        $assets->addScript('assets/js/cal.js');
-        $assets->addStyle('assets/css/theatres.css');
-        $assets->addStyle('assets/css/theatres-print.css', 'print');
-        $assets->addStyle('assets/css/cal.css');
-
         $context = array(
             'plays' => $plays,
             'cal'   => $cal,

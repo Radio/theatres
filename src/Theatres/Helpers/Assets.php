@@ -94,11 +94,17 @@ class Assets
 
     public function renderScript($url, $condition = null)
     {
-        return Html::renderScriptTag($this->siteBase . '/' . $url, $condition);
+        if (strpos($url, '//:') === false) {
+            $url = $this->siteBase . '/' . $url;
+        }
+        return Html::renderScriptTag($url, $condition);
     }
 
     public function renderStyle($url, $media, $condition = null)
     {
-        return Html::renderStyleTag($this->siteBase . '/' . $url, $media, $condition);
+        if (strpos($url, '://') === false) {
+            $url = $this->siteBase . '/' . $url;
+        }
+        return Html::renderStyleTag($url, $media, $condition);
     }
 }
