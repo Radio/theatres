@@ -12,12 +12,9 @@ use Theatres\Helpers\Models;
  * @property $id
  * @property $key
  * @property $theatre FK
- * @property $date Deprecated
  * @property $title
  * @property $scene FK
  * @property $link
- * @property $hash Deprecated
- * @property $price Deprecated
  *
  * @package Theatres\Models
  */

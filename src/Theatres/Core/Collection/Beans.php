@@ -17,7 +17,7 @@ abstract class Collection_Beans extends Collection
 
         $sql = $this->buildSql();
 
-        return R::findAll($this->beanType, $sql, $this->bindings);
+        return $this->runLoadSql($sql);
     }
 
     protected function buildSql()
@@ -40,6 +40,15 @@ abstract class Collection_Beans extends Collection
             $sql = null;
         }
         return $sql;
+    }
+
+    /**
+     * @param $sql
+     * @return array
+     */
+    protected function runLoadSql($sql)
+    {
+        return R::findAll($this->beanType, $sql, $this->bindings);
     }
 
     /**

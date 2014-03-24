@@ -36,7 +36,7 @@ class Api_Shows extends Controller_Rest_Collection
      * Apply scene filter.
      * Fetch and apply filters to collection.
      *
-     * @param Collection $collection Collection instance.
+     * @param Collection|Shows $collection Collection instance.
      * @param Request $request Request instance.
      * @return void
      */
@@ -50,6 +50,11 @@ class Api_Shows extends Controller_Rest_Collection
         $scene = $request->query->get('scene');
         if ($scene) {
             $collection->addConditions('scene = ?', array($scene));
+        }
+
+        $populate = $request->query->get('populate');
+        if ($populate == 'play') {
+            $collection->setPopulatePlay(true);
         }
 
         $this->applyDateFilters($collection, $request);
