@@ -94,3 +94,10 @@ $app->match('/api/plays', 'Theatres\\Controllers\\Api_Plays::call')
 $app->match('/api/plays/{id}', 'Theatres\\Controllers\\Api_Plays_Play::call')
     ->assert('id', '\d+|@[a-z\-_0-9]+')
     ->bind('api_plays_play');
+
+$app->match('/api/shows', 'Theatres\\Controllers\\Api_Shows::call')
+    ->bind('api_shows');
+
+$app->match('/api/shows/{id}', 'Theatres\\Controllers\\Api_Shows_Show::call')
+    ->assert('id', '\d+|@[a-z\-_0-9]+')
+    ->bind('api_shows_show');

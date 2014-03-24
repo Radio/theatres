@@ -4,31 +4,31 @@ namespace Theatres\Controllers;
 
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
-use Theatres\Collections\Plays;
+use Theatres\Collections\Shows;
 use Theatres\Core\Collection;
 use Theatres\Core\Controller_Rest_Collection;
 use Theatres\Helpers\Api;
 
 /**
- * API plays resource controller.
+ * API shows resource controller.
  *
  * @package Theatres\Controllers
  */
-class Api_Plays extends Controller_Rest_Collection
+class Api_Shows extends Controller_Rest_Collection
 {
     /** @var array List of allowed orders. */
     protected $allowedOrders = array(
-        'id', 'title'
+        'id', 'date'
     );
 
     /**
-     * Get Plays Collection.
+     * Get Shows Collection.
      *
-     * @return Plays
+     * @return Shows
      */
     protected function getCollection()
     {
-        return new Plays();
+        return new Shows();
     }
 
     /**

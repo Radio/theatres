@@ -50,30 +50,6 @@ class Theatre extends \RedBean_SimpleModel
         }
     }
 
-    public function storeSchedule($schedule, $month, $year)
-    {
-        $this->clearSchedule($month, $year);
-
-        $plays = array();
-        foreach ($schedule as $playData) {
-            $play = R::dispense('play');
-            $play->import($playData);
-            $plays[] = $play;
-        }
-        R::storeAll($plays);
-    }
-
-    private function clearSchedule($month, $year)
-    {
-        if ($this->key != 'house') {
-            R::exec('delete from play where theatre = ? and month (`date`) = ? and year(`date`) = ?',
-                array($this->key, $month, $year));
-        } else {
-            R::exec('delete from play where theatre in (select `key` from theatre where house_slug is not null and house_slug != "") and month (`date`) = ? and year(`date`) = ?',
-                array($month, $year));
-        }
-    }
-
     public function isInHouse()
     {
         return (bool) $this->house_slug;

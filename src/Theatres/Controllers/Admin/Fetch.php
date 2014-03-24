@@ -6,6 +6,7 @@ use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 use Theatres\Collections\Theatres;
 use Theatres\Core\Exceptions\Fetchers_UndefinedFetcher;
+use Theatres\Models\Schedule;
 use Theatres\Models\Theatre;
 use RedBean_Facade as R;
 use Theatres\Helpers\Date as DateHelper;
@@ -46,12 +47,14 @@ class Admin_Fetch
         try {
             $fetcher = $theatre->getFetcher($theatre);
 
-            $schedule = $fetcher->fetch($month, $year);
+            $shows = $fetcher->fetch($month, $year);
 
-            $theatre->storeSchedule($schedule, $month, $year);
+            $schedule = new Schedule($theatre->box());
+
+            $schedule->saveSchedule($shows, $month, $year);
 
             $message = sprintf('Получили %d спектаклей на %s %d года.',
-                count($schedule), DateHelper::getMonthName($month), $year);
+                count($shows), DateHelper::getMonthName($month), $year);
 
             $responseData['status'] = 'success';
             $responseData['message'] = $message;

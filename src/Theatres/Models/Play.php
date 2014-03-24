@@ -2,108 +2,52 @@
 
 namespace Theatres\Models;
 
-use Theatres\Collections\Theatres;
-use Theatres\Collections\Scenes;
+use RedBean_Facade as R;
+use Theatres\Exceptions\MoreThanOneBeanFound;
+use Theatres\Helpers\Models;
 
 /**
  * Class Play
  *
  * @property $id
- * @property $theatre
- * @property $date
+ * @property $key
+ * @property $theatre FK
+ * @property $date Deprecated
  * @property $title
- * @property $scene
+ * @property $scene FK
  * @property $link
- * @property $hash
- * @property $price
+ * @property $hash Deprecated
+ * @property $price Deprecated
  *
  * @package Theatres\Models
  */
 class Play extends \RedBean_SimpleModel
 {
-    /** @var \Theatres\Collections\Scenes */
-    private static $scenes;
-
-    /** @var \Theatres\Collections\Theatres */
-    private static $theatres;
-
-    private static function loadTheatres()
+    /**
+     * Load play by tag (which is a variant of play title).
+     *
+     * @param $tag
+     * @throws \Theatres\Exceptions\MoreThanOneBeanFound
+     */
+    public function loadByTag($tag)
     {
-        if (is_null(self::$theatres)) {
-            self::$theatres = new Theatres();
+        $plays = R::tagged('play', array($tag));
+        if ($plays) {
+            if (count($plays) == 1) {
+                $this->bean->importFrom(current($plays));
+            } else {
+                throw new MoreThanOneBeanFound('More than one bean found for tag "' . $tag . '"');
+            }
         }
     }
 
-    private static function loadScenes()
-    {
-        if (is_null(self::$scenes)) {
-            self::$scenes = new Scenes();
-        }
-    }
 
     public function update()
     {
-        $this->hash = $this->generateHash();
-    }
-
-    protected function generateHash()
-    {
-        $line = sprintf('%s-%s-%s-%s-%s',
-            $this->theatre,
-            $this->date,
-            $this->title,
-            $this->scene,
-            $this->link
-        );
-        return md5($line);
-    }
-
-    public function getDate()
-    {
-        return $this->getDateTime()->setTime(0, 0);
-    }
-
-    public function getDateTime()
-    {
-        return new \DateTime($this->date);
-    }
-
-    public function getSceneTitle()
-    {
-        self::loadScenes();
-        if (self::$scenes) {
-            $scene = self::$scenes->findWith('key', $this->scene);
-            if ($scene) {
-                return $scene->title;
+        if (!$this->id) {
+            if (!$this->key && $this->title) {
+                $this->key = Models::generateKey($this->title);
             }
         }
-        return $this->scene;
-    }
-
-    /**
-     * @return Theatre
-     */
-    public function getTheatre()
-    {
-        self::loadTheatres();
-        if (self::$theatres) {
-            return self::$theatres->findWith('key', $this->theatre);
-        }
-        return null;
-    }
-
-    public function getTheatreTitle($full = false)
-    {
-        return ($theatre = $this->getTheatre()) ? $theatre->getTitle($full) : '';
-    }
-
-    public function getTheatreAbbr($full = false)
-    {
-        return ($theatre = $this->getTheatre()) ? $theatre->getAbbr($full) : '';
-    }
-
-    public function getTheatreLink()
-    {
-        return ($theatre = $this->getTheatre()) ? $theatre->link : '';
     }
 }
