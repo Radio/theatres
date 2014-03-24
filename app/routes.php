@@ -5,7 +5,7 @@ use \Theatres\Controllers;
 
 // Define Routes
 
-// 1. Home
+// 1. Home and Front App
 
 $app->get('/', 'Theatres\\Controllers\\Homepage::index')
     ->bind('homepage');
@@ -19,6 +19,13 @@ $app->get('/templates/{tpl}', 'Theatres\\Controllers\\AngularTemplates::index')
         return substr($tpl, 0, -5);
     })
     ->bind('templates');
+
+$app->get('/month', 'Theatres\\Controllers\\Homepage::index')
+    ->bind('front_app.month');
+
+$app->get('/play/{id}', 'Theatres\\Controllers\\Homepage::index')
+    ->assert('id', '\d+')
+    ->bind('front_app.play');
 
 // 2. Admin
 
@@ -71,19 +78,19 @@ $app->match('/api/theatres', 'Theatres\\Controllers\\Api_Theatres::call')
     ->bind('api_theatres');
 
 $app->match('/api/theatres/{id}', 'Theatres\\Controllers\\Api_Theatres_Theatre::call')
-    ->assert('id', '\d+')
+    ->assert('id', '\d+|@[a-z\-_0-9]+')
     ->bind('api_theatres_theatre');
 
 $app->match('/api/scenes', 'Theatres\\Controllers\\Api_Scenes::call')
     ->bind('api_scenes');
 
 $app->match('/api/scenes/{id}', 'Theatres\\Controllers\\Api_Scenes_Scene::call')
-    ->assert('id', '\d+')
+    ->assert('id', '\d+|@[a-z\-_0-9]+')
     ->bind('api_scenes_scene');
 
 $app->match('/api/plays', 'Theatres\\Controllers\\Api_Plays::call')
     ->bind('api_plays');
 
 $app->match('/api/plays/{id}', 'Theatres\\Controllers\\Api_Plays_Play::call')
-    ->assert('id', '\d+')
+    ->assert('id', '\d+|@[a-z\-_0-9]+')
     ->bind('api_plays_play');

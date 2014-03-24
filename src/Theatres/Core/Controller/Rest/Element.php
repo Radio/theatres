@@ -21,6 +21,9 @@ abstract class Controller_Rest_Element extends Controller_Rest
     /** @var \RedBean_OODBBean Element instance. */
     protected $element;
 
+    /** @var string|null The field containing the unique name of an element. Is used to load element by @name. */
+    protected $nameField;
+
     /** @var array Fields that are allowed to update. */
     protected $allowedFields = array();
 
@@ -33,7 +36,12 @@ abstract class Controller_Rest_Element extends Controller_Rest
      */
     protected function loadElement($id)
     {
-        $this->element = R::load($this->type, $id);
+        if ($this->nameField && strpos($id, '@') === 0) {
+            $name = substr($id, 1);
+            $this->element = R::findOne($this->type, '`' . $this->nameField . '`=?', array($name));
+        } else {
+            $this->element = R::load($this->type, $id);
+        }
         if ($id && !$this->element->getID()) {
             throw new Exceptions\Api_NotFound(ucfirst($this->type) . ' was not found');
         }
