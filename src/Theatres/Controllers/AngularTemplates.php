@@ -12,13 +12,17 @@ class AngularTemplates
 
     public function index(Request $request, Application $app, $tpl)
     {
+        $content = '';
+        $tpl = str_replace('../', '', $tpl);
         $path = $app['root']
             . DIRECTORY_SEPARATOR . 'resources'
             . DIRECTORY_SEPARATOR . 'templates'
             . DIRECTORY_SEPARATOR . str_replace('.', DIRECTORY_SEPARATOR, $tpl)
             . '.html';
 
-        $content = file_get_contents($path);
+        if (is_readable($path)) {
+            $content = file_get_contents($path);
+        }
 
         return $content;
     }

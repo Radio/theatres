@@ -21,6 +21,11 @@ class Api_Shows extends Controller_Rest_Collection
         'id', 'date'
     );
 
+    /** @var array Fields that are allowed to update. */
+    protected $allowedFields = array(
+        'theatre', 'play', 'scene', 'date', 'price',
+    );
+
     /**
      * Get Shows Collection.
      *

@@ -6,10 +6,17 @@ angular.module('api')
             get: function(query) {
                 var deferred = $q.defer();
                 resource.query(query, function(plays) {
-                    for (var i = 0; i < plays.length; i++) {
-                        plays[i].date = new Date(plays[i].date);
-                    }
                     deferred.resolve(plays);
+                }, function(response) {
+                    deferred.reject(response);
+                });
+
+                return deferred.promise;
+            },
+            post: function(play) {
+                var deferred = $q.defer();
+                resource.save(play, function(response) {
+                    deferred.resolve(response);
                 }, function(response) {
                     deferred.reject(response);
                 });

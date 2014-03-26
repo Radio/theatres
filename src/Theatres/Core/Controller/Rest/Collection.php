@@ -149,13 +149,11 @@ abstract class Controller_Rest_Collection extends Controller_Rest
      *
      * @param Application $app Application instance.
      * @param Request $request Request instance.
-     * @throws Exceptions\Api_NotImplemented
-     * @return array
+     * @return null
      */
     public function delete(Application $app, Request $request)
     {
-        $beanType = $this->getCollection()->getBeanType();
-        R::wipe($beanType);
+        $this->getCollection()->delete();
 
         return null;
     }

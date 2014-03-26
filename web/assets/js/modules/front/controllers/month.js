@@ -26,9 +26,6 @@ angular.module('frontApp.controllers')
 
         // Title functions
 
-        $scope.getHeaderClass = function() {
-            return $scope.getSubtitle() ? 'with-sub-title' : '';
-        };
         $scope.getTitle = function() {
             var month = DateHelper.getMonthTitle($scope.filter.month);
             var year = $scope.filter.year;
@@ -41,7 +38,7 @@ angular.module('frontApp.controllers')
 
         // Theatres functions
 
-        $scope.setTheatre = function(theatre, $event) {
+        $scope.setTheatreFilter = function(theatre, $event) {
             $scope.filter.theatre = theatre;
             $event.preventDefault();
         };
@@ -53,25 +50,10 @@ angular.module('frontApp.controllers')
             }
             return null;
         };
-        $scope.getTheatreClass = function(theatre) {
-            if ($scope.filter.theatre) {
-                if (theatre && $scope.filter.theatre.key == theatre.key) {
-                    return 'current';
-                }
-            } else {
-                if (!theatre) {
-                    return 'current';
-                }
-            }
-            return '';
-        };
-        $scope.getTheatreButtonTitle = function() {
-            return $scope.filter.theatre ? $scope.filter.theatre.title : 'Все театры'
-        };
 
         // Scenes functions
 
-        $scope.setScene = function(scene, $event) {
+        $scope.setSceneFilter = function(scene, $event) {
             $scope.filter.scene = scene;
             $event.preventDefault();
         };
@@ -82,21 +64,6 @@ angular.module('frontApp.controllers')
                 }
             }
             return null;
-        };
-        $scope.getSceneClass = function(scene) {
-            if ($scope.filter.scene) {
-                if (scene && $scope.filter.scene.key == scene.key) {
-                    return 'current';
-                }
-            } else {
-                if (!scene) {
-                    return 'current';
-                }
-            }
-            return '';
-        };
-        $scope.getSceneButtonTitle = function() {
-            return $scope.filter.scene ? $scope.filter.scene.title : 'Все сцены'
         };
 
         // Date functions
@@ -111,18 +78,8 @@ angular.module('frontApp.controllers')
 
             return plays;
         };
-
         $scope.isToday = function(date) {
             return DateHelper.datesAreEqual(date, DateHelper.getCurrentDate());
-        };
-
-        $scope.getDateClass = function(date) {
-            var classes = [];
-            classes.push('day-' + date.getDay());
-            if ($scope.isToday(date)) {
-                classes.push('today');
-            }
-            return classes;
         };
 
         // Private

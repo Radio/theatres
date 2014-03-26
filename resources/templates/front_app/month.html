@@ -1,4 +1,4 @@
-<div class="page-header" ng-class="getHeaderClass()">
+<div class="page-header" ng-class="{true: 'with-sub-title', false: ''}[getSubtitle().length > 0]">
     <h2>{{ getTitle() }}</h2>
     <h3 ng-show="getSubtitle()">{{ getSubtitle() }}</h3>
 </div>
@@ -8,13 +8,16 @@
             <div class="theatres-list btn-group">
                 <div class="btn-group">
                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                        {{ getTheatreButtonTitle() }} <span class="caret"></span>
+                        {{ filter.theatre ? filter.theatre.title : 'Все театры' }} <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" role="menu">
-                        <li ng-class="getTheatreClass()"><a href="#" ng-click="setTheatre(null, $event)">Все</a></li>
+                        <li ng-class="{true: 'current', false: ''}[filter.theatre == null]">
+                            <a href="#" ng-click="setTheatreFilter(null, $event)">Все</a>
+                        </li>
                         <li class="divider"></li>
-                        <li ng-repeat="theatre in theatres" ng-class="getTheatreClass(theatre)">
-                            <a href="#" ng-click="setTheatre(theatre, $event)">{{ theatre.title }}</a>
+                        <li ng-repeat="theatre in theatres"
+                            ng-class="{true: 'current', false: ''}[filter.theatre.key == theatre.key]">
+                            <a href="#" ng-click="setTheatreFilter(theatre, $event)">{{ theatre.title }}</a>
                         </li>
                     </ul>
                 </div>
@@ -22,13 +25,16 @@
             <div class="scenes-list btn-group">
                 <div class="btn-group">
                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                        {{ getSceneButtonTitle() }} <span class="caret"></span>
+                        {{ filter.scene ? filter.scene.title : 'Все сцены' }} <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" role="menu">
-                        <li ng-class="getSceneClass()"><a href="#" ng-click="setScene(null, $event)">Все</a></li>
+                        <li ng-class="{true: 'current', false: ''}[filter.scene == null]">
+                            <a href="#" ng-click="setSceneFilter(null, $event)">Все</a>
+                        </li>
                         <li class="divider"></li>
-                        <li ng-repeat="scene in scenes" ng-class="getSceneClass(scene)">
-                            <a href="#" ng-click="setScene(scene, $event)">{{ scene.title }}</a>
+                        <li ng-repeat="scene in scenes"
+                            ng-class="{true: 'current', false: ''}[filter.scene.key == scene.key]">
+                            <a href="#" ng-click="setSceneFilter(scene, $event)">{{ scene.title }}</a>
                         </li>
                     </ul>
                 </div>
@@ -40,10 +46,9 @@
     </div>
     <div class="row month">
         <div class="col-md-12">
-            <div class="day row"
-                 ng-class="getDateClass(date)"
-                 ng-repeat="date in days"
-                >
+            <div class="day row day-{{ date.getDay() }}"
+                 ng-class="{true:'today', false:''}[isToday(date)]"
+                 ng-repeat="date in days">
                 <p class="day-number col-xs-2">
                     <span class="day-number-number">{{ date | date : 'd' }}</span>
                     <span class="day-of-week-name">

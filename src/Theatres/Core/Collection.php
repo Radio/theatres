@@ -29,6 +29,14 @@ abstract class Collection implements Collection_Interface, \IteratorAggregate, \
 
     abstract protected function loadData();
 
+    abstract protected function deleteData();
+
+    /**
+     * Load data if it has not been loaded yet.
+     * Call beforeLoad() and afterLoad();
+     *
+     * @return Collection
+     */
     protected function load()
     {
         if ($this->isLoaded()) {
@@ -43,14 +51,31 @@ abstract class Collection implements Collection_Interface, \IteratorAggregate, \
         return $this;
     }
 
+    /**
+     * @return bool
+     */
+    public function delete()
+    {
+        $this->beforeDelete();
+        $result = $this->deleteData();
+        $this->afterDelete();
+        return $result;
+    }
+
     protected function beforeLoad()
     {
-
     }
 
     protected function afterLoad()
     {
+    }
 
+    protected function beforeDelete()
+    {
+    }
+
+    protected function afterDelete()
+    {
     }
 
     public function getFirst()

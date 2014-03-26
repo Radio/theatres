@@ -1,0 +1,32 @@
+<div class="breadcrumb">
+    <a href="/admin">Панель управления</a>
+    <span class="sep">→</span>
+    <h2>Получить расписание</h2>
+</div>
+
+<div id="fetch-form" class="fetch-area">
+    <div class="row theatre">
+        <div class="col-md-12">
+            <button type="button" class="btn btn-default" ng-click="fetchAll()">Парсить все</button>
+        </div>
+    </div>
+    <div class="row theatre" ng-repeat="theatre in theatres">
+        <div class="col-md-4">
+            <button type="button" class="fetch-theatre btn btn-default"
+                    ng-click="fetchTheatre(theatre)">
+                Парсить <strong>{{ theatre.title }}</strong>
+            </button>
+        </div>
+        <div class="col-md-8">
+            <div class="fetching-details alert alert-info"
+                 ng-show="theatre.fetching.status">
+                <div class="progress"
+                     ng-class="{active:'active progress-striped', inactive: ''}[theatre.fetching.status]">
+                    <div class="progress-bar" style="width: 100%"
+                         ng-class="{success:'progress-bar-success', failure: 'progress-bar-danger'}[theatre.fetching.result]">&nbsp;</div>
+                </div>
+                <p>{{ theatre.fetching.message }}</p>
+            </div>
+        </div>
+    </div>
+</div>

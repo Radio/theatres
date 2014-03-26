@@ -1,12 +1,17 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
 a {
     text-decoration: none;
-    border-bottom: 1px solid rgba(42, 100, 150, 0.5); /* #428bca */
+    border-bottom: 1px solid;
+    /*border-bottom: 1px solid rgba(42, 100, 150, 0.5); *//* #428bca */
     color: #2a6496;
 }
 a:hover,
 a:active {
     text-decoration: none;
-    border-bottom: 1px solid rgba(26, 59, 92, 0.50);  /* #2a6496 */
+    border-bottom: 1px solid;
+    /*border-bottom: 1px solid rgba(26, 59, 92, 0.50);  *//* #2a6496 */
     color: #23517b;
 }
 .dropdown-menu>li>a {

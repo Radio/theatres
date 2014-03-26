@@ -16,6 +16,6 @@ class Api_Shows_Show extends Controller_Rest_Element
 
     /** @var array Fields that are allowed to update. */
     protected $allowedFields = array(
-        'title', 'date', 'link', 'price', 'scene', 'theatre'
+        'theatre', 'play', 'scene', 'date', 'price',
     );
 }

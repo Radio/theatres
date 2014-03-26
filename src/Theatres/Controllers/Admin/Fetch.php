@@ -16,21 +16,6 @@ class Admin_Fetch
 {
     use Templatable;
 
-    public function index(Application $app)
-    {
-        $theatres = new Theatres();
-        $theatres->setConditions('fetcher is not null and fetcher != ""');
-        $theatres->setOrder('id');
-
-        $context = array(
-            'is_admin' => true,
-            'theatres' => $theatres,
-        );
-
-        $this->useLayout('admin');
-        return $this->renderTemplate('admin/fetch.twig', $context, $app);
-    }
-
     public function fetch(Request $request, Application $app, $theatreKey)
     {
         $month = $request->query->getInt('month', (int) date('n'));
@@ -46,11 +31,9 @@ class Admin_Fetch
 
         try {
             $fetcher = $theatre->getFetcher($theatre);
-
             $shows = $fetcher->fetch($month, $year);
 
             $schedule = new Schedule($theatre->box());
-
             $schedule->saveSchedule($shows, $month, $year);
 
             $message = sprintf('Получили %d спектаклей на %s %d года.',
@@ -66,6 +49,4 @@ class Admin_Fetch
 
         return $app->json($responseData);
     }
-
-
 }

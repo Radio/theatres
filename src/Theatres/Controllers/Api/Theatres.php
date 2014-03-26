@@ -21,6 +21,11 @@ class Api_Theatres extends Controller_Rest_Collection
         'id', 'title'
     );
 
+    /** @var array Fields that are allowed to update. */
+    protected $allowedFields = array(
+        'title', 'abbr', 'link', 'fetcher', 'key', 'house_slug'
+    );
+
     /**
      * Get Theatres Collection.
      *

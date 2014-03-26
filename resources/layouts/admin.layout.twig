@@ -1,14 +1,14 @@
 {% spaceless %}
-    {#{{- app.assets.addScript("http://code.jquery.com/jquery-2.1.0.min.js") -}}#}
-    {{- app.assets.addScript("assets/vendor/jquery/dist/jquery.min.js") -}}
-    {#{{- app.assets.addScript("//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js") -}}#}
-    {{- app.assets.addScript("assets/vendor/bootstrap/dist/js/bootstrap.min.js") -}}
+    {% include "assets/js/vendors.twig" %}
+
     {{- app.assets.addScript("assets/js/theatres.js") -}}
-    {{- app.assets.addScript("assets/js/theatres_admin.js") -}}
     {{- app.assets.addScript("assets/vendor/flying-focus/standalone/flying-focus.js") -}}
 
-    {{- app.assets.addStyle("assets/css/theatres.css") -}}
-    {{- app.assets.addStyle("assets/css/theatres-print.css", "print") -}}
+    {% include "assets/js/helpers.twig" %}
+    {% include "assets/js/api.twig" %}
+    {% include "assets/js/modules/admin.twig" %}
+
+    {% include "assets/css/base.twig" %}
     {{- app.assets.addStyle("assets/css/admin.css") -}}
 {% endspaceless %}
 {% include "parts/header.twig" %}

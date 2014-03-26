@@ -19,6 +19,6 @@ class Api_Plays_Play extends Controller_Rest_Element
 
     /** @var array Fields that are allowed to update. */
     protected $allowedFields = array(
-        'title', 'date', 'link', 'price', 'scene', 'theatre'
+        'title', 'link', 'key', 'scene', 'theatre'
     );
 }
