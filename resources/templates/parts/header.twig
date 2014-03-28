@@ -3,9 +3,6 @@
 
 <title>
     {{ appTitle }} /
-    {% if query.theatre %} {{ query.theatre | theatreTitle }} / {% endif %}
-    {% if query.month %} {{ query.month | monthName | title }} {% endif %}
-    {% if show_year and query.year %} {{ query.year }} {% endif %}
     {% if is_admin %} Панель управления {% endif %}
 </title>
 

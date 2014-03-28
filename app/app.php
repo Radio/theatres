@@ -44,10 +44,6 @@ if ($debug) {
     $twig->addExtension(new Twig_Extension_Debug());
 }
 
-$twig->addFilter('dayOfWeekName', new Twig_Filter_Function('\Theatres\Helpers\Date::getDayOfWeekName'));
-$twig->addFilter('monthName', new Twig_Filter_Function('\Theatres\Helpers\Date::getMonthName'));
-$twig->addFilter('theatreTitle', new Twig_Filter_Function('\Theatres\Helpers\Models::getTheatreTitle'));
-
 $twig->addGlobal('app', $app);
 $twig->addGlobal('debug', $debug);
 $twig->addGlobal('base', $siteBase);
