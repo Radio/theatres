@@ -1,6 +1,9 @@
 .admin h2 {
     text-align: left;
 }
+.breadcrumb {
+    margin: 30px 0 40px;
+}
 .breadcrumb h2,
 .breadcrumb h3 {
     display: inline;
@@ -16,7 +19,7 @@
     display: none;
 }
 .admin-form {
-    margin-top: 20px;
+    margin-top: 30px;
 }
 .messages p {
     padding: 5px 10px;
@@ -26,6 +29,10 @@
     width: 24px;
     height: 24px;
 }
+.form-group {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 .theatre-row .input-house_slug {
     margin-top: 5px;
 }
@@ -33,7 +40,8 @@
     margin: 5px;
 }
 
-.col-title input[type="text"] {
+.col-title input[type="text"],
+.col-title select {
     width: 85%;
     float: right;
 }
@@ -45,6 +53,9 @@
     width: 85%;
     float: right;
 }
+.show-row .col-title input[type="text"]{
+    width: 80%;
+}
 .col-button .updated-message {
     margin-left: 15px;
 }
@@ -54,4 +65,18 @@
 
 .fetch-area .row {
     margin-bottom: 10px;
+}
+.play-pic {
+    margin-right: 20px;
+    vertical-align: top;
+}
+.play-row .updated-message {
+    padding: 6px 0;
+    display: inline-block;
+}
+.second-line {
+    margin-top: 10px;
+}
+.show-theatre {
+    margin: 7px 0 0 10px;
 }

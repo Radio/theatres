@@ -39,6 +39,9 @@ abstract class Controller_Rest_Element extends Controller_Rest
         if ($this->nameField && strpos($id, '@') === 0) {
             $name = substr($id, 1);
             $this->element = R::findOne($this->type, '`' . $this->nameField . '`=?', array($name));
+            if (!$this->element) {
+                $this->element = R::dispense($this->type);
+            }
         } else {
             $this->element = R::load($this->type, $id);
         }

@@ -23,6 +23,10 @@ angular.module('admin', [
                 templateUrl: '/templates/admin.plays.html',
                 controller: 'PlaysController'
             })
+            .when('/admin/plays/play/:playId', {
+                templateUrl: '/templates/admin.plays.play.html',
+                controller: 'PlayController'
+            })
             .when('/admin/shows', {
                 templateUrl: '/templates/admin.shows.html',
                 controller: 'ShowsController'

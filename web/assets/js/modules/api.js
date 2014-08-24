@@ -1,12 +1,17 @@
-angular.module('api', ['ngResource'])
+angular.module('api', ['ngResource', 'LocalStorageModule'])
     .constant('API_URL', '/api')
-    .factory('Api', ['Theatres', 'Plays', 'Scenes', 'Theatre', 'Play', 'Scene', function(Theatres, Plays, Scenes, Theatre, Play, Scene) {
-        return {
-            theatres: Theatres,
-            scenes: Scenes,
-            plays: Plays,
-            theatre: Theatre,
-            play: Play,
-            scene: Scene
-        };
-    }]);
+    .factory('Api', ['Theatres', 'Theatre', 'Plays', 'Play', 'Scenes', 'Scene', 'Tags', 'PlayTags', 'Shows', 'Show',
+        function(Theatres, Theatre, Plays, Play, Scenes, Scene, Tags, PlayTags, Shows, Show) {
+            return {
+                theatres: Theatres,
+                theatre: Theatre,
+                plays: Plays,
+                play: Play,
+                scenes: Scenes,
+                scene: Scene,
+                tags: Tags,
+                playTags: PlayTags,
+                shows: Shows,
+                show: Show
+            };
+        }]);

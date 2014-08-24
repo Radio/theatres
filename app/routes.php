@@ -20,9 +20,14 @@ $app->get('/templates/{tpl}', 'Theatres\\Controllers\\AngularTemplates::index')
 $app->get('/month', 'Theatres\\Controllers\\FrontApp::index')
     ->bind('front_app.month');
 
+// deprecated
 $app->get('/play/{id}', 'Theatres\\Controllers\\FrontApp::index')
     ->assert('id', '\d+')
-    ->bind('front_app.play');
+    ->bind('front_app.play_by_id');
+
+$app->get('/plays/{key}', 'Theatres\\Controllers\\FrontApp::index')
+    ->assert('key', '[a-z\-_0-9]+')
+    ->bind('front_app_plays_play');
 
 // 2. Admin
 
@@ -38,6 +43,9 @@ $app->get('/admin/system/export', 'Theatres\\Controllers\\Admin_System_Export::i
 $app->get('/admin/system/import', 'Theatres\\Controllers\\Admin_System_Import::index')
     ->bind('admin_system_import');
 
+$app->get('/admin/system/clear', 'Theatres\\Controllers\\Admin_System_Clear::index')
+    ->bind('admin_system_clear');
+
 // 2.1 Admin → Theatres
 
 $app->get('/admin/theatres', 'Theatres\\Controllers\\Admin_App::index')
@@ -52,6 +60,10 @@ $app->get('/admin/scenes', 'Theatres\\Controllers\\Admin_App::index')
 
 $app->get('/admin/plays', 'Theatres\\Controllers\\Admin_App::index')
     ->bind('admin_plays_list');
+
+$app->get('/admin/plays/play/{id}', 'Theatres\\Controllers\\Admin_App::index')
+    ->assert('id', '\d+|@[a-z\-_0-9]+')
+    ->bind('admin_plays_play');
 
 // 2.5 Admin → Shows
 

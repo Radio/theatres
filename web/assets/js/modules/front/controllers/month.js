@@ -2,7 +2,7 @@ angular.module('frontApp.controllers')
     .controller('MonthController', ['$scope', 'DateHelper', 'Api', function ($scope, DateHelper, Api) {
 
         $scope.theatres = [];
-        $scope.plays = [];
+        $scope.shows = [];
         $scope.filter = {
             month: DateHelper.getCurrentMonth(),
             year: DateHelper.getCurrentYear(),
@@ -12,10 +12,10 @@ angular.module('frontApp.controllers')
         $scope.days = DateHelper.getMonthDays($scope.filter.month, $scope.filter.year);
 
         $scope.$watch('filter.theatre', function() {
-            loadPlays();
+            loadShows();
         });
         $scope.$watch('filter.scene', function() {
-            loadPlays();
+            loadShows();
         });
         Api.theatres.get({}).then(function(theatres) {
             $scope.theatres = theatres;
@@ -68,15 +68,15 @@ angular.module('frontApp.controllers')
 
         // Date functions
 
-        $scope.getPlaysOnDay = function(date) {
-            var plays = [];
-            for (var i = 0; i < $scope.plays.length; i++) {
-                if (DateHelper.datesAreEqual($scope.plays[i].date, date)) {
-                    plays.push($scope.plays[i]);
+        $scope.getShowsOnDay = function(date) {
+            var shows = [];
+            for (var i = 0; i < $scope.shows.length; i++) {
+                if (DateHelper.datesAreEqual($scope.shows[i].date, date)) {
+                    shows.push($scope.shows[i]);
                 }
             }
 
-            return plays;
+            return shows;
         };
         $scope.isToday = function(date) {
             return DateHelper.datesAreEqual(date, DateHelper.getCurrentDate());
@@ -84,11 +84,12 @@ angular.module('frontApp.controllers')
 
         // Private
 
-        function loadPlays()
+        function loadShows()
         {
             $scope.loading = true;
 
             var query = {
+                populate: 'play',
                 month: $scope.filter.month,
                 year: $scope.filter.year
             };
@@ -99,8 +100,9 @@ angular.module('frontApp.controllers')
                 query.scene = $scope.filter.scene.key
             }
 
-            Api.plays.get(query).then(function(response) {
-                $scope.plays = response;
+            Api.shows.disableCache();
+            Api.shows.get(query).then(function(response) {
+                $scope.shows = response;
                 $scope.loading = false;
             });
         }

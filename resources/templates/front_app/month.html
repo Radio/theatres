@@ -57,10 +57,10 @@
                         <span ng-show="isToday(date)"> (сегодня)</span>
                     </span>
                 </p>
-                <div class="plays col-xs-10">
+                <div class="shows col-xs-10">
                     <div
-                         ng-repeat="play in getPlaysOnDay(date)"
-                         ng-include="'templates/front_app.play_brief.html'"
+                         ng-repeat="show in getShowsOnDay(date)"
+                         ng-include="'templates/front_app.show_brief.html'"
                         >
                     </div>
                 </div>
@@ -70,4 +70,4 @@
     </div>
 </div>
 
-<!--<pre>{{ plays }}</pre>-->
+<!--<pre>{{ shows }}</pre>-->

@@ -1,0 +1,73 @@
+<div class="breadcrumb">
+    <a href="/admin">Панель управления</a>
+    <span class="sep">→</span>
+    <h2>Репертуар</h2>
+</div>
+
+<ng-include src="'/templates/admin.shows.filters.html'"></ng-include>
+
+<form id="edit-shows-form" class="admin-form" action="" method="post">
+    <fieldset class="row form-group show-row"
+              ng-repeat="show in shows" id="show-{{ show.key }}">
+        <div class="col-md-2 col-title">
+            <label for="show-title-{{ show.id }}">{{ show.id }}</label>
+            <input type="text" class="form-control" placeholder="Дата"
+                   ng-model="show.date" date-time="DD.MM.YYYY HH:mm" ng-blur="saveShow(show)"/>
+            <span class="updated-message" ng-show="lastUpdatedId == show.id">
+                <span class="glyphicon glyphicon-ok"></span> Сохранено
+            </span>
+        </div>
+        <div class="col-md-3">
+            <select class="form-control"
+                    ng-model="show.play" ng-change="saveShow(show)"
+                    ng-options="play.key as play.title for play in plays">
+            </select>
+            <p class="show-theatre">{{ getTheatreByKey(show.theatre).title }}</p>
+        </div>
+        <div class="col-md-3">
+            <select class="form-control"
+                    ng-model="show.scene" ng-change="saveShow(show)"
+                    ng-options="scene.key as scene.title for scene in scenes">
+            </select>
+        </div>
+        <div class="col-md-2">
+            <input type="text" class="form-control" placeholder="Цена"
+                   ng-model="show.price" ng-blur="saveShow(show)"/>
+        </div>
+        <div class="col-md-2 col-button">
+            <button type="button" class="btn btn-danger delete-show" ng-click="deleteShow(show)" title="Удалить">&times;</button>
+            &nbsp;&nbsp;
+            <a href="#" class="text-danger" ng-click="deleteShow(show)">Удалить</a>
+        </div>
+    </fieldset>
+    <fieldset class="row form-group show-row" id="show-new">
+        <div class="col-md-2 col-title">
+            <label for="show-title-new">+</label>
+            <input type="text" class="form-control" placeholder="Дата (д.м.г ч:м)"
+                   ng-model="newShow.date" date-time="DD.MM.YYYY HH:mm" />
+        </div>
+        <div class="col-md-3">
+            <select class="form-control"
+                    ng-model="newShow.play" ng-change="setShowDefaults(newShow)"
+                    ng-options="play.key as play.title for play in plays">
+            </select>
+            <p class="show-theatre">{{ getTheatreByKey(newShow.theatre).title }}</p>
+        </div>
+        <div class="col-md-3">
+            <select class="form-control"
+                    ng-model="newShow.scene"
+                    ng-options="scene.key as scene.title for scene in scenes">
+            </select>
+        </div>
+        <div class="col-md-2">
+            <input type="text" class="form-control" placeholder="Цена"
+                   ng-model="newShow.price"/>
+        </div>
+        <div class="col-md-2">
+            <button type="button" class="btn btn-success add-show" title="Добавить"
+                    ng-click="addShow(newShow)">+</button>
+            &nbsp;&nbsp;
+            <a href="#" class="text-success" ng-click="addShow(newShow)">Добавить</a>
+        </div>
+    </fieldset>
+</form>

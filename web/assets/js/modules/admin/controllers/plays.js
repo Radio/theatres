@@ -1,12 +1,18 @@
 angular.module('admin.controllers')
-    .controller('PlaysController', ['$scope', '$timeout', 'Api', function ($scope, $timeout, Api) {
+    .controller('PlaysController', ['$scope', '$timeout', 'Api', 'PlaysFilters', function ($scope, $timeout, Api, PlaysFilters) {
+
+        $('html, body').scrollTop(0);
 
         $scope.lastUpdatedId = null;
         $scope.newPlay = {};
         $scope.plays = [];
-        $scope.filter = {};
 
-        $scope.$watch('filter', function() {
+        $scope.filter = PlaysFilters;
+
+        $scope.$watch('filter.theatre', function() {
+            loadPlays();
+        });
+        $scope.$watch('filter.scene', function() {
             loadPlays();
         });
 
@@ -30,14 +36,26 @@ angular.module('admin.controllers')
         $scope.savePlay = function(play)
         {
             Api.play.put(play.id, play).then(function(response) {
-                //loadPlays();
                 setLastUpdatedId(play.id);
+                //loadPlays();
             });
+        };
+        $scope.editPlay = function(play)
+        {
+            // todo: put play to storage before rendering form.
         };
 
         function loadPlays()
         {
-            Api.plays.get($scope.filter).then(function(plays) {
+            var query = {};
+            if ($scope.filter.theatre) {
+                query.theatre = $scope.filter.theatre.key
+            }
+            if ($scope.filter.scene) {
+                query.scene = $scope.filter.scene.key
+            }
+
+            Api.plays.get(query).then(function(plays) {
                 $scope.plays = plays;
             });
         }

@@ -4,6 +4,8 @@
     <h2>Спектакли</h2>
 </div>
 
+<ng-include src="'/templates/admin.plays.filters.html'"></ng-include>
+
 <form id="edit-plays-form" class="admin-form" action="" method="post">
     <fieldset class="row form-group play-row"
               ng-repeat="play in plays" id="play-{{ play.key }}">
@@ -19,12 +21,12 @@
         <div class="col-md-2">
             <button type="button" class="btn btn-primary delete-play" ng-click="editPlay(play)" title="Изменить">/</button>
             &nbsp;&nbsp;
-            <a href="#" class="text-primary" ng-click="editPlay(play)">Подробнее...</a>
+            <a href="/admin/plays/play/{{ play.id }}" class="text-primary" ng-click="editPlay(play)">Подробнее...</a>
         </div>
         <div class="col-md-3 col-button">
             <button type="button" class="btn btn-danger delete-play" ng-click="deletePlay(play)" title="Удалить">&times;</button>
             &nbsp;&nbsp;
-            <a href="#" class="text-danger" ng-click="deleteScene(scene)">Удалить</a>
+            <a href="#" class="text-danger" ng-click="deletePlay(play)">Удалить</a>
             <span class="updated-message" ng-show="lastUpdatedId == play.id">
                 <span class="glyphicon glyphicon-ok"></span> Сохранено
             </span>
