@@ -4,7 +4,10 @@ angular.module('frontApp', [
 ])
 .config(['$routeProvider', '$locationProvider', '$interpolateProvider', function($routeProvider, $locationProvider, $interpolateProvider) {
         //$interpolateProvider.startSymbol('{[{').endSymbol('}]}');
-        $locationProvider.html5Mode(true);
+        $locationProvider.html5Mode({
+            enabled: true,
+            requireBase: false
+        });
         $routeProvider
             .when('/month', {
                 templateUrl: '/assets/templates/front/month.html',

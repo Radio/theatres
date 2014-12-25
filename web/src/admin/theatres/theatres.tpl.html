@@ -1,0 +1,79 @@
+<div class="breadcrumb" xmlns="http://www.w3.org/1999/html">
+    <a href="/admin">Панель управления</a>
+    <span class="sep">→</span>
+    <h2>Театры</h2>
+</div>
+
+<div class="admin-form">
+    <fieldset class="row form-group options-panel">
+        <div class="col-md-12">
+            <input type="search" class="form-control" placeholder="Filter"
+                   data-ng-model="theatresFilter"/>
+        </div>
+    </fieldset>
+
+    <fieldset class="row form-group theatre-row">
+        <div class="col-md-12" data-ng-hide="showNewRow">
+            <a href="#" data-ng-click="showNewRow = true">Добавить</a>
+        </div>
+
+        <div data-ng-show="showNewRow">
+            <div class="col-md-3 col-title">
+                <label>+</label>
+                <input type="text" class="form-control" placeholder="Название"
+                       data-ng-model="newTheatre.title"/>
+            </div>
+            <div class="col-md-1">
+                <input type="text" class="form-control" placeholder="Аббр." data-ng-model="newTheatre.abbr"/>
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control" placeholder="Ссылка" data-ng-model="newTheatre.link"/>
+                <input type="text" class="form-control input-house_slug" placeholder="Слаг в ДА"
+                       data-ng-model="newTheatre.house_slug" />
+            </div>
+            <div class="col-md-2">
+                <input type="text" class="form-control" placeholder="Ключ" data-ng-model="newTheatre.key"/>
+            </div>
+            <div class="col-md-2">
+                <input type="text" class="form-control" placeholder="Fetcher" data-ng-model="newTheatre.fetcher"/>
+            </div>
+            <div class="col-md-1">
+                <button type="button" class="btn btn-success add-theatre" title="Добавить"
+                        data-ng-click="addTheatre(newTheatre)">+</button>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset class="row form-group theatre-row"
+              data-ng-repeat="theatre in theatres | filter:theatresFilter track by $index">
+        <div class="col-md-3 col-title">
+            <label>{{ theatre.id }}</label>
+            <input type="text" class="form-control" placeholder="Название"
+                   data-ng-model="theatre.title" data-ng-blur="saveTheatre(theatre)"/>
+            <p class="updated-message" data-ng-show="lastUpdatedId == theatre.id">
+                <span class="glyphicon glyphicon-ok"></span> Сохранено
+            </p>
+        </div>
+        <div class="col-md-1">
+            <input type="text" class="form-control" placeholder="Аббр."
+                   data-ng-model="theatre.abbr" data-ng-blur="saveTheatre(theatre)"/>
+        </div>
+        <div class="col-md-3">
+            <input type="text" class="form-control" placeholder="Ссылка"
+                   data-ng-model="theatre.link" data-ng-blur="saveTheatre(theatre)"/>
+            <input type="text" class="form-control input-house_slug" placeholder="Слаг в ДА"
+                   data-ng-model="theatre.house_slug" data-ng-blur="saveTheatre(theatre)"/>
+        </div>
+        <div class="col-md-2">
+            <input type="text" class="form-control" placeholder="Ключ"
+                   data-ng-model="theatre.key" data-ng-blur="saveTheatre(theatre)"/>
+        </div>
+        <div class="col-md-2">
+            <input type="text" class="form-control" placeholder="Fetcher"
+                   data-ng-model="theatre.fetcher" data-ng-blur="saveTheatre(theatre)"/>
+        </div>
+        <div class="col-md-1">
+            <button type="button" class="btn btn-danger delete-theatre" data-ng-click="deleteTheatre(theatre)" title="Удалить">&times;</button>
+        </div>
+    </fieldset>
+</div>

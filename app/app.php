@@ -50,6 +50,11 @@ if ($debug) {
             \Symfony\Component\HttpFoundation\Request $request,
             \Symfony\Component\HttpFoundation\Response $response
         ) use ($app, $queryLogger) {
+
+            if ($response->headers->get('Content-Type') == 'application/json') {
+                return;
+            }
+
             $debugTemplatePath = $app['dir.resources']
                 . DIRECTORY_SEPARATOR . 'templates' . DIRECTORY_SEPARATOR . 'debug.html';
             $debugHtml = file_get_contents($debugTemplatePath);
