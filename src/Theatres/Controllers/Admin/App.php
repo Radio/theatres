@@ -12,11 +12,6 @@ class Admin_App
 
     public function index(Request $request, Application $app)
     {
-        $context = array(
-            'is_admin' => true
-        );
-
-        $this->useLayout('admin');
-        return $this->renderTemplate('admin.twig', $context, $app);
+        return $this->renderLayout('admin', $app);
     }
 }

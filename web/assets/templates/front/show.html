@@ -5,7 +5,9 @@
 <div class="container">
     <div class="row play-info play-full {{ play.theatre }}" itemscope itemtype="http://schema.org/TheaterEvent">
         <div class="play-time col-md-1">
-            <time datetime="{{ play.date | date : 'yyyy-MM-ddTHH:mmZ' }}" itemprop="startDate" content="{{ play.date | date : 'yyyy-MM-ddTHH:mmZ' }}">
+            <time datetime="{{ play.date | date : 'yyyy-MM-ddTHH:mmZ' }}"
+                  itemprop="startDate"
+                  content="{{ play.date | date : 'yyyy-MM-ddTHH:mmZ' }}">
                 {{ play.date | date : 'H:mm' }}
             </time>
         </div>

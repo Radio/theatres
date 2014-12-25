@@ -49,12 +49,12 @@ class Api_Shows extends Controller_Rest_Collection
     {
         $theatre = $request->query->get('theatre');
         if ($theatre) {
-            $collection->addConditions('theatre = ?', array($theatre));
+            $collection->addConditions('`show`.theatre = ?', array($theatre));
         }
 
         $scene = $request->query->get('scene');
         if ($scene) {
-            $collection->addConditions('scene = ?', array($scene));
+            $collection->addConditions('`show`.scene = ?', array($scene));
         }
 
         $populate = $request->query->get('populate');

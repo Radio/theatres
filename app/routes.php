@@ -7,9 +7,12 @@ use \Theatres\Controllers;
 
 // 1. Home and Front App
 
-$app->get('/', 'Theatres\\Controllers\\FrontApp::index')
+$app->get('/', 'Theatres\\Controllers\\Front_App::index')
     ->bind('homepage');
 
+/**
+ * @deprecated
+ */
 $app->get('/templates/{tpl}', 'Theatres\\Controllers\\AngularTemplates::index')
     ->assert('tpl', '.+?\.html')
     ->convert('tpl', function($tpl) {
@@ -17,15 +20,15 @@ $app->get('/templates/{tpl}', 'Theatres\\Controllers\\AngularTemplates::index')
     })
     ->bind('templates');
 
-$app->get('/month', 'Theatres\\Controllers\\FrontApp::index')
+$app->get('/month', 'Theatres\\Controllers\\Front_App::index')
     ->bind('front_app.month');
 
 // deprecated
-$app->get('/play/{id}', 'Theatres\\Controllers\\FrontApp::index')
+$app->get('/play/{id}', 'Theatres\\Controllers\\Front_App::index')
     ->assert('id', '\d+')
     ->bind('front_app.play_by_id');
 
-$app->get('/plays/{key}', 'Theatres\\Controllers\\FrontApp::index')
+$app->get('/plays/{key}', 'Theatres\\Controllers\\Front_App::index')
     ->assert('key', '[a-z\-_0-9]+')
     ->bind('front_app_plays_play');
 

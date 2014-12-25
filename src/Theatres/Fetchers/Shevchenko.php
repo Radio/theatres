@@ -9,7 +9,6 @@ class Shevchenko extends Fetcher
 {
     protected $theatreId = 'shevchenko';
     protected $source = 'http://www.theatre-shevchenko.com.ua/repertuar/month.php?id=';
-//    protected $source = 'http://127.0.0.2/theatres/resources/shevchenko.html?id=';
 
     protected $pageContentsStart  = '<ul class="primer-list">';
     protected $pageContentsFinish = '</ul>';
@@ -29,7 +28,6 @@ class Shevchenko extends Fetcher
 
     protected function parseSchedule($html)
     {
-//        var_dump($html);
         $schedule = array();
 
         $matched = preg_match_all('/<li.*?<\/li>/isu', $html, $lines);

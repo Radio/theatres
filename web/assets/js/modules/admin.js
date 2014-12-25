@@ -8,31 +8,31 @@ angular.module('admin', [
         $locationProvider.html5Mode(true);
         $routeProvider
             .when('/admin', {
-                templateUrl: '/templates/admin.home.html',
+                templateUrl: '/assets/templates/admin/home.html',
                 controller: 'HomeController'
             })
             .when('/admin/theatres', {
-                templateUrl: '/templates/admin.theatres.html',
+                templateUrl: '/assets/templates/admin/theatres.html',
                 controller: 'TheatresController'
             })
             .when('/admin/scenes', {
-                templateUrl: '/templates/admin.scenes.html',
+                templateUrl: '/assets/templates/admin/scenes.html',
                 controller: 'ScenesController'
             })
             .when('/admin/plays', {
-                templateUrl: '/templates/admin.plays.html',
+                templateUrl: '/assets/templates/admin/plays.html',
                 controller: 'PlaysController'
             })
             .when('/admin/plays/play/:playId', {
-                templateUrl: '/templates/admin.plays.play.html',
+                templateUrl: '/assets/templates/admin/plays/play.html',
                 controller: 'PlayController'
             })
             .when('/admin/shows', {
-                templateUrl: '/templates/admin.shows.html',
+                templateUrl: '/assets/templates/admin/shows.html',
                 controller: 'ShowsController'
             })
             .when('/admin/fetch', {
-                templateUrl: '/templates/admin.fetch.html',
+                templateUrl: '/assets/templates/admin/fetch.html',
                 controller: 'FetchController'
             })
             .otherwise({

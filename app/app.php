@@ -17,7 +17,8 @@ if ($secure) {
 }
 
 $app['debug'] = $debug;
-$app['root'] = realpath(__DIR__ . '/..');
+$app['dir.root'] = realpath(__DIR__ . '/..');
+$app['dir.resources'] = $app['dir.root'] . '/resources';
 
 $app['assets'] = $app->share(function() use ($siteBase) {
     return new \Theatres\Helpers\Assets($siteBase);
@@ -30,28 +31,7 @@ if (!$debug) {
     $app->error(array($errorHandler, 'handleKernelException'));
 }
 
-// 2. Configure Twig
-
-$twigLoader = new Twig_Loader_Filesystem(array(
-    __DIR__.'/../resources/layouts',
-    __DIR__.'/../resources/templates',
-));
-$twig = new Twig_Environment($twigLoader, array(
-    'cache' => $debug ? false : __DIR__.'/../resources/templates_cache',
-    'debug' => $debug
-));
-if ($debug) {
-    $twig->addExtension(new Twig_Extension_Debug());
-}
-
-$twig->addGlobal('app', $app);
-$twig->addGlobal('debug', $debug);
-$twig->addGlobal('base', $siteBase);
-$twig->addGlobal('appTitle', $appTitle);
-
-$app['twig'] = $twig;
-
-// 3. Configure ORM
+// 2. Configure ORM
 
 define('REDBEAN_MODEL_PREFIX', '\\Theatres\\Models\\');
 
@@ -66,12 +46,22 @@ if ($debug) {
         RedBean_Facade::getDatabaseAdapter()
     );
     $app['queryLogger'] = $queryLogger;
-    if ($app['twig']) {
-        $app['twig']->addGlobal('queryLogger', $queryLogger);
-    }
+    $app->after(function (
+            \Symfony\Component\HttpFoundation\Request $request,
+            \Symfony\Component\HttpFoundation\Response $response
+        ) use ($app, $queryLogger) {
+            $debugTemplatePath = $app['dir.resources']
+                . DIRECTORY_SEPARATOR . 'templates' . DIRECTORY_SEPARATOR . 'debug.html';
+            $debugHtml = file_get_contents($debugTemplatePath);
+
+            $response->setContent(
+                $response->getContent()
+                . sprintf($debugHtml, implode("\n", $queryLogger->getLogs()))
+            );
+        });
 }
 
-// 4. Define Routes
+// 3. Define Routes
 
 require_once __DIR__ . '/routes.php';
 
