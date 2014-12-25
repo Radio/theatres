@@ -13,7 +13,7 @@ class Admin_System_Import
 
     public function index(Application $app)
     {
-        $this->setImportPath($app['root'] . DIRECTORY_SEPARATOR . 'resources'
+        $this->setImportPath($app['dir.root'] . DIRECTORY_SEPARATOR . 'resources'
             . DIRECTORY_SEPARATOR . 'export');
         $this->validateImportPath();
 

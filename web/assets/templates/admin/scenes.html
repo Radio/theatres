@@ -1,0 +1,44 @@
+<div class="breadcrumb">
+    <a href="/admin">Панель управления</a>
+    <span class="sep">→</span>
+    <h2>Сцены</h2>
+</div>
+
+<form id="edit-scenes-form" class="admin-form" action="" method="post">
+    <fieldset class="row form-group scene-row"
+              ng-repeat="scene in scenes" id="scene-{{ scene.key }}">
+        <div class="col-md-3 col-title">
+            <label for="scene-title-{{ scene.id }}">{{ scene.id }}</label>
+            <input type="text" id="scene-title-{{ scene.id }}" class="form-control" placeholder="Название"
+                   ng-model="scene.title" ng-blur="saveScene(scene)"/>
+        </div>
+        <div class="col-md-2">
+            <input type="text" class="form-control" placeholder="Ключ"
+                   ng-model="scene.key" ng-blur="saveScene(scene)"/>
+        </div>
+        <div class="col-md-3 col-button">
+            <button type="button" class="btn btn-danger delete-scene" ng-click="deleteScene(scene)" title="Удалить">&times;</button>
+            &nbsp;&nbsp;
+            <a href="#" class="text-danger" ng-click="deleteScene(scene)">Удалить</a>
+            <span class="updated-message" ng-show="lastUpdatedId == scene.id">
+                <span class="glyphicon glyphicon-ok"></span> Сохранено
+            </span>
+        </div>
+    </fieldset>
+    <fieldset class="row form-group scene-row" id="scene-new">
+        <div class="col-md-3 col-title">
+            <label for="scene-title-new">+</label>
+            <input type="text" id="scene-title-new" class="form-control" placeholder="Название"
+                   ng-model="newScene.title"/>
+        </div>
+        <div class="col-md-2">
+            <input type="text" class="form-control" placeholder="Ключ" ng-model="newScene.key"/>
+        </div>
+        <div class="col-md-3">
+            <button type="button" class="btn btn-success add-scene" title="Добавить"
+                    ng-click="addScene(newScene)">+</button>
+            &nbsp;&nbsp;
+            <a href="#" class="text-success" ng-click="addPlay(newPlay)">Добавить</a>
+        </div>
+    </fieldset>
+</form>

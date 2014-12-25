@@ -11,40 +11,27 @@ use Silex\Application;
  */
 trait Controller_Templatable
 {
-    /** @var string Layout suffix which is used to resolve naming conflicts */
-    protected $layoutSuffix = '.layout.twig';
-
-    /** @var string layout name */
-    protected $layout;
+    /** @var string Layout folder */
+    protected $layoutFolder = 'layouts';
 
     /**
      * Render template in a context.
      *
-     * @param string $templateName Name (path) of the template file.
-     * @param array  $context      Rendering context.
-     * @param \Silex\Application $app Application instance.
+     * @param string             $layoutName Name (path) of the layout file.
+     * @param \Silex\Application $app        Application instance.
+     *
      * @return string
      */
-    protected function renderTemplate($templateName, array $context, Application $app)
+    protected function renderLayout($layoutName, Application $app)
     {
-        if ($this->layout) {
-            $context['template'] = $templateName;
-            $template = $this->layout . $this->layoutSuffix;
-        } else {
-            $template = $templateName;
+        $content = '';
+        $path = $app['dir.resources']
+            . DIRECTORY_SEPARATOR . $this->layoutFolder
+            . DIRECTORY_SEPARATOR . $layoutName . '.html';
+        if (is_readable($path)) {
+            $content = file_get_contents($path);
         }
 
-        /** @var \Twig_Environment $twig */
-        $twig = $app['twig'];
-        return $twig->render($template, $context);
-    }
-
-    /**
-     * @param string $layout Layout name
-     * @return void
-     */
-    public function useLayout($layout)
-    {
-        $this->layout = $layout;
+        return $content;
     }
 }

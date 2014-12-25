@@ -7,11 +7,11 @@ angular.module('frontApp', [
         $locationProvider.html5Mode(true);
         $routeProvider
             .when('/month', {
-                templateUrl: '/templates/front_app.month.html',
+                templateUrl: '/assets/templates/front/month.html',
                 controller: 'MonthController'
             })
             .when('/play/:playKey', {
-                templateUrl: '/templates/front_app.play.html',
+                templateUrl: '/assets/templates/front/play.html',
                 controller: 'PlayController'
             })
             .otherwise({

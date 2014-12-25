@@ -18,7 +18,12 @@ class Api_Plays extends Controller_Rest_Collection
 {
     /** @var array List of allowed orders. */
     protected $allowedOrders = array(
-        'id', 'date', 'title'
+        'id', 'title'
+    );
+
+    /** @var array Fields that are allowed to update. */
+    protected $allowedFields = array(
+        'title', 'link', 'key', 'scene', 'theatre'
     );
 
     /**

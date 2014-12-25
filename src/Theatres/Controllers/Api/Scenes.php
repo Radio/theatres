@@ -18,6 +18,11 @@ class Api_Scenes extends Controller_Rest_Collection
         'id', 'title'
     );
 
+    /** @var array Fields that are allowed to update. */
+    protected $allowedFields = array(
+        'title', 'key'
+    );
+
     /**
      * Get Scenes Collection.
      *

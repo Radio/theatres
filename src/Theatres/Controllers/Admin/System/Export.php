@@ -13,7 +13,7 @@ class Admin_System_Export
 
     public function index(Application $app)
     {
-        $this->setExportPath($app['root'] . DIRECTORY_SEPARATOR . 'resources'
+        $this->setExportPath($app['dir.root'] . DIRECTORY_SEPARATOR . 'resources'
             . DIRECTORY_SEPARATOR . 'export');
         $this->validateExportPath();
 

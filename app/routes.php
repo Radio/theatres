@@ -7,12 +7,12 @@ use \Theatres\Controllers;
 
 // 1. Home and Front App
 
-$app->get('/', 'Theatres\\Controllers\\Homepage::index')
+$app->get('/', 'Theatres\\Controllers\\Front_App::index')
     ->bind('homepage');
 
-$app->get('/cal', 'Theatres\\Controllers\\Cal::index')
-    ->bind('cal');
-
+/**
+ * @deprecated
+ */
 $app->get('/templates/{tpl}', 'Theatres\\Controllers\\AngularTemplates::index')
     ->assert('tpl', '.+?\.html')
     ->convert('tpl', function($tpl) {
@@ -20,16 +20,21 @@ $app->get('/templates/{tpl}', 'Theatres\\Controllers\\AngularTemplates::index')
     })
     ->bind('templates');
 
-$app->get('/month', 'Theatres\\Controllers\\Homepage::index')
+$app->get('/month', 'Theatres\\Controllers\\Front_App::index')
     ->bind('front_app.month');
 
-$app->get('/play/{id}', 'Theatres\\Controllers\\Homepage::index')
+// deprecated
+$app->get('/play/{id}', 'Theatres\\Controllers\\Front_App::index')
     ->assert('id', '\d+')
-    ->bind('front_app.play');
+    ->bind('front_app.play_by_id');
+
+$app->get('/plays/{key}', 'Theatres\\Controllers\\Front_App::index')
+    ->assert('key', '[a-z\-_0-9]+')
+    ->bind('front_app_plays_play');
 
 // 2. Admin
 
-$app->get('/admin', 'Theatres\\Controllers\\Admin_Homepage::index')
+$app->get('/admin', 'Theatres\\Controllers\\Admin_App::index')
     ->bind('admin');
 
 $app->get('/admin/system/setup', 'Theatres\\Controllers\\Admin_System_Setup::index')
@@ -41,32 +46,36 @@ $app->get('/admin/system/export', 'Theatres\\Controllers\\Admin_System_Export::i
 $app->get('/admin/system/import', 'Theatres\\Controllers\\Admin_System_Import::index')
     ->bind('admin_system_import');
 
+$app->get('/admin/system/clear', 'Theatres\\Controllers\\Admin_System_Clear::index')
+    ->bind('admin_system_clear');
+
 // 2.1 Admin → Theatres
 
-$app->get('/admin/theatres', 'Theatres\\Controllers\\Admin_Theatres::index')
+$app->get('/admin/theatres', 'Theatres\\Controllers\\Admin_App::index')
     ->bind('admin_theatres_list');
-
-$app->post('/admin/theatres', 'Theatres\\Controllers\\Admin_Theatres::save')
-    ->bind('admin_theatres_save');
-
-$app->post('/admin/theatres/delete', 'Theatres\\Controllers\\Admin_Theatres::delete')
-    ->bind('admin_theatres_delete');
 
 // 2.3 Admin → Scenes
 
-$app->get('/admin/scenes', 'Theatres\\Controllers\\Admin_Scenes::index')
+$app->get('/admin/scenes', 'Theatres\\Controllers\\Admin_App::index')
     ->bind('admin_scenes_list');
 
-$app->post('/admin/scenes', 'Theatres\\Controllers\\Admin_Scenes::save')
-    ->bind('admin_scenes_save');
+// 2.4 Admin → Plays
 
-$app->post('/admin/scenes/delete', 'Theatres\\Controllers\\Admin_Scenes::delete')
-    ->bind('admin_scenes_delete');
+$app->get('/admin/plays', 'Theatres\\Controllers\\Admin_App::index')
+    ->bind('admin_plays_list');
 
+$app->get('/admin/plays/play/{id}', 'Theatres\\Controllers\\Admin_App::index')
+    ->assert('id', '\d+|@[a-z\-_0-9]+')
+    ->bind('admin_plays_play');
 
-// 2.4 Admin → Fetch
+// 2.5 Admin → Shows
 
-$app->get('/admin/fetch', 'Theatres\\Controllers\\Admin_Fetch::index')
+$app->get('/admin/shows', 'Theatres\\Controllers\\Admin_App::index')
+    ->bind('admin_shows_list');
+
+// 2.6 Admin → Fetch
+
+$app->get('/admin/fetch', 'Theatres\\Controllers\\Admin_App::index')
     ->bind('admin_fetch');
 
 $app->get('/admin/fetch/{theatreKey}', 'Theatres\\Controllers\\Admin_Fetch::fetch')
@@ -94,3 +103,21 @@ $app->match('/api/plays', 'Theatres\\Controllers\\Api_Plays::call')
 $app->match('/api/plays/{id}', 'Theatres\\Controllers\\Api_Plays_Play::call')
     ->assert('id', '\d+|@[a-z\-_0-9]+')
     ->bind('api_plays_play');
+
+$app->match('/api/plays/{playId}/tags', 'Theatres\\Controllers\\Api_Plays_Play_Tags::call')
+    ->assert('playId', '\d+|@[a-z\-_0-9]+')
+    ->bind('api_plays_play_tags');
+
+$app->match('/api/shows', 'Theatres\\Controllers\\Api_Shows::call')
+    ->bind('api_shows');
+
+$app->match('/api/shows/{id}', 'Theatres\\Controllers\\Api_Shows_Show::call')
+    ->assert('id', '\d+|@[a-z\-_0-9]+')
+    ->bind('api_shows_show');
+
+$app->match('/api/tags', 'Theatres\\Controllers\\Api_Tags::call')
+    ->bind('api_tags');
+
+$app->match('/api/tags/{id}', 'Theatres\\Controllers\\Api_Tags_Tag::call')
+    ->assert('id', '\d+|@[a-z\-_0-9]+')
+    ->bind('api_tags_tag');
