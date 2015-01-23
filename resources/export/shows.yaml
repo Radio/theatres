@@ -1,0 +1,288 @@
+-
+    id: '135'
+    theatre: shevchenko
+    date: '2015-01-02 11:00:00'
+    scene: big
+    price: '20, 30, 35 грн'
+    play: kit-u-chobotyah
+    hash: e1e43ff5c665eefa391f781e5fcfafed
+-
+    id: '136'
+    theatre: shevchenko
+    date: '2015-01-02 14:00:00'
+    scene: big
+    price: '20, 30, 35 грн'
+    play: kit-u-chobotyah
+    hash: 400865608b4f26462ddd967a4431b809
+-
+    id: '137'
+    theatre: shevchenko
+    date: '2015-01-02 19:00:00'
+    scene: small
+    price: '60 грн'
+    play: malenki-podruzhni-zlochini
+    hash: 7710303dd4332ab623ba6160c57d3d93
+-
+    id: '138'
+    theatre: shevchenko
+    date: '2015-01-03 11:00:00'
+    scene: big
+    price: '20, 30, 35 грн'
+    play: princesa-i-svinopas
+    hash: 693de9c7a69c946c076e9a0b449af8de
+-
+    id: '139'
+    theatre: shevchenko
+    date: '2015-01-03 14:00:00'
+    scene: big
+    price: '20, 30, 35 грн'
+    play: princesa-i-svinopas
+    hash: 681ffa91aab75b22aa921d459a359388
+-
+    id: '140'
+    theatre: shevchenko
+    date: '2015-01-03 19:00:00'
+    scene: small
+    price: '60 грн'
+    play: iren-i-duhi
+    hash: d6628b678e1aa007386829761415f710
+-
+    id: '141'
+    theatre: shevchenko
+    date: '2015-01-04 11:00:00'
+    scene: big
+    price: '20, 30, 35 грн'
+    play: princesa-i-svinopas
+    hash: 16e600030b602261b1b8ff0f38217069
+-
+    id: '142'
+    theatre: shevchenko
+    date: '2015-01-04 14:00:00'
+    scene: big
+    price: '20, 30, 35 грн'
+    play: princesa-i-svinopas
+    hash: fb44fdd2ffaa26cdb6224b8824c77f16
+-
+    id: '143'
+    theatre: shevchenko
+    date: '2015-01-04 18:00:00'
+    scene: small
+    price: '60 грн'
+    play: dorogocinna-pamela
+    hash: 5c14e95ed14307069bd0342a83d1d915
+-
+    id: '144'
+    theatre: shevchenko
+    date: '2015-01-05 11:00:00'
+    scene: big
+    price: '20, 30, 35 грн'
+    play: princesa-i-svinopas
+    hash: 683336fa698274e78a7da78441522acc
+-
+    id: '145'
+    theatre: shevchenko
+    date: '2015-01-05 14:00:00'
+    scene: big
+    price: '20, 30, 35 грн'
+    play: princesa-i-svinopas
+    hash: 6416561259500413ff54eb7507f5d746
+-
+    id: '146'
+    theatre: shevchenko
+    date: '2015-01-06 11:00:00'
+    scene: big
+    price: '20, 30, 35 грн'
+    play: princesa-i-svinopas
+    hash: 171176c03f9d5767bbdcee9ed7b76417
+-
+    id: '147'
+    theatre: shevchenko
+    date: '2015-01-06 14:00:00'
+    scene: big
+    price: '20, 30, 35 грн'
+    play: princesa-i-svinopas
+    hash: 9e1a00bb23ad730b48ab084fc774c3a9
+-
+    id: '148'
+    theatre: shevchenko
+    date: '2015-01-06 19:00:00'
+    scene: small
+    price: '60 грн'
+    play: koroleva-krasi
+    hash: 992f115d0bfb8319b98d3d24f6416010
+-
+    id: '149'
+    theatre: shevchenko
+    date: '2015-01-07 11:00:00'
+    scene: big
+    price: '20, 30, 35 грн'
+    play: veseli-prigodi-pifa
+    hash: 378c7cecb24fa6251bf497ff9b883217
+-
+    id: '150'
+    theatre: shevchenko
+    date: '2015-01-07 19:00:00'
+    scene: small
+    price: '60 грн'
+    play: 22-pocilunki-4-mlosti-ta-1-migren
+    hash: 609f67ce9ad9fb38efb59e5df4934b39
+-
+    id: '151'
+    theatre: shevchenko
+    date: '2015-01-08 11:00:00'
+    scene: big
+    price: '20, 30, 35 грн'
+    play: veseli-prigodi-pifa
+    hash: 8f23ec1e53c1798f4e1efd429bff5526
+-
+    id: '152'
+    theatre: shevchenko
+    date: '2015-01-08 19:00:00'
+    scene: small
+    price: '60 грн'
+    play: violonchel
+    hash: 58027b413308dde8fd722bcf817e5223
+-
+    id: '153'
+    theatre: shevchenko
+    date: '2015-01-09 19:00:00'
+    scene: small
+    price: '60 грн'
+    play: aktorska-grimerna
+    hash: 0b3ee478d566b66bd33a79a2f774213e
+-
+    id: '154'
+    theatre: shevchenko
+    date: '2015-01-10 19:00:00'
+    scene: small
+    price: '60 грн'
+    play: orkestr
+    hash: 9c504b652274b41b0a256bdb05958eff
+-
+    id: '155'
+    theatre: shevchenko
+    date: '2015-01-11 11:00:00'
+    scene: big
+    price: '20, 30, 35 грн'
+    play: veseli-prigodi-pifa
+    hash: 1561d75ed574a672f173e1c8a3f00760
+-
+    id: '156'
+    theatre: shevchenko
+    date: '2015-01-11 18:00:00'
+    scene: big
+    price: '20-70 грн'
+    play: antigona-u-nyu-yorku
+    hash: b56f0a3e8403e56343f8e95acf26fb2e
+-
+    id: '157'
+    theatre: shevchenko
+    date: '2015-01-15 18:00:00'
+    scene: big
+    price: '20–50 грн'
+    play: son-litnoyi-nochi
+    hash: cea78cc1688e4a08282d658ceb401895
+-
+    id: '158'
+    theatre: shevchenko
+    date: '2015-01-16 18:00:00'
+    scene: big
+    price: '20-70 грн'
+    play: blez
+    hash: e45551c8a2f078166bda86b9618aaf93
+-
+    id: '159'
+    theatre: shevchenko
+    date: '2015-01-17 18:00:00'
+    scene: big
+    price: '20–50 грн'
+    play: z-toboyu-i-bez-tebe
+    hash: d89e89e99c5effba3acfb6ce9641243b
+-
+    id: '160'
+    theatre: shevchenko
+    date: '2015-01-18 18:00:00'
+    scene: big
+    price: '20–50 грн'
+    play: primadonni
+    hash: 88821639ecd188647359c3b27f4a10a5
+-
+    id: '161'
+    theatre: shevchenko
+    date: '2015-01-20 18:00:00'
+    scene: big
+    price: '20-70 грн'
+    play: antigona-u-nyu-yorku
+    hash: bb0d8d1f335c5b2878ee49204b35240b
+-
+    id: '162'
+    theatre: shevchenko
+    date: '2015-01-21 18:00:00'
+    scene: big
+    price: '20–50 грн'
+    play: ukradene-schastya
+    hash: 374830824cf7aeee095bade2f6d11949
+-
+    id: '163'
+    theatre: shevchenko
+    date: '2015-01-22 18:00:00'
+    scene: big
+    price: '20–50 грн'
+    play: shelmenko-denschik
+    hash: 10cf9903bc6c03807ae2cb6c0f0ab46d
+-
+    id: '164'
+    theatre: shevchenko
+    date: '2015-01-23 18:00:00'
+    scene: big
+    price: '20–50 грн'
+    play: zoychina-kvartira
+    hash: 611c0579c284af328f3440d4e6f6cabb
+-
+    id: '165'
+    theatre: shevchenko
+    date: '2015-01-24 18:00:00'
+    scene: big
+    price: '20–50 грн'
+    play: yazichniki
+    hash: 6b6613ef87310e0907b69e7cb88ad70d
+-
+    id: '166'
+    theatre: shevchenko
+    date: '2015-01-25 18:00:00'
+    scene: big
+    price: '20–50 грн'
+    play: prodavec-doschu
+    hash: a2f88f7124d03e95a7707f2a1c2d3d8d
+-
+    id: '167'
+    theatre: shevchenko
+    date: '2015-01-28 19:00:00'
+    scene: small
+    price: '60 грн'
+    play: mina-mazaylo
+    hash: f0aeacc763c4713fc274ff8d0071272c
+-
+    id: '168'
+    theatre: shevchenko
+    date: '2015-01-29 19:00:00'
+    scene: small
+    price: '60 грн'
+    play: groshi-sto-tisyach
+    hash: ae2250720cb6e71cff865628267c5ad7
+-
+    id: '169'
+    theatre: shevchenko
+    date: '2015-01-30 18:00:00'
+    scene: big
+    price: '20–50 грн'
+    play: duzhe-prosta-istoriya
+    hash: 7b123576a133257327891d57e89071bb
+-
+    id: '170'
+    theatre: shevchenko
+    date: '2015-01-31 18:00:00'
+    scene: big
+    price: '20–50 грн'
+    play: smishni-groshi
+    hash: 01ad4c81ed1b703774336f2fa801694f

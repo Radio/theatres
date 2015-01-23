@@ -12,7 +12,7 @@ use RedBean_Facade as R;
 use Theatres\Helpers\Date as DateHelper;
 use Theatres\Core\Controller_Templatable as Templatable;
 
-class Admin_Fetch
+class Fetch
 {
     use Templatable;
 

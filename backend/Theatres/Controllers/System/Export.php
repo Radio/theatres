@@ -20,6 +20,8 @@ class System_Export
         $this->exportTheatres();
         $this->exportScenes();
         $this->exportPlays();
+        $this->exportShows();
+        $this->exportTags();
 
         return 'Export was successful.';
     }
@@ -37,6 +39,17 @@ class System_Export
     protected function exportPlays()
     {
         return $this->exportItems('play', 'plays.yaml');
+    }
+
+    protected function exportShows()
+    {
+        return $this->exportItems('show', 'shows.yaml');
+    }
+
+    protected function exportTags()
+    {
+        $this->exportItems('tag', 'tags.yaml');
+        $this->exportItems('play_tag', 'play_tags.yaml');
     }
 
     protected function exportItems($type, $fileName)

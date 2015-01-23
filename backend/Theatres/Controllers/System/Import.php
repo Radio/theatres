@@ -17,9 +17,17 @@ class System_Import
             . DIRECTORY_SEPARATOR . 'export');
         $this->validateImportPath();
 
+        R::exec('SET foreign_key_checks = 0');
+        R::setStrictTyping(false);
+
         $this->importTheatres();
         $this->importScenes();
         $this->importPlays();
+        $this->importShows();
+        $this->importTags();
+
+        R::exec('SET foreign_key_checks = 1');
+        R::setStrictTyping(true);
 
         return 'Import was successful.';
     }
@@ -37,6 +45,17 @@ class System_Import
     protected function importPlays()
     {
         $this->importItems('play', 'plays.yaml');
+    }
+
+    protected function importShows()
+    {
+        $this->importItems('show', 'shows.yaml');
+    }
+
+    protected function importTags()
+    {
+        $this->importItems('tag', 'tags.yaml');
+        $this->importItems('play_tag', 'play_tags.yaml');
     }
 
     protected function importItems($type, $fileName)

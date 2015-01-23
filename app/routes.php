@@ -5,7 +5,7 @@ use \Theatres\Controllers;
 
 // Define Routes
 
-// 1. Admin
+// 1. System
 
 $app->get('/system/setup', 'Theatres\\Controllers\\System_Setup::index')
     ->bind('system_setup');
@@ -19,12 +19,12 @@ $app->get('/system/import', 'Theatres\\Controllers\\System_Import::index')
 $app->get('/system/clear', 'Theatres\\Controllers\\System_Clear::index')
     ->bind('system_clear');
 
-// 1.2 Admin → Fetch
+// 2. Fetch
 
-$app->get('/admin/fetch/{theatreKey}', 'Theatres\\Controllers\\Admin_Fetch::fetch')
-    ->bind('admin_fetch_theatre');
+$app->get('/fetch/{theatreKey}', 'Theatres\\Controllers\\Fetch::fetch')
+    ->bind('fetch_theatre');
 
-// 2. API
+// 3. API
 
 $app->match('/api/theatres', 'Theatres\\Controllers\\Api_Theatres::call')
     ->bind('api_theatres');

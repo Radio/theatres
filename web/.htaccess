@@ -5,7 +5,7 @@
 
     RewriteEngine On
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^(api|system) app.php [L]
+    RewriteRule ^(api|system|fetch) app.php [L]
 
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^admin admin.html [L]
