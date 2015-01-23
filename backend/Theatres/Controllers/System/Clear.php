@@ -6,7 +6,7 @@ use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 use \RedBean_Facade as R;
 
-class Admin_System_Clear
+class System_Clear
 {
     public function index(Request $request, Application $app)
     {

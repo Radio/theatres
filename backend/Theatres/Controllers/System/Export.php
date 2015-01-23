@@ -7,7 +7,7 @@ use RedBean_Facade as R;
 use Symfony\Component\Yaml\Yaml;
 use Theatres\Exceptions\Export as ExportException;
 
-class Admin_System_Export
+class System_Export
 {
     protected $exportPath;
 

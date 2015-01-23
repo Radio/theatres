@@ -7,17 +7,17 @@ use \Theatres\Controllers;
 
 // 1. Admin
 
-$app->get('/admin/system/setup', 'Theatres\\Controllers\\Admin_System_Setup::index')
-    ->bind('admin_system_setup');
+$app->get('/system/setup', 'Theatres\\Controllers\\System_Setup::index')
+    ->bind('system_setup');
 
-$app->get('/admin/system/export', 'Theatres\\Controllers\\Admin_System_Export::index')
-    ->bind('admin_system_export');
+$app->get('/system/export', 'Theatres\\Controllers\\System_Export::index')
+    ->bind('system_export');
 
-$app->get('/admin/system/import', 'Theatres\\Controllers\\Admin_System_Import::index')
-    ->bind('admin_system_import');
+$app->get('/system/import', 'Theatres\\Controllers\\System_Import::index')
+    ->bind('system_import');
 
-$app->get('/admin/system/clear', 'Theatres\\Controllers\\Admin_System_Clear::index')
-    ->bind('admin_system_clear');
+$app->get('/system/clear', 'Theatres\\Controllers\\System_Clear::index')
+    ->bind('system_clear');
 
 // 1.2 Admin → Fetch
 

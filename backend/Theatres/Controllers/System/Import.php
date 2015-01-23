@@ -7,7 +7,7 @@ use RedBean_Facade as R;
 use Symfony\Component\Yaml\Yaml;
 use Theatres\Exceptions\Import as ImportException;
 
-class Admin_System_Import
+class System_Import
 {
     protected $importPath;
 
