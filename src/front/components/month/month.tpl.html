@@ -1,0 +1,73 @@
+<div class="page-header" ng-class="{true: 'with-sub-title', false: ''}[getSubtitle().length > 0]">
+    <h2>{{ getTitle() }}</h2>
+    <h3 data-ng-show="getSubtitle()">{{ getSubtitle() }}</h3>
+</div>
+<div class="container">
+    <div class="row options-panel">
+        <div class="col-md-12">
+            <div class="theatres-list btn-group">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        {{ filter.theatre ? filter.theatre.title : 'Все театры' }} <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li ng-class="{true: 'current', false: ''}[filter.theatre == null]">
+                            <a href="#" ng-click="setTheatreFilter(null, $event)">Все</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li ng-repeat="theatre in theatres"
+                            ng-class="{true: 'current', false: ''}[filter.theatre.key == theatre.key]">
+                            <a href="#" ng-click="setTheatreFilter(theatre, $event)">{{ theatre.title }}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="scenes-list btn-group">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        {{ filter.scene ? filter.scene.title : 'Все сцены' }} <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li ng-class="{true: 'current', false: ''}[filter.scene == null]">
+                            <a href="#" ng-click="setSceneFilter(null, $event)">Все</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li ng-repeat="scene in scenes"
+                            ng-class="{true: 'current', false: ''}[filter.scene.key == scene.key]">
+                            <a href="#" ng-click="setSceneFilter(scene, $event)">{{ scene.title }}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="btn-group" ng-show="loading">
+                <div class="btn-group loading-text">загружаем...</div>
+            </div>
+        </div>
+    </div>
+    <div class="row month">
+        <div class="col-md-12">
+            <div class="day row day-{{ date.getDay() }}"
+                 ng-class="{true:'today', false:''}[isToday(date)]"
+                 ng-repeat="date in days">
+                <p class="day-number col-xs-2">
+                    <span class="day-number-number">{{ date | date : 'd' }}</span>
+                    <span class="day-of-week-name">
+                        <span class="hidden-xs">{{ date | date : 'EEEE' }}</span>
+                        <span class="hidden-sm hidden-md hidden-lg">{{ date | date : 'EEE' }}</span>
+                        <span ng-show="isToday(date)"> (сегодня)</span>
+                    </span>
+                </p>
+                <div class="shows col-xs-10">
+                    <div
+                         ng-repeat="show in getShowsOnDay(date)"
+                         ng-include="'src/front/components/month/show_brief.tpl.html'"
+                        >
+                    </div>
+                </div>
+            </div>
+            <div ng-show="loading" class="overlay month-overlay"></div>
+        </div>
+    </div>
+</div>
+
+<!--<pre>{{ shows }}</pre>-->

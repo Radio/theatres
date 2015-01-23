@@ -9,7 +9,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Theatres": "src/"
+            "Theatres": "backend/"
         }
     }
 }

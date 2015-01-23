@@ -12,7 +12,7 @@ $app->register(new Silex\Provider\SecurityServiceProvider(), array(
             'users' => $users,
         ),
         'api' => array(
-            'pattern' => new RequestMatcher('^/api', null, array('POST', 'PUT', 'DELETE')),
+            'pattern' => new RequestMatcher('^/api', null, array('GET', 'POST', 'PUT', 'DELETE')),
             'http' => true,
             'users' => $users,
         ),

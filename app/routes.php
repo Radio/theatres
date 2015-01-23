@@ -5,37 +5,7 @@ use \Theatres\Controllers;
 
 // Define Routes
 
-// 1. Home and Front App
-
-$app->get('/', 'Theatres\\Controllers\\Front_App::index')
-    ->bind('homepage');
-
-/**
- * @deprecated
- */
-$app->get('/templates/{tpl}', 'Theatres\\Controllers\\AngularTemplates::index')
-    ->assert('tpl', '.+?\.html')
-    ->convert('tpl', function($tpl) {
-        return substr($tpl, 0, -5);
-    })
-    ->bind('templates');
-
-$app->get('/month', 'Theatres\\Controllers\\Front_App::index')
-    ->bind('front_app.month');
-
-// deprecated
-$app->get('/play/{id}', 'Theatres\\Controllers\\Front_App::index')
-    ->assert('id', '\d+')
-    ->bind('front_app.play_by_id');
-
-$app->get('/plays/{key}', 'Theatres\\Controllers\\Front_App::index')
-    ->assert('key', '[a-z\-_0-9]+')
-    ->bind('front_app_plays_play');
-
-// 2. Admin
-
-$app->get('/admin', 'Theatres\\Controllers\\Admin_App::index')
-    ->bind('admin');
+// 1. Admin
 
 $app->get('/admin/system/setup', 'Theatres\\Controllers\\Admin_System_Setup::index')
     ->bind('admin_system_setup');
@@ -49,39 +19,12 @@ $app->get('/admin/system/import', 'Theatres\\Controllers\\Admin_System_Import::i
 $app->get('/admin/system/clear', 'Theatres\\Controllers\\Admin_System_Clear::index')
     ->bind('admin_system_clear');
 
-// 2.1 Admin → Theatres
-
-$app->get('/admin/theatres', 'Theatres\\Controllers\\Admin_App::index')
-    ->bind('admin_theatres_list');
-
-// 2.3 Admin → Scenes
-
-$app->get('/admin/scenes', 'Theatres\\Controllers\\Admin_App::index')
-    ->bind('admin_scenes_list');
-
-// 2.4 Admin → Plays
-
-$app->get('/admin/plays', 'Theatres\\Controllers\\Admin_App::index')
-    ->bind('admin_plays_list');
-
-$app->get('/admin/plays/play/{id}', 'Theatres\\Controllers\\Admin_App::index')
-    ->assert('id', '\d+|@[a-z\-_0-9]+')
-    ->bind('admin_plays_play');
-
-// 2.5 Admin → Shows
-
-$app->get('/admin/shows', 'Theatres\\Controllers\\Admin_App::index')
-    ->bind('admin_shows_list');
-
-// 2.6 Admin → Fetch
-
-$app->get('/admin/fetch', 'Theatres\\Controllers\\Admin_App::index')
-    ->bind('admin_fetch');
+// 1.2 Admin → Fetch
 
 $app->get('/admin/fetch/{theatreKey}', 'Theatres\\Controllers\\Admin_Fetch::fetch')
     ->bind('admin_fetch_theatre');
 
-// 3. API
+// 2. API
 
 $app->match('/api/theatres', 'Theatres\\Controllers\\Api_Theatres::call')
     ->bind('api_theatres');

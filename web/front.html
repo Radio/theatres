@@ -1,0 +1,59 @@
+<!doctype html>
+<meta charset="utf-8" lang="ru">
+
+<title>Все спектакли Харькова на одной странице</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" media="all" />
+<link href="http://fonts.googleapis.com/css?family=Roboto:400,300,500,700&subset=latin,cyrillic-ext"
+      rel="stylesheet" media="all" />
+<link href="/assets/css/front.css" rel="stylesheet" media="all" />
+<link href="/assets/css/print.css" rel="stylesheet" media="print" />
+
+<!--[if lt IE 9]>
+<script src="/assets/vendor/html5shiv/dist/html5shiv.js"></script>
+<script src="/assets/vendor/respond/dest/respond.min.js"></script>
+<![endif]-->
+
+<div id="main" class="container"
+     data-ng-cloak
+     data-ng-app="frontApp">
+
+    <header>
+        <h1><a href="/">Все спектакли Харькова на одной странице</a></h1>
+    </header>
+
+    <div data-ng-view></div>
+</div>
+
+
+<script src="/vendor/jquery/dist/jquery.min.js"></script>
+<script src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/vendor/angular/angular.min.js"></script>
+<script src="/vendor/angular-route/angular-route.min.js"></script>
+<script src="/vendor/angular-resource/angular-resource.min.js"></script>
+<script src="/assets/js/angular-locale_ru-ru.js"></script>
+<script src="/vendor/angular-local-storage/angular-local-storage.min.js"></script>
+<script src="/vendor/flying-focus/standalone/flying-focus.js"></script>
+<script src="/vendor/momentjs/moment.js"></script>
+
+<script src="/tpl/front/templates.js"></script>
+
+<script src="/src/helper/helper.module.js"></script>
+<script src="/src/helper/shared/date/dateServices.js"></script>
+<script src="/src/helper/shared/date/dateTimeDirective.js"></script>
+
+<script src="/src/api/api.module.js"></script>
+<script src="/src/api/components/factory/factoryService.js"></script>
+<script src="/src/api/components/api/apiService.js"></script>
+<script src="/src/api/components/scene/sceneServices.js"></script>
+<script src="/src/api/components/theatre/theatreServices.js"></script>
+<script src="/src/api/components/play/playServices.js"></script>
+<script src="/src/api/components/show/showServices.js"></script>
+<script src="/src/api/components/tag/tagServices.js"></script>
+
+<script src="/src/front/front.module.js"></script>
+<script src="/src/front/front.routes.js"></script>
+<script src="/src/front/components/month/monthController.js"></script>
+<script src="/src/front/components/play/playController.js"></script>

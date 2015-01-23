@@ -3,9 +3,10 @@
 /web/assets/vendor
 /.idea/workspace.xml
 /.idea/.name
-/resources/templates_cache/*
 /.idea/dataSources.ids
 /.idea/dataSources.xml
 /tmp
 /logs
 /app/config.php
+node_modules
+build
