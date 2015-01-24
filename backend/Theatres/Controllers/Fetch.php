@@ -6,6 +6,7 @@ use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 use Theatres\Collections\Theatres;
 use Theatres\Core\Exceptions\Fetchers_UndefinedFetcher;
+use Theatres\Core\Factory;
 use Theatres\Models\Schedule;
 use Theatres\Models\Theatre;
 use RedBean_Facade as R;
@@ -30,7 +31,9 @@ class Fetch
         );
 
         try {
-            $fetcher = $theatre->getFetcher($theatre);
+            /** @var Factory $factory */
+            $factory = $app['factory'];
+            $fetcher = $factory->getTheatreFetcher($theatreKey);
             $shows = $fetcher->fetch($month, $year);
 
             $schedule = new Schedule($theatre->box());

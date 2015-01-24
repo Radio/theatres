@@ -46,25 +46,25 @@ class System_Setup
                 'title' => 'Театр 19',
                 'abbr' => 'Т19',
                 'link' => 'http://www.theatre19.com.ua',
-                'fetcher' => 'Theatre19',
+                'has_fetcher' => '1',
             ),
             'shevchenko' => array(
                 'title' => 'Театр им. Шевченко',
                 'abbr' => 'ТШ',
                 'link' => 'http://www.theatre-shevchenko.com.ua',
-                'fetcher' => 'Shevchenko',
+                'has_fetcher' => '1',
             ),
             'postscriptum' => array(
                 'title' => 'Театр «PostScriptum»',
                 'abbr' => 'PS',
                 'link' => 'http://ps-teatr.com.ua',
-                'fetcher' => 'PostScriptum',
+                'has_fetcher' => '1',
             ),
             'pushkin' => array(
                 'title' => 'Театр им. Пушкина',
                 'abbr' => 'ТП',
                 'link' => 'http://rusdrama.kh.ua',
-                'fetcher' => 'Pushkin',
+                'has_fetcher' => '1',
             ),
         );
 
@@ -79,7 +79,7 @@ class System_Setup
             $theatre->title = $data['title'];
             $theatre->abbr = $data['abbr'];
             $theatre->link = $data['link'];
-            $theatre->fetcher = $data['fetcher'];
+            $theatre->has_fetcher = $data['has_fetcher'];
             $beans[] = $theatre;
         }
         R::storeAll($beans);

@@ -23,7 +23,7 @@ class Api_Theatres extends Controller_Rest_Collection
 
     /** @var array Fields that are allowed to update. */
     protected $allowedFields = array(
-        'title', 'abbr', 'link', 'fetcher', 'key', 'house_slug'
+        'title', 'abbr', 'link', 'has_fetcher', 'key', 'house_slug'
     );
 
     /**
@@ -48,9 +48,9 @@ class Api_Theatres extends Controller_Rest_Collection
         $fetchable = Api::toBool($request->query->get('fetchable'));
         if ($fetchable !== null) {
             if ($fetchable) {
-                $collection->addConditions('fetcher is not null and fetcher != ""');
+                $collection->addConditions('has_fetcher = 1');
             } else {
-                $collection->addConditions('(fetcher is null or fetcher = "")');
+                $collection->addConditions('has_fetcher = 0');
             }
         }
 

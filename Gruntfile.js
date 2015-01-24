@@ -104,6 +104,7 @@ module.exports = function(grunt) {
                     src: [
                         '<%= vendor.files.js %>',
                         '<%= vendor.files.map %>',
+                        '<%= vendor.files.fonts %>',
                         '<%= vendor.files.css %>'
                     ],
                     dest: '<%= buildDir %>/vendor',

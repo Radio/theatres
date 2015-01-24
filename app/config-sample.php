@@ -1,7 +1,5 @@
 <?php
 
-$appTitle = 'Все спектакли Харькова на одной странице';
-
 $siteBase = '/theatres/web';
 
 $debug  = true;

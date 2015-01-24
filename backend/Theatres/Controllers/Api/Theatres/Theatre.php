@@ -19,6 +19,6 @@ class Api_Theatres_Theatre extends Controller_Rest_Element
 
     /** @var array Fields that are allowed to update. */
     protected $allowedFields = array(
-        'title', 'abbr', 'link', 'fetcher', 'key', 'house_slug'
+        'title', 'abbr', 'link', 'has_fetcher', 'key', 'house_slug'
     );
 }

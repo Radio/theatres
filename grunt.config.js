@@ -75,6 +75,9 @@ module.exports = {
                 'angular/angular.min.js.map',
                 'angular-route/angular-route.min.js.map',
                 'angular-resource/angular-resource.min.js.map'
+            ],
+            fonts: [
+                'bootstrap/dist/fonts/glyphicons-halflings-regular.*'
             ]
         }
     },

@@ -10,8 +10,8 @@ angular.module('admin')
         $scope.$watch('filter', function() {
             loadTheatres();
         });
-        $scope.$on('theatre-updated', function(event) {
-            setLastUpdatedId(event.theatreId);
+        $scope.$on('theatre-updated', function(event, data) {
+            setLastUpdatedId(data.theatreId);
         });
 
         $scope.deleteTheatre = function(theatre)

@@ -14,7 +14,7 @@ use Theatres\Core\Exceptions\Fetchers_UndefinedFetcher;
  * @property $abbr
  * @property $link
  * @property $key
- * @property $fetcher
+ * @property $has_fetcher
  * @property $house_slug
  *
  * @package Theatres\Models
@@ -32,21 +32,6 @@ class Theatre extends \RedBean_SimpleModel
         $first = $theatres->getFirst();
         if ($first) {
             $this->bean->importFrom($first);
-        }
-    }
-
-    /**
-     * @throws \Theatres\Core\Exceptions\Fetchers_UndefinedFetcher
-     * @return \Theatres\Core\Fetcher_Interface
-     */
-    public function getFetcher()
-    {
-        $fetcherClassName = '\\Theatres\\Fetchers\\' . $this->fetcher;
-
-        if (class_exists($fetcherClassName)) {
-            return new $fetcherClassName;
-        } else {
-            throw new Fetchers_UndefinedFetcher("Fetcher '$fetcherClassName' is not defined.");
         }
     }
 

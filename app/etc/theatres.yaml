@@ -1,0 +1,16 @@
+---
+theatre19:
+  fetcher: "\\Theatres\\Fetchers\\Theatre19"
+  schedule: "\\Theatres\\Models\\Schedule"
+shevchenko:
+  fetcher: "\\Theatres\\Fetchers\\Shevchenko"
+  schedule: "\\Theatres\\Models\\Schedule"
+postscriptum:
+  fetcher: "\\Theatres\\Fetchers\\PostScriptum"
+  schedule: "\\Theatres\\Models\\Schedule"
+pushkin:
+  fetcher: "\\Theatres\\Fetchers\\Pushkin"
+  schedule: "\\Theatres\\Models\\Schedule"
+house:
+  fetcher: "\\Theatres\\Fetchers\\House"
+  schedule: "\\Theatres\\Models\\Schedule"

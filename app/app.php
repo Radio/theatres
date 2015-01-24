@@ -18,10 +18,15 @@ if ($secure) {
 
 $app['debug'] = $debug;
 $app['dir.root'] = realpath(__DIR__ . '/..');
+$app['dir.config'] = $app['dir.root'] . '/app/etc';
 $app['dir.resources'] = $app['dir.root'] . '/resources';
 
-$app['assets'] = $app->share(function() use ($siteBase) {
-    return new \Theatres\Helpers\Assets($siteBase);
+$app['config'] = $app->share(function() use ($app) {
+    return new \Theatres\Core\Config($app['dir.config']);
+});
+
+$app['factory'] = $app->share(function() use ($app) {
+    return new \Theatres\Core\Factory($app);
 });
 
 // 1.1 Set error handler

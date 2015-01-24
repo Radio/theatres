@@ -3,10 +3,9 @@
 namespace Theatres\Models;
 
 use RedBean_Facade as R;
-use Theatres\Exceptions\MoreThanOneBeanFound;
 
 /**
- * Class Schedule
+ * Theatre Schedule
  * @package Theatres\Models
  */
 class Schedule
@@ -33,48 +32,58 @@ class Schedule
         R::storeAll($shows);
     }
 
-    private function clearSchedule($month, $year)
+    protected function clearSchedule($month, $year)
     {
-        if ($this->theatre->key != 'house') {
-            R::exec('delete from `show` where theatre = ? and month (`date`) = ? and year(`date`) = ?',
-                array($this->theatre->key, $month, $year));
-        } else {
-            R::exec('
-            delete from `show` where
-                theatre in (select `key` from theatre where house_slug is not null and house_slug != "")
-                and month (`date`) = ?
-                and year(`date`) = ?',
-                array($month, $year));
-        }
+        R::exec('delete from `show` where theatre = ? and month (`date`) = ? and year(`date`) = ?',
+            array($this->theatre->key, $month, $year));
     }
 
+    /**
+     * Setup show data.
+     *
+     * @param array $showData Show data.
+     * @return \RedBean_OODBBean|Show
+     */
     protected function setupShow($showData)
     {
         /** @var Show|\RedBean_OODBBean $show */
         $show = R::dispense('show');
 
-        $titleTag = $showData['title'];
-        /** @var Play|\RedBean_OODBBean $play */
-        $play = R::dispense('play');
-        try {
-            $play->loadByTag($titleTag);
-            if (!$play->id) {
-                $this->createAndSaveNewPlay($play, $showData);
-            }
-            if ($play->id) {
-                $showData['play'] = $play->key;
-                $show->import($showData, array('theatre', 'play', 'scene', 'price', 'date'));
-            }
-        } catch (MoreThanOneBeanFound $e) {
-            throw $e;
+        $play = $this->getPlay($showData);
+
+        if ($play->id) {
+            $showData['play'] = $play->key;
+            $show->import($showData, array('theatre', 'play', 'scene', 'price', 'date'));
         }
 
         return $show;
     }
 
     /**
-     * @param \RedBean_OODBBean $play
-     * @param $data
+     * Get existing play or create new one.
+     *
+     * @param array $showData Show data.
+     * @return \RedBean_OODBBean|Play
+     */
+    protected function getPlay($showData)
+    {
+        $titleTag = $showData['title'];
+        /** @var Play|\RedBean_OODBBean $play */
+        $play = R::dispense('play');
+
+        $play->loadByTag($titleTag);
+        if (!$play->id) {
+            $this->createAndSaveNewPlay($play, $showData);
+            return $play;
+        }
+        return $play;
+    }
+
+    /**
+     * Create new play.
+     *
+     * @param \RedBean_OODBBean $play Play bean instance.
+     * @param array $data Play data.
      */
     protected function createAndSaveNewPlay(\RedBean_OODBBean $play, $data)
     {
