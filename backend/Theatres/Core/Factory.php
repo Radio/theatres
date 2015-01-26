@@ -2,6 +2,9 @@
 
 namespace Theatres\Core;
 use Theatres\Core\Exceptions\Fetchers_UndefinedFetcher;
+use Theatres\Exceptions\UndefinedSchedule;
+use Theatres\Models\Schedule;
+use Theatres\Models\Theatre;
 
 /**
  * Config Class working with yaml configuration.
@@ -23,6 +26,8 @@ class Factory
     }
 
     /**
+     * Get fetcher for theatre.
+     *
      * @param string $theatreKey Theatre key.
      * @throws Exceptions\Fetchers_UndefinedFetcher
      *
@@ -40,6 +45,28 @@ class Factory
             return new $fetcherClassName;
         } else {
             throw new Fetchers_UndefinedFetcher("Fetcher '$fetcherClassName' is not defined.");
+        }
+    }
+
+    /**
+     * Get schedule for theatre.
+     *
+     * @param Theatre $theatre Theatre Beam.
+     * @throws \Theatres\Exceptions\UndefinedSchedule
+     * @return Schedule
+     */
+    public function getTheatreSchedule(Theatre $theatre)
+    {
+        /** @var Config $config */
+        $config = $this->app['config'];
+        $theatresConfig = $config->get('theatres');
+
+        $scheduleClassName = $theatresConfig[$theatre->key]['schedule'];
+
+        if (class_exists($scheduleClassName)) {
+            return new $scheduleClassName($theatre);
+        } else {
+            throw new UndefinedSchedule("Schedule '$scheduleClassName' is not defined.");
         }
     }
 }

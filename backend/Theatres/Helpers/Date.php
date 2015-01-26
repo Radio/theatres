@@ -15,18 +15,16 @@ class Date
     );
 
     private static $monthNames = array(
-        1 => 'январь',
-             'февраль',
-             'март',
-             'апрель',
-             'май',
-             'июнь',
-             'июль',
-             'август',
-             'сентябрь',
-             'октябрь',
-             'ноябрь',
-             'декабрь',
+        'nominative'=> array(
+            1 => 'январь', 'февраль', 'март', 'апрель',
+                 'май', 'июнь', 'июль', 'август',
+                 'сентябрь', 'октябрь', 'ноябрь', 'декабрь',
+        ),
+        'genitive' => array(
+            1 => 'января', 'февраля', 'марта', 'апреля',
+                'мая', 'июня', 'июля', 'августа',
+                'сентября', 'октября', 'ноября', 'декабря'
+        )
     );
 
     public static function getDayOfWeekName(\DateTime $date)
@@ -36,6 +34,29 @@ class Date
 
     public static function getMonthName($monthNumber)
     {
-        return isset(self::$monthNames[$monthNumber]) ? self::$monthNames[$monthNumber] : '';
+        return isset(self::$monthNames['nominative'][$monthNumber])
+            ? self::$monthNames['nominative'][$monthNumber] : '';
+    }
+
+    public static function mapMonthTitle($title, $case = 'nominative')
+    {
+        foreach (self::$monthNames[$case] as $monthNumber => $monthName) {
+            if (mb_strtolower($title) == $monthName) {
+                return $monthNumber;
+            }
+        }
+
+        return null;
+    }
+
+    public static function mapMonthShortTitle($title)
+    {
+        foreach (self::$monthNames['nominative'] as $monthNumber => $monthName) {
+            if (strpos($monthName, mb_strtolower($title)) === 0) {
+                return $monthNumber;
+            }
+        }
+
+        return null;
     }
 }

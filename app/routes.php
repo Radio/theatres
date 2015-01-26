@@ -24,6 +24,9 @@ $app->get('/system/clear', 'Theatres\\Controllers\\System_Clear::index')
 $app->get('/fetch/{theatreKey}', 'Theatres\\Controllers\\Fetch::fetch')
     ->bind('fetch_theatre');
 
+$app->get('/fetch/test/{theatreKey}', 'Theatres\\Controllers\\Fetch::test')
+    ->bind('fetch_test_theatre');
+
 // 3. API
 
 $app->match('/api/theatres', 'Theatres\\Controllers\\Api_Theatres::call')

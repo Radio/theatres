@@ -9,7 +9,6 @@ class Pushkin extends Fetcher
 {
     protected $theatreId = 'pushkin';
     protected $source = 'http://rusdrama.kh.ua/tekushij-sezon/shedule?tmpl=component&print=1';
-//    protected $source = 'http://127.0.0.2/theatres/resources/pushkin.html';
 
     protected $pageContentsStart  = '<table';
     protected $pageContentsFinish = '</table>';

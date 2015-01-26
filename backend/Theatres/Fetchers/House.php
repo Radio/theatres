@@ -11,7 +11,6 @@ class House extends Fetcher
 {
     protected $theatreId = 'house';
     protected $source = 'http://domaktera.com.ua/afisha';
-    //protected $source = 'http://127.0.0.2/theatres/resources/house.html';
 
     protected $pageContentsStart  = '<table class="afisha">';
     protected $pageContentsFinish = '</table>';

@@ -7,10 +7,19 @@ shevchenko:
   schedule: "\\Theatres\\Models\\Schedule"
 postscriptum:
   fetcher: "\\Theatres\\Fetchers\\PostScriptum"
-  schedule: "\\Theatres\\Models\\Schedule"
+  schedule: "\\Theatres\\Models\\Schedule_Months"
 pushkin:
   fetcher: "\\Theatres\\Fetchers\\Pushkin"
   schedule: "\\Theatres\\Models\\Schedule"
 house:
   fetcher: "\\Theatres\\Fetchers\\House"
+  schedule: "\\Theatres\\Models\\Schedule_House"
+novascena:
+  fetcher: "\\Theatres\\Fetchers\\NovaScena"
+  schedule: "\\Theatres\\Models\\Schedule_Months"
+moget:
+  fetcher: "\\Theatres\\Fetchers\\Moget"
+  schedule: "\\Theatres\\Models\\Schedule"
+beautifulflowers:
+  fetcher: "\\Theatres\\Fetchers\\BeautifulFlowers"
   schedule: "\\Theatres\\Models\\Schedule"

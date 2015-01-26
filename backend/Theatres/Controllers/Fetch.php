@@ -36,7 +36,7 @@ class Fetch
             $fetcher = $factory->getTheatreFetcher($theatreKey);
             $shows = $fetcher->fetch($month, $year);
 
-            $schedule = new Schedule($theatre->box());
+            $schedule = $factory->getTheatreSchedule($theatre->box());
             $schedule->saveSchedule($shows, $month, $year);
 
             $message = sprintf('Получили %d спектаклей на %s %d года.',
@@ -44,6 +44,36 @@ class Fetch
 
             $responseData['status'] = 'success';
             $responseData['message'] = $message;
+
+        } catch (Fetchers_UndefinedFetcher $e) {
+            $responseData['status'] = 'failure';
+            $responseData['message'] = $e->getMessage();
+        }
+
+        return $app->json($responseData);
+    }
+
+    public function test(Request $request, Application $app, $theatreKey)
+    {
+        $month = $request->query->getInt('month', (int) date('n'));
+        $year  = $request->query->getInt('year', (int) date('Y'));
+
+        /** @var Theatre $theatre */
+        $theatre = R::dispense('theatre');
+        $theatre->loadByKey($theatreKey);
+
+        $responseData = array(
+            'status' => ''
+        );
+
+        try {
+            /** @var Factory $factory */
+            $factory = $app['factory'];
+            $fetcher = $factory->getTheatreFetcher($theatreKey);
+            $shows = $fetcher->fetch($month, $year);
+
+            $responseData['status'] = 'success';
+            $responseData['shows'] = $shows;
 
         } catch (Fetchers_UndefinedFetcher $e) {
             $responseData['status'] = 'failure';

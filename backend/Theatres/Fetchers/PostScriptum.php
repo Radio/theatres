@@ -15,7 +15,6 @@ class PostScriptum extends Fetcher
 {
     protected $theatreId = 'postscriptum';
     protected $source = 'http://ps-teatr.com.ua';
-//    protected $source = 'http://127.0.0.2/theatres/resources/postscriptum.html';
 
     protected $pageContentsStart  = '<div class="post">';
     protected $pageContentsFinish = '</div> <!-- Closes Post -->';
@@ -24,11 +23,11 @@ class PostScriptum extends Fetcher
     {
         $schedule = array();
 
-        $html = Helpers\Html::stripTags($html, '<p><strong>');
+        $html = Helpers\Html::stripTags($html, '<p><em>');
 
         // 22.01 (ср. 19:00) &#8211; &#8220;СОЙЧИНЕ КРИЛО&#8221;
         // 22.01 (ср. 19:00) – “СОЙЧИНЕ КРИЛО”
-        $matched = preg_match_all('/(\d\d\.\d\d)\s+\([^\s]+\s+(\d\d:\d\d)\)\s+\&\#8211;\s+\&\#8220;(.*?)\&\#8221;/is', $html, $lines, PREG_SET_ORDER);
+        $matched = preg_match_all('/(\d?\d\.\d\d)\s+\([^\s]+\s+(\d\d:\d\d)\).+?(“|\&\#8220;)(.*?)(”|\&\#8221;)/is', $html, $lines, PREG_SET_ORDER);
         for ($i = 0; $i < count($lines); $i++) {
             $line = $lines[$i];
 
@@ -38,7 +37,7 @@ class PostScriptum extends Fetcher
             $priceHtml = mb_substr($html, $priceHtmlStart, $priceHtmlFinish - $priceHtmlStart);
 
             $date  = $this->parseDate($line[1], $line[2]);
-            $title = $this->parseTitle($line[3]);
+            $title = $this->parseTitle(Helpers\Html::stripTags($line[4]));
             $scene = $this->parseScene();
             $link  = $this->parseLink('');
             $price = $this->parsePrice($priceHtml);
@@ -123,7 +122,7 @@ class PostScriptum extends Fetcher
         $price = null;
 
         $prices = array();
-        $matched = preg_match_all('/(\d+)\s*грн/is', $html, $matches);
+        $matched = preg_match_all('/<em>\s*(\d+)\s*<\/em>/is', $html, $matches);
         foreach ($matches[1] as $priceString) {
             $prices[] = (int) $priceString;
         }
