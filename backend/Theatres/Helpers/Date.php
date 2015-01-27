@@ -41,7 +41,7 @@ class Date
     public static function mapMonthTitle($title, $case = 'nominative')
     {
         foreach (self::$monthNames[$case] as $monthNumber => $monthName) {
-            if (mb_strtolower($title) == $monthName) {
+            if (mb_strtolower($title, 'utf-8') == $monthName) {
                 return $monthNumber;
             }
         }
@@ -52,7 +52,7 @@ class Date
     public static function mapMonthShortTitle($title)
     {
         foreach (self::$monthNames['nominative'] as $monthNumber => $monthName) {
-            if (strpos($monthName, mb_strtolower($title)) === 0) {
+            if (strpos($monthName, mb_strtolower($title, 'utf-8')) === 0) {
                 return $monthNumber;
             }
         }

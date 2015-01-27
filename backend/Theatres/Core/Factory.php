@@ -39,13 +39,14 @@ class Factory
         $config = $this->app['config'];
         $theatresConfig = $config->get('theatres');
 
-        $fetcherClassName = $theatresConfig[$theatreKey]['fetcher'];
-
-        if (class_exists($fetcherClassName)) {
-            return new $fetcherClassName;
-        } else {
+        if (isset($theatresConfig[$theatreKey])) {
+            $fetcherClassName = $theatresConfig[$theatreKey]['fetcher'];
+            if (class_exists($fetcherClassName)) {
+                return new $fetcherClassName;
+            }
             throw new Fetchers_UndefinedFetcher("Fetcher '$fetcherClassName' is not defined.");
         }
+        throw new Fetchers_UndefinedFetcher("Fetcher is not defined.");
     }
 
     /**
@@ -61,12 +62,13 @@ class Factory
         $config = $this->app['config'];
         $theatresConfig = $config->get('theatres');
 
-        $scheduleClassName = $theatresConfig[$theatre->key]['schedule'];
-
-        if (class_exists($scheduleClassName)) {
-            return new $scheduleClassName($theatre);
-        } else {
+        if (isset($theatresConfig[$theatre->key])) {
+            $scheduleClassName = $theatresConfig[$theatre->key]['schedule'];
+            if (class_exists($scheduleClassName)) {
+                return new $scheduleClassName($theatre);
+            }
             throw new UndefinedSchedule("Schedule '$scheduleClassName' is not defined.");
         }
+        throw new UndefinedSchedule("Schedule is not defined.");
     }
 }

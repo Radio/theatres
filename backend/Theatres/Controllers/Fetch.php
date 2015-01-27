@@ -22,13 +22,19 @@ class Fetch
         $month = $request->query->getInt('month', (int) date('n'));
         $year  = $request->query->getInt('year', (int) date('Y'));
 
+        $responseData = array(
+            'status' => ''
+        );
+
         /** @var Theatre $theatre */
         $theatre = R::dispense('theatre');
         $theatre->loadByKey($theatreKey);
 
-        $responseData = array(
-            'status' => ''
-        );
+        if (!$theatre->id) {
+            $responseData['status'] = 'failure';
+            $responseData['message'] = 'Theatre doesn\'t exists.';
+            return $app->json($responseData);
+        }
 
         try {
             /** @var Factory $factory */
@@ -58,13 +64,19 @@ class Fetch
         $month = $request->query->getInt('month', (int) date('n'));
         $year  = $request->query->getInt('year', (int) date('Y'));
 
+        $responseData = array(
+            'status' => ''
+        );
+
         /** @var Theatre $theatre */
         $theatre = R::dispense('theatre');
         $theatre->loadByKey($theatreKey);
 
-        $responseData = array(
-            'status' => ''
-        );
+        if (!$theatre->id) {
+            $responseData['status'] = 'failure';
+            $responseData['message'] = 'Theatre doesn\'t exists.';
+            return $app->json($responseData);
+        }
 
         try {
             /** @var Factory $factory */
