@@ -29,6 +29,12 @@
 Кукольный театр
     http://puppet.kharkov.ua/afisha.html
 
+Театр «Мадригал»
+    http://madrigal.org.ua/afisha
+
+Театр музыкальной комедии
+    http://www.operetta.kharkiv.ua/calendar-field-perfomance-date/month/2015-01
+
 Под вопросом
 -------------
 
@@ -41,11 +47,6 @@
 
 Todo
 ----
-
-Театр «Мадригал»
-    http://madrigal.org.ua/afisha
-Театр музыкальной комедии
-    http://www.operetta.kharkiv.ua/calendar-field-perfomance-date/month/2015-01
 Театр «На Жуках»
     http://zhuki.kharkov.ua/afisha.htm
 Оперный театр (ХАТОБ)

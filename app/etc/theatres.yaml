@@ -26,3 +26,9 @@ beautifulflowers:
 puppet:
   fetcher: "\\Theatres\\Fetchers\\Puppet"
   schedule: "\\Theatres\\Models\\Schedule_Months"
+madrigal:
+  fetcher: "\\Theatres\\Fetchers\\Madrigal"
+  schedule: "\\Theatres\\Models\\Schedule_Months"
+operetta:
+  fetcher: "\\Theatres\\Fetchers\\Operetta"
+  schedule: "\\Theatres\\Models\\Schedule_Months"
