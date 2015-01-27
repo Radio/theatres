@@ -23,3 +23,6 @@ moget:
 beautifulflowers:
   fetcher: "\\Theatres\\Fetchers\\BeautifulFlowers"
   schedule: "\\Theatres\\Models\\Schedule"
+puppet:
+  fetcher: "\\Theatres\\Fetchers\\Puppet"
+  schedule: "\\Theatres\\Models\\Schedule_Months"

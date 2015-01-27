@@ -26,6 +26,9 @@
 Театр "Прекрасные цветы"
     http://gobananas.com.ua/
 
+Кукольный театр
+    http://puppet.kharkov.ua/afisha.html
+
 Под вопросом
 -------------
 
@@ -39,25 +42,22 @@
 Todo
 ----
 
-- Кукольный театр (http://puppet.kharkov.ua/)
-    КТ
-- Театр «Мадригал»
-    М
-- Театр «Публицист»
-    П
-- Театр DADA
-    DD
-- Театр музыкальной комедии
-    МК
-- Театр поэзии и музыки
-    ПМ
-- Театр-студия «Ступени»
-    ТС
-- Театр «На Жуках»
-    НЖ
-- Оперный театр (ХАТОБ)
-    Х
-- Театр для детей и юношества
-    ДЮ
-- Театр-студия "Винора"
-    В
+Театр «Мадригал»
+    http://madrigal.org.ua/afisha
+Театр музыкальной комедии
+    http://www.operetta.kharkiv.ua/calendar-field-perfomance-date/month/2015-01
+Театр «На Жуках»
+    http://zhuki.kharkov.ua/afisha.htm
+Оперный театр (ХАТОБ)
+    http://www.hatob.com.ua/index.php?option=com_jevents&task=month.calendar&year=2015&month=01&day=27&Itemid=6
+Театр для детей и юношества
+    http://tyz.kharkov.ua/
+
+
+No schedule
+-----------
+Театр «Публицист» (ДА?)
+Театр DADA (ДА?)
+Театр поэзии и музыки (ДА?)
+Театр-студия «Ступени» (ДА?)
+Театр-студия "Винора" (https://vinora.wordpress.com/%D0%B0%D1%84%D1%96%D1%88%D1%96/)
