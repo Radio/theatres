@@ -1,22 +1,35 @@
 <div class="row show-info show-brief {{ show.theatre }}" itemscope itemtype="http://schema.org/TheaterEvent">
     <div class="show-time col-md-1">
-        <time datetime="{{ show.date | date : 'yyyy-MM-ddTHH:mmZ' }}" itemprop="startDate" content="{{ show.date | date : 'yyyy-MM-ddTHH:mmZ' }}">
+        <time datetime="{{ show.date | date : 'yyyy-MM-ddTHH:mmZ' }}"
+              itemprop="startDate"
+              content="{{ show.date | date : 'yyyy-MM-ddTHH:mmZ' }}">
             {{ show.date | date : 'H:mm' }}
         </time>
     </div>
     <div class="show-title col-md-11">
         <div class="row">
-            <h4 class="col-lg-8"><a href="{{ show.play_link }}" itemprop="url"><span itemprop="name">{{ show.play_title }}</span></a></h4>
+            <h4 class="col-lg-8 hidden-lg">
+                <a href="{{ show.play_link }}"
+                   itemprop="url"><span itemprop="name">{{ show.play_title }}</span></a>
+            </h4>
             <div class="show-scene col-lg-4">
                 <span itemprop="performer">
                     <a itemprop="url" href="#"
-                       class="show-theatre-title">{{ getTheatreByKey(show.theatre).title }}</a><span ng-show="getTheatreByKey(show.theatre).house_slug">, Дом Актера</span>
+                       class="show-theatre-title">{{ getTheatreByKey(show.theatre).title }}</a><span
+                            data-ng-show="getTheatreByKey(show.theatre).house_slug">, Дом Актера</span>
                 </span>
-                <span class="show-separator">&middot;</span>
-                <span class="nobr">{{ getSceneByKey(show.scene).title }}</span><span ng-show="show.price">
-                <span class="show-separator">&middot;</span>
-                <span class="price nobr">{{ show.price }}</span></span>
+                <!--<span class="show-separator">&middot;</span>-->
+                <br>
+                <span class="nobr">{{ getSceneByKey(show.scene).title }}</span>
+                <span data-ng-show="show.price">
+                    <span class="show-separator">&middot;</span>
+                    <span class="price nobr">{{ show.price }}</span>
+                </span>
             </div>
+            <h4 class="col-lg-8 hidden-xs hidden-sm hidden-md">
+                <a href="{{ show.play_link }}"
+                   itemprop="url"><span itemprop="name">{{ show.play_title }}</span></a>
+            </h4>
         </div>
     </div>
 </div>

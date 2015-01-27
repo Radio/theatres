@@ -1,5 +1,6 @@
 angular.module('api', [
         'ngResource',
-        'LocalStorageModule'
+        'LocalStorageModule',
+        'helper'
     ])
     .constant('API_URL', '/api');

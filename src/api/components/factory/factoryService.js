@@ -1,19 +1,6 @@
 angular.module('api')
     .factory('Factory', function($resource, $q, API_URL, localStorageService) {
 
-        function dateStringToObject(item)
-        {
-            if (typeof item.date == 'string') {
-                item.date = new Date(item.date);
-            }
-        }
-        function dateObjectToString(item)
-        {
-            if (typeof item.date == 'object') {
-                item.date = moment(item.date).format('YYYY-MM-DD HH:mm:ss');
-            }
-        }
-
         var collectionServiceProducer = function(resourcePath, resourceDefaults) {
             var resource = $resource(API_URL + '/' + resourcePath, resourceDefaults || {});
             var useCache = true;
@@ -48,8 +35,6 @@ angular.module('api')
                 },
                 post: function(item) {
                     var deferred = $q.defer();
-
-                    dateObjectToString(item);
 
                     resource.save(item, function(response) {
                         deferred.resolve(response);

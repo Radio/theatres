@@ -37,6 +37,22 @@ angular.module('helper')
                 return date1.getFullYear() == date2.getFullYear() &&
                     date1.getMonth() == date2.getMonth() &&
                     date1.getDate() == date2.getDate();
+            },
+
+            dateStringToObject: function(item, properties) {
+                properties.forEach(function(property) {
+                    if (typeof item[property] == 'string') {
+                        item[property] = new Date(item[property]);
+                    }
+                });
+            },
+            dateObjectToString: function(item, properties, format) {
+                format = format || 'YYYY-MM-DD HH:mm:ss';
+                properties.forEach(function(property) {
+                    if (typeof item[property] == 'object') {
+                        item[property] = moment(item[property]).format(format);
+                    }
+                });
             }
         };
     });
