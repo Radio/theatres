@@ -1,6 +1,6 @@
 
 /vendor
-/web/assets/vendor
+/bower_components
 /.idea/workspace.xml
 /.idea/.name
 /.idea/dataSources.ids
