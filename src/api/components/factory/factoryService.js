@@ -100,7 +100,6 @@ angular.module('api')
                     var deferred = $q.defer();
 
                     data.id = id;
-                    dateObjectToString(data);
 
                     resource.update(data, function(response) {
                         deferred.resolve(response);
