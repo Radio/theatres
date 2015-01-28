@@ -4,61 +4,66 @@
 Готово
 -------
 
-Театр 19
+* Театр 19
     http://www.theatre19.com.ua/scena.php
 
-«Post Scriptum»
+* «Post Scriptum»
     http://ps-teatr.com.ua/
 
-Театр им. Шевченка
+* Театр им. Шевченко
     http://www.theatre-shevchenko.com.ua/repertuar/month.php?id=N
 
-Театр им. Пушкина
+* Театр им. Пушкина
     http://rusdrama.kh.ua/tekushij-sezon/shedule?tmpl=component&print=1
 
-ЦСИ «Новая сцена»
+* ЦСИ «Новая сцена»
     http://novascena.org/?page=playbills
 
-Театр «Может быть»
-    http://moget.com.ua/afisha
-    (сцена определяется некорректно)
+* Театр «Может быть»
+    http://moget.com.ua/afisha (сцена определяется некорректно)
 
-Театр "Прекрасные цветы"
+* Театр "Прекрасные цветы"
     http://gobananas.com.ua/
 
-Кукольный театр
+* Кукольный театр
     http://puppet.kharkov.ua/afisha.html
 
-Театр «Мадригал»
+* Театр «Мадригал»
     http://madrigal.org.ua/afisha
 
-Театр музыкальной комедии
+* Театр музыкальной комедии
     http://www.operetta.kharkiv.ua/calendar-field-perfomance-date/month/2015-01
+
+* Оперный театр (ХАТОБ)
+    http://www.hatob.com.ua/index.php?option=com_jevents&task=month.calendar&year=2015&month=01&day=27&Itemid=6
+    (сцена определяется некорректно)
+
+* Театр для детей и юношества
+    http://tyz.kharkov.ua/ (цены есть на страницах спектаклей)
 
 Под вопросом
 -------------
 
-Дом Актера
-    - Театр «Котелок» (ДА)
+* Дом Актера
+    http://domaktera.com.ua - *Сайт не работает*
+    - Театр «Котелок»
     - Театр в театре
-    - "Лаборатория театрра"
-    http://domaktera.com.ua - Сайт не работает
+    - «Лаборатория театрра»
+    - Театр поэзии и музыки
 
+* Театр «На Жуках» - *Плохо парсится, похож на PostScriptum*
+    http://zhuki.kharkov.ua/afisha.htm
+    http://tvoj.kharkov.ua/help/Theatre/Zhuki/
 
 Todo
 ----
-Театр «На Жуках»
-    http://zhuki.kharkov.ua/afisha.htm
-Оперный театр (ХАТОБ)
-    http://www.hatob.com.ua/index.php?option=com_jevents&task=month.calendar&year=2015&month=01&day=27&Itemid=6
-Театр для детей и юношества
-    http://tyz.kharkov.ua/
 
+* Филармония и Органный зал
+    http://filarmonia.kh.ua/afisha/
 
-No schedule
+No schedule or not ready for parsing.
 -----------
-Театр «Публицист» (ДА?)
-Театр DADA (ДА?)
-Театр поэзии и музыки (ДА?)
-Театр-студия «Ступени» (ДА?)
-Театр-студия "Винора" (https://vinora.wordpress.com/%D0%B0%D1%84%D1%96%D1%88%D1%96/)
+- Театр «Публицист»
+- Театр DADA
+- Театр-студия «Ступени»
+- Театр-студия «Винора» (https://vinora.wordpress.com/%D0%B0%D1%84%D1%96%D1%88%D1%96/)
