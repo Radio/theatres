@@ -32,3 +32,9 @@ madrigal:
 operetta:
   fetcher: "\\Theatres\\Fetchers\\Operetta"
   schedule: "\\Theatres\\Models\\Schedule_Months"
+hatob:
+  fetcher: "\\Theatres\\Fetchers\\Hatob"
+  schedule: "\\Theatres\\Models\\Schedule"
+tyz:
+  fetcher: "\\Theatres\\Fetchers\\Tyz"
+  schedule: "\\Theatres\\Models\\Schedule_Months"
