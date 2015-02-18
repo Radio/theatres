@@ -10,4 +10,15 @@ class Plays extends Beans
     {
         $this->beanType = 'play';
     }
+
+    public function toArray()
+    {
+        $data = parent::toArray();
+        return array_map(function($play) {
+            $play['is_premiere'] = (bool) $play['is_premiere'];
+            $play['is_for_children'] = (bool) $play['is_for_children'];
+            $play['is_musical'] = (bool) $play['is_musical'];
+            return $play;
+        }, $data);
+    }
 }

@@ -81,7 +81,7 @@ class Shows extends Beans
     protected function populatePlay(&$selectStatement, &$fromStatement)
     {
         $playFields = array(
-            'key', 'theatre_id', 'title', 'scene_id', 'link'
+            'key', 'theatre_id', 'title', 'scene_id', 'link', 'is_premiere', 'is_for_children', 'is_musical'
         );
         foreach ($playFields as $playField) {
             $selectStatement .= ', play.`' . $playField . '` as play_' . $playField;
@@ -117,5 +117,26 @@ class Shows extends Beans
             $selectStatement .= ', scene.`' . $field . '` as scene_' . $field;
         }
         $fromStatement .= ' LEFT JOIN scene on show.scene_id = scene.`id` ';
+    }
+
+    public function toArray()
+    {
+        $playFields = ['is_premiere', 'is_for_children', 'is_musical'];
+        $theatreFields = ['has_fetcher'];
+        $data = parent::toArray();
+        return array_map(function($show) use ($playFields, $theatreFields) {
+            foreach ($playFields as $playField) {
+                if (array_key_exists('play_' . $playField, $show)) {
+                    $show['play_' . $playField] = (bool) $show['play_' . $playField];
+                }
+            }
+            foreach ($theatreFields as $theatreField) {
+                if (array_key_exists('theatre_' . $theatreField, $show)) {
+                    $show['theatre_' . $theatreField] = (bool) $show['theatre_' . $theatreField];
+                }
+            }
+
+            return $show;
+        }, $data);
     }
 }

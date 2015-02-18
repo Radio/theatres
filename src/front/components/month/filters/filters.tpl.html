@@ -1,0 +1,38 @@
+<div class="col-md-12 filters-col">
+    <div class="filter-block">
+        <h5>Выберите день</h5>
+        <div data-calendar data-month="filter.month"  data-year="filter.year"></div>
+    </div>
+
+    <div class="filter-block theatres-list">
+        <h5>Спектакли</h5>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" data-ng-model="filter.playTypes['is_for_adults']"
+                       data-ng-disabled="!filter.playTypes['is_for_children']"> для взрослых
+            </label>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" data-ng-model="filter.playTypes['is_for_children']"
+                       data-ng-disabled="!filter.playTypes['is_for_adults']"> для детей
+            </label>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" data-ng-model="filter.playTypes['is_musical']"> музыкальные
+            </label>
+        </div>
+    </div>
+
+    <div class="filter-block scenes-list">
+        <h5>Сцены</h5>
+        <div class="checkbox"
+             data-ng-repeat="scene in scenes">
+            <label>
+                <input type="checkbox" data-ng-model="filter.scenes[scene.id]">
+                {{ scene.title }}
+            </label>
+        </div>
+    </div>
+</div>

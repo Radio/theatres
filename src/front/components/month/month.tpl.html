@@ -4,9 +4,9 @@
 </div>
 <div class="container-fluid month-container">
     <div class="row">
-        <div class="col-lg-2"
+        <div class="col-lg-2 hidden-sm hidden-xs"
              data-ng-controller="MonthFiltersController"
-             data-ng-include="'src/front/components/month/filters.tpl.html'"></div>
+             data-ng-include="'src/front/components/month/filters/filters.tpl.html'"></div>
         <div class="col-lg-10 poster">
             <div class="month">
                 <div class="day row day-{{ date.getDay() }} date-{{ date.getDate() }}"
@@ -15,9 +15,9 @@
                     <p class="day-number col-xs-2 col-xs-1-5">
                         <span class="day-number-number">{{ date | date : 'd' }}</span>
                         <span class="day-of-week-name">
-                            <span class="hidden-xs">{{ date | date : 'EEEE' }}</span>
-                            <span class="hidden-sm hidden-md hidden-lg">{{ date | date : 'EEE' }}</span>
-                            <span data-ng-show="isToday(date)"> (сегодня)</span>
+                            <span class="hidden-xs hidden-sm">{{ date | date : 'EEEE' }}</span>
+                            <span class="visible-xs visible-sm">{{ date | date : 'EEE' }}</span>
+                            <span class="hidden-xs" data-ng-show="isToday(date)"> (сегодня)</span>
                         </span>
                     </p>
                     <div class="shows  col-xs-10 col-xs-10-5">

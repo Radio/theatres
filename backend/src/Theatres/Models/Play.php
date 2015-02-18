@@ -31,8 +31,8 @@ class Play extends \RedBean_SimpleModel
     public static $allowedFields = [
         'theatre_id', 'theatre', 'scene_id', 'scene',
         'title', 'key', 'link',  'price', 'image',
-        'is_premiere', 'director', 'author',
-        'genre', 'duration', 'description'
+        'director', 'author', 'genre', 'duration', 'description',
+        'is_premiere', 'is_for_children', 'is_musical'
     ];
 
     /**

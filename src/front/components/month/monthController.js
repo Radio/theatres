@@ -24,9 +24,9 @@ angular.module('frontApp')
 
         $(window).scroll(function() {
             if ($(this).scrollTop() > 0) {
-                $('.main-header').addClass('secondary');
+                $('.main-container').addClass('scrolled');
             } else {
-                $('.main-header').removeClass('secondary');
+                $('.main-container').removeClass('scrolled');
             }
         });
 
@@ -76,12 +76,6 @@ angular.module('frontApp')
                 month: Filters.month,
                 year: Filters.year
             };
-            if (Filters.theatre) {
-                query.theatre = Filters.theatre.id;
-            }
-            if (Filters.scene) {
-                query.scene = Filters.scene.id;
-            }
             return query;
         }
 

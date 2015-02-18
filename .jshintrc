@@ -8,6 +8,7 @@
         "$": false,
         "angular": false,
         "confirm": false,
-        "moment": false
+        "moment": false,
+        "window": false
     }
 }

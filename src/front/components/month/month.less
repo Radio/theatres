@@ -1,9 +1,35 @@
-
 .month-container {
     padding-top: 20px;
 }
+
+.scrolled {
+    .main-header {
+        position: fixed;
+        z-index: 500;
+        top: 0;
+        left: 0;
+        width: 100%;
+
+        text-align: left;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
+        h1 {
+            font-size: 1.5em;
+            margin: 5px 0;
+
+            > span {
+                display: inline;
+            }
+            .second-title {
+                font-weight: 500;
+            }
+        }
+    }
+}
+
 .poster {
     position: relative;
+    padding-bottom: 500px;
 
     .month {
         .overlay {
@@ -96,7 +122,4 @@
     .show-separator {
         margin: 0 .2em;
     }
-}
-.filters-col {
-    position: fixed;
 }

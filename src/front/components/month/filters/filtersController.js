@@ -1,0 +1,68 @@
+angular.module('frontApp')
+    .controller('MonthFiltersController', function ($scope, DateHelper, Api, Filters) {
+
+        $scope.playTypes = [
+            {id: 'is_for_children', title: 'Для детей'},
+            {id: 'is_for_adults', title: 'Для взрослых'},
+            {id: 'is_musical', title: 'Музыкальные'}
+        ];
+        $scope.scenes = [];
+        $scope.filter = Filters;
+
+        $scope.$on('day-clicked', function(event, day) {
+            var $dayNode = $('.date-' + day);
+            if ($dayNode.length) {
+                $('html, body').scrollTop($dayNode.offset().top - 60);
+            }
+        });
+
+        initPlayTypesFilter($scope.playTypes);
+        Api.scenes.get({}).then(function(scenes) {
+            $scope.scenes = scenes;
+            initScenesFilter($scope.scenes);
+        });
+
+        // private
+
+        function initPlayTypesFilter(playTypes)
+        {
+            angular.forEach(playTypes, function(playType) {
+                Filters.playTypes[playType.id] = true;
+            });
+        }
+
+        function initScenesFilter(scenes)
+        {
+            angular.forEach(scenes, function(scene) {
+                Filters.scenes[scene.id] = true;
+            });
+        }
+
+    })
+    .filter('showsFilter', function() {
+        return function(input, filters) {
+            var filtered = [];
+            if (input) {
+                for (var i = 0; i < input.length; i++) {
+                    if (filters.theatre && filters.theatre.id !== input[i].theatre_id) {
+                        continue;
+                    }
+                    if (input[i].play_is_musical && filters.playTypes.is_musical === false) {
+                        continue;
+                    }
+                    if (input[i].play_is_for_children) {
+                        if (filters.playTypes.is_for_children === false) {
+                            continue;
+                        }
+                    } else {
+                        if (filters.playTypes.is_for_adults === false) {
+                            continue;
+                        }
+                    }
+
+                    filtered.push(input[i]);
+                }
+            }
+            return filtered;
+        };
+    });

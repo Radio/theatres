@@ -4,8 +4,8 @@ angular.module('frontApp')
             month: null,
             year: null,
             theatre: null,
-            scene: null,
 
-            theatres: {}
+            playTypes: {},
+            scenes: {}
         };
     });

@@ -107,7 +107,33 @@
                 <div class="col-sm-10">
                     <input type="text" id="play-image" class="form-control"
                            data-ng-model="play.image" data-ng-blur="savePlay(play)"/>
+                </div>
+            </div>
 
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-2">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" data-ng-model="play.is_premiere"
+                                   data-ng-change="savePlay(play)"> Премьера
+                        </label>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" data-ng-model="play.is_for_children"
+                                   data-ng-change="savePlay(play)"> Для детей
+                        </label>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" data-ng-model="play.is_musical"
+                                   data-ng-change="savePlay(play)"> Музыкальный
+                        </label>
+                    </div>
                 </div>
             </div>
 
