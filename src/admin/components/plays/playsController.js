@@ -49,10 +49,10 @@ angular.module('admin')
         {
             var query = {};
             if ($scope.filter.theatre) {
-                query.theatre = $scope.filter.theatre.key;
+                query.theatre = $scope.filter.theatre.id;
             }
             if ($scope.filter.scene) {
-                query.scene = $scope.filter.scene.key;
+                query.scene = $scope.filter.scene.id;
             }
 
             Api.plays.get(query).then(function(plays) {

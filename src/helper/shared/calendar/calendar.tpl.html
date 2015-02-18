@@ -1,0 +1,10 @@
+<div class="calendar">
+    <div class="week clearfix" data-ng-repeat="week in calendar track by $index">
+        <div class="day" data-ng-class="{'out-of-month': !day, 'today': isToday(day)}"
+             data-ng-repeat="day in week track by $index">
+            <span data-ng-show="!!day" data-ng-click="dayClickHandler(day)"
+                  title="{{ isToday(day) ? 'Сегодня' : '' }}"
+                    >{{ day }}</span>
+        </div>
+    </div>
+</div>

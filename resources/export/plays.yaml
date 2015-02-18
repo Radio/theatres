@@ -1,175 +1,1950 @@
 -
-    id: '134'
-    theatre: shevchenko
+    id: '1'
     title: 'Кіт у чоботях'
-    scene: big
+    price: '20, 30, 35 грн'
     link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=36'
     key: kit-u-chobotyah
+    theatre_id: '2'
+    scene_id: '3'
+    director: 'Олег Русов'
+    author: 'Шарль Перро (П’єса С.Прокофьєвої, Г.Сапгіра)'
+    genre: 'Музична казка на 1 дію для дошкільників і дітей молодшого шкільного віку'
+    duration: '1 година 15 хв.'
+    description: 'Незвична чарівна історія про те, як у стародавньому королівстві завдяки хороброму Коту у чоботях Принцеса та Жак–простак перемогли Людоїда і зберегли віру в добро, вірність, дружбу, щире кохання. Це динамічне яскраве видовище, де багато музики, танців, казкових перетворень.'
+    image: 'http://www.theatre-shevchenko.com.ua/images/performance/kot02.JPG'
+    is_premiere: null
 -
-    id: '135'
-    theatre: shevchenko
+    id: '2'
     title: 'Маленькі подружні злочини'
-    scene: small
+    price: '60 грн'
     link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=27'
     key: malenki-podruzhni-zlochini
+    theatre_id: '2'
+    scene_id: '2'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
 -
-    id: '136'
-    theatre: shevchenko
+    id: '3'
     title: 'Принцеса і свинопас'
-    scene: big
+    price: '20, 30, 35 грн'
     link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=60'
     key: princesa-i-svinopas
+    theatre_id: '2'
+    scene_id: '3'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
 -
-    id: '137'
-    theatre: shevchenko
+    id: '4'
     title: 'Ірен і духи'
-    scene: small
+    price: '60 грн'
     link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=28'
     key: iren-i-duhi
+    theatre_id: '2'
+    scene_id: '2'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
 -
-    id: '138'
-    theatre: shevchenko
+    id: '5'
     title: 'Дорогоцінна Памела'
-    scene: small
+    price: '60 грн'
     link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=6'
     key: dorogocinna-pamela
+    theatre_id: '2'
+    scene_id: '2'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
 -
-    id: '139'
-    theatre: shevchenko
+    id: '6'
     title: 'Королева краси'
-    scene: small
+    price: '60 грн'
     link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=53'
     key: koroleva-krasi
+    theatre_id: '2'
+    scene_id: '2'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
 -
-    id: '140'
-    theatre: shevchenko
+    id: '7'
     title: 'Веселі пригоди Піфа'
-    scene: big
+    price: '20, 30, 35 грн'
     link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=26'
     key: veseli-prigodi-pifa
+    theatre_id: '2'
+    scene_id: '3'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
 -
-    id: '141'
-    theatre: shevchenko
+    id: '8'
     title: '22 поцілунки, 4 млості та 1 мігрень'
-    scene: small
+    price: '60 грн'
     link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=1'
     key: 22-pocilunki-4-mlosti-ta-1-migren
+    theatre_id: '2'
+    scene_id: '2'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
 -
-    id: '142'
-    theatre: shevchenko
+    id: '9'
     title: Віолончель
-    scene: small
+    price: '60 грн'
     link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=3'
     key: violonchel
+    theatre_id: '2'
+    scene_id: '2'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
 -
-    id: '143'
-    theatre: shevchenko
+    id: '10'
     title: 'Акторська гримерна'
-    scene: small
+    price: '60 грн'
     link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=40'
     key: aktorska-grimerna
+    theatre_id: '2'
+    scene_id: '2'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
 -
-    id: '144'
-    theatre: shevchenko
+    id: '11'
     title: Оркестр
-    scene: small
+    price: '60 грн'
     link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=16'
     key: orkestr
+    theatre_id: '2'
+    scene_id: '2'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
 -
-    id: '145'
-    theatre: shevchenko
+    id: '12'
     title: 'Антиґона у Нью-Йорку'
-    scene: big
+    price: '20-70 грн'
     link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=65'
     key: antigona-u-nyu-yorku
+    theatre_id: '2'
+    scene_id: '3'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
 -
-    id: '146'
-    theatre: shevchenko
+    id: '13'
     title: 'Сон літньої ночі'
-    scene: big
+    price: '20–50 грн'
     link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=21'
     key: son-litnoyi-nochi
+    theatre_id: '2'
+    scene_id: '3'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
 -
-    id: '147'
-    theatre: shevchenko
+    id: '14'
     title: Блез
-    scene: big
+    price: '20-70 грн'
     link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=64'
     key: blez
+    theatre_id: '2'
+    scene_id: '3'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
 -
-    id: '148'
-    theatre: shevchenko
+    id: '15'
     title: 'З Тобою І Без Тебе'
-    scene: big
+    price: '20–50 грн'
     link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=54'
     key: z-toboyu-i-bez-tebe
+    theatre_id: '2'
+    scene_id: '3'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
 -
-    id: '149'
-    theatre: shevchenko
+    id: '16'
     title: Примадонни
-    scene: big
+    price: '20–50 грн'
     link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=30'
     key: primadonni
+    theatre_id: '2'
+    scene_id: '3'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
 -
-    id: '150'
-    theatre: shevchenko
+    id: '17'
     title: 'Украдене щастя'
-    scene: big
+    price: '20–50 грн'
     link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=23'
     key: ukradene-schastya
+    theatre_id: '2'
+    scene_id: '3'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
 -
-    id: '151'
-    theatre: shevchenko
+    id: '18'
     title: Шельменко-денщик
-    scene: big
+    price: '20–50 грн'
     link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=24'
     key: shelmenko-denschik
+    theatre_id: '2'
+    scene_id: '3'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
 -
-    id: '152'
-    theatre: shevchenko
+    id: '19'
     title: 'Зойчина квартира'
-    scene: big
+    price: '20–50 грн'
     link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=32'
     key: zoychina-kvartira
+    theatre_id: '2'
+    scene_id: '3'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
 -
-    id: '153'
-    theatre: shevchenko
+    id: '20'
     title: Язичники
-    scene: big
+    price: '20–50 грн'
     link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=59'
     key: yazichniki
+    theatre_id: '2'
+    scene_id: '3'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
 -
-    id: '154'
-    theatre: shevchenko
+    id: '21'
     title: 'Продавець дощу'
-    scene: big
+    price: '20–50 грн'
     link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=57'
     key: prodavec-doschu
+    theatre_id: '2'
+    scene_id: '3'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
 -
-    id: '155'
-    theatre: shevchenko
+    id: '22'
     title: 'Мина Мазайло'
-    scene: small
+    price: '60 грн'
     link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=13'
     key: mina-mazaylo
+    theatre_id: '2'
+    scene_id: '2'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
 -
-    id: '156'
-    theatre: shevchenko
+    id: '23'
     title: 'Гроші (Сто тисяч)'
-    scene: small
+    price: '60 грн'
     link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=5'
     key: groshi-sto-tisyach
+    theatre_id: '2'
+    scene_id: '2'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
 -
-    id: '157'
-    theatre: shevchenko
+    id: '24'
     title: 'Дуже проста історія'
-    scene: big
+    price: '20–50 грн'
     link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=7'
     key: duzhe-prosta-istoriya
+    theatre_id: '2'
+    scene_id: '3'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
 -
-    id: '158'
-    theatre: shevchenko
+    id: '25'
     title: 'Смішні гроші'
-    scene: big
+    price: '20–50 грн'
     link: 'http://www.theatre-shevchenko.com.ua/performance/index.php?perf=20'
     key: smishni-groshi
+    theatre_id: '2'
+    scene_id: '3'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '26'
+    title: Двери
+    price: null
+    link: 'http://www.theatre19.com.ua/scena.php'
+    key: dveri
+    theatre_id: '1'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '27'
+    title: 'Ищу работу'
+    price: null
+    link: 'http://www.theatre19.com.ua/scena.php'
+    key: ischu-rabotu
+    theatre_id: '1'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '28'
+    title: '(Самый) Легкий способ бросить курить'
+    price: null
+    link: 'http://www.theatre19.com.ua/scena.php'
+    key: samyy-legkiy-sposob-brosit-kurit
+    theatre_id: '1'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '29'
+    title: Чмо
+    price: null
+    link: 'http://www.theatre19.com.ua/scena.php'
+    key: chmo
+    theatre_id: '1'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '30'
+    title: 'Но все-таки'
+    price: null
+    link: 'http://www.theatre19.com.ua/scena.php'
+    key: no-vse-taki
+    theatre_id: '1'
+    scene_id: '2'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '31'
+    title: 'Наш Гамлет'
+    price: null
+    link: 'http://www.theatre19.com.ua/scena.php'
+    key: nash-gamlet
+    theatre_id: '1'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '32'
+    title: 'СОЙЧИНЕ КРИЛО'
+    price: '56–110 грн'
+    link: 'http://ps-teatr.com.ua'
+    key: soychine-krilo
+    theatre_id: '3'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '33'
+    title: 'ЧОЛОВІК МОЄЇ ДРУЖИНИ'
+    price: '64–120 грн'
+    link: 'http://ps-teatr.com.ua'
+    key: cholovik-moyeyi-druzhini
+    theatre_id: '3'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '34'
+    title: 'ВЕЧЕРЯ ДЛЯ ДУРНЯ'
+    price: null
+    link: 'http://ps-teatr.com.ua'
+    key: vecherya-dlya-durnya
+    theatre_id: '3'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '35'
+    title: 'ВІЧНІ ФРАНЦУЗЬКІ ФАРСИ про це…'
+    price: null
+    link: 'http://ps-teatr.com.ua'
+    key: vichni-francuzki-farsi-pro-ce
+    theatre_id: '3'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '36'
+    title: 'ПРИГОДА ВЕДМЕДИКІВ ПАНДА'
+    price: '80–140 грн'
+    link: 'http://ps-teatr.com.ua'
+    key: prigoda-vedmedikiv-panda
+    theatre_id: '3'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '37'
+    title: 'НУ, НАРЕШТІ!'
+    price: '56–110 грн'
+    link: 'http://ps-teatr.com.ua'
+    key: nu-nareshti
+    theatre_id: '3'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '38'
+    title: 'ДОХОДНОЕ МЕСТО'
+    price: null
+    link: 'http://rusdrama.kh.ua/tekushij-sezon/spektakli/5-dohodnoe-mesto'
+    key: dohodnoe-mesto
+    theatre_id: '4'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '39'
+    title: 'СЛИШКОМ ЖЕНАТЫЙ ТАКСИСТ'
+    price: null
+    link: 'http://rusdrama.kh.ua/tekushij-sezon/spektakli/17-slishkom-zhenatij-taksist'
+    key: slishkom-zhenatyy-taksist
+    theatre_id: '4'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '40'
+    title: 'ДЯДЮШКИН СОН'
+    price: null
+    link: 'http://rusdrama.kh.ua/tekushij-sezon/spektakli/28-djadjushkin-son'
+    key: dyadyushkin-son
+    theatre_id: '4'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '41'
+    title: 'ТРОЕ И МАДЛЕН'
+    price: null
+    link: 'http://rusdrama.kh.ua/tekushij-sezon/spektakli/201-troe-i-madlen'
+    key: troe-i-madlen
+    theatre_id: '4'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '42'
+    title: Крыса
+    price: null
+    link: 'http://gobananas.com.ua/show/rat'
+    key: krysa
+    theatre_id: '6'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '43'
+    title: Красный
+    price: null
+    link: 'http://gobananas.com.ua/show/red'
+    key: krasnyy
+    theatre_id: '6'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '44'
+    title: Жир
+    price: null
+    link: 'http://gobananas.com.ua/show/fat'
+    key: zhir
+    theatre_id: '6'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '45'
+    title: '«История любви»'
+    price: null
+    link: 'http://moget.com.ua/istoriya-lyubvi'
+    key: istoriya-lyubvi
+    theatre_id: '7'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '46'
+    title: '«Город знакомств»'
+    price: null
+    link: 'http://moget.com.ua/gorod-znakomstv'
+    key: gorod-znakomstv
+    theatre_id: '7'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '47'
+    title: '«Империя ангелов»'
+    price: null
+    link: 'http://moget.com.ua/imperiya-angelov'
+    key: imperiya-angelov
+    theatre_id: '7'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '48'
+    title: '«Мужики не плачут» (Дупло)'
+    price: null
+    link: 'http://moget.com.ua/muzhiki-ne-plachut-duplo'
+    key: muzhiki-ne-plachut-duplo
+    theatre_id: '7'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '49'
+    title: «Стаккато»
+    price: null
+    link: 'http://moget.com.ua/stakkato'
+    key: stakkato
+    theatre_id: '7'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '50'
+    title: 'Волк и семеро козлят'
+    price: '30 грн (детский), 60 грн'
+    link: 'http://puppet.kharkov.ua/spektakli/semerokozlyt.html'
+    key: volk-i-semero-kozlyat
+    theatre_id: '22'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: 'http://puppet.kharkov.ua/../perform/Puppet-00000000308.jpg'
+    is_premiere: null
+-
+    id: '51'
+    title: 'Сказка о трех поросятах'
+    price: '30 грн (детский), 60 грн'
+    link: 'http://puppet.kharkov.ua/spektakli/POROSJaTA.html'
+    key: skazka-o-treh-porosyatah
+    theatre_id: '22'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: 'http://puppet.kharkov.ua/../perform/Puppet-00000000242.jpg'
+    is_premiere: null
+-
+    id: '52'
+    title: 'По щучьему велению'
+    price: '30 грн (детский), 60 грн'
+    link: 'http://puppet.kharkov.ua/spektakli/EMELIJA.html'
+    key: po-schuchemu-veleniyu
+    theatre_id: '22'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: 'http://puppet.kharkov.ua/../perform/Puppet-00000000304.jpg'
+    is_premiere: null
+-
+    id: '53'
+    title: 'ТАИНСТВЕННЫЙ ГИППОПОТАМ'
+    price: '30 грн (детский), 60 грн'
+    link: 'http://puppet.kharkov.ua/spektakli/GIPPOPOTAM.html'
+    key: tainstvennyy-gippopotam
+    theatre_id: '22'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: 'http://puppet.kharkov.ua/../perform/Puppet-00000000302.jpg'
+    is_premiere: null
+-
+    id: '54'
+    title: ГУСИ-ЛЕБЕДИ
+    price: '30 грн (детский), 60 грн'
+    link: 'http://puppet.kharkov.ua/spektakli/GUSI-LEBEDI.html'
+    key: gusi-lebedi
+    theatre_id: '22'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: 'http://puppet.kharkov.ua/../perform/Puppet-00000000156.jpg'
+    is_premiere: null
+-
+    id: '55'
+    title: 'МАЛЫШ И КАРЛСОН'
+    price: '30 грн (детский), 60 грн'
+    link: 'http://puppet.kharkov.ua/spektakli/KARLSON.html'
+    key: malysh-i-karlson
+    theatre_id: '22'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: 'http://puppet.kharkov.ua/../perform/Puppet-00000000164.jpg'
+    is_premiere: null
+-
+    id: '56'
+    title: 'КОШКИН ДОМ'
+    price: '30 грн (детский), 60 грн'
+    link: 'http://puppet.kharkov.ua/spektakli/KOShKIN-DOM.html'
+    key: koshkin-dom
+    theatre_id: '22'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: 'http://puppet.kharkov.ua/../perform/Puppet-00000000260.jpg'
+    is_premiere: null
+-
+    id: '57'
+    title: ЖИЛИ-БЫЛИ
+    price: '30 грн (детский), 60 грн'
+    link: 'http://puppet.kharkov.ua/spektakli/ZhILI-BYLI.html'
+    key: zhili-byli
+    theatre_id: '22'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: 'http://puppet.kharkov.ua/../perform/Puppet-00000000250.jpg'
+    is_premiere: null
+-
+    id: '58'
+    title: 'МОЯ ПРЕКРАСНАЯ ЛЕДИ'
+    price: '30 грн (детский), 60 грн'
+    link: 'http://puppet.kharkov.ua/spektakli/LEDI.html'
+    key: moya-prekrasnaya-ledi
+    theatre_id: '22'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: 'http://puppet.kharkov.ua/../perform/Puppet-00000000016.jpg'
+    is_premiere: null
+-
+    id: '59'
+    title: 'ЕЩЕ РАЗ О КРАСНОЙ ШАПОЧКЕ'
+    price: '30 грн (детский), 60 грн'
+    link: 'http://puppet.kharkov.ua/spektakli/KRASNaja-ShAPOChKa.html'
+    key: esche-raz-o-krasnoy-shapochke
+    theatre_id: '22'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: 'http://puppet.kharkov.ua/../perform/Puppet-00000000083.jpg'
+    is_premiere: null
+-
+    id: '60'
+    title: 'ЧЕРТОВА МЕЛЬНИЦА'
+    price: '30 грн (детский), 60 грн'
+    link: 'http://puppet.kharkov.ua/spektakli/MELNICA.html'
+    key: chertova-melnica
+    theatre_id: '22'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: 'http://puppet.kharkov.ua/../perform/Puppet-00000000003.jpg'
+    is_premiere: null
+-
+    id: '61'
+    title: 'ПРИКЛЮЧЕНИЯ НЕЗНАЙКИ'
+    price: '30 грн (детский), 60 грн'
+    link: 'http://puppet.kharkov.ua/spektakli/NEZNAJKA.html'
+    key: priklyucheniya-neznayki
+    theatre_id: '22'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: 'http://puppet.kharkov.ua/../perform/Puppet-00000000264.jpg'
+    is_premiere: null
+-
+    id: '62'
+    title: КАЗАНОВА
+    price: '30 грн (детский), 60 грн'
+    link: 'http://puppet.kharkov.ua/spektakli/kazanova.html'
+    key: kazanova
+    theatre_id: '22'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: 'http://puppet.kharkov.ua/../perform/Puppet-00000000277.jpg'
+    is_premiere: null
+-
+    id: '63'
+    title: 'ТАЙНА КОРОЛЕВСКОГО САДА'
+    price: '30 грн (детский), 60 грн'
+    link: 'http://puppet.kharkov.ua/spektakli/KOROLEVSKij-SAD.html'
+    key: tayna-korolevskogo-sada
+    theatre_id: '22'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: 'http://puppet.kharkov.ua/../perform/Puppet-00000000296.jpg'
+    is_premiere: null
+-
+    id: '64'
+    title: 'СКОТНЫЙ ДВОР'
+    price: '30 грн (детский), 60 грн'
+    link: 'http://puppet.kharkov.ua/spektakli/SKOTNYJ-DVOR.html'
+    key: skotnyy-dvor
+    theatre_id: '22'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: 'http://puppet.kharkov.ua/../perform/Puppet-00000000018.jpg'
+    is_premiere: null
+-
+    id: '65'
+    title: 'МАСТЕР И МАРГАРИТА'
+    price: '30 грн (детский), 60 грн'
+    link: 'http://puppet.kharkov.ua/spektakli/Master.html'
+    key: master-i-margarita
+    theatre_id: '22'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: 'http://puppet.kharkov.ua/../perform/Puppet-00000000072.jpg'
+    is_premiere: null
+-
+    id: '66'
+    title: 'ЗОЛОТОЙ КЛЮЧИК ИЛИ ПРИКЛЮЧЕНИЯ БУРАТИНО'
+    price: '30 грн (детский), 60 грн'
+    link: 'http://puppet.kharkov.ua/spektakli/BURATINO.html'
+    key: zolotoy-klyuchik-ili-priklyucheniya-buratino
+    theatre_id: '22'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: 'http://puppet.kharkov.ua/../perform/Puppet-00000000012.jpg'
+    is_premiere: null
+-
+    id: '67'
+    title: 'МАЙСЬКА НІЧ'
+    price: '30 грн (детский), 60 грн'
+    link: 'http://puppet.kharkov.ua/spektakli/noch.html'
+    key: mayska-nich
+    theatre_id: '22'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: 'http://puppet.kharkov.ua/../perform/Puppet-00000000045.jpg'
+    is_premiere: null
+-
+    id: '68'
+    title: ДЮЙМОВОЧКА
+    price: '30 грн (детский), 60 грн'
+    link: 'http://puppet.kharkov.ua/spektakli/DJuJMOVOChKA.html'
+    key: dyuymovochka
+    theatre_id: '22'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: 'http://puppet.kharkov.ua/../perform/Puppet-00000000014.jpg'
+    is_premiere: null
+-
+    id: '69'
+    title: 'ПРОСТЫЕ ИСТОРИИ АНТОНА ЧЕХОВА'
+    price: '30 грн (детский), 60 грн'
+    link: 'http://puppet.kharkov.ua/spektakli/PROSTYE-ISTORII.html'
+    key: prostye-istorii-antona-chehova
+    theatre_id: '22'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: 'http://puppet.kharkov.ua/../perform/Puppet-00000000024.jpg'
+    is_premiere: null
+-
+    id: '70'
+    title: 'БЕЛОСНЕЖКА И СЕМЬ ГНОМОВ'
+    price: '30 грн (детский), 60 грн'
+    link: 'http://puppet.kharkov.ua/spektakli/BELOSNEZhKA.html'
+    key: belosnezhka-i-sem-gnomov
+    theatre_id: '22'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: 'http://puppet.kharkov.ua/../perform/Puppet-00000000125.jpg'
+    is_premiere: null
+-
+    id: '71'
+    title: РЕВИЗОР
+    price: '30 грн (детский), 60 грн'
+    link: 'http://puppet.kharkov.ua/spektakli/REVIZOR.html'
+    key: revizor
+    theatre_id: '22'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: 'http://puppet.kharkov.ua/../perform/Puppet-00000000057.jpg'
+    is_premiere: null
+-
+    id: '72'
+    title: ЖЕНИТЬБА
+    price: '30 грн (детский), 60 грн'
+    link: 'http://puppet.kharkov.ua/spektakli/genitba.html'
+    key: zhenitba
+    theatre_id: '22'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '73'
+    title: КОСТЕР
+    price: '60, 55, 50  грн'
+    link: 'http://madrigal.org.ua/postanovki/post-molod/koster'
+    key: koster
+    theatre_id: '23'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: 'http://madrigal.org.ua/Multimedia/Images/DSC02461_170x170.JPG'
+    is_premiere: null
+-
+    id: '74'
+    title: 'ПРИКЛЮЧЕНИЕ ЭЛЛИ В ИЗУМРУДНОМ ГОРОДЕ'
+    price: '55 грн'
+    link: 'http://madrigal.org.ua/postanovki/post-detsk/priklyucheniya_elli_v_izumrudnom_gorode'
+    key: priklyuchenie-elli-v-izumrudnom-gorode
+    theatre_id: '23'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: 'http://madrigal.org.ua/Multimedia/Images/Prikluchenija-Elli_170x170.jpg'
+    is_premiere: null
+-
+    id: '75'
+    title: 'КОРОЛЬ И ШУТ'
+    price: '70, 65, 60, 55 грн'
+    link: 'http://madrigal.org.ua/postanovki/post-molod/korol_i_shut'
+    key: korol-i-shut
+    theatre_id: '23'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: 'http://madrigal.org.ua/Multimedia/Images/Korol-i-shut_170x170.jpg'
+    is_premiere: null
+-
+    id: '76'
+    title: БУ-РА-ТИ-НО
+    price: '50, 45, 40 грн'
+    link: 'http://madrigal.org.ua/postanovki/post-detsk/buratino'
+    key: bu-ra-ti-no
+    theatre_id: '23'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: 'http://madrigal.org.ua/Multimedia/Images/IMG_2253-800x600-1d70--1-_170x170.jpg'
+    is_premiere: null
+-
+    id: '77'
+    title: 'ДОН ЖУАН'
+    price: '70, 65, 60, 55 грн'
+    link: 'http://madrigal.org.ua/postanovki/post-molod/don_zhuan'
+    key: don-zhuan
+    theatre_id: '23'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: 'http://madrigal.org.ua/Multimedia/Images/spektakl-don-zhuan_170x170.jpg'
+    is_premiere: null
+-
+    id: '78'
+    title: 'БАЛ ПРИНЦЕСС'
+    price: '50, 45, 40 грн'
+    link: 'http://madrigal.org.ua/postanovki/post-detsk/bal_princess'
+    key: bal-princess
+    theatre_id: '23'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: 'http://madrigal.org.ua/Multimedia/Images/ball-princes_170x170.jpg'
+    is_premiere: null
+-
+    id: '79'
+    title: 'ОТДАЙТЕСЬ ГИПНОТИЗЕРУ'
+    price: '60 грн'
+    link: 'http://madrigal.org.ua/postanovki/post-molod/otdajtes_gipnotezyoru'
+    key: otdaytes-gipnotizeru
+    theatre_id: '23'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: 'http://madrigal.org.ua/Multimedia/Images/Spektakl-gipnotezer_170x170.jpg'
+    is_premiere: null
+-
+    id: '80'
+    title: 'ЧУМА, ВЕРОНА И ЛЮБОВЬ'
+    price: '60, 55, 50  грн'
+    link: 'http://madrigal.org.ua/postanovki/post-molod/chuma%2c_verona_i_lyubov'
+    key: chuma-verona-i-lyubov
+    theatre_id: '23'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: 'http://madrigal.org.ua/Multimedia/Images/Chuma-verona-lubov_170x170.jpg'
+    is_premiere: null
+-
+    id: '81'
+    title: 'КАЙ И ГЕРДА'
+    price: '50, 45, 40 грн'
+    link: 'http://madrigal.org.ua/postanovki/post-detsk/kaj_i_gerda'
+    key: kay-i-gerda
+    theatre_id: '23'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: 'http://madrigal.org.ua/Multimedia/Images/Snezhnaya-koroleva_170x170.jpg'
+    is_premiere: null
+-
+    id: '82'
+    title: 'Кошкин дом'
+    price: '30 грн'
+    link: 'http://www.operetta.kharkiv.ua/repertuar/p-valdgardt-s-marshak-koshkin-dom-muzykalnaya-skazka-v-2-deystviyah'
+    key: p-valdgardt-s-marshak-koshkin-dom-muzykalnaya-skazka-v-2-deystviyah
+    theatre_id: '24'
+    scene_id: '1'
+    director: null
+    author: 'П. Вальдгардт, С. Маршак'
+    genre: 'музыкальная сказка в 2 действиях.'
+    duration: null
+    description: null
+    image: null
+    is_premiere: '0'
+-
+    id: '83'
+    title: 'Принцесса цирка'
+    price: '20–60 грн'
+    link: 'http://www.operetta.kharkiv.ua/repertuar/i-kalman-i-berlyand-i-petrova-princessa-cirka-operetta-v-3-deystviyah'
+    key: i-kalman-i-berlyand-i-petrova-princessa-cirka-operetta-v-3-deystviyah
+    theatre_id: '24'
+    scene_id: '1'
+    director: null
+    author: 'И. Кальман, И. Берлянд, И. Петрова'
+    genre: 'оперетта в 3 действиях'
+    duration: null
+    description: null
+    image: null
+    is_premiere: '0'
+-
+    id: '84'
+    title: 'Вождь Краснокожих'
+    price: '30 грн'
+    link: 'http://www.operetta.kharkiv.ua/repertuar/premera-i-gaydenko-vozhd-krasnokozhih-muzykalnyy-spektakl-dlya-detey'
+    key: premera-i-gaydenko-vozhd-krasnokozhih-muzykalnyy-spektakl-dlya-detey
+    theatre_id: '24'
+    scene_id: '1'
+    director: 'Алексей Серегин, Тарас Шигимага'
+    author: 'И. Гайденко'
+    genre: 'Музыкальный спектакль для детей'
+    duration: null
+    description: "26 декабря в 12.00 2014 года на сцене Харьковского академического театра музыкальной комедии состоится премьера музыкального спектакля для детей «Вождь краснокожих» по мотивам одноименного рассказа О. Генри.\n\nСпектакль «Вождь краснокожих» создан специально для Харьковского академического театра музыкальной комедии.\n\nДействие происходит в одном из городов в американском штате Алабама. Двое мошенников, похищают ребенка с целью выкупа. Но сорванец и выдумщик Джонни устраивает своим грабителям такую «сладкую» и «весёлую» жизнь, что они не знают, как от него избавиться. А отец не только отказывается платить выкуп, но предлагает «двум злодеям» самим заплатить ему за то, что он возьмет сына обратно."
+    image: null
+    is_premiere: '1'
+-
+    id: '85'
+    title: 'М. Мокиенко. С Махотин "Осторожно! Волшебный лес" музыкальная сказка для детей и взрослых'
+    price: '30 грн'
+    link: 'http://www.operetta.kharkiv.ua/repertuar/m-mokienko-s-mahotin-ostorozhno-volshebnyy-les-muzykalnaya-skazka-dlya-detey-i-vzroslyh'
+    key: m-mokienko-s-mahotin-ostorozhno-volshebnyy-les-muzykalnaya-skazka-dlya-detey-i-vzroslyh
+    theatre_id: '24'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: '0'
+-
+    id: '86'
+    title: 'И. Кальман, Л. ШТЕЙН, Б. ЙЕНБАХ, В. МИХАЙЛОВ, Д. ТОЛМАЧЁВ «СИЛЬВА», оперетта в 2 действиях'
+    price: '20–60 грн'
+    link: 'http://www.operetta.kharkiv.ua/repertuar/i-kalman-l-shteyn-b-yenbah-v-mihaylov-d-tolmachyov-silva-operetta-v-2-deystviyah'
+    key: i-kalman-l-shteyn-b-yenbah-v-mihaylov-d-tolmachev-silva-operetta-v-2-deystviyah
+    theatre_id: '24'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: '0'
+-
+    id: '87'
+    title: 'И.Гайденко «КРАСАВИЦА И ЧУДОВИЩЕ» музыкальная сказка в 2 действиях'
+    price: '30 грн'
+    link: 'http://www.operetta.kharkiv.ua/repertuar/igaydenko-krasavica-i-chudovishche-muzykalnaya-skazka-v-2-deystviyah'
+    key: i-gaydenko-krasavica-i-chudovische-muzykalnaya-skazka-v-2-deystviyah
+    theatre_id: '24'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: '0'
+-
+    id: '88'
+    title: 'И.Гайденко, К. Людвиг, И. Факторовский "Авантюристы", музыкальная комедия в двух действиях'
+    price: '20–60 грн'
+    link: 'http://www.operetta.kharkiv.ua/repertuar/igaydenko-k-lyudvig-i-faktorovskiy-avantyuristy-muzykalnaya-komediya-v-dvuh-deystviyah'
+    key: i-gaydenko-k-lyudvig-i-faktorovskiy-avantyuristy-muzykalnaya-komediya-v-dvuh-deystviyah
+    theatre_id: '24'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: '0'
+-
+    id: '89'
+    title: 'Премьера оперетта в 2 действиях Ф. Зуппе "Прекрасная Галатея"'
+    price: '20–60 грн'
+    link: 'http://www.operetta.kharkiv.ua/repertuar/premera-operetta-v-2-deystviyah-f-zuppe-prekrasnaya-galateya'
+    key: premera-operetta-v-2-deystviyah-f-zuppe-prekrasnaya-galateya
+    theatre_id: '24'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: '1'
+-
+    id: '90'
+    title: 'В. Колло, Д. Джусто, А Геркен, «Любовь в стиле «Джаз» («Любовь по-американски»)'
+    price: '20–60 грн'
+    link: 'http://www.operetta.kharkiv.ua/repertuar/v-kollo-d-dzhusto-gerken-lyubov-v-stile-dzhaz-lyubov-po-amerikanski'
+    key: v-kollo-d-dzhusto-a-gerken-lyubov-v-stile-dzhaz-lyubov-po-amerikanski
+    theatre_id: '24'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: '0'
+-
+    id: '91'
+    title: 'А. Рыбников, А. Вознесенский «ЮНОНА» И «АВОСЬ» рок-опера в 2 действиях'
+    price: '20–60 грн'
+    link: 'http://www.operetta.kharkiv.ua/repertuar/rybnikov-voznesenskiy-yunona-i-avos-rok-opera-v-2-deystviyah'
+    key: a-rybnikov-a-voznesenskiy-yunona-i-avos-rok-opera-v-2-deystviyah
+    theatre_id: '24'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: '0'
+-
+    id: '92'
+    title: 'НОВОГОДНИЙ КОНЦЕРТ в 2 отделениях'
+    price: '20–60 грн'
+    link: 'http://www.operetta.kharkiv.ua/repertuar/novogodniy-koncert-v-2-otdeleniyah'
+    key: novogodniy-koncert-v-2-otdeleniyah
+    theatre_id: '24'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: '0'
+-
+    id: '93'
+    title: 'Ф. Легар, «ВЕСЕЛАЯ ВДОВА» оперетта в 2 действиях, по мотивам комедии А. Мельяка «Атташе посольства».'
+    price: '20–60 грн'
+    link: 'http://www.operetta.kharkiv.ua/repertuar/f-legar-veselaya-vdova-operetta-v-2-deystviyah-po-motivam-komedii-melyaka-attashe-posolstva'
+    key: f-legar-veselaya-vdova-operetta-v-2-deystviyah-po-motivam-komedii-a-melyaka-attashe-posolstva
+    theatre_id: '24'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: '0'
+-
+    id: '94'
+    title: 'И. Кальман, В. Тихомиров, С. Фогельсон «БАЯДЕРА» оперетта в 2 действиях.'
+    price: '20–60 грн'
+    link: 'http://www.operetta.kharkiv.ua/repertuar/i-kalman-v-tihomirov-s-fogelson-bayadera-operetta-v-2-deystviyah'
+    key: i-kalman-v-tihomirov-s-fogelson-bayadera-operetta-v-2-deystviyah
+    theatre_id: '24'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: '0'
+-
+    id: '95'
+    title: 'Е. Птичкин БАБИЙ БУНТ музыкальная комедия в 2 действиях, по мотивам «Донских рассказов» М. Шолохова.'
+    price: '20–60 грн'
+    link: 'http://www.operetta.kharkiv.ua/repertuar/e-ptichkin-babiy-bunt-muzykalnaya-komediya-v-2-deystviyah-po-motivam-donskih-rasskazov-m-sholohova'
+    key: e-ptichkin-babiy-bunt-muzykalnaya-komediya-v-2-deystviyah-po-motivam-donskih-rasskazov-m-sholohova
+    theatre_id: '24'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: '0'
+-
+    id: '96'
+    title: 'БРЕМЕНСКИЕ МУЗЫКАНТЫ'
+    price: null
+    link: 'http://www.hatob.com.ua/index.php?option=com_jevents&task=icalrepeat.detail&evid=1389&Itemid=6&year=2015&month=01&day=06&uid=5e069b0a83044bb878ed083461f4cb25'
+    key: bremenskie-muzykanty
+    theatre_id: '26'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '97'
+    title: 'НОВОГОДНИЕ ПРИКЛЮЧЕНИЯ БУРАТИНО'
+    price: null
+    link: 'http://www.hatob.com.ua/index.php?option=com_jevents&task=icalrepeat.detail&evid=1390&Itemid=6&year=2015&month=01&day=08&uid=70740e0ce0cecf0aadbe704fbc8b1d3e'
+    key: novogodnie-priklyucheniya-buratino
+    theatre_id: '26'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '98'
+    title: 'Красная Шапочка'
+    price: null
+    link: 'http://www.hatob.com.ua/index.php?option=com_jevents&task=icalrepeat.detail&evid=1391&Itemid=6&year=2015&month=01&day=09&uid=ba2805e4a78f4228df2224db73e30ea2'
+    key: krasnaya-shapochka
+    theatre_id: '26'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '99'
+    title: Хоттабыч!
+    price: null
+    link: 'http://www.hatob.com.ua/index.php?option=com_jevents&task=icalrepeat.detail&evid=1392&Itemid=6&year=2015&month=01&day=09&uid=8a2cbdebb5cf56073a4211ec79a5dffb'
+    key: hottabych
+    theatre_id: '26'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '100'
+    title: 'РОЖДЕСТВЕНСКИЕ ВСТРЕЧИ'
+    price: null
+    link: 'http://www.hatob.com.ua/index.php?option=com_jevents&task=icalrepeat.detail&evid=1394&Itemid=6&year=2015&month=01&day=10&uid=20dc3a6a800012f5b23ab08c9f599d6e'
+    key: rozhdestvenskie-vstrechi
+    theatre_id: '26'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '101'
+    title: 'Свадьба Фигаро'
+    price: null
+    link: 'http://www.hatob.com.ua/index.php?option=com_jevents&task=icalrepeat.detail&evid=1397&Itemid=6&year=2015&month=01&day=14&uid=0e8effcda7adfd26fbd568295967fbf4'
+    key: svadba-figaro
+    theatre_id: '26'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '102'
+    title: 'Евгений Онегин'
+    price: null
+    link: 'http://www.hatob.com.ua/index.php?option=com_jevents&task=icalrepeat.detail&evid=1398&Itemid=6&year=2015&month=01&day=15&uid=f2ebccc8bb2cf26aadda2fb227f85506'
+    key: evgeniy-onegin
+    theatre_id: '26'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '103'
+    title: ЖИЗЕЛЬ
+    price: null
+    link: 'http://www.hatob.com.ua/index.php?option=com_jevents&task=icalrepeat.detail&evid=1399&Itemid=6&year=2015&month=01&day=16&uid=7e03ebc4e542cd8da73face820749be6'
+    key: zhizel
+    theatre_id: '26'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '104'
+    title: ЧЕРЕВИЧКИ
+    price: null
+    link: 'http://www.hatob.com.ua/index.php?option=com_jevents&task=icalrepeat.detail&evid=1400&Itemid=6&year=2015&month=01&day=17&uid=f97568c5010d19aa91848305cd8a1677'
+    key: cherevichki
+    theatre_id: '26'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '105'
+    title: 'Дон КИХОТ'
+    price: null
+    link: 'http://www.hatob.com.ua/index.php?option=com_jevents&task=icalrepeat.detail&evid=1401&Itemid=6&year=2015&month=01&day=18&uid=4aecc2e312d96ab62c5701fc5bd5514c'
+    key: don-kihot
+    theatre_id: '26'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '106'
+    title: 'ЛЕБЕДИНОЕ ОЗЕРО'
+    price: null
+    link: 'http://www.hatob.com.ua/index.php?option=com_jevents&task=icalrepeat.detail&evid=1402&Itemid=6&year=2015&month=01&day=21&uid=bfa52329761e92bb52fd013319bdcd17'
+    key: lebedinoe-ozero
+    theatre_id: '26'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '107'
+    title: 'ТАРАС БУЛЬБА'
+    price: null
+    link: 'http://www.hatob.com.ua/index.php?option=com_jevents&task=icalrepeat.detail&evid=1403&Itemid=6&year=2015&month=01&day=22&uid=e59702b3803d90c7bba5063e3ef12bc7'
+    key: taras-bulba
+    theatre_id: '26'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '108'
+    title: 'КОЛЕСО ФОРТУНЫ'
+    price: null
+    link: 'http://www.hatob.com.ua/index.php?option=com_jevents&task=icalrepeat.detail&evid=1378&Itemid=6&year=2015&month=01&day=23&uid=fdc486186a8e4fccb77cb898303d5cd3'
+    key: koleso-fortuny
+    theatre_id: '26'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '109'
+    title: 'ТАТЬЯНИН ДЕНЬ С ДИРИЖЕРОМ В.ПЛОСКИНОЙ'
+    price: null
+    link: 'http://www.hatob.com.ua/index.php?option=com_jevents&task=icalrepeat.detail&evid=1430&Itemid=6&year=2015&month=01&day=24&uid=64be9091794244f12635453ff85d3b1a'
+    key: tatyanin-den-s-dirizherom-v-ploskinoy
+    theatre_id: '26'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '110'
+    title: 'ЗОЛУШКА (СИНДИ)'
+    price: null
+    link: 'http://www.hatob.com.ua/index.php?option=com_jevents&task=icalrepeat.detail&evid=1404&Itemid=6&year=2015&month=01&day=25&uid=01c880ae438001a24f95ce8ccfbbde62'
+    key: zolushka-sindi
+    theatre_id: '26'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '111'
+    title: ИОЛАНТА
+    price: null
+    link: 'http://www.hatob.com.ua/index.php?option=com_jevents&task=icalrepeat.detail&evid=1407&Itemid=6&year=2015&month=01&day=29&uid=8ee9af4b8d9ebb893c74c9503621561e'
+    key: iolanta
+    theatre_id: '26'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '112'
+    title: 'САМСОН и ДАЛИЛА'
+    price: null
+    link: 'http://www.hatob.com.ua/index.php?option=com_jevents&task=icalrepeat.detail&evid=1408&Itemid=6&year=2015&month=01&day=31&uid=d7ee6b12b4f5d9d721f24e99d0ee9cd7'
+    key: samson-i-dalila
+    theatre_id: '26'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: null
+-
+    id: '113'
+    title: 'Конкурс рисунков на тему: «Мой любимый спектакль»'
+    price: null
+    link: 'http://tyz.kharkov.ua/?p=551'
+    key: konkurs-risunkov-na-temu-moy-lyubimyy-spektakl
+    theatre_id: '27'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: '0'
+-
+    id: '114'
+    title: 'Как Кощей на Василисе женился'
+    price: null
+    link: 'http://tyz.kharkov.ua/?p=1740'
+    key: kak-koschey-na-vasilise-zhenilsya
+    theatre_id: '27'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: '0'
+-
+    id: '115'
+    title: 'ДВЕНАДЦАТЬ МЕСЯЦЕВ'
+    price: null
+    link: 'http://tyz.kharkov.ua/?p=143'
+    key: dvenadcat-mesyacev
+    theatre_id: '27'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: '0'
+-
+    id: '116'
+    title: 'ВОЛШЕБНИК ИЗУМРУДНОГО ГОРОДА'
+    price: null
+    link: 'http://tyz.kharkov.ua/?p=150'
+    key: volshebnik-izumrudnogo-goroda
+    theatre_id: '27'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: '0'
+-
+    id: '117'
+    title: 'НОЧЬ ПЕРЕД РОЖДЕСТВОМ'
+    price: null
+    link: 'http://tyz.kharkov.ua/?p=169'
+    key: noch-pered-rozhdestvom
+    theatre_id: '27'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: '0'
+-
+    id: '118'
+    title: 'ТАЙНА СНЕЖНОЙ КОРОЛЕВЫ'
+    price: null
+    link: 'http://tyz.kharkov.ua/?p=131'
+    key: tayna-snezhnoy-korolevy
+    theatre_id: '27'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: '0'
+-
+    id: '119'
+    title: 'СИНДБАД-МОРЕХОД И МЕДНЫЙ ГОРОД'
+    price: null
+    link: 'http://tyz.kharkov.ua/?p=5995'
+    key: sindbad-morehod-i-mednyy-gorod
+    theatre_id: '27'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: '1'
+-
+    id: '120'
+    title: 'ЛЕГЕНДА О СПЯЩЕЙ КРАСАВИЦЕ'
+    price: null
+    link: 'http://tyz.kharkov.ua/?p=4445'
+    key: legenda-o-spyaschey-krasavice
+    theatre_id: '27'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: '1'
+-
+    id: '121'
+    title: 'ЗОЛОТОЙ ЦЫПЛЕНОК'
+    price: null
+    link: 'http://tyz.kharkov.ua/?p=121'
+    key: zolotoy-cyplenok
+    theatre_id: '27'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: '0'
+-
+    id: '122'
+    title: 'АЛЕНЬКИЙ ЦВЕТОЧЕК'
+    price: null
+    link: 'http://tyz.kharkov.ua/?p=141'
+    key: alenkiy-cvetochek
+    theatre_id: '27'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: '0'
+-
+    id: '123'
+    title: 'ВЕСЁЛЫЕ ПРИКЛЮЧЕНИЯ НЕЗНАЙКИ'
+    price: null
+    link: 'http://tyz.kharkov.ua/?p=3112'
+    key: veselye-priklyucheniya-neznayki
+    theatre_id: '27'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: '0'
+-
+    id: '124'
+    title: МУХА-ЦОКОТУХА
+    price: null
+    link: 'http://tyz.kharkov.ua/?p=116'
+    key: muha-cokotuha
+    theatre_id: '27'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: '0'
+-
+    id: '125'
+    title: '... И О РАБОТНИКЕ ЕГО БАЛДЕ'
+    price: null
+    link: 'http://tyz.kharkov.ua/?p=690'
+    key: i-o-rabotnike-ego-balde
+    theatre_id: '27'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: '0'
+-
+    id: '126'
+    title: 'НАЗАР СТОДОЛЯ'
+    price: null
+    link: 'http://tyz.kharkov.ua/?p=4041'
+    key: nazar-stodolya
+    theatre_id: '27'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: '0'
+-
+    id: '127'
+    title: РУСАЛОЧКА
+    price: null
+    link: 'http://tyz.kharkov.ua/?p=80'
+    key: rusalochka
+    theatre_id: '27'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: '0'
+-
+    id: '128'
+    title: 'ДЕНЬ РОЖДЕНИЯ КОТА ЛЕОПОЛЬДА'
+    price: null
+    link: 'http://tyz.kharkov.ua/?p=113'
+    key: den-rozhdeniya-kota-leopolda
+    theatre_id: '27'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: '0'
+-
+    id: '129'
+    title: 'ЛІСОВА ПІСНЯ'
+    price: null
+    link: 'http://tyz.kharkov.ua/?p=179'
+    key: lisova-pisnya
+    theatre_id: '27'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: '0'
+-
+    id: '130'
+    title: '"О чём рассказали волшебники" (Невероятное путешествие ДОКТОРА АЙБОЛИТА)'
+    price: null
+    link: 'http://tyz.kharkov.ua/?p=111'
+    key: o-chem-rasskazali-volshebniki-neveroyatnoe-puteshestvie-doktora-aybolita
+    theatre_id: '27'
+    scene_id: '1'
+    director: null
+    author: null
+    genre: null
+    duration: null
+    description: null
+    image: null
+    is_premiere: '0'

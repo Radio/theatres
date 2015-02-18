@@ -1,0 +1,102 @@
+
+.month-container {
+    padding-top: 20px;
+}
+.poster {
+    position: relative;
+
+    .month {
+        .overlay {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(40, 164, 201, .1);
+        }
+        .loading-text {
+            margin-left: 10px;
+            padding-left: 32px;
+            background: url(/assets/img/cat.png) no-repeat scroll left center transparent;
+        }
+    }
+    .day {
+        padding-top: 1em;
+        padding-bottom: 1em;
+        border-top: 1px solid #eee;
+
+        &.previous,
+        &.next {
+            color: #ccc;
+        }
+
+        .day-number {
+            margin-bottom: .6em;
+
+            .day-number-number {
+                font-size: 1.8em;
+                margin-right: 5px;
+            }
+            .day-of-week-name {
+                font-size: 0.9em;
+                color: #888;
+                position: relative;
+                /*top: -1em;*/
+            }
+        }
+        &.day-0, &.day-6 {
+            .day-number {
+                border-left: 4px solid #dd7d70;
+                padding-left: 12px;
+                position: relative;
+            }
+        }
+        &.today {
+            .day-number {
+                border-left: 4px solid #28a4c9;
+                padding-left: 12px;
+                position: relative;
+            }
+        }
+    }
+
+    .show-info {
+        clear: both;
+        overflow: hidden;
+        margin-bottom: 10px;
+    }
+    .shows :last-child .show-info {
+        margin-bottom: 0;
+    }
+    .show-time {
+        /*max-width: 3em;*/
+        padding-top: .85em;
+    }
+    .show-title h4 {
+        margin: .15em 0 5px;
+        font-size: 1.571em;
+        font-weight: 400;
+        line-height: 1.5em;
+    }
+    .show-scene {
+        margin-top: 0.7em;
+        font-size: 0.929em;
+        color: #666;
+    }
+    @media (min-width: 1200px) {
+        .show-scene {
+            font-size: 1em;
+            line-height: 1.7;
+        }
+    }
+    .show-theatre-title {
+        color: inherit;
+        border-bottom-color: rgba(96, 96, 96, 0.3);
+    }
+    .show-separator {
+        margin: 0 .2em;
+    }
+}
+.filters-col {
+    position: fixed;
+}

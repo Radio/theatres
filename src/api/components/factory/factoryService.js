@@ -3,11 +3,11 @@ angular.module('api')
 
         var collectionServiceProducer = function(resourcePath, resourceDefaults) {
             var resource = $resource(API_URL + '/' + resourcePath, resourceDefaults || {});
-            var useCache = true;
+            var useCache = false;
             var cacheKeys = [];
             var cacheKeyPrefix = resourcePath.replace('/\//g', '.') + '.';
 
-            function getCacheKey(query) {
+            function getCacheKey    (query) {
                 return cacheKeyPrefix + JSON.stringify(query || {});
             }
 

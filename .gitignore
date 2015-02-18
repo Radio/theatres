@@ -1,5 +1,5 @@
 
-/vendor
+/backend/vendor
 /bower_components
 /.idea/workspace.xml
 /.idea/.name
@@ -7,6 +7,8 @@
 /.idea/dataSources.xml
 /tmp
 /logs
-/app/config.php
+/backend/app/config.php
 node_modules
 build
+deploy
+secret.json

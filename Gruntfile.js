@@ -13,6 +13,12 @@ module.exports = function(grunt) {
         clean: {
             build: {
                 src: ['<%= buildDir %>']
+            },
+            package: {
+                src: ['<%= packageDir %>']
+            },
+            symlink: {
+                src: ['<%= buildDir %>/backend']
             }
         },
 
@@ -35,6 +41,14 @@ module.exports = function(grunt) {
                 src: ['<%= front.appFiles.tpl %>'],
                 dest: '<%= front.tpl.jsFile %>',
                 module: '<%= front.tpl.moduleName %>'
+            },
+            helper: {
+                options: {
+                    base: '.'
+                },
+                src: ['<%= helper.appFiles.tpl %>'],
+                dest: '<%= helper.tpl.jsFile %>',
+                module: '<%= helper.tpl.moduleName %>'
             }
         },
 
@@ -159,6 +173,59 @@ module.exports = function(grunt) {
             }
         },
 
+        symlink: {
+            options: {
+                overwrite: true
+            },
+            backend: {
+                src: '<%= buildDir %>/../backend',
+                dest: '<%= buildDir %>/backend'
+            }
+        },
+
+        compress: {
+            shared: {
+                options: {
+                    archive: '<%= packageDir %>/package.tar.gz',
+                    mode: 'tgz'
+                },
+                files: [
+                    {
+                        expand: true,
+                        cwd: '<%= buildDir %>',
+                        dot: true,
+                        src: ['**'],
+                        dest: ''
+                    },
+                    {
+                        src: ['backend/**', '!backend/app/config.php'],
+                        dest: ''
+                    },
+                    {
+                        src: ['resources/**'],
+                        dest: ''
+                    }
+                ]
+            }
+        },
+
+        secret: grunt.file.readJSON('secret.json'),
+        environments: {
+            thehost: {
+                options: {
+                    host: '<%= secret.thehost.host %>',
+                    username: '<%= secret.thehost.username %>',
+                    password: '<%= secret.thehost.password %>',
+                    port: '<%= secret.thehost.port %>',
+                    deploy_path: '<%= secret.thehost.path %>',
+                    local_path: '<%= packageDir %>',
+                    current_symlink: 'current',
+                    after_deploy: 'cd <%= secret.thehost.path %> && tar -xvf current/package.tar.gz && rm current',
+                    debug: true
+                }
+            }
+        },
+
         watch: {
             options: {
                 livereload: true
@@ -185,7 +252,8 @@ module.exports = function(grunt) {
             tpls: {
                 files: [
                     '<%= front.appFiles.tpl %>',
-                    '<%= admin.appFiles.tpl %>'
+                    '<%= admin.appFiles.tpl %>',
+                    '<%= helper.appFiles.tpl %>'
                 ],
                 tasks: ['html2js']
             },
@@ -200,30 +268,22 @@ module.exports = function(grunt) {
             img: {
                 files: ['<%= webFiles.images %>'],
                 tasks: ['copy:img']
+            },
+            less: {
+                files: [
+                    "<%= webDir %>/**/*.less",
+                    "<%= srcDir %>/**/*.less"
+                ],
+                tasks: ['less']
             }
         }
-
-        // Todo: configure concat and less tasks.
-
-//        uglify: {
-//            options: {
-//                mangle: false,
-//                banner: '/*! <%= pkg.name %> <%= pkg.version %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
-//            },
-//            admin: {
-//                expand: true,
-//                cwd: 'web/src/admin',
-//                src: '**/**/*.js',
-//                dest: 'web/build/admin'
-//            }
-//        }
     };
 
     grunt.initConfig(grunt.util._.merge(taskConfig, gruntConfig));
 
 
     grunt.registerTask('build', [
-        'clean',
+        'clean:build',
         'html2js',
         'jshint',
         'copy:js',
@@ -232,7 +292,22 @@ module.exports = function(grunt) {
         // assets
         'less',
         'copy:img',
-        'copy:web'
+        'copy:web',
+        'symlink:backend'
+    ]);
+
+
+    grunt.registerTask('package', [
+        'build',
+        'clean:package',
+        'clean:symlink',
+        'compress',
+        'symlink:backend'
+    ]);
+
+    grunt.registerTask('deploy', [
+        'package',
+        'ssh_deploy:thehost'
     ]);
 
     // Default task(s).

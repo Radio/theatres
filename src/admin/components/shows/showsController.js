@@ -35,25 +35,25 @@ angular.module('admin')
         });
 
         $scope.setShowDefaults = function(show) {
-            var play = $scope.getPlayByKey(show.play);
+            var play = $scope.getPlayById(show.play_id);
             if (play) {
-                show.theatre = play.theatre;
-                show.scene = play.scene;
+                show.theatre_id = play.theatre_id;
+                show.scene_id = play.scene_id;
             }
         };
 
-        $scope.getTheatreByKey = function(key) {
+        $scope.getTheatreById = function(id) {
             for (var i = 0; i < $scope.theatres.length; i++) {
-                if ($scope.theatres[i].key == key) {
+                if ($scope.theatres[i].id == id) {
                     return $scope.theatres[i];
                 }
             }
             return null;
         };
 
-        $scope.getPlayByKey = function(key) {
+        $scope.getPlayById = function(id) {
             for (var i = 0; i < $scope.plays.length; i++) {
-                if ($scope.plays[i].key == key) {
+                if ($scope.plays[i].id == id) {
                     return $scope.plays[i];
                 }
             }
@@ -70,7 +70,7 @@ angular.module('admin')
         };
         $scope.addShow = function(show)
         {
-            if (show.play) {
+            if (show.play_id) {
                 Api.shows.post(show).then(function(response) {
                     var newId = response.id;
                     setLastUpdatedId(newId);
@@ -93,10 +93,10 @@ angular.module('admin')
                 order: $scope.filter.order
             };
             if ($scope.filter.theatre) {
-                query.theatre = $scope.filter.theatre.key;
+                query.theatre = $scope.filter.theatre.id;
             }
             if ($scope.filter.scene) {
-                query.scene = $scope.filter.scene.key;
+                query.scene = $scope.filter.scene.id;
             }
             $scope.loading = true;
 

@@ -2,64 +2,28 @@
     <h2>{{ getTitle() }}</h2>
     <h3 data-ng-show="getSubtitle()">{{ getSubtitle() }}</h3>
 </div>
-<div class="container">
-    <div class="row options-panel">
-        <div class="col-md-12">
-            <div class="theatres-list btn-group">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                        {{ filter.theatre ? filter.theatre.title : 'Все театры' }} <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu">
-                        <li data-ng-class="{true: 'current', false: ''}[filter.theatre == null]">
-                            <a href="#" data-ng-click="setTheatreFilter(null, $event)">Все</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li data-ng-repeat="theatre in theatres"
-                            data-ng-class="{true: 'current', false: ''}[filter.theatre.key == theatre.key]">
-                            <a href="#" data-ng-click="setTheatreFilter(theatre, $event)">{{ theatre.title }}</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="scenes-list btn-group">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                        {{ filter.scene ? filter.scene.title : 'Все сцены' }} <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu">
-                        <li data-ng-class="{true: 'current', false: ''}[filter.scene == null]">
-                            <a href="#" data-ng-click="setSceneFilter(null, $event)">Все</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li data-ng-repeat="scene in scenes"
-                            data-ng-class="{true: 'current', false: ''}[filter.scene.key == scene.key]">
-                            <a href="#" data-ng-click="setSceneFilter(scene, $event)">{{ scene.title }}</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="btn-group" data-ng-show="loading">
-                <div class="btn-group loading-text">загружаем...</div>
-            </div>
-        </div>
-    </div>
-    <div class="row month">
-        <div class="col-md-12">
-            <div class="day row day-{{ date.getDay() }}"
-                 data-ng-class="{true:'today', false:''}[isToday(date)]"
-                 data-ng-repeat="date in days">
-                <p class="day-number col-xs-2">
-                    <span class="day-number-number">{{ date | date : 'd' }}</span>
-                    <span class="day-of-week-name">
-                        <span class="hidden-xs">{{ date | date : 'EEEE' }}</span>
-                        <span class="hidden-sm hidden-md hidden-lg">{{ date | date : 'EEE' }}</span>
-                        <span data-ng-show="isToday(date)"> (сегодня)</span>
-                    </span>
-                </p>
-                <div class="shows col-xs-10">
-                    <div data-ng-repeat="show in getShowsOnDay(date)"
-                         data-ng-include="'src/front/components/month/show_brief.tpl.html'"></div>
+<div class="container-fluid month-container">
+    <div class="row">
+        <div class="col-lg-2"
+             data-ng-controller="MonthFiltersController"
+             data-ng-include="'src/front/components/month/filters.tpl.html'"></div>
+        <div class="col-lg-10 poster">
+            <div class="month">
+                <div class="day row day-{{ date.getDay() }} date-{{ date.getDate() }}"
+                     data-ng-class="{true:'today', false:''}[isToday(date)]"
+                     data-ng-repeat="date in days">
+                    <p class="day-number col-xs-2 col-xs-1-5">
+                        <span class="day-number-number">{{ date | date : 'd' }}</span>
+                        <span class="day-of-week-name">
+                            <span class="hidden-xs">{{ date | date : 'EEEE' }}</span>
+                            <span class="hidden-sm hidden-md hidden-lg">{{ date | date : 'EEE' }}</span>
+                            <span data-ng-show="isToday(date)"> (сегодня)</span>
+                        </span>
+                    </p>
+                    <div class="shows  col-xs-10 col-xs-10-5">
+                        <div data-ng-repeat="show in date.shows | showsFilter:filter"
+                             data-ng-include="'src/front/components/month/show-brief.tpl.html'"></div>
+                    </div>
                 </div>
             </div>
             <div data-ng-show="loading" class="overlay month-overlay"></div>

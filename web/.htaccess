@@ -3,7 +3,7 @@
 
     DirectoryIndex front.html
 
-    RewriteEngine On
+        RewriteEngine On
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^(api|system|fetch) app.php [L]
 

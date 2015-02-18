@@ -1,0 +1,17 @@
+<div class="row show-info show-brief {{ show.theatre }}" itemscope itemtype="http://schema.org/TheaterEvent">
+    <div class="show-time col-md-1">
+        <time datetime="{{ show.date | date : 'yyyy-MM-ddTHH:mmZ' }}"
+              itemprop="startDate"
+              content="{{ show.date | date : 'yyyy-MM-ddTHH:mmZ' }}">
+            {{ show.date | date : 'H:mm' }}
+        </time>
+    </div>
+    <div class="show-title col-md-11">
+        <h4>
+            <a href="{{ show.play_link }}" itemprop="url">
+                <span itemprop="name">{{ show.play_title }}</span>
+            </a>
+        </h4>
+        <div class="show-scene" data-show-brief-meta data-show="show"></div>
+    </div>
+</div>

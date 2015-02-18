@@ -1,0 +1,41 @@
+<div class="col-md-12 filters-col">
+
+
+    <h5>Выберите день:</h5>
+    <div data-calendar data-month="filter.month"  data-year="filter.year"></div>
+
+    <div class="theatres-list">
+        <h5>Театры:</h5>
+
+        <div class="checkbox"
+             data-ng-repeat="theatre in theatres"
+             data-ng-class="{true: 'current', false: ''}[filter.theatre.id == theatre.id]">
+            <label>
+                <input type="checkbox"
+                       data-ng-model="filter.theatres[theatre.id]">
+                {{ theatre.title }}
+            </label>
+        </div>
+    </div>
+
+    <div class="scenes-list btn-group">
+        <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                {{ filter.scene ? filter.scene.title : 'Все сцены' }} <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li data-ng-class="{true: 'current', false: ''}[filter.scene == null]">
+                    <a href="#" data-ng-click="setSceneFilter(null, $event)">Все</a>
+                </li>
+                <li class="divider"></li>
+                <li data-ng-repeat="scene in scenes"
+                    data-ng-class="{true: 'current', false: ''}[filter.scene.id == scene.id]">
+                    <a href="#" data-ng-click="setSceneFilter(scene, $event)">{{ scene.title }}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="btn-group" data-ng-show="loading">
+        <div class="btn-group loading-text">загружаем...</div>
+    </div>
+</div>

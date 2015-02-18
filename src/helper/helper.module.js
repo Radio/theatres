@@ -1,1 +1,1 @@
-angular.module('helper', []);
+angular.module('helper', ['helper-templates']);

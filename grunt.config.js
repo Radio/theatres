@@ -2,7 +2,9 @@ module.exports = {
 
     webDir: 'web',
     srcDir: 'src',
+    backendDir: 'backend',
     buildDir: 'build',
+    packageDir: 'deploy',
     webFiles: {
         php: ['**/*.php'],
         html: ['*.html'],
@@ -21,7 +23,12 @@ module.exports = {
     helper: {
         srcDir: '<%= srcDir %>/helper',
         appFiles: {
-            js: ['<%= helper.srcDir %>/**/*.js']
+            js: ['<%= helper.srcDir %>/**/*.js'],
+            tpl: ['<%= helper.srcDir %>/**/*.tpl.html']
+        },
+        tpl: {
+            jsFile: '<%= buildDir %>/tpl/helper/templates.js',
+            moduleName: 'helper-templates'
         }
     },
 
@@ -63,7 +70,9 @@ module.exports = {
                 'angular-resource/angular-resource.min.js',
                 'angular-local-storage/angular-local-storage.min.js',
                 'flying-focus/standalone/flying-focus.js',
-                'momentjs/moment.js',
+                'momentjs/min/moment.min.js',
+                'momentjs/min/moment-with-langs.min.js',
+                'momentjs/lang/ru.js',
                 'html5shiv/dist/html5shiv.js',
                 'respond/dest/respond.min.js'
             ],

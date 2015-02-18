@@ -1,5 +1,8 @@
+@bgColor: #fff;
+
 body {
     font-family: 'Roboto', sans-serif;
+    background-color: @bgColor;
 }
 a {
     text-decoration: none;
@@ -22,53 +25,80 @@ a:active {
 .dropdown-menu>.current>a {
     font-weight: 700;
 }
-h1 {
-    background: #28a4c9;
-    color: #fff;
-    font-size: 1.5em;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    line-height: 1.5em;
-    padding: 0.3em 1.5em .2em;
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
+
+.main-header {
+    text-align: center;
+    background-color: @bgColor;
+
+    &.secondary {
+        position: fixed;
+        z-index: 500;
+        top: 0;
+        left: 0;
+        width: 100%;
+
+        text-align: left;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
+        h1 {
+            font-size: 1.5em;
+            margin: 5px 0;
+
+            > span {
+                display: inline;
+            }
+            .second-title {
+                font-weight: 500;
+            }
+        }
+    }
+
+    h1 {
+        color: #333;
+        font-size: 2.5em;
+        font-weight: 300;
+        line-height: 1.5em;
+        padding: 0.3em 1.5em .2em;
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+
+        a {
+            color: #333;
+            border-bottom: 0 none;
+
+            &:hover,
+            &:active,
+            &:visited {
+                color: #333;
+                border-bottom: 1px solid rgba(51, 51, 51, 0.5);  /* #333 */
+            }
+        }
+        > span {
+            display: none;
+        }
+    }
 }
-h1 a {
-    color: #fff;
-    border-bottom: 0 none;
+.ctrl-view {
+//    padding-top: 100px;
 }
-h1 a:hover, h1 a:active, h1 a:visited {
-    color: #fff;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);  /* #fff */
-}
+
 .page-header {
     border-bottom: 0 none;
-    margin: 40px 0 35px;
+    margin: 20px 0 35px;
+
+    &.with-sub-title {
+        margin: 20px 0 10px;
+    }
+    h2 {
+        text-align: center;
+        font-size: 2em;
+    }
+    h3 {
+        text-align: center;
+    }
 }
-.page-header.with-sub-title {
-    margin: 20px 0 10px;
-}
-.page-header h2 {
-    text-align: center;
-    font-size: 2em;
-}
-.page-header h3 {
-    text-align: center;
-}
-/*
-.page-header .other-month {
-    position: relative;
-    width: 40px;
-    font-size: 1em;
-}
-.page-header .prev-month {
-    left: -50px;
-}
-*/
-header {
-    text-align: center;
-}
+
 .form-control {
     padding: .3em .5em;
 }
