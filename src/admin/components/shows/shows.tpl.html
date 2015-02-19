@@ -20,7 +20,7 @@
         <div class="col-md-3">
             <select class="form-control"
                     data-ng-model="show.play_id" data-ng-change="saveShow(show)"
-                    data-ng-options="play.id as play.title for play in plays">
+                    data-ng-options="play.id as play.title group by play.theatre_title for play in plays">
             </select>
             <p class="show-theatre">{{ getTheatreById(show.theatre_id).title }}</p>
         </div>

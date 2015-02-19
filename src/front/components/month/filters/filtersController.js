@@ -9,13 +9,6 @@ angular.module('frontApp')
         $scope.scenes = [];
         $scope.filter = Filters;
 
-        $scope.$on('day-clicked', function(event, day) {
-            var $dayNode = $('.date-' + day);
-            if ($dayNode.length) {
-                $('html, body').scrollTop($dayNode.offset().top - 60);
-            }
-        });
-
         initPlayTypesFilter($scope.playTypes);
         Api.scenes.get({}).then(function(scenes) {
             $scope.scenes = scenes;

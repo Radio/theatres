@@ -3,15 +3,7 @@ angular.module('admin')
 
         $scope.filter = ShowsFilters;
 
-        $scope.theatres = [];
-        $scope.scenes = [];
-
-        Api.theatres.get().then(function(theatres) {
-            $scope.theatres = theatres;
-        });
-        Api.scenes.get().then(function(scenes) {
-            $scope.scenes = scenes;
-        });
+        groupPlaysByTheatre();
 
         $scope.setTheatreFilter = function(theatre) {
             ShowsFilters.theatre = theatre;
@@ -19,4 +11,20 @@ angular.module('admin')
         $scope.setSceneFilter = function(scene) {
             ShowsFilters.scene = scene;
         };
+
+        function groupPlaysByTheatre()
+        {
+            var grouped = {};
+            if ($scope.plays) {
+                for (var i = 0; i < $scope.plays.length; i++) {
+                    var play = $scope.plays[i];
+                    if (!grouped[play.theatre_id]) {
+                        grouped[play.theatre_id] = [];
+                    }
+                    grouped[play.theatre_id].push(play);
+                }
+            }
+
+            return grouped;
+        }
     });

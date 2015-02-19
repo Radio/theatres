@@ -1,6 +1,8 @@
 angular.module('frontApp')
     .controller('MonthController', function ($scope, TitleHelper, DateHelper, Api, Filters) {
 
+       var shownDay;
+
         TitleHelper.first = 'Все спектакли Харькова на одной странице';
 
         $scope.filter = Filters;
@@ -11,15 +13,24 @@ angular.module('frontApp')
         $scope.days = DateHelper.getMonthDays(Filters.month, Filters.year);
 
         loadShows();
-        $scope.$on('filters-changed', function() {
-            //loadShows();
-        });
 
+        $scope.$watchCollection('filter.playTypes', function() {
+            if (shownDay) {
+                setTimeout(function() {
+                    scrollToDay(shownDay);
+                }, 300);
+            }
+        });
         $scope.$watchGroup(['filter.month','filter.year'], function() {
             TitleHelper.second = getTitle();
         });
         $scope.$watch('filter.theatre', function() {
             TitleHelper.third = getSubtitle();
+        });
+
+        $scope.$on('day-clicked', function(event, day) {
+            shownDay = day;
+            scrollToDay(day);
         });
 
         $(window).scroll(function() {
@@ -89,4 +100,29 @@ angular.module('frontApp')
             return showsOnDay;
         }
 
+        function scrollToDay(day) {
+            var $dayNode = $('.date-' + day);
+            if ($dayNode.length) {
+//                $('html, body').scrollTop($dayNode.offset().top - 60);
+                $("html, body").animate({
+                    scrollTop: $dayNode.offset().top - 60
+                }, '300', 'swing');
+            }
+        }
+
+        function defineScrolledDay()
+        {
+            var scrolledDay = 0;
+            var currentScroll = $(window).scrollTop();
+            var $dayBlocks = $('.month .day');
+            for (var i = 0; i < $dayBlocks.length; i++) {
+                var $dayBlock = $($dayBlocks.get(i));
+                if ($dayBlock.offset().top > currentScroll) {
+                    scrolledDay = $dayBlock.data('day');
+                    break;
+                }
+            }
+
+            return scrolledDay;
+        }
     });

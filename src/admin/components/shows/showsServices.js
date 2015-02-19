@@ -5,6 +5,8 @@ angular.module('admin')
 
             theatre: null,
             scene: null,
-            date: null
+            date: null,
+            from: null,
+            to: null
         };
     });

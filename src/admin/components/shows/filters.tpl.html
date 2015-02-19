@@ -1,4 +1,4 @@
-<div class="row options-panel" ng-controller="ShowsFiltersController">
+<div class="row options-panel" data-ng-controller="ShowsFiltersController">
     <div class="col-md-12">
         <div class="theatres-list btn-group">
             <div class="btn-group">
@@ -6,13 +6,13 @@
                     {{ filter.theatre ? filter.theatre.title : 'Все театры' }} <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" role="menu">
-                    <li ng-class="{true: 'current', false: ''}[filter.theatre == null]">
-                        <a href="#" ng-click="setTheatreFilter(null)">Все</a>
+                    <li data-ng-class="{true: 'current', false: ''}[filter.theatre == null]">
+                        <a href="#" data-ng-click="setTheatreFilter(null)">Все</a>
                     </li>
                     <li class="divider"></li>
-                    <li ng-repeat="theatre in theatres"
-                        ng-class="{true: 'current', false: ''}[filter.theatre.key == theatre.key]">
-                        <a href="#" ng-click="setTheatreFilter(theatre)">{{ theatre.title }}</a>
+                    <li data-ng-repeat="theatre in theatres"
+                        data-ng-class="{true: 'current', false: ''}[filter.theatre.key == theatre.key]">
+                        <a href="#" data-ng-click="setTheatreFilter(theatre)">{{ theatre.title }}</a>
                     </li>
                 </ul>
             </div>
@@ -23,18 +23,36 @@
                     {{ filter.scene ? filter.scene.title : 'Все сцены' }} <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" role="menu">
-                    <li ng-class="{true: 'current', false: ''}[filter.scene == null]">
-                        <a href="#" ng-click="setSceneFilter(null)">Все</a>
+                    <li data-ng-class="{true: 'current', false: ''}[filter.scene == null]">
+                        <a href="#" data-ng-click="setSceneFilter(null)">Все</a>
                     </li>
                     <li class="divider"></li>
-                    <li ng-repeat="scene in scenes"
-                        ng-class="{true: 'current', false: ''}[filter.scene.key == scene.key]">
-                        <a href="#" ng-click="setSceneFilter(scene)">{{ scene.title }}</a>
+                    <li data-ng-repeat="scene in scenes"
+                        data-ng-class="{true: 'current', false: ''}[filter.scene.key == scene.key]">
+                        <a href="#" data-ng-click="setSceneFilter(scene)">{{ scene.title }}</a>
                     </li>
                 </ul>
             </div>
         </div>
-        <div class="btn-group" ng-show="loading">
+        <div class="scenes-list btn-group">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label>с:</label>
+                    <input type="text" class="form-control date-filter" placeholder="dd.mm.YYYY"
+                           data-ng-model="filter.from"
+                           data-ng-pattern="/^\d\d\.\d\d\.\d\d\d\d$/"
+                           data-ng-model-options="{ updateOn: 'blur', allowInvalid: false }">
+                </div>
+                <div class="form-group">
+                    <label>по:</label>
+                    <input type="text" class="form-control date-filter" placeholder="dd.mm.YYYY"
+                           data-ng-model="filter.to"
+                           data-ng-pattern="/^\d\d\.\d\d\.\d\d\d\d$/"
+                           data-ng-model-options="{ updateOn: 'blur', allowInvalid: false }">
+                </div>
+            </form>
+        </div>
+        <div class="btn-group" data-ng-show="loading">
             <div class="btn-group loading-text">загружаем...</div>
         </div>
     </div>

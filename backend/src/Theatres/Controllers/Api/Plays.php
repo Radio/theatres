@@ -41,7 +41,7 @@ class Api_Plays extends Controller_Rest_Collection
      * Apply scene filter.
      * Fetch and apply filters to collection.
      *
-     * @param Collection $collection Collection instance.
+     * @param Collection|Plays $collection Collection instance.
      * @param Request $request Request instance.
      * @return void
      */
@@ -57,59 +57,14 @@ class Api_Plays extends Controller_Rest_Collection
             $collection->addConditions('scene_id = ?', array($scene));
         }
 
-        $this->applyDateFilters($collection, $request);
-        $this->applyTimeFilters($collection, $request);
+        $populate = explode(',', $request->query->get('populate'));
+        if (in_array('theatre', $populate)) {
+            $collection->setPopulateTheatreFlag(true);
+        }
+        if (in_array('scene', $populate)) {
+            $collection->setPopulateSceneFlag(true);
+        }
 
         parent::applyFilters($collection, $request);
-    }
-
-    /**
-     * Apply date filters.
-     *
-     * @param Collection $collection Collection instance.
-     * @param Request $request Request instance.
-     * @return void
-     */
-    protected function applyDateFilters(Collection $collection, Request $request)
-    {
-        $date = Api::toSqlDate($request->query->get('date'));
-        if ($date) {
-            $collection->addConditions('date(`date`) = ?', array($date));
-        }
-
-        $dateFrom = Api::toSqlDate($request->query->get('date_from'));
-        if ($dateFrom) {
-            $collection->addConditions('date(`date`) >= ?', array($dateFrom));
-        }
-
-        $dateTo = Api::toSqlDate($request->query->get('date_to'));
-        if ($dateTo) {
-            $collection->addConditions('date(`date`) <= ?', array($dateTo));
-        }
-    }
-
-    /**
-     * Apply time filters.
-     *
-     * @param Collection $collection Collection instance.
-     * @param Request $request Request instance.
-     * @return void
-     */
-    protected function applyTimeFilters(Collection $collection, Request $request)
-    {
-        $time = Api::toSqlTime($request->query->get('time'));
-        if ($time) {
-            $collection->addConditions('time(`date`) = ?', array($time));
-        }
-
-        $timeFrom = Api::toSqlTime($request->query->get('time_from'));
-        if ($timeFrom) {
-            $collection->addConditions('time(`date`) >= ?', array($timeFrom));
-        }
-
-        $timeTo = Api::toSqlTime($request->query->get('time_to'));
-        if ($timeTo) {
-            $collection->addConditions('time(`date`) <= ?', array($timeTo));
-        }
     }
 }

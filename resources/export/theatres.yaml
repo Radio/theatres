@@ -16,8 +16,8 @@
     has_fetcher: '1'
 -
     id: '3'
-    key: postscriptum
-    title: 'Театр «PostScriptum»'
+    key: big
+    title: 'большая сцена'
     abbr: PS
     link: 'http://ps-teatr.com.ua'
     house_slug: ''

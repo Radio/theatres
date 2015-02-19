@@ -1,7 +1,9 @@
 angular.module('admin')
-    .controller('ShowsController', function ($scope, $timeout, Api, ShowsFilters) {
+    .controller('ShowsController', function ($scope, $timeout, Api, ShowsFilters, DateHelper) {
 
         $('html, body').scrollTop(0);
+
+        initFilters();
 
         $scope.lastUpdatedId = null;
         $scope.newShow = {};
@@ -17,20 +19,11 @@ angular.module('admin')
         Api.scenes.get().then(function(scenes) {
             $scope.scenes = scenes;
         });
-        Api.plays.get().then(function(plays) {
+        Api.plays.get({populate: 'theatre'}).then(function(plays) {
             $scope.plays = plays;
         });
 
-        $scope.$watch('filter.date', function() {
-            loadShows();
-        });
-        $scope.$watch('filter.theatre', function() {
-            loadShows();
-        });
-        $scope.$watch('filter.scene', function() {
-            loadShows();
-        });
-        $scope.$watch('filter.date', function() {
+        $scope.$watchGroup(['filter.from', 'filter.to', 'filter.theatre', 'filter.scene'], function() {
             loadShows();
         });
 
@@ -82,28 +75,32 @@ angular.module('admin')
         $scope.saveShow = function(show)
         {
             Api.show.put(show.id, show).then(function(response) {
-                //loadShows();
                 setLastUpdatedId(show.id);
             });
         };
 
         function loadShows()
         {
-            var query = {
-                order: $scope.filter.order
-            };
-            if ($scope.filter.theatre) {
-                query.theatre = $scope.filter.theatre.id;
-            }
-            if ($scope.filter.scene) {
-                query.scene = $scope.filter.scene.id;
-            }
-            $scope.loading = true;
+            if ($scope.filter.from && $scope.filter.to) {
 
-            Api.shows.get(query).then(function(shows) {
-                $scope.shows = shows;
-                $scope.loading = false;
-            });
+                var query = {
+                    order: $scope.filter.order,
+                    date_from: $scope.filter.from,
+                    date_to: $scope.filter.to
+                };
+                if ($scope.filter.theatre) {
+                    query.theatre = $scope.filter.theatre.id;
+                }
+                if ($scope.filter.scene) {
+                    query.scene = $scope.filter.scene.id;
+                }
+                $scope.loading = true;
+
+                Api.shows.get(query).then(function(shows) {
+                    $scope.shows = shows;
+                    $scope.loading = false;
+                });
+            }
         }
 
         var timeoutPromise = null;
@@ -117,5 +114,14 @@ angular.module('admin')
                 $scope.lastUpdatedId = null;
                 timeoutPromise = null;
             }, 5000);
+        }
+
+        function initFilters() {
+            var currentYear = DateHelper.getCurrentYear();
+            var currentMonth = DateHelper.getCurrentMonth();
+            currentMonth = currentMonth < 10 ? '0' + currentMonth : currentMonth;
+
+            ShowsFilters.from = '01.' + currentMonth + '.' + currentYear;
+            ShowsFilters.to = '10.' + currentMonth + '.' + currentYear;
         }
     });

@@ -31,6 +31,8 @@ angular.module('helper')
                 return days;
             },
             getNumberOfDaysInMonth: function(monthNumber, year) {
+                monthNumber = monthNumber || currentDate.getMonth();
+                year = year || currentDate.getFullYear();
                 return new Date(year, monthNumber, 0).getDate();
             },
             datesAreEqual: function(date1, date2) {
