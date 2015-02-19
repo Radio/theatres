@@ -3,103 +3,44 @@
 namespace Theatres\Collections;
 
 use Theatres\Core\Collection_Beans as Beans;
-use RedBean_Facade as R;
+use Theatres\Models\Play;
+use Theatres\Models\Scene_Populatable;
+use Theatres\Models\Theatre_Populatable;
 
 class Plays extends Beans
 {
-    protected $populateTheatreFlag = false;
-    protected $populateSceneFlag = false;
+    use Theatre_Populatable;
+    use Scene_Populatable;
 
     public function __construct()
     {
         $this->beanType = 'play';
+        static::$booleanFields = Play::$booleanFields;
     }
 
     /**
-     * @param boolean $populateSceneFlag
+     * Populate result with play, theatre and scene data if needed.
+     *
+     * @param &string $selectStatement Select statement
+     * @param &string $fromStatement From statement
+     * @param string $mainTable Main table name or alias.
      */
-    public function setPopulateSceneFlag($populateSceneFlag)
+    protected function adjustLoadSqlStatements(&$selectStatement, &$fromStatement, $mainTable)
     {
-        $this->populateSceneFlag = $populateSceneFlag;
-    }
-
-    /**
-     * @param boolean $populateTheatreFlag
-     */
-    public function setPopulateTheatreFlag($populateTheatreFlag)
-    {
-        $this->populateTheatreFlag = $populateTheatreFlag;
-    }
-
-    /**
-     * @param $sql
-     * @return array
-     */
-    protected function runLoadSql($sql)
-    {
-        if ($this->populateSceneFlag || $this->populateTheatreFlag) {
-
-            $selectStatement = 'SELECT `play`.*';
-            $fromStatement = ' FROM `play`';
-
-            if ($this->populateSceneFlag) {
-                $this->populateScene($selectStatement, $fromStatement);
-            }
-            if ($this->populateTheatreFlag) {
-                $this->populateTheatre($selectStatement, $fromStatement);
-            }
-
-            $query = $selectStatement . ' ' . $fromStatement;
-            if ($this->conditions) {
-                $query .= 'where ' . $sql;
-            } else {
-                $query .= $sql;
-            }
-            $rows = R::getAll($query, $this->bindings);
-            return R::convertToBeans($this->beanType, $rows);
-        } else {
-            return R::findAll($this->beanType, $sql, $this->bindings);
+        if ($this->populateSceneFlag) {
+            $this->populateScene($selectStatement, $fromStatement, $mainTable);
         }
-    }
-
-
-    /**
-     * @param $selectStatement
-     * @param $fromStatement
-     */
-    protected function populateTheatre(&$selectStatement, &$fromStatement)
-    {
-        $fields = array(
-            'title', 'abbr', 'link', 'key', 'house_slug'
-        );
-        foreach ($fields as $field) {
-            $selectStatement .= ', theatre.`' . $field . '` as theatre_' . $field;
+        if ($this->populateTheatreFlag) {
+            $this->populateTheatre($selectStatement, $fromStatement, $mainTable);
         }
-        $fromStatement .= ' LEFT JOIN theatre on play.theatre_id = theatre.`id` ';
-    }
-
-    /**
-     * @param $selectStatement
-     * @param $fromStatement
-     */
-    protected function populateScene(&$selectStatement, &$fromStatement)
-    {
-        $fields = array(
-            'title', 'key'
-        );
-        foreach ($fields as $field) {
-            $selectStatement .= ', scene.`' . $field . '` as scene_' . $field;
-        }
-        $fromStatement .= ' LEFT JOIN scene on play.scene_id = scene.`id` ';
     }
 
     public function toArray()
     {
         $data = parent::toArray();
         return array_map(function($play) {
-            $play['is_premiere'] = (bool) $play['is_premiere'];
-            $play['is_for_children'] = (bool) $play['is_for_children'];
-            $play['is_musical'] = (bool) $play['is_musical'];
+            $play = $this->normalizePopulatedTheatreBooleanFields($play);
+
             return $play;
         }, $data);
     }

@@ -2,8 +2,6 @@
 
 namespace Theatres\Helpers;
 
-use Theatres\Collections\Theatres;
-
 class Models
 {
     protected static $lettersMap = array(
@@ -22,8 +20,8 @@ class Models
     public static function generateKey($title, $delimiter = '-')
     {
         $key = strtolower(strtr($title, self::$lettersMap));
-        $key = preg_replace('/[^a-z0-9]+/', '-', $key);
-        $key = trim($key, '-');
+        $key = preg_replace('/[^a-z0-9]+/', $delimiter, $key);
+        $key = trim($key, $delimiter);
 
         return $key;
     }

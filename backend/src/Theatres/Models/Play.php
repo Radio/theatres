@@ -3,6 +3,7 @@
 namespace Theatres\Models;
 
 use RedBean_Facade as R;
+use Theatres\Core\Model_Bean;
 use Theatres\Exceptions\MoreThanOneBeanFound;
 use Theatres\Helpers;
 
@@ -26,12 +27,16 @@ use Theatres\Helpers;
  *
  * @package Theatres\Models
  */
-class Play extends \RedBean_SimpleModel
+class Play extends Model_Bean
 {
     public static $allowedFields = [
         'theatre_id', 'theatre', 'scene_id', 'scene',
         'title', 'key', 'link',  'price', 'image',
         'director', 'author', 'genre', 'duration', 'description',
+        'is_premiere', 'is_for_children', 'is_musical'
+    ];
+
+    public static $booleanFields = [
         'is_premiere', 'is_for_children', 'is_musical'
     ];
 

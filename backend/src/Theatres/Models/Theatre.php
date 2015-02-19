@@ -3,8 +3,7 @@
 namespace Theatres\Models;
 
 use Theatres\Collections\Theatres;
-use RedBean_Facade as R;
-use Theatres\Core\Exceptions\Fetchers_UndefinedFetcher;
+use Theatres\Core\Model_Bean;
 
 /**
  * Class Theatre
@@ -19,7 +18,7 @@ use Theatres\Core\Exceptions\Fetchers_UndefinedFetcher;
  *
  * @package Theatres\Models
  */
-class Theatre extends \RedBean_SimpleModel
+class Theatre extends Model_Bean
 {
     const HOUSE_ABBR = 'ДА';
     const HOUSE_TITLE_ADDITION = 'в Доме Актера';
@@ -27,6 +26,10 @@ class Theatre extends \RedBean_SimpleModel
     public static $allowedFields = array(
         'title', 'abbr', 'link', 'has_fetcher', 'key', 'house_slug'
     );
+
+    public static $booleanFields = [
+        'has_fetcher'
+    ];
 
     public function loadByKey($key)
     {

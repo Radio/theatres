@@ -7,7 +7,15 @@ use Theatres\Core\Exceptions\Collection_Beans_UndefinedBeanType as UndefinedBean
 
 abstract class Collection_Beans extends Collection
 {
+    /**
+     * @var string Bean type.
+     */
     protected $beanType = null;
+
+    /**
+     * @var array List of boolean fields to normalize on converting to array.
+     */
+    protected static $booleanFields = [];
 
     /**
      * @throws Exceptions\Collection_Beans_UndefinedBeanType
@@ -39,7 +47,32 @@ abstract class Collection_Beans extends Collection
      */
     protected function runLoadSql($sql)
     {
-        return R::findAll($this->beanType, $sql, $this->bindings);
+        $selectStatement = 'SELECT `' . $this->beanType . '`.*';
+        $fromStatement = ' FROM `' . $this->beanType . '`';
+
+        $this->adjustLoadSqlStatements($selectStatement, $fromStatement, $this->beanType);
+
+        $query = $selectStatement . ' ' . $fromStatement;
+        if ($this->conditions) {
+            $query .= 'where ' . $sql;
+        } else {
+            $query .= $sql;
+        }
+
+        $rows = R::getAll($query, $this->bindings);
+        return R::convertToBeans($this->beanType, $rows);
+    }
+
+    /**
+     * Adjust sql statements if needed.
+     *
+     * @param &string $selectStatement Select statement.
+     * @param &string $fromStatement   From statement.
+     * @param string  $mainTable       Main table name or alias.
+     */
+    protected function adjustLoadSqlStatements(&$selectStatement, &$fromStatement, $mainTable)
+    {
+        // Do nothing here by default.
     }
 
     /**
@@ -118,9 +151,18 @@ abstract class Collection_Beans extends Collection
         return null;
     }
 
+    /**
+     * Convert beans to array.
+     *
+     * @return array
+     */
     public function toArray()
     {
         $this->load();
-        return R::beansToArray($this->items);
+        $data = R::beansToArray($this->items);
+        return array_map(function($itemData) {
+            $itemData = Model_Bean::normalizeBooleanFields($itemData, static::$booleanFields);
+            return $itemData;
+        }, $data);
     }
 }

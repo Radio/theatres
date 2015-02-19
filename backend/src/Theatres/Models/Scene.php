@@ -3,6 +3,7 @@
 namespace Theatres\Models;
 
 use Theatres\Collections\Scenes;
+use Theatres\Core\Model_Bean;
 
 /**
  * Class Scene
@@ -13,7 +14,7 @@ use Theatres\Collections\Scenes;
  *
  * @package Theatres\Models
  */
-class Scene extends \RedBean_SimpleModel
+class Scene extends Model_Bean
 {
     public static $allowedFields = ['title', 'key'];
 

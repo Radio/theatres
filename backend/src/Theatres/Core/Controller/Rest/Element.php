@@ -18,7 +18,7 @@ abstract class Controller_Rest_Element extends Controller_Rest
     /** @var string Bean type. */
     protected $type;
 
-    /** @var \RedBean_OODBBean Element instance. */
+    /** @var \RedBean_OODBBean|Model_Bean Element instance. */
     protected $element;
 
     /** @var string|null The field containing the unique name of an element. Is used to load element by @name. */
@@ -60,7 +60,7 @@ abstract class Controller_Rest_Element extends Controller_Rest
      */
     public function get(Application $app, Request $request)
     {
-        return $this->element->export();
+        return $this->element->toArray();
     }
 
     /**

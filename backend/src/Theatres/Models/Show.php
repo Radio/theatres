@@ -2,8 +2,7 @@
 
 namespace Theatres\Models;
 
-use Theatres\Collections\Theatres;
-use Theatres\Collections\Scenes;
+use Theatres\Core\Model_Bean;
 
 /**
  * Class Show
@@ -18,7 +17,7 @@ use Theatres\Collections\Scenes;
  *
  * @package Theatres\Models
  */
-class Show extends \RedBean_SimpleModel
+class Show extends Model_Bean
 {
     public static $allowedFields = [
         'theatre_id', 'theatre', 'play_id', 'play', 'scene_id', 'scene', 'price', 'date'
