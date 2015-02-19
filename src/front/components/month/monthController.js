@@ -14,13 +14,9 @@ angular.module('frontApp')
 
         loadShows();
 
-        $scope.$watchCollection('filter.playTypes', function() {
-            if (shownDay) {
-                setTimeout(function() {
-                    scrollToDay(shownDay);
-                }, 300);
-            }
-        });
+        $scope.$watchCollection('filter.playTypes', fixScrolledToDay);
+        $scope.$watchCollection('filter.scenes', fixScrolledToDay);
+
         $scope.$watchGroup(['filter.month','filter.year'], function() {
             TitleHelper.second = getTitle();
         });
@@ -107,6 +103,15 @@ angular.module('frontApp')
                 $("html, body").animate({
                     scrollTop: $dayNode.offset().top - 60
                 }, '300', 'swing');
+            }
+        }
+
+        function fixScrolledToDay()
+        {
+            if (shownDay) {
+                setTimeout(function() {
+                    scrollToDay(shownDay);
+                }, 300);
             }
         }
 

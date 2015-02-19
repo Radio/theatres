@@ -40,6 +40,9 @@ angular.module('frontApp')
                     if (filters.theatre && filters.theatre.id !== input[i].theatre_id) {
                         continue;
                     }
+                    if (filters.scenes && filters.scenes[input[i].scene_id] === false) {
+                        continue;
+                    }
                     if (input[i].play_is_musical && filters.playTypes.is_musical === false) {
                         continue;
                     }
