@@ -63,6 +63,10 @@ class Api_Shows extends Controller_Rest_Collection
         }
         if (in_array('theatre', $populate)) {
             $collection->setPopulateTheatreFlag(true);
+            $theatreKey = $request->query->get('theatreKey');
+            if ($theatreKey) {
+                $collection->addConditions('`theatre`.`key` = ?', array($theatreKey));
+            }
         }
         if (in_array('scene', $populate)) {
             $collection->setPopulateSceneFlag(true);
@@ -96,6 +100,16 @@ class Api_Shows extends Controller_Rest_Collection
         $dateTo = Api::toSqlDate($request->query->get('date_to'));
         if ($dateTo) {
             $collection->addConditions('date(`date`) <= ?', array($dateTo));
+        }
+
+        $month = (int) $request->query->get('month');
+        if ($month && $month > 1 && $month <= 12) {
+            $collection->addConditions('month(`date`) = ?', array($month));
+        }
+
+        $year = (int) $request->query->get('year');
+        if ($year && $year > 2000 && $year <= 3000) {
+            $collection->addConditions('year(`date`) = ?', array($year));
         }
     }
 

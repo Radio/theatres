@@ -6,12 +6,22 @@
 .scrolled {
     .filters-col {
         top: 80px;
+
+        @media (max-width: 992px) {
+            position: relative;
+            width: 100%;
+            top: 0;
+        }
     }
 }
+
 .filter-block {
     margin-bottom: 25px;
 }
 .calendar {
+    @media (max-width: 992px) {
+        font-size: 1.2em;
+    }
     .week {
         .day {
             float: left;

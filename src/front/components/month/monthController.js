@@ -1,46 +1,37 @@
 angular.module('frontApp')
-    .controller('MonthController', function ($scope, TitleHelper, DateHelper, Api, Filters) {
+    .controller('MonthController', function ($scope, $routeParams, TitleHelper, DateHelper, Api, Filters) {
 
-       var shownDay;
+        var shownDay;
 
         TitleHelper.first = 'Все спектакли Харькова на одной странице';
+        $scope.getTitle = getTitle;
+        $scope.getSubtitle = getSubtitle;
+        $scope.filterTheatre = null;
 
+        initFilters();
         $scope.filter = Filters;
 
-        Filters.month = DateHelper.getCurrentMonth();
-        Filters.year = DateHelper.getCurrentYear();
-
         $scope.days = DateHelper.getMonthDays(Filters.month, Filters.year);
-
-        loadShows();
-
-        $scope.$watchCollection('filter.playTypes', fixScrolledToDay);
-        $scope.$watchCollection('filter.scenes', fixScrolledToDay);
+        loadShows().then(function() {
+            $("html, body").scrollTop(0);
+        });
 
         $scope.$watchGroup(['filter.month','filter.year'], function() {
             TitleHelper.second = getTitle();
         });
-        $scope.$watch('filter.theatre', function() {
+        $scope.$watchGroup(['filter.theatre', 'filterTheatre'], function() {
             TitleHelper.third = getSubtitle();
         });
+        $scope.$watchCollection(['title'], function() {
+            fixPosterMargin();
+        });
 
+        $scope.$watchCollection('filter.playTypes', fixScrolledToDay);
+        $scope.$watchCollection('filter.scenes', fixScrolledToDay);
         $scope.$on('day-clicked', function(event, day) {
             shownDay = day;
             scrollToDay(day);
         });
-
-        $(window).scroll(function() {
-            if ($(this).scrollTop() > 0) {
-                $('.main-container').addClass('scrolled');
-            } else {
-                $('.main-container').removeClass('scrolled');
-            }
-        });
-
-        // Title functions
-
-        $scope.getTitle = getTitle;
-        $scope.getSubtitle = getSubtitle;
 
         $scope.isToday = function(date) {
             return DateHelper.datesAreEqual(date, DateHelper.getCurrentDate());
@@ -48,16 +39,16 @@ angular.module('frontApp')
 
         // Private
 
-         function getTitle() {
+        function getTitle() {
             var month = DateHelper.getMonthTitle(Filters.month);
             var year = Filters.year;
 
             return month + (year == DateHelper.getCurrentYear() ? '' : ' ' + year);
         }
         function getSubtitle() {
-            return Filters.theatre ? Filters.theatre.title : '';
+            var theatre = Filters.theatre || $scope.filterTheatre;
+            return theatre ? theatre.title : '';
         }
-
 
         function loadShows()
         {
@@ -83,6 +74,12 @@ angular.module('frontApp')
                 month: Filters.month,
                 year: Filters.year
             };
+            if (Filters.theatre) {
+                query.theatre = Filters.theatre.id;
+            }
+            if (Filters.theatreKey) {
+                query.theatreKey = Filters.theatreKey;
+            }
             return query;
         }
 
@@ -96,12 +93,25 @@ angular.module('frontApp')
             return showsOnDay;
         }
 
+        function initFilters() {
+            Filters.month = DateHelper.getCurrentMonth();
+            Filters.year = DateHelper.getCurrentYear();
+            if ($routeParams.theatreKey) {
+                Filters.theatreKey = $routeParams.theatreKey;
+                Api.theatre.get('@' + $routeParams.theatreKey).then(function(theatre) {
+                    $scope.filterTheatre = theatre;
+                });
+            } else {
+                Filters.theatreKey = null;
+                $scope.filterTheatre = null;
+            }
+        }
+
         function scrollToDay(day) {
             var $dayNode = $('.date-' + day);
             if ($dayNode.length) {
-//                $('html, body').scrollTop($dayNode.offset().top - 60);
                 $("html, body").animate({
-                    scrollTop: $dayNode.offset().top - 60
+                    scrollTop: $dayNode.offset().top - $('.main-header').height()
                 }, '300', 'swing');
             }
         }
@@ -115,19 +125,13 @@ angular.module('frontApp')
             }
         }
 
-        function defineScrolledDay()
+        function fixPosterMargin()
         {
-            var scrolledDay = 0;
-            var currentScroll = $(window).scrollTop();
-            var $dayBlocks = $('.month .day');
-            for (var i = 0; i < $dayBlocks.length; i++) {
-                var $dayBlock = $($dayBlocks.get(i));
-                if ($dayBlock.offset().top > currentScroll) {
-                    scrolledDay = $dayBlock.data('day');
-                    break;
+            setInterval(function() {
+                if ($('.main-container').hasClass('scrolled')) {
+                    $('.filters-col').css({'margin-top': $('.main-header').height()});
                 }
-            }
-
-            return scrolledDay;
+            }, 500);
         }
+
     });

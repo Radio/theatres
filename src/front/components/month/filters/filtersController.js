@@ -1,15 +1,16 @@
 angular.module('frontApp')
     .controller('MonthFiltersController', function ($scope, DateHelper, Api, Filters) {
 
+        $scope.filter = Filters;
+
         $scope.playTypes = [
             {id: 'is_for_children', title: 'Для детей'},
             {id: 'is_for_adults', title: 'Для взрослых'},
             {id: 'is_musical', title: 'Музыкальные'}
         ];
-        $scope.scenes = [];
-        $scope.filter = Filters;
-
         initPlayTypesFilter($scope.playTypes);
+
+        $scope.scenes = [];
         Api.scenes.get({}).then(function(scenes) {
             $scope.scenes = scenes;
             initScenesFilter($scope.scenes);
@@ -30,14 +31,13 @@ angular.module('frontApp')
                 Filters.scenes[scene.id] = true;
             });
         }
-
     })
     .filter('showsFilter', function() {
         return function(input, filters) {
             var filtered = [];
             if (input) {
                 for (var i = 0; i < input.length; i++) {
-                    if (filters.theatre && filters.theatre.id !== input[i].theatre_id) {
+                    if (filters.theatre && filters.theatre.id != input[i].theatre_id) {
                         continue;
                     }
                     if (filters.scenes && filters.scenes[input[i].scene_id] === false) {

@@ -65,6 +65,7 @@ module.exports = {
             js: [
                 'jquery/dist/jquery.min.js',
                 'bootstrap/dist/js/bootstrap.min.js',
+                'responsive-bootstrap-toolkit/js/bootstrap-toolkit.min.js',
                 'angular/angular.min.js',
                 'angular-route/angular-route.min.js',
                 'angular-resource/angular-resource.min.js',

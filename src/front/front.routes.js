@@ -1,7 +1,11 @@
 angular.module('frontApp')
     .config(function($routeProvider) {
         $routeProvider
-            .when('/month', {
+            .when('/', {
+                templateUrl: 'src/front/components/month/month.tpl.html',
+                controller: 'MonthController'
+            })
+            .when('/theatre/:theatreKey', {
                 templateUrl: 'src/front/components/month/month.tpl.html',
                 controller: 'MonthController'
             })
@@ -10,6 +14,6 @@ angular.module('frontApp')
                 controller: 'PlayController'
             })
             .otherwise({
-                redirectTo: '/month'
+                redirectTo: '/'
             });
     });

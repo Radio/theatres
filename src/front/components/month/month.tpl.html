@@ -1,10 +1,12 @@
 <div class="page-header" data-ng-class="{true: 'with-sub-title', false: ''}[getSubtitle().length > 0]">
-    <h2>{{ getTitle() }}</h2>
-    <h3 data-ng-show="getSubtitle()">{{ getSubtitle() }}</h3>
+    <h2>
+        {{ getTitle() }}
+        <span data-ng-show="getSubtitle()">&middot; {{ getSubtitle() }}</span>
+    </h2>
 </div>
 <div class="container-fluid month-container">
 
-        <div class="filters-col hidden-sm hidden-xs"
+        <div class="filters-col"
              data-ng-controller="MonthFiltersController"
              data-ng-include="'src/front/components/month/filters/filters.tpl.html'"></div>
         <div class="poster">

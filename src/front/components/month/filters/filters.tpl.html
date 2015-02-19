@@ -1,4 +1,9 @@
 <div>
+
+    <div class="filter-block" data-ng-if="filter.theatreKey">
+        <a href="/">&larr; Все театры</a>
+    </div>
+    
     <div class="filter-block">
         <h5>Выберите день</h5>
         <div data-calendar data-month="filter.month"  data-year="filter.year"></div>
