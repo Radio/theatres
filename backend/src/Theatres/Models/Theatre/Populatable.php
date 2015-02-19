@@ -13,7 +13,7 @@ trait Theatre_Populatable
      * @var array List of fields to populate.
      */
     protected $theatrePopulatingFields = [
-        'key', 'theatre_id', 'title', 'scene_id', 'link', 'is_premiere', 'is_for_children', 'is_musical'
+        'title', 'abbr', 'link', 'key', 'house_slug'
     ];
 
     /**
