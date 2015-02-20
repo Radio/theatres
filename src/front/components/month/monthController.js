@@ -3,20 +3,13 @@ angular.module('frontApp')
 
         var shownDay;
 
-        TitleHelper.first = 'Все спектакли Харькова на одной странице';
-        $scope.getTitle = getTitle;
-        $scope.getSubtitle = getSubtitle;
-        $scope.filterTheatre = null;
-
+        initTitle();
         initFilters();
-        $scope.filter = Filters;
-
-        $scope.days = DateHelper.getMonthDays(Filters.month, Filters.year);
         loadShows().then(function() {
             $("html, body").scrollTop(0);
         });
 
-        $scope.$watchGroup(['filter.month','filter.year'], function() {
+        $scope.$watchGroup(['filter.month', 'filter.year'], function() {
             TitleHelper.second = getTitle();
         });
         $scope.$watchGroup(['filter.theatre', 'filterTheatre'], function() {
@@ -39,12 +32,19 @@ angular.module('frontApp')
 
         // Private
 
+        function initTitle() {
+            TitleHelper.first = 'Все спектакли Харькова на одной странице';
+            $scope.getTitle = getTitle;
+            $scope.getSubtitle = getSubtitle;
+        }
+
         function getTitle() {
             var month = DateHelper.getMonthTitle(Filters.month);
             var year = Filters.year;
 
             return month + (year == DateHelper.getCurrentYear() ? '' : ' ' + year);
         }
+
         function getSubtitle() {
             var theatre = Filters.theatre || $scope.filterTheatre;
             return theatre ? theatre.title : '';
@@ -53,10 +53,10 @@ angular.module('frontApp')
         function loadShows()
         {
             $scope.loading = true;
+            $scope.days = DateHelper.getMonthDays(Filters.month, Filters.year);
 
             var query = buildQuery();
             return Api.shows.get(query).then(function(shows) {
-                $scope.shows = shows;
                 $scope.days.forEach(function(day) {
                     day.shows = getShowsOnDay(day, shows);
                 });
@@ -105,6 +105,8 @@ angular.module('frontApp')
                 Filters.theatreKey = null;
                 $scope.filterTheatre = null;
             }
+
+            $scope.filter = Filters;
         }
 
         function scrollToDay(day) {
@@ -119,17 +121,23 @@ angular.module('frontApp')
         function fixScrolledToDay()
         {
             if (shownDay) {
-                setTimeout(function() {
-                    scrollToDay(shownDay);
-                }, 300);
+                if (ResponsiveBootstrapToolkit.is('lg') || ResponsiveBootstrapToolkit.is('md')) {
+                    setTimeout(function() {
+                        scrollToDay(shownDay);
+                    }, 300);
+                }
             }
         }
 
         function fixPosterMargin()
         {
-            setInterval(function() {
+            var tries = 5;
+            var interval = setInterval(function() {
                 if ($('.main-container').hasClass('scrolled')) {
                     $('.filters-col').css({'margin-top': $('.main-header').height()});
+                }
+                if (!--tries) {
+                    clearInterval(interval);
                 }
             }, 500);
         }

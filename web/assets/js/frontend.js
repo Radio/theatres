@@ -22,7 +22,7 @@
 
     function handleWindowResize()
     {
-        if( viewport.is('xs') ) {
+        if (viewport.is('xs') || viewport.is('sm')) {
             setCompactState();
             $(window).unbind('scroll', handelWindowScroll);
         } else {
