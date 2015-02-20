@@ -2,7 +2,11 @@
 
 use \Symfony\Component\HttpFoundation\RequestMatcher;
 
-$users = include(__DIR__ . '/users.php');
+$protectApiMethods = ['POST', 'PUT', 'DELETE'];
+if (isset($_SERVER['HTTP_REFERER'])
+    && strpos($_SERVER['HTTP_REFERER'], '/admin/') !== false) {
+    $protectApiMethods[] = 'GET';
+}
 
 $app->register(new Silex\Provider\SecurityServiceProvider(), array(
     'security.firewalls' => array(
@@ -12,7 +16,7 @@ $app->register(new Silex\Provider\SecurityServiceProvider(), array(
             'users' => $users,
         ),
         'api' => array(
-            'pattern' => new RequestMatcher('^/api', null, array('GET', 'POST', 'PUT', 'DELETE')),
+            'pattern' => new RequestMatcher('^/api', null, $protectApiMethods),
             'http' => true,
             'users' => $users,
         ),

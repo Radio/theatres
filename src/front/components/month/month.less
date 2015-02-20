@@ -44,6 +44,7 @@
     position: relative;
     padding-bottom: 500px;
     padding-left: 280px;
+    margin-top: 60px;
 
     @media (max-width: 992px) {
         padding-left: 0;
@@ -68,6 +69,10 @@
         padding-top: 1em;
         padding-bottom: 1em;
         border-top: 1px solid #eee;
+
+        &:first-child {
+            border-top: 0 none;
+        }
 
         &.previous,
         &.next {
@@ -139,5 +144,10 @@
     }
     .show-separator {
         margin: 0 .2em;
+    }
+}
+.small-viewport {
+    .poster {
+        margin-top: 0;
     }
 }

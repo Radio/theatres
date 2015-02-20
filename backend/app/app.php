@@ -75,4 +75,7 @@ if ($debug) {
 
 require_once __DIR__ . '/routes.php';
 
+unset($db);
+unset($users);
+
 return $app;

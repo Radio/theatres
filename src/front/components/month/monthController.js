@@ -120,10 +120,14 @@ angular.module('frontApp')
             }
         }
 
+        function isSmallViewport() {
+            return ResponsiveBootstrapToolkit.is('xs') || ResponsiveBootstrapToolkit.is('sm');
+        }
+
         function fixScrolledToDay()
         {
             if (shownDay) {
-                if (ResponsiveBootstrapToolkit.is('lg') || ResponsiveBootstrapToolkit.is('md')) {
+                if (!isSmallViewport()) {
                     setTimeout(function() {
                         scrollToDay(shownDay);
                     }, 300);
@@ -133,17 +137,17 @@ angular.module('frontApp')
 
         function fixPosterMargin()
         {
-            var tries = 5;
-            var interval = setInterval(function() {
-                if ($('.main-container').hasClass('scrolled')) {
+            if (isSmallViewport()) {
+                var tries = 5;
+                var interval = setInterval(function() {
                     var headerHeight = $('.main-header').height();
-                    $('.filters-col').css({'margin-top': headerHeight});
                     $('.scroll-top').css({'top': headerHeight});
-                }
-                if (!--tries) {
-                    clearInterval(interval);
-                }
-            }, 500);
+                    $('.filters-col').css({'margin-top': headerHeight});
+                    if (!--tries) {
+                        clearInterval(interval);
+                    }
+                }, 500);
+            }
         }
 
         function finalizeLoadingState()

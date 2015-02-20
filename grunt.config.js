@@ -10,7 +10,8 @@ module.exports = {
         html: ['*.html', 'snapshots/**'],
         js: ['assets/js/*.js'],
         apache: ['.htaccess'],
-        images: ['assets/img/**/*']
+        images: ['assets/img/**/*'],
+        seo: ['robots.txt']
     },
 
     api: {

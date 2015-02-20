@@ -1,15 +1,14 @@
 (function($, viewport){
 
-    var isSmallViewport;
-
     var $mainContainer = $('.main-container');
     var $scrollTop = $('.scroll-top');
     $scrollTop.click(function() {
         $('html, body').scrollTop(0);
     });
 
-    if ($mainContainer.data('ng-app') == 'frontApp') {
+    if ($('html').data('ng-app') == 'frontApp') {
         handleWindowResize();
+        setCompactState();
 
         $(window)
             .bind('scroll', handelWindowScroll)
@@ -18,25 +17,26 @@
             });
     }
 
+    function isSmallViewport() {
+        return viewport.is('xs') || viewport.is('sm');
+    }
+
     function handelWindowScroll() {
-        if ($(window).scrollTop() > 100) {
-            $scrollTop.show();
-            setCompactState();
-        } else {
-            $scrollTop.hide();
-            if (!isSmallViewport) {
-                setExtendedState();
+        if (isSmallViewport()) {
+            if ($(window).scrollTop() > 100) {
+                $scrollTop.show();
+            } else {
+                $scrollTop.hide();
             }
         }
     }
 
     function handleWindowResize()
     {
-        isSmallViewport = viewport.is('xs') || viewport.is('sm');
-        if (isSmallViewport) {
-            setCompactState();
+        if (isSmallViewport()) {
+            $mainContainer.addClass('small-viewport');
         } else {
-            setExtendedState();
+            $mainContainer.removeClass('small-viewport');
         }
     }
 
