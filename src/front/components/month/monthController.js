@@ -1,5 +1,5 @@
 angular.module('frontApp')
-    .controller('MonthController', function ($scope, $routeParams, TitleHelper, DateHelper, Api, Filters) {
+    .controller('MonthController', function ($scope, $routeParams, $timeout, TitleHelper, DateHelper, Api, Filters) {
 
         var shownDay;
 
@@ -7,6 +7,7 @@ angular.module('frontApp')
         initFilters();
         loadShows().then(function() {
             $("html, body").scrollTop(0);
+            finalizeLoadingState();
         });
 
         $scope.$watchGroup(['filter.month', 'filter.year'], function() {
@@ -134,11 +135,22 @@ angular.module('frontApp')
             var tries = 5;
             var interval = setInterval(function() {
                 if ($('.main-container').hasClass('scrolled')) {
-                    $('.filters-col').css({'margin-top': $('.main-header').height()});
+                    var headerHeight = $('.main-header').height();
+                    $('.filters-col').css({'margin-top': headerHeight});
+                    $('.scroll-top').css({'top': headerHeight});
                 }
                 if (!--tries) {
                     clearInterval(interval);
                 }
+            }, 500);
+        }
+
+        function finalizeLoadingState()
+        {
+            $timeout(function() {
+                // needed for phantomjs to detect teh loading finish.
+                console.log('ready');
+                $scope.$parent.status = 'ready';
             }, 500);
         }
 

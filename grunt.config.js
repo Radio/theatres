@@ -7,7 +7,7 @@ module.exports = {
     packageDir: 'deploy',
     webFiles: {
         php: ['**/*.php'],
-        html: ['*.html'],
+        html: ['*.html', 'snapshots/**'],
         js: ['assets/js/*.js'],
         apache: ['.htaccess'],
         images: ['assets/img/**/*']

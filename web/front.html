@@ -1,72 +1,76 @@
 <!doctype html>
-<meta charset="utf-8" lang="ru">
+<html data-ng-app="frontApp">
+<head>
+    <meta charset="utf-8" lang="ru">
 
-<title>Все спектакли Харькова на одной странице</title>
+    <title>Все спектакли Харькова на одной странице</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" media="all" />
-<link href="http://fonts.googleapis.com/css?family=Roboto:400,300,500,700&subset=latin,cyrillic-ext"
-      rel="stylesheet" media="all" />
-<link href="/assets/css/front.css" rel="stylesheet" media="all" />
-<link href="/assets/css/print.css" rel="stylesheet" media="print" />
+    <link href="/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" media="all" />
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,300,500,700&subset=latin,cyrillic-ext"
+          rel="stylesheet" media="all" />
+    <link href="/assets/css/front.css" rel="stylesheet" media="all" />
+    <link href="/assets/css/print.css" rel="stylesheet" media="print" />
 
-<!--[if lt IE 9]>
-<script src="/assets/vendor/html5shiv/dist/html5shiv.js"></script>
-<script src="/assets/vendor/respond/dest/respond.min.js"></script>
-<![endif]-->
+    <!--[if lt IE 9]>
+    <script src="/assets/vendor/html5shiv/dist/html5shiv.js"></script>
+    <script src="/assets/vendor/respond/dest/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body data-status="{{ status }}">
+    <div id="main" class="container-fluid main-container"
+         data-ng-cloak>
 
-<div id="main" class="container-fluid main-container"
-     data-ng-cloak
-     data-ng-app="frontApp">
+        <header class="main-header">
+            <h1>
+                <a href="#!/" class="first-title">{{ title.first }}</a>
+                <span data-ng-show="title.second.length">/ <span class="second-title">{{ title.second }}</span></span>
+                <span data-ng-show="title.third.length">/ <span class="third-title">{{ title.third }}</span></span>
+            </h1>
+        </header>
+        <div class="scroll-top"></div>
 
-    <header class="main-header">
-        <h1>
-            <a href="/" class="first-title">{{ title.first }}</a>
-            <span data-ng-show="title.second.length">/ <span class="second-title">{{ title.second }}</span></span>
-            <span data-ng-show="title.third.length">/ <span class="third-title">{{ title.third }}</span></span>
-        </h1>
-    </header>
+        <div class="ctrl-view" data-ng-view></div>
+    </div>
 
-    <div class="ctrl-view" data-ng-view></div>
-</div>
+    <script src="/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/vendor/responsive-bootstrap-toolkit/js/bootstrap-toolkit.min.js"></script>
+    <script src="/vendor/angular/angular.min.js"></script>
+    <script src="/vendor/angular-route/angular-route.min.js"></script>
+    <script src="/vendor/angular-resource/angular-resource.min.js"></script>
+    <script src="/assets/js/angular-locale_ru-ru.js"></script>
+    <script src="/vendor/angular-local-storage/angular-local-storage.min.js"></script>
+    <script src="/vendor/flying-focus/standalone/flying-focus.js"></script>
+    <script src="/vendor/momentjs/min/moment-with-langs.min.js"></script>
+    <script src="/vendor/momentjs/lang/ru.js"></script>
 
+    <script src="/assets/js/frontend.js"></script>
 
-<script src="/vendor/jquery/dist/jquery.min.js"></script>
-<script src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="/vendor/responsive-bootstrap-toolkit/js/bootstrap-toolkit.min.js"></script>
-<script src="/vendor/angular/angular.min.js"></script>
-<script src="/vendor/angular-route/angular-route.min.js"></script>
-<script src="/vendor/angular-resource/angular-resource.min.js"></script>
-<script src="/assets/js/angular-locale_ru-ru.js"></script>
-<script src="/vendor/angular-local-storage/angular-local-storage.min.js"></script>
-<script src="/vendor/flying-focus/standalone/flying-focus.js"></script>
-<script src="/vendor/momentjs/min/moment-with-langs.min.js"></script>
-<script src="/vendor/momentjs/lang/ru.js"></script>
+    <script src="/tpl/front/templates.js"></script>
+    <script src="/tpl/helper/templates.js"></script>
 
-<script src="/assets/js/frontend.js"></script>
+    <script src="/src/helper/helper.module.js"></script>
+    <script src="/src/helper/shared/date/dateServices.js"></script>
+    <script src="/src/helper/shared/date/dateTimeDirective.js"></script>
+    <script src="/src/helper/shared/calendar/calendarDirective.js"></script>
+    <script src="/src/helper/shared/title/titleServices.js"></script>
 
-<script src="/tpl/front/templates.js"></script>
-<script src="/tpl/helper/templates.js"></script>
+    <script src="/src/api/api.module.js"></script>
+    <script src="/src/api/components/factory/factoryService.js"></script>
+    <script src="/src/api/components/api/apiService.js"></script>
+    <script src="/src/api/components/scene/sceneServices.js"></script>
+    <script src="/src/api/components/theatre/theatreServices.js"></script>
+    <script src="/src/api/components/play/playServices.js"></script>
+    <script src="/src/api/components/show/showServices.js"></script>
+    <script src="/src/api/components/tag/tagServices.js"></script>
 
-<script src="/src/helper/helper.module.js"></script>
-<script src="/src/helper/shared/date/dateServices.js"></script>
-<script src="/src/helper/shared/date/dateTimeDirective.js"></script>
-<script src="/src/helper/shared/calendar/calendarDirective.js"></script>
-<script src="/src/helper/shared/title/titleServices.js"></script>
-
-<script src="/src/api/api.module.js"></script>
-<script src="/src/api/components/factory/factoryService.js"></script>
-<script src="/src/api/components/api/apiService.js"></script>
-<script src="/src/api/components/scene/sceneServices.js"></script>
-<script src="/src/api/components/theatre/theatreServices.js"></script>
-<script src="/src/api/components/play/playServices.js"></script>
-<script src="/src/api/components/show/showServices.js"></script>
-<script src="/src/api/components/tag/tagServices.js"></script>
-
-<script src="/src/front/front.module.js"></script>
-<script src="/src/front/front.routes.js"></script>
-<script src="/src/front/components/month/monthServices.js"></script>
-<script src="/src/front/components/month/monthController.js"></script>
-<script src="/src/front/components/month/filters/filtersController.js"></script>
-<script src="/src/front/components/play/playController.js"></script>
+    <script src="/src/front/front.module.js"></script>
+    <script src="/src/front/front.routes.js"></script>
+    <script src="/src/front/components/month/monthServices.js"></script>
+    <script src="/src/front/components/month/monthController.js"></script>
+    <script src="/src/front/components/month/filters/filtersController.js"></script>
+    <script src="/src/front/components/play/playController.js"></script>
+</body>
+</html>

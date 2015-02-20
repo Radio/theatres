@@ -81,6 +81,7 @@ module.exports = function(grunt) {
                     src: [
                         '<%= webFiles.html %>',
                         '<%= webFiles.js %>',
+                        '<%= webFiles.images %>',
                         '<%= webFiles.php %>',
                         '<%= webFiles.apache %>'
                     ],
@@ -261,7 +262,9 @@ module.exports = function(grunt) {
                 files: [
                     '<%= webDir %>/<%= webFiles.html %>',
                     '<%= webDir %>/<%= webFiles.php %>',
-                    '<%= webDir %>/<%= webFiles.apache %>'
+                    '<%= webDir %>/<%= webFiles.apache %>',
+                    '<%= webDir %>/<%= webFiles.js %>',
+                    '<%= webDir %>/<%= webFiles.images %>'
                 ],
                 tasks: ['copy:web']
             },

@@ -1,33 +1,42 @@
 (function($, viewport){
 
+    var isSmallViewport;
+
     var $mainContainer = $('.main-container');
+    var $scrollTop = $('.scroll-top');
+    $scrollTop.click(function() {
+        $('html, body').scrollTop(0);
+    });
 
     if ($mainContainer.data('ng-app') == 'frontApp') {
         handleWindowResize();
 
-        $(window).bind('resize', function() {
-            viewport.changed(function(){
-                handleWindowResize();
+        $(window)
+            .bind('scroll', handelWindowScroll)
+            .bind('resize', function() {
+                viewport.changed(handleWindowResize);
             });
-        });
+    }
 
-        function handelWindowScroll() {
-            if ($(window).scrollTop() > 100) {
-                setCompactState()
-            } else {
-                setExtendedState()
+    function handelWindowScroll() {
+        if ($(window).scrollTop() > 100) {
+            $scrollTop.show();
+            setCompactState();
+        } else {
+            $scrollTop.hide();
+            if (!isSmallViewport) {
+                setExtendedState();
             }
         }
     }
 
     function handleWindowResize()
     {
-        if (viewport.is('xs') || viewport.is('sm')) {
+        isSmallViewport = viewport.is('xs') || viewport.is('sm');
+        if (isSmallViewport) {
             setCompactState();
-            $(window).unbind('scroll', handelWindowScroll);
         } else {
             setExtendedState();
-            $(window).bind('scroll', handelWindowScroll);
         }
     }
 

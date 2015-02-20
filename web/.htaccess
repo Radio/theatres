@@ -3,7 +3,12 @@
 
     DirectoryIndex front.html
 
-        RewriteEngine On
+    RewriteEngine On
+
+    #RewriteCond %{REQUEST_URI}  ^/$
+    RewriteCond %{QUERY_STRING} ^_escaped_fragment_=(.*)$
+    RewriteRule ^(.*)$ snapshots/index.php [NC,L]
+
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^(api|system|fetch) app.php [L]
 

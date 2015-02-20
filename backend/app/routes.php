@@ -19,6 +19,9 @@ $app->get('/system/import', 'Theatres\\Controllers\\System_Import::index')
 $app->get('/system/clear', 'Theatres\\Controllers\\System_Clear::index')
     ->bind('system_clear');
 
+$app->get('/system/sitemap', 'Theatres\\Controllers\\System_Sitemap::index')
+    ->bind('system_sitemap');
+
 // 2. Fetch
 
 $app->get('/fetch/{theatreKey}', 'Theatres\\Controllers\\Fetch::fetch')
