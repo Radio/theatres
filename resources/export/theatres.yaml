@@ -4,165 +4,213 @@
     title: 'Театр 19'
     abbr: Т19
     link: 'http://www.theatre19.com.ua'
-    fetcher: Theatre19
     house_slug: teatr-19
+    has_fetcher: '1'
 -
     id: '2'
     key: shevchenko
     title: 'Театр им. Шевченко'
     abbr: ТШ
     link: 'http://www.theatre-shevchenko.com.ua'
-    fetcher: Shevchenko
     house_slug: ''
+    has_fetcher: '1'
 -
     id: '3'
-    key: postscriptum
-    title: 'Театр «PostScriptum»'
+    key: big
+    title: 'большая сцена'
     abbr: PS
     link: 'http://ps-teatr.com.ua'
-    fetcher: PostScriptum
     house_slug: ''
+    has_fetcher: '1'
 -
     id: '4'
     key: pushkin
     title: 'Театр им. Пушкина'
     abbr: ТП
     link: 'http://rusdrama.kh.ua'
-    fetcher: Pushkin
     house_slug: ''
+    has_fetcher: '1'
 -
     id: '5'
     key: house
     title: 'Дом Актера'
     abbr: ДА
     link: 'http://domaktera.com.ua'
-    fetcher: House
     house_slug: ''
+    has_fetcher: '1'
 -
     id: '6'
-    key: flowers
+    key: beautifulflowers
     title: 'Театр «Прекрасные Цветы»'
     abbr: ПЦ
     link: 'http://vk.com/club33804478'
-    fetcher: ''
     house_slug: teatr-prekrasny-e-tsvety
+    has_fetcher: '1'
 -
     id: '7'
-    key: teatr-mozhet-byit
+    key: moget
     title: 'Театр «Может быть»'
     abbr: МБ
     link: 'http://domaktera.com.ua/theaters/teatr-mozhet-byit'
-    fetcher: ''
     house_slug: teatr-mozhet-byit
+    has_fetcher: '1'
 -
     id: '8'
     key: teatr-v-teatre
     title: 'Театр в театре'
     abbr: ТвТ
     link: 'http://domaktera.com.ua/theaters/teatr-v-teatre'
-    fetcher: ''
     house_slug: teatr-v-teatre
+    has_fetcher: '0'
 -
     id: '9'
     key: novascena
     title: 'ЦСИ «Новая Сцена»'
     abbr: НС
     link: 'http://domaktera.com.ua/theaters/novascena'
-    fetcher: ''
     house_slug: novascena
+    has_fetcher: '0'
 -
     id: '10'
     key: del-pjero
     title: 'Театр Французской Комедии «Дель Пьеро»'
     abbr: ДП
     link: 'http://domaktera.com.ua/theaters/del-pjero'
-    fetcher: ''
     house_slug: del-pjero
+    has_fetcher: '0'
 -
     id: '11'
     key: teatr-forte
     title: 'Театр «Forte»'
     abbr: F
     link: 'http://domaktera.com.ua/theaters/teatr-forte'
-    fetcher: ''
     house_slug: teatr-forte
+    has_fetcher: '0'
 -
     id: '12'
     key: teatral-ny-j-kollektiv-marionette
     title: 'Малый Театр Марионеток'
     abbr: МТМ
     link: 'http://domaktera.com.ua/theaters/teatral-ny-j-kollektiv-marionette'
-    fetcher: ''
     house_slug: teatral-ny-j-kollektiv-marionette
+    has_fetcher: '0'
 -
     id: '13'
     key: teatr-sahalin
     title: 'Театр «Сахалин»'
     abbr: Сx
     link: 'http://domaktera.com.ua/theaters/teatr-sahalin'
-    fetcher: ''
     house_slug: teatr-sahalin
+    has_fetcher: '0'
 -
     id: '14'
     key: teatr-up
     title: 'Театр Up'
     abbr: Up
     link: 'http://domaktera.com.ua/theaters/teatr-up'
-    fetcher: ''
     house_slug: teatr-up
+    has_fetcher: '0'
 -
     id: '15'
     key: aparte
     title: 'Творческий Центр «Апарте»'
     abbr: ТЦА
     link: 'http://domaktera.com.ua/theaters/aparte'
-    fetcher: ''
     house_slug: aparte
+    has_fetcher: '0'
 -
     id: '16'
     key: teatr-green-magic
     title: 'Творческое объединение «Green Magic»'
     abbr: GM
     link: 'http://domaktera.com.ua/theaters/teatr-green-magic'
-    fetcher: ''
     house_slug: teatr-green-magic
+    has_fetcher: '0'
 -
     id: '17'
     key: hoteatr
     title: 'Харьковский Открытый Театр'
     abbr: ХОТ
     link: 'http://domaktera.com.ua/theaters/hoteatr'
-    fetcher: ''
     house_slug: hoteatr
+    has_fetcher: '0'
 -
     id: '18'
     key: teatr-lanzheron
     title: 'Театр «Ланжеронъ»'
     abbr: Лъ
     link: 'http://domaktera.com.ua/theaters/teatr-lanzheron'
-    fetcher: ''
     house_slug: teatr-lanzheron
+    has_fetcher: '0'
 -
     id: '19'
     key: novyi-teat
     title: 'Новый театр'
     abbr: НТ
     link: 'http://domaktera.com.ua/theaters/novyi-teat'
-    fetcher: ''
     house_slug: novyi-teat
+    has_fetcher: '0'
 -
     id: '20'
     key: tk-yunona
     title: 'ТК Юнона'
     abbr: null
     link: 'http://domaktera.com.ua/theaters/tk-yunona'
-    fetcher: null
     house_slug: tk-yunona
+    has_fetcher: '0'
 -
     id: '21'
     key: kotelok
     title: 'Театр «Котелок»'
     abbr: null
     link: 'http://domaktera.com.ua/theaters/kotelok'
-    fetcher: null
     house_slug: kotelok
+    has_fetcher: '0'
+-
+    id: '22'
+    key: puppet
+    title: 'Кукольный театр'
+    abbr: КТ
+    link: 'http://puppet.kharkov.ua'
+    house_slug: null
+    has_fetcher: '1'
+-
+    id: '23'
+    key: madrigal
+    title: Мадригал
+    abbr: М
+    link: 'http://madrigal.org.ua'
+    house_slug: null
+    has_fetcher: '1'
+-
+    id: '24'
+    key: operetta
+    title: 'Театр музыкальной комедии'
+    abbr: МК
+    link: 'http://www.operetta.kharkiv.ua'
+    house_slug: null
+    has_fetcher: '1'
+-
+    id: '25'
+    key: zhuki
+    title: 'Театр «На Жуках»'
+    abbr: Ж
+    link: 'Театр «На Жуках»'
+    house_slug: null
+    has_fetcher: '0'
+-
+    id: '26'
+    key: hatob
+    title: 'Оперный театр (ХАТОБ)'
+    abbr: Х
+    link: 'http://www.hatob.com.ua'
+    house_slug: null
+    has_fetcher: '1'
+-
+    id: '27'
+    key: tyz
+    title: 'Театр для детей и юношества'
+    abbr: ТЮЗ
+    link: 'http://tyz.kharkov.ua'
+    house_slug: null
+    has_fetcher: '1'

@@ -1,0 +1,2392 @@
+-
+    id: '181'
+    date: '2015-01-06 19:00:00'
+    price: null
+    hash: 31b81e9268f8149a034f436ce22efbab
+    theatre_id: '1'
+    scene_id: '1'
+    play_id: '26'
+-
+    id: '182'
+    date: '2015-01-09 19:00:00'
+    price: null
+    hash: 28fa6d1a6d9dc2ca4885fa40325b4e43
+    theatre_id: '1'
+    scene_id: '1'
+    play_id: '27'
+-
+    id: '183'
+    date: '2015-01-11 19:00:00'
+    price: null
+    hash: 79cd4751f091655ec9426dd2952d2429
+    theatre_id: '1'
+    scene_id: '1'
+    play_id: '28'
+-
+    id: '184'
+    date: '2015-01-13 19:00:00'
+    price: null
+    hash: edcf17d0d495c8e8c2faaa914779bd1a
+    theatre_id: '1'
+    scene_id: '1'
+    play_id: '29'
+-
+    id: '185'
+    date: '2015-01-15 19:00:00'
+    price: null
+    hash: 0e2c62da5c69e8c8a48287a7851b9127
+    theatre_id: '1'
+    scene_id: '1'
+    play_id: '26'
+-
+    id: '186'
+    date: '2015-01-17 19:00:00'
+    price: null
+    hash: fdc24f554e2bfdf215047aa7bebd3f94
+    theatre_id: '1'
+    scene_id: '1'
+    play_id: '27'
+-
+    id: '187'
+    date: '2015-01-18 19:00:00'
+    price: null
+    hash: 8dd7acc9ac04ed55eab6017e27d77cf6
+    theatre_id: '1'
+    scene_id: '2'
+    play_id: '30'
+-
+    id: '188'
+    date: '2015-01-21 19:00:00'
+    price: null
+    hash: d742461503e442d52abb6030a97ee35f
+    theatre_id: '1'
+    scene_id: '1'
+    play_id: '26'
+-
+    id: '189'
+    date: '2015-01-22 19:00:00'
+    price: null
+    hash: 4614f69012029422d3443c2102bedb93
+    theatre_id: '1'
+    scene_id: '2'
+    play_id: '30'
+-
+    id: '190'
+    date: '2015-01-27 19:00:00'
+    price: null
+    hash: b22c171dfe2af5cc8eefbb9f74f12149
+    theatre_id: '1'
+    scene_id: '1'
+    play_id: '31'
+-
+    id: '191'
+    date: '2015-01-30 19:00:00'
+    price: null
+    hash: 97eb9ce683c88b81c5d4eb9c26f26c0a
+    theatre_id: '1'
+    scene_id: '2'
+    play_id: '30'
+-
+    id: '192'
+    date: '2015-01-25 18:00:00'
+    price: '56–110 грн'
+    hash: 3809a668187468f5bca3eabcc58f7660
+    theatre_id: '3'
+    scene_id: '1'
+    play_id: '32'
+-
+    id: '193'
+    date: '2015-01-26 19:00:00'
+    price: '64–120 грн'
+    hash: 9525218b6f57a9a8ec89a9cea0850d9c
+    theatre_id: '3'
+    scene_id: '1'
+    play_id: '33'
+-
+    id: '194'
+    date: '2015-01-30 19:00:00'
+    price: null
+    hash: 46d7feba0359634e3b6a8d192e4bc84a
+    theatre_id: '3'
+    scene_id: '1'
+    play_id: '34'
+-
+    id: '195'
+    date: '2015-01-31 19:00:00'
+    price: null
+    hash: 92bc07f0ed80bf043ec7f7f46b9f337e
+    theatre_id: '3'
+    scene_id: '1'
+    play_id: '33'
+-
+    id: '196'
+    date: '2015-02-01 18:00:00'
+    price: null
+    hash: 2dbc8de08d39729eb968d11959835d73
+    theatre_id: '3'
+    scene_id: '1'
+    play_id: '35'
+-
+    id: '197'
+    date: '2015-02-08 18:00:00'
+    price: '80–140 грн'
+    hash: dc68a85f208eae44439906549fcd8d2b
+    theatre_id: '3'
+    scene_id: '1'
+    play_id: '36'
+-
+    id: '198'
+    date: '2015-02-13 19:00:00'
+    price: null
+    hash: 7777d61373417b72d5e98f040895d028
+    theatre_id: '3'
+    scene_id: '1'
+    play_id: '34'
+-
+    id: '199'
+    date: '2015-02-15 18:00:00'
+    price: null
+    hash: 9ac08a4c6983417c4a7293323d8f82fe
+    theatre_id: '3'
+    scene_id: '1'
+    play_id: '33'
+-
+    id: '200'
+    date: '2015-02-22 18:00:00'
+    price: '64–120 грн'
+    hash: 00bf3305dc1e4e2bf3302409d5502a9c
+    theatre_id: '3'
+    scene_id: '1'
+    play_id: '35'
+-
+    id: '201'
+    date: '2015-02-27 19:00:00'
+    price: '56–110 грн'
+    hash: 591cd9a4ea4f812e4de8532d12c0e3da
+    theatre_id: '3'
+    scene_id: '1'
+    play_id: '37'
+-
+    id: '202'
+    date: '2015-02-28 19:00:00'
+    price: '72–130 грн'
+    hash: d2096e296db88028a9670170a0a7403d
+    theatre_id: '3'
+    scene_id: '1'
+    play_id: '34'
+-
+    id: '203'
+    date: '2015-01-28 19:00:00'
+    price: null
+    hash: 44b6b9c20ed3f2291c22c9ce852237fa
+    theatre_id: '4'
+    scene_id: '1'
+    play_id: '38'
+-
+    id: '204'
+    date: '2015-01-29 19:00:00'
+    price: null
+    hash: bc5915c535e8b10a2b57ea26fc7cd365
+    theatre_id: '4'
+    scene_id: '1'
+    play_id: '39'
+-
+    id: '205'
+    date: '2015-01-30 19:00:00'
+    price: null
+    hash: a0ef50961bd4a4a506f228967ebb7802
+    theatre_id: '4'
+    scene_id: '1'
+    play_id: '40'
+-
+    id: '206'
+    date: '2015-01-31 19:00:00'
+    price: null
+    hash: 5c8899ace54780daf646ab0d62d16ab3
+    theatre_id: '4'
+    scene_id: '1'
+    play_id: '41'
+-
+    id: '207'
+    date: '2015-01-22 19:00:00'
+    price: null
+    hash: f20eec14ad7f880eecebd23d203bc50b
+    theatre_id: '6'
+    scene_id: '1'
+    play_id: '42'
+-
+    id: '208'
+    date: '2015-01-28 19:00:00'
+    price: null
+    hash: 037459f305e98f508805d6011fd34d18
+    theatre_id: '6'
+    scene_id: '1'
+    play_id: '43'
+-
+    id: '209'
+    date: '2015-02-02 19:00:00'
+    price: null
+    hash: e9de8bcee9c1fb1420649b16a36f3b55
+    theatre_id: '6'
+    scene_id: '1'
+    play_id: '44'
+-
+    id: '210'
+    date: '2015-01-26 19:00:00'
+    price: null
+    hash: 307fc229ae2bffe006a530258d365636
+    theatre_id: '7'
+    scene_id: '1'
+    play_id: '45'
+-
+    id: '211'
+    date: '2015-01-27 19:00:00'
+    price: null
+    hash: c6b8b038c5a0a06099f797f8a5c83cd6
+    theatre_id: '7'
+    scene_id: '1'
+    play_id: '46'
+-
+    id: '212'
+    date: '2015-01-29 19:00:00'
+    price: null
+    hash: 6f56b23a8e86092bd8fc531b0e355b91
+    theatre_id: '7'
+    scene_id: '1'
+    play_id: '47'
+-
+    id: '213'
+    date: '2015-02-08 19:00:00'
+    price: null
+    hash: be41916b4ad8e75e025c327eaa177547
+    theatre_id: '7'
+    scene_id: '1'
+    play_id: '48'
+-
+    id: '214'
+    date: '2015-02-12 19:00:00'
+    price: null
+    hash: 04c2ed6fc358884dcd134c611c42a1f2
+    theatre_id: '7'
+    scene_id: '1'
+    play_id: '49'
+-
+    id: '215'
+    date: '2015-01-02 10:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: e9c8735a036ae8ccdacbc4fa56820aa1
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '50'
+-
+    id: '216'
+    date: '2015-01-02 12:30:00'
+    price: '30 грн (детский), 60 грн'
+    hash: c9fb9a1aafc8e763f8d0fa2418ded5b4
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '50'
+-
+    id: '217'
+    date: '2015-01-02 15:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 3ad9158fa3846e2b67b4700d12e734a4
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '50'
+-
+    id: '218'
+    date: '2015-01-02 17:30:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 8b9a2b4745fa10337e1434ac91b21303
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '50'
+-
+    id: '219'
+    date: '2015-01-03 10:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: aca74a8f03e7f1038b90514c34783fb5
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '50'
+-
+    id: '220'
+    date: '2015-01-03 12:30:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 0aa330303cbd570441f8d2b49c92cfae
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '50'
+-
+    id: '221'
+    date: '2015-01-03 15:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 8f907804f409959eea26c475c2fbd638
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '50'
+-
+    id: '222'
+    date: '2015-01-03 17:30:00'
+    price: '30 грн (детский), 60 грн'
+    hash: c19154ac46be4ba166852d9583ab4fa2
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '50'
+-
+    id: '223'
+    date: '2015-01-04 10:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 674c187919e844d7aa7e20d9f56ea833
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '51'
+-
+    id: '224'
+    date: '2015-01-04 12:30:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 213a8cbd76416fe86fb06f6fa87c192a
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '51'
+-
+    id: '225'
+    date: '2015-01-04 15:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 5b9c55caccaaba742212665cc307e813
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '51'
+-
+    id: '226'
+    date: '2015-01-04 17:30:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 304e37832b22d346b9922897584517f8
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '51'
+-
+    id: '227'
+    date: '2015-01-05 10:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 86a9036e15f4652f5e6b11f5b11d23cc
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '52'
+-
+    id: '228'
+    date: '2015-01-05 12:30:00'
+    price: '30 грн (детский), 60 грн'
+    hash: c56f777c72843c40f21dcf04b7b420a9
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '52'
+-
+    id: '229'
+    date: '2015-01-05 15:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 1f0258c3596f654ca0bb16dbe4b6d624
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '52'
+-
+    id: '230'
+    date: '2015-01-05 17:30:00'
+    price: '30 грн (детский), 60 грн'
+    hash: e8528af203d3cab14914fdb1c7eba0d0
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '52'
+-
+    id: '231'
+    date: '2015-01-06 11:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 6e49a61c2f1a54b494990c8976c27c3f
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '53'
+-
+    id: '232'
+    date: '2015-01-06 13:30:00'
+    price: '30 грн (детский), 60 грн'
+    hash: d65c6cdba24d05133e58171d64312224
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '53'
+-
+    id: '233'
+    date: '2015-01-06 16:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: e57b6fe9f111e6d46cef5240c54bb44c
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '53'
+-
+    id: '234'
+    date: '2015-01-07 11:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 97c71af1dbda22672ff65401b2084c52
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '54'
+-
+    id: '235'
+    date: '2015-01-07 13:30:00'
+    price: '30 грн (детский), 60 грн'
+    hash: ea4c473d706aadf0c83d9248c6eeb690
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '54'
+-
+    id: '236'
+    date: '2015-01-07 16:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 828806eeb01763968d5b417a4dbfa89e
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '54'
+-
+    id: '237'
+    date: '2015-01-08 11:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 18fa464eb27ad2110ccb03a2d82c99e2
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '50'
+-
+    id: '238'
+    date: '2015-01-08 13:30:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 8fef2778b5b6a34fb29924c404bb9702
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '50'
+-
+    id: '239'
+    date: '2015-01-08 16:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: d8728ff0513297ddc132af773aca93a7
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '50'
+-
+    id: '240'
+    date: '2015-01-09 11:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: e78f3645a59bf91be7fce4cfd8730302
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '55'
+-
+    id: '241'
+    date: '2015-01-09 13:30:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 275cf2b0662b9292cc4988d6d76bcb94
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '55'
+-
+    id: '242'
+    date: '2015-01-09 16:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: a1de5101b69392b837e01cdd2e1be92a
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '55'
+-
+    id: '243'
+    date: '2015-01-10 11:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: d45189bea79d35a90746ee0a8d34993a
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '56'
+-
+    id: '244'
+    date: '2015-01-10 13:30:00'
+    price: '30 грн (детский), 60 грн'
+    hash: f39e76cc6d7d58774ef56bac0819391e
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '56'
+-
+    id: '245'
+    date: '2015-01-10 16:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: a777b092a6b36a4398c2c7d0a4edb16f
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '56'
+-
+    id: '246'
+    date: '2015-01-11 11:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 565bc0533be538e629204cea7c159e7e
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '57'
+-
+    id: '247'
+    date: '2015-01-11 13:30:00'
+    price: '30 грн (детский), 60 грн'
+    hash: d86f41dd2744607827263c500dc91a3f
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '57'
+-
+    id: '248'
+    date: '2015-01-11 16:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: c832ab0f9326c31665cf70bf9aedda6c
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '57'
+-
+    id: '249'
+    date: '2015-01-16 18:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: adc363a4b540139d08846140a547f405
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '58'
+-
+    id: '250'
+    date: '2015-01-17 11:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: d50bc77a7256c3004ce52a1a2c9d51e8
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '59'
+-
+    id: '251'
+    date: '2015-01-17 13:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: cd39788787578ab4f7c2c3f52765b7ee
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '59'
+-
+    id: '252'
+    date: '2015-01-17 18:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 3eeff34a3434241141cf2f2ac0b2d365
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '60'
+-
+    id: '253'
+    date: '2015-01-18 11:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 411fb183539533db0d941cc09b3b9020
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '61'
+-
+    id: '254'
+    date: '2015-01-18 13:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 32cbbc31d86a348d7a0f3eb986d897ea
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '61'
+-
+    id: '255'
+    date: '2015-01-23 18:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 9db7ab97746e9040a954e3efa7074c21
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '62'
+-
+    id: '256'
+    date: '2015-01-24 11:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: a5aa4552c7c12afbbd3a7cbb071336a3
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '63'
+-
+    id: '257'
+    date: '2015-01-24 13:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 10e9f220fef312f4ef9227bf6671bad2
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '63'
+-
+    id: '258'
+    date: '2015-01-24 18:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 24dd1bba171dd33d494bd698adc91b8f
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '64'
+-
+    id: '259'
+    date: '2015-01-25 11:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 638297e716953a39b4a9c3a412b0459a
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '54'
+-
+    id: '260'
+    date: '2015-01-25 13:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 4c6777970699da7a879e7ae385043306
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '54'
+-
+    id: '261'
+    date: '2015-01-30 18:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: e61d0711e710cc69bf93378959ed2804
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '65'
+-
+    id: '262'
+    date: '2015-01-31 11:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 03e2e03128e4d46aa62949d20de8fbc1
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '66'
+-
+    id: '263'
+    date: '2015-01-31 13:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 09267cdda69613f0ea780566e538a4b8
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '66'
+-
+    id: '264'
+    date: '2015-01-31 18:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 3bca75593fcdd3a9abca1b0d084e6cdd
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '67'
+-
+    id: '265'
+    date: '2015-02-01 11:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: d27cc3c2f6b5c7301acfc9b9d2a77f65
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '68'
+-
+    id: '266'
+    date: '2015-02-01 13:30:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 61b5c22a6d34acb77b411f490e999251
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '68'
+-
+    id: '267'
+    date: '2015-02-06 18:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 51aab2d29a998963b08d5e8be3ef3aec
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '69'
+-
+    id: '268'
+    date: '2015-02-07 11:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 637939191eec9b8f365dfdf4706dc390
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '57'
+-
+    id: '269'
+    date: '2015-02-07 13:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: ea7e3daeaaed9c86e2f55b5cf53c0183
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '57'
+-
+    id: '270'
+    date: '2015-02-07 18:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 724ec747e8211c8c048db47ef683f748
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '60'
+-
+    id: '271'
+    date: '2015-02-08 11:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 210e386ae5117b730734621a6bc53051
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '70'
+-
+    id: '272'
+    date: '2015-02-08 13:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 66baac6c3a5d8bbbd77ade1cdfd1266e
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '70'
+-
+    id: '273'
+    date: '2015-02-13 18:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: b571f0cecf5f68bda54c543e7c8863ca
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '62'
+-
+    id: '274'
+    date: '2015-02-14 11:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: a555ed85e6913a83e77a6f83fdeaf740
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '56'
+-
+    id: '275'
+    date: '2015-02-14 13:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 52443eef89bc35c4f09b5ff25e0f323e
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '56'
+-
+    id: '276'
+    date: '2015-02-14 18:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 0ec3cd70fb91b249ef1b26fb5e0cb1a6
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '65'
+-
+    id: '277'
+    date: '2015-02-15 11:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 6704edee573292bd5e0c8513c6d9c670
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '52'
+-
+    id: '278'
+    date: '2015-02-15 13:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 307d54c9bf4318b2530278ce7db19b2a
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '52'
+-
+    id: '279'
+    date: '2015-02-20 18:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 87faa6d0dae3949470a9054d7c6a124c
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '71'
+-
+    id: '280'
+    date: '2015-02-21 11:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 1584f09faaa80d901bed761103148e7b
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '51'
+-
+    id: '281'
+    date: '2015-02-21 13:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: c7fd8a0b1ef4e9a53fc09c9cd95b5aa1
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '51'
+-
+    id: '282'
+    date: '2015-02-21 18:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 223a8c652889223ad20670e10429ca94
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '64'
+-
+    id: '283'
+    date: '2015-02-22 11:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 129c8e0660f223f351da4c7ea38452c3
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '63'
+-
+    id: '284'
+    date: '2015-02-22 13:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: c79ce6aa05d2a19c8d15d58f2b26eb6a
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '63'
+-
+    id: '285'
+    date: '2015-02-27 18:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 5b970c558f2560d69fbbfae014ec5b31
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '72'
+-
+    id: '286'
+    date: '2015-02-28 11:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 3dc54149b315bad1b3dcc3b2d801b3d9
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '66'
+-
+    id: '287'
+    date: '2015-02-28 13:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: 062131bdc32f81ad9fea496f34cabf7b
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '66'
+-
+    id: '288'
+    date: '2015-02-28 18:00:00'
+    price: '30 грн (детский), 60 грн'
+    hash: d5282a70842f541aab0a6dd8c94852aa
+    theatre_id: '22'
+    scene_id: '1'
+    play_id: '72'
+-
+    id: '289'
+    date: '2015-01-31 18:00:00'
+    price: '60, 55, 50  грн'
+    hash: 70c071019b898430b5fb5b6a818be636
+    theatre_id: '23'
+    scene_id: '1'
+    play_id: '73'
+-
+    id: '290'
+    date: '2015-02-01 11:00:00'
+    price: '55 грн'
+    hash: 65c8371f01429883565e3100e6c9548a
+    theatre_id: '23'
+    scene_id: '1'
+    play_id: '74'
+-
+    id: '291'
+    date: '2015-02-07 18:00:00'
+    price: '70, 65, 60, 55 грн'
+    hash: 59c4847c5c78a761e87d3b3ed1205f6f
+    theatre_id: '23'
+    scene_id: '1'
+    play_id: '75'
+-
+    id: '292'
+    date: '2015-02-08 11:00:00'
+    price: '50, 45, 40 грн'
+    hash: 380e90ce5610ee438b517b325de984e0
+    theatre_id: '23'
+    scene_id: '1'
+    play_id: '76'
+-
+    id: '293'
+    date: '2015-02-14 18:00:00'
+    price: '70, 65, 60, 55 грн'
+    hash: 0b04f3580994770cd0969d9b43ee9923
+    theatre_id: '23'
+    scene_id: '1'
+    play_id: '77'
+-
+    id: '294'
+    date: '2015-02-15 11:00:00'
+    price: '50, 45, 40 грн'
+    hash: 48fb0a483b78ff1ff209cc86c08d4cbd
+    theatre_id: '23'
+    scene_id: '1'
+    play_id: '78'
+-
+    id: '295'
+    date: '2015-02-21 18:00:00'
+    price: '60 грн'
+    hash: e484c591ab2a941ee14c25757e2a3dc9
+    theatre_id: '23'
+    scene_id: '1'
+    play_id: '79'
+-
+    id: '296'
+    date: '2015-02-28 18:00:00'
+    price: '60, 55, 50  грн'
+    hash: 3fd0de5c4894159bc76b03976370fed7
+    theatre_id: '23'
+    scene_id: '1'
+    play_id: '80'
+-
+    id: '297'
+    date: '2015-03-01 11:00:00'
+    price: '50, 45, 40 грн'
+    hash: 95aa283268e99a0ef7c913606d3845a8
+    theatre_id: '23'
+    scene_id: '1'
+    play_id: '81'
+-
+    id: '298'
+    date: '2015-01-02 11:00:00'
+    price: '30 грн'
+    hash: 1d99fd075a470731fe189e41b47d8cad
+    theatre_id: '24'
+    scene_id: '1'
+    play_id: '82'
+-
+    id: '299'
+    date: '2015-01-02 18:30:00'
+    price: '20–60 грн'
+    hash: 03f85324ca3d04cfbb82ff31023d882e
+    theatre_id: '24'
+    scene_id: '1'
+    play_id: '83'
+-
+    id: '300'
+    date: '2015-01-03 11:00:00'
+    price: '30 грн'
+    hash: 17fb972ed4a2ebec5fcc4e79a7b7d8e4
+    theatre_id: '24'
+    scene_id: '1'
+    play_id: '84'
+-
+    id: '301'
+    date: '2015-01-03 14:00:00'
+    price: '30 грн'
+    hash: 98e7a7e5afaafc878acaf0d4edf9f8a4
+    theatre_id: '24'
+    scene_id: '1'
+    play_id: '84'
+-
+    id: '302'
+    date: '2015-01-04 15:00:00'
+    price: '30 грн'
+    hash: 811da7694ef8c10386bf5f407f82304a
+    theatre_id: '24'
+    scene_id: '1'
+    play_id: '85'
+-
+    id: '303'
+    date: '2015-01-05 11:00:00'
+    price: '30 грн'
+    hash: 7e52e56c32c99eb3cd45dc57597f9f4a
+    theatre_id: '24'
+    scene_id: '1'
+    play_id: '84'
+-
+    id: '304'
+    date: '2015-01-05 14:00:00'
+    price: '30 грн'
+    hash: 7fb3547174e312f52624c669935cca00
+    theatre_id: '24'
+    scene_id: '1'
+    play_id: '84'
+-
+    id: '305'
+    date: '2015-01-06 12:00:00'
+    price: '30 грн'
+    hash: a936c744b7b79cd14ef1015ba9376cf1
+    theatre_id: '24'
+    scene_id: '1'
+    play_id: '84'
+-
+    id: '306'
+    date: '2015-01-08 12:00:00'
+    price: '30 грн'
+    hash: b15135427f6b661ee918ff1b384528e9
+    theatre_id: '24'
+    scene_id: '1'
+    play_id: '85'
+-
+    id: '307'
+    date: '2015-01-08 18:30:00'
+    price: '20–60 грн'
+    hash: 8456afa1ec8ad40a6a67a36082c275a6
+    theatre_id: '24'
+    scene_id: '1'
+    play_id: '86'
+-
+    id: '308'
+    date: '2015-01-09 12:00:00'
+    price: '30 грн'
+    hash: fd43a802d70a4c13cecfaae17b693b39
+    theatre_id: '24'
+    scene_id: '1'
+    play_id: '87'
+-
+    id: '309'
+    date: '2015-01-09 18:30:00'
+    price: '20–60 грн'
+    hash: d5fb4c3f41e2a0b02b87c9406b48247b
+    theatre_id: '24'
+    scene_id: '1'
+    play_id: '88'
+-
+    id: '310'
+    date: '2015-01-10 12:00:00'
+    price: '30 грн'
+    hash: 87a5ca713cd1d4e7d1beadd14071fc49
+    theatre_id: '24'
+    scene_id: '1'
+    play_id: '84'
+-
+    id: '311'
+    date: '2015-01-10 18:30:00'
+    price: '20–60 грн'
+    hash: 273e56a0b6658f7d7145890d10571d78
+    theatre_id: '24'
+    scene_id: '1'
+    play_id: '89'
+-
+    id: '312'
+    date: '2015-01-11 17:00:00'
+    price: '20–60 грн'
+    hash: 7e46a55b0f5b0963735d73c787b4307b
+    theatre_id: '24'
+    scene_id: '1'
+    play_id: '90'
+-
+    id: '313'
+    date: '2015-01-12 18:30:00'
+    price: '20–60 грн'
+    hash: 32c4a6d1ff00a7125c0958ba30cf3be8
+    theatre_id: '24'
+    scene_id: '1'
+    play_id: '91'
+-
+    id: '314'
+    date: '2015-01-13 18:30:00'
+    price: '20–60 грн'
+    hash: fa8808358322634d10efb62dedfdac43
+    theatre_id: '24'
+    scene_id: '1'
+    play_id: '92'
+-
+    id: '315'
+    date: '2015-01-24 12:00:00'
+    price: '30 грн'
+    hash: 364792d236c343cafcac49db7d944b27
+    theatre_id: '24'
+    scene_id: '1'
+    play_id: '82'
+-
+    id: '316'
+    date: '2015-01-24 18:30:00'
+    price: '20–60 грн'
+    hash: 421111d7861550ae64cfd61f9066ddba
+    theatre_id: '24'
+    scene_id: '1'
+    play_id: '93'
+-
+    id: '317'
+    date: '2015-01-28 17:00:00'
+    price: '20–60 грн'
+    hash: b0049fa7a3826069d3ce507eb5149487
+    theatre_id: '24'
+    scene_id: '1'
+    play_id: '91'
+-
+    id: '318'
+    date: '2015-01-29 18:30:00'
+    price: '20–60 грн'
+    hash: 6f1ed1bec54f5eefedeb2622c77d3f4b
+    theatre_id: '24'
+    scene_id: '1'
+    play_id: '94'
+-
+    id: '319'
+    date: '2015-01-30 18:30:00'
+    price: '20–60 грн'
+    hash: d724d0b12881dbbdeb90ed7ebd674a86
+    theatre_id: '24'
+    scene_id: '1'
+    play_id: '95'
+-
+    id: '320'
+    date: '2015-01-31 12:00:00'
+    price: '30 грн'
+    hash: 0e415cf33342566d5850929a7db0d39a
+    theatre_id: '24'
+    scene_id: '1'
+    play_id: '84'
+-
+    id: '321'
+    date: '2015-01-31 18:30:00'
+    price: '20–60 грн'
+    hash: e81bc150db3a18ff715e2ad10ff2d3e9
+    theatre_id: '24'
+    scene_id: '1'
+    play_id: '89'
+-
+    id: '322'
+    date: '2015-01-06 11:00:00'
+    price: null
+    hash: d2187cafbc415341cd809be5721ea358
+    theatre_id: '26'
+    scene_id: '1'
+    play_id: '96'
+-
+    id: '323'
+    date: '2015-01-08 15:00:00'
+    price: null
+    hash: 6efe1f2aa680faacd54d5d0038dfb838
+    theatre_id: '26'
+    scene_id: '1'
+    play_id: '97'
+-
+    id: '324'
+    date: '2015-01-09 11:00:00'
+    price: null
+    hash: bd3028e3fa04e6d4e567dac5b348ddcd
+    theatre_id: '26'
+    scene_id: '1'
+    play_id: '98'
+-
+    id: '325'
+    date: '2015-01-09 15:00:00'
+    price: null
+    hash: eb4bd015aede257e1c9cbf48196c75b4
+    theatre_id: '26'
+    scene_id: '1'
+    play_id: '99'
+-
+    id: '326'
+    date: '2015-01-10 11:00:00'
+    price: null
+    hash: f27c955c72de2d264ab92a1c3918d4c0
+    theatre_id: '26'
+    scene_id: '1'
+    play_id: '96'
+-
+    id: '327'
+    date: '2015-01-10 18:30:00'
+    price: null
+    hash: 5093254c8334566926603843c8671ede
+    theatre_id: '26'
+    scene_id: '1'
+    play_id: '100'
+-
+    id: '328'
+    date: '2015-01-11 11:00:00'
+    price: null
+    hash: 983e66be743f10a994fd98e2180f676e
+    theatre_id: '26'
+    scene_id: '1'
+    play_id: '97'
+-
+    id: '329'
+    date: '2015-01-11 15:00:00'
+    price: null
+    hash: e2f2ba22e0f3ccd3fcbab57e5e3375ac
+    theatre_id: '26'
+    scene_id: '1'
+    play_id: '96'
+-
+    id: '330'
+    date: '2015-01-14 18:30:00'
+    price: null
+    hash: 78a3484d0f86edc81b114a614548b032
+    theatre_id: '26'
+    scene_id: '1'
+    play_id: '101'
+-
+    id: '331'
+    date: '2015-01-15 18:30:00'
+    price: null
+    hash: b73f994f0a5b628cbbd3e3f8b18ca9b1
+    theatre_id: '26'
+    scene_id: '1'
+    play_id: '102'
+-
+    id: '332'
+    date: '2015-01-16 18:30:00'
+    price: null
+    hash: b0545bf8e4a0d5d897f3f1d591d9b7bb
+    theatre_id: '26'
+    scene_id: '1'
+    play_id: '103'
+-
+    id: '333'
+    date: '2015-01-17 18:30:00'
+    price: null
+    hash: 257b30f8faae5bd2607fc0ddde7f6c18
+    theatre_id: '26'
+    scene_id: '1'
+    play_id: '104'
+-
+    id: '334'
+    date: '2015-01-18 11:30:00'
+    price: null
+    hash: 179cc8980c418a8535a5c214829a9782
+    theatre_id: '26'
+    scene_id: '1'
+    play_id: '70'
+-
+    id: '335'
+    date: '2015-01-18 18:30:00'
+    price: null
+    hash: 5ff89fba70a1ec4680ca4d02260bf3a6
+    theatre_id: '26'
+    scene_id: '1'
+    play_id: '105'
+-
+    id: '336'
+    date: '2015-01-21 18:30:00'
+    price: null
+    hash: c2752792792c444af32276c3c2830634
+    theatre_id: '26'
+    scene_id: '1'
+    play_id: '106'
+-
+    id: '337'
+    date: '2015-01-22 18:30:00'
+    price: null
+    hash: 4a52160df9dc127bccab40978c009cbb
+    theatre_id: '26'
+    scene_id: '1'
+    play_id: '107'
+-
+    id: '338'
+    date: '2015-01-23 18:30:00'
+    price: null
+    hash: 58b53d4be1397c717ebf4e4e47eca977
+    theatre_id: '26'
+    scene_id: '1'
+    play_id: '108'
+-
+    id: '339'
+    date: '2015-01-24 18:30:00'
+    price: null
+    hash: 3c67e7d447cae4d712cb9d9bb3edcc8d
+    theatre_id: '26'
+    scene_id: '1'
+    play_id: '109'
+-
+    id: '340'
+    date: '2015-01-25 18:30:00'
+    price: null
+    hash: 768933218d888e076eff7b40b9e1f33a
+    theatre_id: '26'
+    scene_id: '1'
+    play_id: '110'
+-
+    id: '341'
+    date: '2015-01-29 18:30:00'
+    price: null
+    hash: afdb66eae5157ded371b290ef0fc61ec
+    theatre_id: '26'
+    scene_id: '1'
+    play_id: '111'
+-
+    id: '342'
+    date: '2015-01-31 18:30:00'
+    price: null
+    hash: ed4b4efab8a2a2e1ba75a1b6bbdb28fb
+    theatre_id: '26'
+    scene_id: '1'
+    play_id: '112'
+-
+    id: '343'
+    date: '2015-01-01 10:00:00'
+    price: null
+    hash: 6d6893cbc9cc3b0aa54121934d7e14e7
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '113'
+-
+    id: '344'
+    date: '2015-01-02 10:30:00'
+    price: null
+    hash: f388578c030ebcfebddfdb9799676eb8
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '114'
+-
+    id: '345'
+    date: '2015-01-02 13:30:00'
+    price: null
+    hash: bfd4eb04e50b802caf9a334a91ec91f4
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '114'
+-
+    id: '346'
+    date: '2015-01-03 10:30:00'
+    price: null
+    hash: e1d43a8274e5ae0a966ef5e450453591
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '114'
+-
+    id: '347'
+    date: '2015-01-03 13:30:00'
+    price: null
+    hash: 35d7e7c9d1fd0d3d1e9575fb22dd67d7
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '114'
+-
+    id: '348'
+    date: '2015-01-04 10:30:00'
+    price: null
+    hash: a9bdd5656bcb4ba49c391da5424274b3
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '115'
+-
+    id: '349'
+    date: '2015-01-04 14:00:00'
+    price: null
+    hash: 21e347ed19bcd109267542c9dda9cd54
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '115'
+-
+    id: '350'
+    date: '2015-01-05 10:30:00'
+    price: null
+    hash: 9b88f637f9938f9c5fad780011c8c8b9
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '116'
+-
+    id: '351'
+    date: '2015-01-05 14:00:00'
+    price: null
+    hash: 874dba52c90ffe3f451031ccb58914b1
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '116'
+-
+    id: '352'
+    date: '2015-01-06 10:30:00'
+    price: null
+    hash: a0e8b3471b26beb49590428c8271c8c7
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '117'
+-
+    id: '353'
+    date: '2015-01-06 14:00:00'
+    price: null
+    hash: 892ead49e546842ea8a324948da72773
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '117'
+-
+    id: '354'
+    date: '2015-01-08 10:30:00'
+    price: null
+    hash: 3dae98589345aa67f60d16419dc00204
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '118'
+-
+    id: '355'
+    date: '2015-01-08 14:00:00'
+    price: null
+    hash: 386983cce2c5bf66dbe8b53ebb0dbaea
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '118'
+-
+    id: '356'
+    date: '2015-01-09 10:30:00'
+    price: null
+    hash: 9aef50a968999c3e20538ddb05246513
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '119'
+-
+    id: '357'
+    date: '2015-01-09 14:00:00'
+    price: null
+    hash: 57811090b858590c600fa4de1410de20
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '119'
+-
+    id: '358'
+    date: '2015-01-10 10:30:00'
+    price: null
+    hash: 2c55ae64c829bcdfd614c83d88018de4
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '120'
+-
+    id: '359'
+    date: '2015-01-10 14:00:00'
+    price: null
+    hash: f4fa635b8141d70f490e8eae775d788f
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '120'
+-
+    id: '360'
+    date: '2015-01-11 10:30:00'
+    price: null
+    hash: b26fb42a6e242fa74d10179453063d0f
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '119'
+-
+    id: '361'
+    date: '2015-01-11 14:00:00'
+    price: null
+    hash: ff8d04c01570054f74d2d53196686b92
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '119'
+-
+    id: '362'
+    date: '2015-01-17 11:00:00'
+    price: null
+    hash: 35acc5089cdcc75abe38495b8d3b321d
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '121'
+-
+    id: '363'
+    date: '2015-01-17 14:00:00'
+    price: null
+    hash: 788c3a9ceb716ddb4384694f72b3284b
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '121'
+-
+    id: '364'
+    date: '2015-01-18 11:00:00'
+    price: null
+    hash: c02ed3a17af4a53e95a3f75c7f573859
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '122'
+-
+    id: '365'
+    date: '2015-01-18 14:00:00'
+    price: null
+    hash: 8884cb58412a2c1f91db55c0344a9e16
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '122'
+-
+    id: '366'
+    date: '2015-01-24 11:00:00'
+    price: null
+    hash: 7821079477a0dca7763d1a07e6debd5d
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '56'
+-
+    id: '367'
+    date: '2015-01-24 14:00:00'
+    price: null
+    hash: d1a69570846c552755d5506bfb627c9b
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '56'
+-
+    id: '368'
+    date: '2015-01-25 11:00:00'
+    price: null
+    hash: 34d40ded2b872e2e871b273421ea4837
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '123'
+-
+    id: '369'
+    date: '2015-01-25 14:00:00'
+    price: null
+    hash: dadf689110b4a1095997d10addb55fe5
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '123'
+-
+    id: '370'
+    date: '2015-01-31 11:00:00'
+    price: null
+    hash: 23e56f9546ded8380f7ccbb8872cf208
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '124'
+-
+    id: '371'
+    date: '2015-01-31 14:00:00'
+    price: null
+    hash: 5bf9258be999db0de3ed1f5c67c93e05
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '124'
+-
+    id: '372'
+    date: '2015-02-01 00:00:00'
+    price: null
+    hash: 5619c004534c34bb2efa38cf7a07e9ac
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '113'
+-
+    id: '373'
+    date: '2015-02-01 11:00:00'
+    price: null
+    hash: dbe96836b64163b7f4e73dd49d43b143
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '115'
+-
+    id: '374'
+    date: '2015-02-01 14:00:00'
+    price: null
+    hash: d25924f4d6b6ef1eeb3a31b3ae86c1c3
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '115'
+-
+    id: '375'
+    date: '2015-02-07 11:00:00'
+    price: null
+    hash: ebb96fc3e9c23722390c90358218b8bb
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '125'
+-
+    id: '376'
+    date: '2015-02-07 14:00:00'
+    price: null
+    hash: faed5f8b2830adaa7b32831851bf4be0
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '125'
+-
+    id: '377'
+    date: '2015-02-08 11:00:00'
+    price: null
+    hash: f39814b63a1ef3a0185ac724ee9d5e64
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '118'
+-
+    id: '378'
+    date: '2015-02-08 14:00:00'
+    price: null
+    hash: 0b840eca9fa107112d27e7ce2201742f
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '118'
+-
+    id: '379'
+    date: '2015-02-12 15:00:00'
+    price: null
+    hash: 947cf531f1acbc53f5068af1d0fadc64
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '126'
+-
+    id: '380'
+    date: '2015-02-14 11:00:00'
+    price: null
+    hash: d24aace7a20c54b9fcf96c3f9aea948e
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '68'
+-
+    id: '381'
+    date: '2015-02-14 14:00:00'
+    price: null
+    hash: 11b68f8588f9c9ddad43dfbbb92e19a7
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '68'
+-
+    id: '382'
+    date: '2015-02-15 11:00:00'
+    price: null
+    hash: 85672907cc499ca786d5ed7caf020648
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '127'
+-
+    id: '383'
+    date: '2015-02-15 14:00:00'
+    price: null
+    hash: da8fd5585b870db1b583b898c348e53c
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '127'
+-
+    id: '384'
+    date: '2015-02-21 11:00:00'
+    price: null
+    hash: 3ef15cceef13ba1a4c404d576a21d59d
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '128'
+-
+    id: '385'
+    date: '2015-02-21 14:00:00'
+    price: null
+    hash: 91dce31d4026ee462b9847f83e742e59
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '128'
+-
+    id: '386'
+    date: '2015-02-22 11:00:00'
+    price: null
+    hash: e2743468e6be5c968298146c764c9b42
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '122'
+-
+    id: '387'
+    date: '2015-02-22 14:00:00'
+    price: null
+    hash: c1b8c41e05e352de830b0bc3513baf41
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '122'
+-
+    id: '388'
+    date: '2015-02-26 15:00:00'
+    price: null
+    hash: f452199a3ecc09100b5a9010305ccec6
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '129'
+-
+    id: '389'
+    date: '2015-02-27 15:00:00'
+    price: null
+    hash: c607a2710a9b14bd395a39aa564b2501
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '129'
+-
+    id: '390'
+    date: '2015-02-28 11:00:00'
+    price: null
+    hash: 5b06bded0a1c0ceb29312fdbd29f6bff
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '130'
+-
+    id: '391'
+    date: '2015-02-28 14:00:00'
+    price: null
+    hash: 9ad11ade5a29b8ed5e3ff29faabb863f
+    theatre_id: '27'
+    scene_id: '1'
+    play_id: '130'
+-
+    id: '392'
+    date: '2015-01-02 11:00:00'
+    price: '20, 30, 35 грн'
+    hash: 0c8e894cd4c850a572f0bdd7db6f056d
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '1'
+-
+    id: '393'
+    date: '2015-01-02 14:00:00'
+    price: '20, 30, 35 грн'
+    hash: e149e0c0f755d7bba06e163ee8022fce
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '1'
+-
+    id: '394'
+    date: '2015-01-02 19:00:00'
+    price: '60 грн'
+    hash: 85866c78e894f9faf292388c58ea7c79
+    theatre_id: '2'
+    scene_id: '2'
+    play_id: '2'
+-
+    id: '395'
+    date: '2015-01-03 11:00:00'
+    price: '20, 30, 35 грн'
+    hash: ca3322a18c8be0703671539e56f42ba8
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '3'
+-
+    id: '396'
+    date: '2015-01-03 14:00:00'
+    price: '20, 30, 35 грн'
+    hash: 4ebf0d6bff27e10ac4d70e076ffb9cc2
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '3'
+-
+    id: '397'
+    date: '2015-01-03 19:00:00'
+    price: '60 грн'
+    hash: 8b5d8299c8a6e2c4ff2bb28e753d4f2e
+    theatre_id: '2'
+    scene_id: '2'
+    play_id: '4'
+-
+    id: '398'
+    date: '2015-01-04 11:00:00'
+    price: '20, 30, 35 грн'
+    hash: 81a3e582f1414e9c03ecece1a9ad9182
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '3'
+-
+    id: '399'
+    date: '2015-01-04 14:00:00'
+    price: '20, 30, 35 грн'
+    hash: 5a87e30839bcd80bf4691acf89e7059b
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '3'
+-
+    id: '400'
+    date: '2015-01-04 18:00:00'
+    price: '60 грн'
+    hash: f0c826c09ff26b36c6e6605bb742155a
+    theatre_id: '2'
+    scene_id: '2'
+    play_id: '5'
+-
+    id: '401'
+    date: '2015-01-05 11:00:00'
+    price: '20, 30, 35 грн'
+    hash: c217eaa4444142e7e9446aff76ef1536
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '3'
+-
+    id: '402'
+    date: '2015-01-05 14:00:00'
+    price: '20, 30, 35 грн'
+    hash: a0a3bfcae5123714872a7e273cc4a754
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '3'
+-
+    id: '403'
+    date: '2015-01-06 11:00:00'
+    price: '20, 30, 35 грн'
+    hash: 9f7e0ad346cc2a4147ba7746b7f30868
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '3'
+-
+    id: '404'
+    date: '2015-01-06 14:00:00'
+    price: '20, 30, 35 грн'
+    hash: 7096789c5b23251ddfe3a9d626ca6342
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '3'
+-
+    id: '405'
+    date: '2015-01-06 19:00:00'
+    price: '60 грн'
+    hash: 75c2e3ad909569fc4ed5acc71aa2a752
+    theatre_id: '2'
+    scene_id: '2'
+    play_id: '6'
+-
+    id: '406'
+    date: '2015-01-07 11:00:00'
+    price: '20, 30, 35 грн'
+    hash: a245d784e5f1fcb7d4f60477ea756911
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '7'
+-
+    id: '407'
+    date: '2015-01-07 19:00:00'
+    price: '60 грн'
+    hash: c7de1f6e0ae0a59ebb63dc3e26420237
+    theatre_id: '2'
+    scene_id: '2'
+    play_id: '8'
+-
+    id: '408'
+    date: '2015-01-08 11:00:00'
+    price: '20, 30, 35 грн'
+    hash: db133e8be4fe3380df080af5b63100c1
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '7'
+-
+    id: '409'
+    date: '2015-01-08 19:00:00'
+    price: '60 грн'
+    hash: 0fc6675dc26f2b7cf2fd46fe973233ef
+    theatre_id: '2'
+    scene_id: '2'
+    play_id: '9'
+-
+    id: '410'
+    date: '2015-01-09 19:00:00'
+    price: '60 грн'
+    hash: 5e3c4614ed4d94e3e3392162f41646c6
+    theatre_id: '2'
+    scene_id: '2'
+    play_id: '10'
+-
+    id: '411'
+    date: '2015-01-10 19:00:00'
+    price: '60 грн'
+    hash: 7a10c65fccb4707d2db57bf77197ff51
+    theatre_id: '2'
+    scene_id: '2'
+    play_id: '11'
+-
+    id: '412'
+    date: '2015-01-11 11:00:00'
+    price: '20, 30, 35 грн'
+    hash: a85235af74a9fd884b6530c5e2e6380e
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '7'
+-
+    id: '413'
+    date: '2015-01-11 18:00:00'
+    price: '20–70 грн'
+    hash: e0848179339e4064963491871f6c2b95
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '12'
+-
+    id: '414'
+    date: '2015-01-15 18:00:00'
+    price: '20–50 грн'
+    hash: 1543ae9ab89a2e6d6e7e142b85e0c6e2
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '13'
+-
+    id: '415'
+    date: '2015-01-16 18:00:00'
+    price: '20–70 грн'
+    hash: 07ad7766484879c79647ec6ade0cc823
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '14'
+-
+    id: '416'
+    date: '2015-01-17 18:00:00'
+    price: '20–50 грн'
+    hash: 0493aeef961c3e8614320ee813381cda
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '15'
+-
+    id: '417'
+    date: '2015-01-18 18:00:00'
+    price: '20–50 грн'
+    hash: 978a113e775eace6ea05a54fe25c3ca4
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '16'
+-
+    id: '418'
+    date: '2015-01-20 18:00:00'
+    price: '20–70 грн'
+    hash: bdc4bc27cdd9f25ad48727a7d3271030
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '12'
+-
+    id: '419'
+    date: '2015-01-21 18:00:00'
+    price: '20–50 грн'
+    hash: 7eee3913715361018147ae0dc6711b84
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '17'
+-
+    id: '420'
+    date: '2015-01-22 18:00:00'
+    price: '20–50 грн'
+    hash: ff3ffe058ba641d47a0050b7829f5a31
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '18'
+-
+    id: '421'
+    date: '2015-01-23 18:00:00'
+    price: '20–50 грн'
+    hash: d84a8de7b119197e8e87fad3a007145b
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '19'
+-
+    id: '422'
+    date: '2015-01-24 18:00:00'
+    price: '20–50 грн'
+    hash: 06790e59dd3f9550a252e346df00306e
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '20'
+-
+    id: '423'
+    date: '2015-01-25 18:00:00'
+    price: '20–50 грн'
+    hash: 11acaea338387746dda3179eb1389ff9
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '21'
+-
+    id: '424'
+    date: '2015-01-28 19:00:00'
+    price: '60 грн'
+    hash: fe7ea70b0604872a24ca0b4da3c50fef
+    theatre_id: '2'
+    scene_id: '2'
+    play_id: '22'
+-
+    id: '425'
+    date: '2015-01-29 19:00:00'
+    price: '60 грн'
+    hash: bd6248a3ce3f5a2ffce7d6447e897476
+    theatre_id: '2'
+    scene_id: '2'
+    play_id: '23'
+-
+    id: '426'
+    date: '2015-01-30 18:00:00'
+    price: '20–50 грн'
+    hash: 86485489d2bb86f264ecf66eb0280d95
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '24'
+-
+    id: '427'
+    date: '2015-01-31 18:00:00'
+    price: '20–50 грн'
+    hash: 96aeac5ecf2cb818b9772ba9d8be27ac
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '25'
+-
+    id: '428'
+    date: '2015-02-01 18:00:00'
+    price: '20–50 грн'
+    hash: 3d25e5b3c2cab5954f097d76b08221a7
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '21'
+-
+    id: '429'
+    date: '2015-02-04 19:00:00'
+    price: '60 грн'
+    hash: 95dbd3ab8168de0cfc4eecfd2f86e397
+    theatre_id: '2'
+    scene_id: '2'
+    play_id: '9'
+-
+    id: '430'
+    date: '2015-02-05 18:00:00'
+    price: '20–50 грн'
+    hash: 8bb4e3bfb2d1195024b13a46cd4b628a
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '131'
+-
+    id: '431'
+    date: '2015-02-06 18:00:00'
+    price: '20–50 грн'
+    hash: f3da60962a8a80a0525496a6525675c0
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '20'
+-
+    id: '432'
+    date: '2015-02-07 18:00:00'
+    price: '20–70 грн'
+    hash: da33be49d9b00eb67c30115ea1d62b35
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '12'
+-
+    id: '433'
+    date: '2015-02-08 18:00:00'
+    price: '60 грн'
+    hash: b1cff98d1c981197f162ffb6d4acd8fc
+    theatre_id: '2'
+    scene_id: '2'
+    play_id: '5'
+-
+    id: '434'
+    date: '2015-02-09 18:00:00'
+    price: '20–50 грн'
+    hash: 71f0306b87c086455964d8a7898f8b64
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '18'
+-
+    id: '435'
+    date: '2015-02-10 19:00:00'
+    price: '70 грн'
+    hash: 8dbf2b21345528197db1d17cb8d275b6
+    theatre_id: '2'
+    scene_id: '2'
+    play_id: '8'
+-
+    id: '436'
+    date: '2015-02-11 18:00:00'
+    price: '20–50 грн'
+    hash: d081cca51f166641118e72e77a4d62be
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '17'
+-
+    id: '437'
+    date: '2015-02-12 18:00:00'
+    price: '20–70 грн'
+    hash: fb9bac7fe83095526dc96db7ae6987ad
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '14'
+-
+    id: '438'
+    date: '2015-02-13 18:00:00'
+    price: '20–50 грн'
+    hash: e3a7c97f96a6d78524fff08a0c1e9756
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '15'
+-
+    id: '439'
+    date: '2015-02-14 18:00:00'
+    price: '20–50 грн'
+    hash: ab27ac8fadd00bd0cb3ac80e5ecd17a1
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '25'
+-
+    id: '440'
+    date: '2015-02-14 19:00:00'
+    price: '60 грн'
+    hash: e59b2ffaec4678097e903cc09524bb24
+    theatre_id: '2'
+    scene_id: '2'
+    play_id: '11'
+-
+    id: '441'
+    date: '2015-02-15 18:00:00'
+    price: '20–50 грн'
+    hash: 5914420a215422d6c28015db91770721
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '16'
+-
+    id: '442'
+    date: '2015-02-17 19:00:00'
+    price: '60 грн'
+    hash: 8183dbaff5c44365f45fb541fa9702b2
+    theatre_id: '2'
+    scene_id: '2'
+    play_id: '132'
+-
+    id: '443'
+    date: '2015-02-18 19:00:00'
+    price: '60 грн'
+    hash: 7677fb6b7c19d428a50c978e37a744fc
+    theatre_id: '2'
+    scene_id: '2'
+    play_id: '2'
+-
+    id: '444'
+    date: '2015-02-19 18:00:00'
+    price: '20–70 грн'
+    hash: eb15c3085d9ddc4fc0a25077ee07d1bc
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '14'
+-
+    id: '445'
+    date: '2015-02-20 18:00:00'
+    price: '20–50 грн'
+    hash: 6d5fc91bc2bbe91694fd4d24bdd92f43
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '19'
+-
+    id: '446'
+    date: '2015-02-21 18:00:00'
+    price: '20–50 грн'
+    hash: 4f7fc8393558e105561f3ed2c92c30ab
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '18'
+-
+    id: '447'
+    date: '2015-02-22 18:00:00'
+    price: '60 грн'
+    hash: 5790795f6a587157c6cbfbdc6a731222
+    theatre_id: '2'
+    scene_id: '2'
+    play_id: '4'
+-
+    id: '448'
+    date: '2015-02-24 19:00:00'
+    price: '60 грн'
+    hash: 1e6cb29e35eabc83e0a172983a831b46
+    theatre_id: '2'
+    scene_id: '2'
+    play_id: '23'
+-
+    id: '449'
+    date: '2015-02-25 18:00:00'
+    price: '20–50 грн'
+    hash: ce43ee176f439d697412d27e1f165779
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '13'
+-
+    id: '450'
+    date: '2015-02-26 18:00:00'
+    price: '20–50 грн'
+    hash: 597c1bbae11abf583a7e428b40d1c4d2
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '16'
+-
+    id: '451'
+    date: '2015-02-27 18:00:00'
+    price: '20–50 грн'
+    hash: 08c81ed24f176ae471a207e2e617df6e
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '24'
+-
+    id: '452'
+    date: '2015-02-28 18:00:00'
+    price: '20–70 грн'
+    hash: 069b3953d6872a86d76eafb2cccf65f7
+    theatre_id: '2'
+    scene_id: '3'
+    play_id: '14'
+-
+    id: '453'
+    date: '2015-02-01 19:00:00'
+    price: null
+    hash: 6778daaca402970aa30eae2a6c8be4aa
+    theatre_id: '1'
+    scene_id: '1'
+    play_id: '26'
+-
+    id: '454'
+    date: '2015-02-03 19:00:00'
+    price: null
+    hash: cd7bf7909ee987da754e00652682842e
+    theatre_id: '1'
+    scene_id: '1'
+    play_id: '29'
+-
+    id: '455'
+    date: '2015-02-04 19:00:00'
+    price: null
+    hash: ed1e21ab0511cb2dcc4c71e6f1c94fa2
+    theatre_id: '1'
+    scene_id: '2'
+    play_id: '30'
+-
+    id: '456'
+    date: '2015-02-05 19:00:00'
+    price: null
+    hash: 82b9f37fd443dfd7ab3faa8ebffb100b
+    theatre_id: '1'
+    scene_id: '1'
+    play_id: '27'
+-
+    id: '457'
+    date: '2015-02-17 19:00:00'
+    price: null
+    hash: 9fc82b8db1ad8a997907a721b4cc9921
+    theatre_id: '1'
+    scene_id: '1'
+    play_id: '26'
+-
+    id: '458'
+    date: '2015-02-18 19:00:00'
+    price: null
+    hash: 77004b5a1d1d9998662b4b4a26be24c5
+    theatre_id: '1'
+    scene_id: '2'
+    play_id: '30'
+-
+    id: '459'
+    date: '2015-02-21 19:00:00'
+    price: null
+    hash: 9b9a79f99f72b295c144d3c11d261336
+    theatre_id: '1'
+    scene_id: '1'
+    play_id: '28'
+-
+    id: '460'
+    date: '2015-02-25 19:00:00'
+    price: null
+    hash: 673c84b666a123910da732275109bae1
+    theatre_id: '1'
+    scene_id: '1'
+    play_id: '133'
+-
+    id: '461'
+    date: '2015-02-27 19:00:00'
+    price: null
+    hash: e0e15b70fd965a124b96946317d2ca60
+    theatre_id: '1'
+    scene_id: '1'
+    play_id: '31'
+-
+    id: '462'
+    date: '2015-02-28 19:00:00'
+    price: null
+    hash: aba7b7786c12c61d0cc83058190d04ea
+    theatre_id: '1'
+    scene_id: '2'
+    play_id: '30'
+-
+    id: '463'
+    date: '2015-02-01 11:30:00'
+    price: null
+    hash: 515a6b4c6930a765c2f164e931653901
+    theatre_id: '26'
+    scene_id: '1'
+    play_id: '134'
+-
+    id: '464'
+    date: '2015-02-01 18:00:00'
+    price: null
+    hash: 20422a69638cb5d901224ad1739b2594
+    theatre_id: '26'
+    scene_id: '1'
+    play_id: '135'
+-
+    id: '465'
+    date: '2015-02-04 18:30:00'
+    price: null
+    hash: 5c9cb77c7c0ee2dd67be7d2a4bf7ad75
+    theatre_id: '26'
+    scene_id: '1'
+    play_id: '136'
+-
+    id: '466'
+    date: '2015-02-05 18:30:00'
+    price: null
+    hash: 1cef148917cf5d79da857b9b3c24ebaa
+    theatre_id: '26'
+    scene_id: '1'
+    play_id: '137'
+-
+    id: '467'
+    date: '2015-02-06 18:30:00'
+    price: null
+    hash: 60186a8b6eded646e3efae8ec256e2b1
+    theatre_id: '26'
+    scene_id: '1'
+    play_id: '138'
+-
+    id: '468'
+    date: '2015-02-07 18:30:00'
+    price: null
+    hash: 1a1e67ae745bbf5d5d5c57133e4fa9d4
+    theatre_id: '26'
+    scene_id: '1'
+    play_id: '139'
+-
+    id: '469'
+    date: '2015-02-08 11:30:00'
+    price: null
+    hash: 5b34a6a99a94c580762e1f5ccb7318be
+    theatre_id: '26'
+    scene_id: '1'
+    play_id: '70'
+-
+    id: '470'
+    date: '2015-02-08 18:30:00'
+    price: null
+    hash: 2aaed7637626267c4b26f47ba1cd62c7
+    theatre_id: '26'
+    scene_id: '1'
+    play_id: '140'
+-
+    id: '471'
+    date: '2015-02-11 18:30:00'
+    price: null
+    hash: d642cb7338e73a7b85fd1c0065f000b2
+    theatre_id: '26'
+    scene_id: '1'
+    play_id: '136'
+-
+    id: '472'
+    date: '2015-02-15 11:30:00'
+    price: null
+    hash: e5ead4d73ce9f5e8f55564c23d9700e8
+    theatre_id: '26'
+    scene_id: '1'
+    play_id: '141'
+-
+    id: '473'
+    date: '2015-02-15 18:30:00'
+    price: null
+    hash: e703921968f09f38ea1b811657022765
+    theatre_id: '26'
+    scene_id: '1'
+    play_id: '142'
+-
+    id: '474'
+    date: '2015-02-21 18:30:00'
+    price: null
+    hash: d6a42b220437b72cdb104fa165483517
+    theatre_id: '26'
+    scene_id: '1'
+    play_id: '143'
+-
+    id: '475'
+    date: '2015-02-22 11:30:00'
+    price: null
+    hash: 64f6de9a9b2f85b39d73901890e70222
+    theatre_id: '26'
+    scene_id: '1'
+    play_id: '127'
+-
+    id: '476'
+    date: '2015-02-22 18:30:00'
+    price: null
+    hash: b1b4e427b97652c9c67cb8d2ffc1878c
+    theatre_id: '26'
+    scene_id: '1'
+    play_id: '106'
+-
+    id: '477'
+    date: '2015-02-25 18:30:00'
+    price: null
+    hash: b8ab3904b1cc48576d2407d794cac4d4
+    theatre_id: '26'
+    scene_id: '1'
+    play_id: '144'
+-
+    id: '478'
+    date: '2015-02-27 18:30:00'
+    price: null
+    hash: db4f57ee5b8c8768e9d172e2cc6b3e94
+    theatre_id: '26'
+    scene_id: '1'
+    play_id: '145'
+-
+    id: '479'
+    date: '2015-02-28 11:30:00'
+    price: null
+    hash: cb4f96c79c941d39c58b6a98fbb2e63f
+    theatre_id: '26'
+    scene_id: '1'
+    play_id: '146'

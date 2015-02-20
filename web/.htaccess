@@ -1,7 +1,20 @@
 <IfModule mod_rewrite.c>
     Options -MultiViews
 
+    DirectoryIndex front.html
+
     RewriteEngine On
+
+    #RewriteCond %{REQUEST_URI}  ^/$
+    RewriteCond %{QUERY_STRING} ^_escaped_fragment_=(.*)$
+    RewriteRule ^(.*)$ snapshots/index.php [NC,L]
+
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^ index.php [L]
+    RewriteRule ^(api|system|fetch) app.php [L]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^admin admin.html [L]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(theatre|play) front.html [L]
 </IfModule>

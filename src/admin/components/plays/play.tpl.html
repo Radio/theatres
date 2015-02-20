@@ -1,0 +1,171 @@
+<div class="breadcrumb">
+    <a href="/admin">Панель управления</a>
+    <span class="sep">→</span>
+    <a href="/admin/plays">Спектакли</a>
+    <span class="sep">→</span>
+    <h2>{{ play.title }}</h2>
+    <span data-ng-show="play.key" class="sep">→</span>
+    <a data-ng-show="play.key" href="/plays/{{ play.key }}">На сайте</a>
+</div>
+
+<form id="edit-play-form" class="admin-form play-form form-horizontal" action="" method="post">
+    <fieldset class="row play-row" id="play-{{ play.key }}">
+
+        <div class="col-sm-10">
+            <div class="form-group">
+                <label for="play-title" class="col-sm-2 control-label">Название</label>
+                <div class="col-sm-10">
+                    <input type="text" id="play-title" class="form-control"
+                           data-ng-model="play.title" data-ng-blur="savePlay(play)"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="play-key" class="col-sm-2 control-label">Ключ</label>
+                <div class="col-sm-10">
+                    <input type="text" id="play-key" class="form-control"
+                           data-ng-model="play.key" data-ng-blur="savePlay(play)"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="play-theatre" class="col-sm-2 control-label">Театр</label>
+                <div class="col-sm-10">
+                    <select id="play-theatre" class="form-control"
+                            data-ng-model="play.theatre_id" data-ng-change="savePlay(play)"
+                            data-ng-options="theatre.id as theatre.title for theatre in theatres">
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="play-scene" class="col-sm-2 control-label">Сцена</label>
+                <div class="col-sm-10">
+                    <select id="play-scene" class="form-control"
+                            data-ng-model="play.scene_id" data-ng-change="savePlay(play)"
+                            data-ng-options="scene.id as scene.title for scene in scenes">
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="play-link" class="col-sm-2 control-label">
+                    <span data-ng-hide="play.link">Ссылка</span>
+                    <a href="{{ play.link }}" data-ng-show="play.link" target="_blank" title="Перейти">Ссылка</a>
+                </label>
+                <div class="col-sm-10">
+                    <input type="text" id="play-link" class="form-control"
+                           data-ng-model="play.link" data-ng-blur="savePlay(play)"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="play-director" class="col-sm-2 control-label">Постановщик</label>
+                <div class="col-sm-10">
+                    <input type="text" id="play-director" class="form-control"
+                           data-ng-model="play.director" data-ng-blur="savePlay(play)"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="play-author" class="col-sm-2 control-label">Автор</label>
+                <div class="col-sm-10">
+                    <input type="text" id="play-author" class="form-control"
+                           data-ng-model="play.author" data-ng-blur="savePlay(play)"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="play-genre" class="col-sm-2 control-label">Жанр</label>
+                <div class="col-sm-10">
+                    <input type="text" id="play-genre" class="form-control"
+                           data-ng-model="play.genre" data-ng-blur="savePlay(play)"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="play-duration" class="col-sm-2 control-label">Длительность</label>
+                <div class="col-sm-10">
+                    <input type="text" id="play-duration" class="form-control"
+                           data-ng-model="play.duration" data-ng-blur="savePlay(play)"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="play-description" class="col-sm-2 control-label">Описание</label>
+                <div class="col-sm-10">
+                    <textarea id="play-description" class="form-control"
+                           data-ng-model="play.description" data-ng-blur="savePlay(play)" rows="5"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="play-image" class="col-sm-2 control-label">
+                    <span data-ng-hide="play.image">Картинка</span>
+                    <a href="{{ play.image }}" data-ng-show="play.image" target="_blank" title="Перейти">Картинка</a>
+                </label>
+                <div class="col-sm-10">
+                    <input type="text" id="play-image" class="form-control"
+                           data-ng-model="play.image" data-ng-blur="savePlay(play)"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-2">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" data-ng-model="play.is_premiere"
+                                   data-ng-change="savePlay(play)"> Премьера
+                        </label>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" data-ng-model="play.is_for_children"
+                                   data-ng-change="savePlay(play)"> Для детей
+                        </label>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" data-ng-model="play.is_musical"
+                                   data-ng-change="savePlay(play)"> Музыкальный
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="play-tags" class="col-sm-2 control-label">Теги</label>
+                <div class="col-sm-10">
+                    <p class="form-control-static">
+                        <span data-ng-repeat="tag in playTags">{{ tag.title }}<br data-ng-show="!$last" /></span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-8 col-sm-offset-2">
+
+                <span class="updated-message" data-ng-show="lastUpdatedId === play.id">
+                    <span class="glyphicon glyphicon-ok"></span> Сохранено
+                </span>
+                </div>
+                <div class="col-sm-2">
+                    <button type="button" class="btn btn-danger delete-play" data-ng-click="deletePlay(play)" title="Удалить">&times;</button>
+                    &nbsp;&nbsp;
+                    <a href="#" class="text-danger" data-ng-click="deletePlay(play)">Удалить</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-2">
+            <a href="{{ play.image }}" data-ng-show="play.image" target="_blank" title="Перейти">
+                <img class="play-pic img-responsive" data-ng-show="play.image" data-ng-src="{{ play.image }}" />
+            </a>
+        </div>
+
+    </fieldset>
+</form>

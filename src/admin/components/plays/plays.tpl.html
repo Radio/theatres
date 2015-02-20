@@ -1,0 +1,57 @@
+<div class="breadcrumb">
+    <a href="/admin">Панель управления</a>
+    <span class="sep">→</span>
+    <h2>Спектакли</h2>
+</div>
+
+<div data-ng-include="'src/admin/components/plays/filters.tpl.html'"></div>
+
+<form id="edit-plays-form" class="admin-form" action="" method="post">
+    <fieldset class="row form-group play-row"
+              data-ng-repeat="play in plays" id="play-{{ play.key }}">
+        <div class="col-md-4 col-title">
+            <label for="play-title-{{ play.id }}">{{ play.id }}</label>
+            <input type="text" id="play-title-{{ play.id }}" class="form-control" placeholder="Название"
+                   data-ng-model="play.title" data-ng-blur="savePlay(play)"/>
+        </div>
+        <div class="col-md-2">
+            <input type="text" class="form-control" placeholder="Ключ"
+                   data-ng-model="play.key" data-ng-blur="savePlay(play)"/>
+        </div>
+        <div class="col-md-2">
+            <a  href="/admin/plays/play/{{ play.id }}" class="btn btn-primary delete-play" data-ng-click="editPlay(play)" title="Изменить">/</a>
+            &nbsp;&nbsp;
+            <a href="/admin/plays/play/{{ play.id }}" class="text-primary" data-ng-click="editPlay(play)">Подробнее...</a>
+        </div>
+        <div class="col-md-3 col-button">
+            <button type="button" class="btn btn-danger delete-play" data-ng-click="deletePlay(play)" title="Удалить">&times;</button>
+            &nbsp;&nbsp;
+            <a href="#" class="text-danger" data-ng-click="deletePlay(play)">Удалить</a>
+            <span class="updated-message" data-ng-show="lastUpdatedId == play.id">
+                <span class="glyphicon glyphicon-ok"></span> Сохранено
+            </span>
+        </div>
+    </fieldset>
+    <!--<fieldset class="row form-group play-row" id="play-new">-->
+        <!--<div class="col-md-4 col-title">-->
+            <!--<label for="play-title-new">+</label>-->
+            <!--<input type="text" id="play-title-new" class="form-control" placeholder="Название"-->
+                   <!--ng-model="newPlay.title"/>-->
+        <!--</div>-->
+        <!--<div class="col-md-2">-->
+            <!--<input type="text" class="form-control" placeholder="Ключ" data-ng-model="newPlay.key"/>-->
+        <!--</div>-->
+        <!--<div class="col-md-1">-->
+            <!--<input type="text" class="form-control" placeholder="Сцена" data-ng-model="newPlay.scene" />-->
+        <!--</div>-->
+        <!--<div class="col-md-2">-->
+            <!--<input type="text" class="form-control" placeholder="Театр" data-ng-model="newPlay.theatre" />-->
+        <!--</div>-->
+        <!--<div class="col-md-3">-->
+            <!--<button type="button" class="btn btn-success add-play" title="Добавить"-->
+                    <!--ng-click="addPlay(newPlay)">+</button>-->
+            <!--&nbsp;&nbsp;-->
+            <!--<a href="#" class="text-success" data-ng-click="addPlay(newPlay)">Добавить</a>-->
+        <!--</div>-->
+    <!--</fieldset>-->
+</form>
