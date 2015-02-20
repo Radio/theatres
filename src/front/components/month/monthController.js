@@ -58,6 +58,7 @@ angular.module('frontApp')
 
             var query = buildQuery();
             return Api.shows.get(query).then(function(shows) {
+                $scope.shows = shows;
                 $scope.days.forEach(function(day) {
                     day.shows = getShowsOnDay(day, shows);
                 });
@@ -148,8 +149,7 @@ angular.module('frontApp')
         function finalizeLoadingState()
         {
             $timeout(function() {
-                // needed for phantomjs to detect teh loading finish.
-                console.log('ready');
+                // needed for phantomjs to detect the loading finish.
                 $scope.$parent.status = 'ready';
             }, 500);
         }
