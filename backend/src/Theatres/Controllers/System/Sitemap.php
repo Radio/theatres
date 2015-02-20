@@ -18,4 +18,19 @@ class System_Sitemap
 
         return 'ok';
     }
+
+    public function plain(Request $request, Application $app)
+    {
+        $builder = new Sitemap_Builder();
+        $links = $builder->getAllLinks();
+
+        $sitemap = '';
+        foreach ($links as $link) {
+            $sitemap .= $link['loc'] . PHP_EOL;
+        }
+
+        file_put_contents($app['dir.root'] . '/sitemap.txt', trim($sitemap));
+
+        return 'ok';
+    }
 }

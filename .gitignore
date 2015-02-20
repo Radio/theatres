@@ -13,4 +13,6 @@ build
 deploy
 secret.json
 sitemap.xml
+sitemap.txt
 google*.html
+/web/snapshots/snap-*.html

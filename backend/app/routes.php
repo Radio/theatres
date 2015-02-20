@@ -7,20 +7,22 @@ use \Theatres\Controllers;
 
 // 1. System
 
-$app->get('/system/setup', 'Theatres\\Controllers\\System_Setup::index')
-    ->bind('system_setup');
+//$app->get('/system/setup', 'Theatres\\Controllers\\System_Setup::index')
+//    ->bind('system_setup');
 
 $app->get('/system/export', 'Theatres\\Controllers\\System_Export::index')
     ->bind('system_export');
 
-$app->get('/system/import', 'Theatres\\Controllers\\System_Import::index')
-    ->bind('system_import');
+//$app->get('/system/import', 'Theatres\\Controllers\\System_Import::index')
+//    ->bind('system_import');
 
-$app->get('/system/clear', 'Theatres\\Controllers\\System_Clear::index')
-    ->bind('system_clear');
+//$app->get('/system/clear', 'Theatres\\Controllers\\System_Clear::index')
+//    ->bind('system_clear');
 
 $app->get('/system/sitemap', 'Theatres\\Controllers\\System_Sitemap::index')
     ->bind('system_sitemap');
+$app->get('/system/sitemap/plain', 'Theatres\\Controllers\\System_Sitemap::plain')
+    ->bind('system_sitemap_plain');
 
 // 2. Fetch
 

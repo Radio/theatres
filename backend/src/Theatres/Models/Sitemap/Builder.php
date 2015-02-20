@@ -16,14 +16,14 @@ class Sitemap_Builder
         return $dom;
     }
 
-    protected function getAllLinks()
+    public function getAllLinks()
     {
         $baseUrl = $this->getBaseUrl();
 
         $homeLink = $this->getHomeLink();
         $theatresLinks = $this->getTheatresLinks();
 
-        $allLinks = $homeLink + $theatresLinks;
+        $allLinks = array_merge($homeLink, $theatresLinks);
 
         $allLinks = array_map(function($link) use ($baseUrl) {
             $link['loc'] = $baseUrl . $link['loc'];
@@ -48,7 +48,6 @@ class Sitemap_Builder
     protected function getTheatresLinks()
     {
         $links = [];
-
         $theatres = new Theatres();
         foreach ($theatres as $theatre) {
             $links[] = [
