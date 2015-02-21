@@ -33,11 +33,11 @@ class Play extends Model_Bean
         'theatre_id', 'theatre', 'scene_id', 'scene',
         'title', 'key', 'link',  'price', 'image',
         'director', 'author', 'genre', 'duration', 'description',
-        'is_premiere', 'is_for_children', 'is_musical'
+        'is_premiere', 'is_for_children', 'is_musical', 'is_music'
     ];
 
     public static $booleanFields = [
-        'is_premiere', 'is_for_children', 'is_musical'
+        'is_premiere', 'is_for_children', 'is_musical', 'is_music'
     ];
 
     /**
