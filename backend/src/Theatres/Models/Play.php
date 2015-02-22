@@ -78,6 +78,6 @@ class Play extends Model_Bean
             'duplicate_id' => $duplicate->id,
         ]);
 
-        //R::trash($duplicate);
+        R::trash($duplicate);
     }
 }
