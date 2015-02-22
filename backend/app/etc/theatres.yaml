@@ -12,7 +12,7 @@ pushkin:
   fetcher: "\\Theatres\\Fetchers\\Pushkin"
   schedule: "\\Theatres\\Models\\Schedule"
 house:
-  fetcher: "\\Theatres\\Fetchers\\House"
+  fetcher: "\\Theatres\\Fetchers\\HouseTvojKharkov"
   schedule: "\\Theatres\\Models\\Schedule_House"
 novascena:
   fetcher: "\\Theatres\\Fetchers\\NovaScena"
