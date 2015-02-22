@@ -21,6 +21,10 @@ angular.module('admin')
                 templateUrl: 'src/admin/components/plays/play.tpl.html',
                 controller: 'PlayController'
             })
+            .when('/admin/plays/play/:playId/duplicate', {
+                templateUrl: 'src/admin/components/plays/duplicate/duplicate.tpl.html',
+                controller: 'PlayDuplicateController'
+            })
             .when('/admin/shows', {
                 templateUrl: 'src/admin/components/shows/shows.tpl.html',
                 controller: 'ShowsController'

@@ -59,9 +59,28 @@
                     data-ng-click="deletePlay(play)" title="Удалить">
                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
             </button>
+            &nbsp;&nbsp;
+            <a  href="/admin/plays/play/{{ play.id }}/duplicate"
+                class="btn btn-warning delete-play" title="Дубликат">
+                <span class="glyphicon glyphicon-pause" aria-hidden="true"></span>
+            </a>
             <span class="updated-message" data-ng-show="lastUpdatedId == play.id">
                 <span class="glyphicon glyphicon-ok"></span> Сохранено
             </span>
+        </div>
+    </fieldset>
+    <fieldset class="row form-group play-row" id="play-new">
+        <div class="col-md-4 col-title">
+            <label for="play-title-new">+</label>
+                <input type="text" id="play-title-new" class="form-control" placeholder="Название"
+                       data-ng-model="newPlay.title"/>
+            </div>
+            <div class="col-md-2">
+                <input type="text" class="form-control" placeholder="Ключ" data-ng-model="newPlay.key"/>
+            </div>
+            <div class="col-md-3">
+                <button type="button" class="btn btn-success add-play" title="Добавить"
+                    data-ng-click="addPlay(newPlay)">+</button>
         </div>
     </fieldset>
 </form>

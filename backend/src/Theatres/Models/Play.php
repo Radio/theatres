@@ -66,4 +66,18 @@ class Play extends Model_Bean
             }
         }
     }
+
+    public function absorbDuplicate($duplicate)
+    {
+        $newTags = R::tag($duplicate);
+        R::addTags($this->bean, $newTags);
+
+        $updateShowsQuery = 'update `show` set play_id = :original_id where play_id = :duplicate_id';
+        R::exec($updateShowsQuery, [
+            'original_id' => $this->bean->id,
+            'duplicate_id' => $duplicate->id,
+        ]);
+
+        //R::trash($duplicate);
+    }
 }

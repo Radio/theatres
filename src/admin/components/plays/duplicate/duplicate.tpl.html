@@ -1,0 +1,32 @@
+<div class="breadcrumb">
+    <a href="/admin">Панель управления</a>
+    <span class="sep">→</span>
+    <a href="/admin/plays">Спектакли</a>
+    <span class="sep">→</span>
+    <a href="/admin/plays/play/{{ play.id }}">{{ play.title }}</a>
+    <span class="sep">→</span>
+    <h2>Дубликат</h2>
+</div>
+
+<form id="edit-play-form" class="admin-form play-form form-horizontal" action="" method="post">
+    <fieldset class="row play-row" id="play-{{ play.key }}">
+
+        <p class="alert alert-danger" role="alert">
+            Этот спектакль будет удален. Его теги перейдут к оригиналу.
+            В расписании он будет заменен на оригинал. Все остальные данные будут утеряны.
+        </p>
+
+        <div class="col-sm-10">
+            <div class="form-group">
+                <label for="play-title" class="col-sm-2 control-label">Оригинал</label>
+                <div class="col-sm-10">
+                    <select class="form-control"
+                            data-ng-model="original"
+                            data-ng-options="play as play.title for play in plays">
+                    </select>
+                </div>
+            </div>
+            <button type="button" data-ng-click="replacePlay(original)" class="btn btn-warning">Объединить</button>
+        </div>
+    </fieldset>
+</form>
