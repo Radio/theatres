@@ -45,7 +45,7 @@ trait Theatre_Populatable
     {
         foreach (Theatre::$booleanFields as $theatreField) {
             if (array_key_exists('theatre_' . $theatreField, $itemData)) {
-                $show['theatre_' . $theatreField] = (bool) $itemData['theatre_' . $theatreField];
+                $itemData['theatre_' . $theatreField] = (bool) $itemData['theatre_' . $theatreField];
             }
         }
 

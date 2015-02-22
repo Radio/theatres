@@ -45,7 +45,7 @@ trait Play_Populatable
     {
         foreach (Play::$booleanFields as $playField) {
             if (array_key_exists('play_' . $playField, $itemData)) {
-                $show['play_' . $playField] = (bool) $itemData['play_' . $playField];
+                $itemData['play_' . $playField] = (bool) $itemData['play_' . $playField];
             }
         }
 
