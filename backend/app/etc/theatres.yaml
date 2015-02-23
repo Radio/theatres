@@ -19,7 +19,7 @@ novascena:
   schedule: "\\Theatres\\Models\\Schedule_Months"
 moget:
   fetcher: "\\Theatres\\Fetchers\\Moget"
-  schedule: "\\Theatres\\Models\\Schedule"
+  schedule: "\\Theatres\\Models\\Schedule_Months"
 beautifulflowers:
   fetcher: "\\Theatres\\Fetchers\\BeautifulFlowers"
   schedule: "\\Theatres\\Models\\Schedule"

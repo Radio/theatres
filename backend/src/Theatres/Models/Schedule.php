@@ -139,6 +139,7 @@ class Schedule
         if ($play->id) {
             $showData['play'] = $play;
             $show->import($showData, Show::$allowedFields);
+            $show->loadByHash($show->generateHash());
         }
 
         return $show;

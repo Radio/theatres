@@ -2,6 +2,7 @@
 
 namespace Theatres\Models;
 
+use Theatres\Collections\Shows;
 use Theatres\Core\Model_Bean;
 
 /**
@@ -28,7 +29,18 @@ class Show extends Model_Bean
         $this->hash = $this->generateHash();
     }
 
-    protected function generateHash()
+    public function loadByHash($hash)
+    {
+        $shows = new Shows();
+        $shows->setConditions('`hash` = ?', array($hash));
+
+        $first = $shows->getFirst();
+        if ($first) {
+            $this->bean->importFrom($first);
+        }
+    }
+
+    public function generateHash()
     {
         $line = sprintf('%s-%s-%s-%s',
             $this->theatre->id,

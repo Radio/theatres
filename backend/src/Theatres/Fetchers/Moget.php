@@ -24,26 +24,29 @@ class Moget extends Fetcher
         foreach($cells as $cellDomElement) {
             $show = pq($cellDomElement);
 
-            $dateLine  = $show->find('.date-display-single')->attr('content');
-            $link = $show->find('.views-field-title a');
-            $titleLine = $link->text();
-            $linkLine = $link->attr('href');
+            $dateLines = $show->find('.date-display-single');
+            foreach ($dateLines as $dateLine) {
+                $dateLine  = pq($dateLine)->attr('content');
+                $link = $show->find('.views-field-title a');
+                $titleLine = $link->text();
+                $linkLine = $link->attr('href');
 
-            $date = $this->parseDate($dateLine);
-            $title = $this->parseTitle($titleLine);
-            $link = $this->parseLink($linkLine);
-            $scene = $this->parseScene();
+                $date = $this->parseDate($dateLine);
+                $title = $this->parseTitle($titleLine);
+                $link = $this->parseLink($linkLine);
+                $scene = $this->parseScene();
 
-            $play = array(
-                'theatre' => $this->theatreId,
-                'date' => $date,
-                'title' => $title,
-                'scene' => $scene,
-                'price' => null,
-                'link' => $link ? $link : $this->source,
-            );
+                $play = array(
+                    'theatre' => $this->theatreId,
+                    'date' => $date,
+                    'title' => $title,
+                    'scene' => $scene,
+                    'price' => null,
+                    'link' => $link ? $link : $this->source,
+                );
 
-            $schedule[] = $play;
+                $schedule[] = $play;
+            }
         }
         Helpers\Schedule::sortByDate($schedule);
 
