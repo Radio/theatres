@@ -21,4 +21,25 @@ angular.module('api')
                 return deferred.promise;
             }
         };
+    }])
+    .factory('PlayDuplicates', ['$resource', '$q', 'API_URL', function($resource, $q, API_URL) {
+
+        var resource = $resource(API_URL + '/plays/:id/duplicates', {id: '@id'});
+
+        return {
+            post: function(id, duplicate) {
+                var deferred = $q.defer();
+
+                resource.save({
+                    id: id,
+                    duplicate: duplicate
+                }, function(response) {
+                    deferred.resolve(response);
+                }, function(response) {
+                    deferred.reject(response);
+                });
+
+                return deferred.promise;
+            }
+        };
     }]);

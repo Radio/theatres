@@ -130,8 +130,16 @@
                 <div class="col-sm-2">
                     <div class="checkbox">
                         <label>
+                            <input type="checkbox" data-ng-model="play.is_dance"
+                                   data-ng-change="savePlay(play)"> Танцевальный
+                        </label>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="checkbox">
+                        <label>
                             <input type="checkbox" data-ng-model="play.is_musical"
-                                   data-ng-change="savePlay(play)"> Музыкальный
+                                   data-ng-change="savePlay(play)"> Мюзикл
                         </label>
                     </div>
                 </div>

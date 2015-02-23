@@ -52,4 +52,9 @@ class Html
         }
         return $html;
     }
+
+    public static function cp1251ToUtf8($string)
+    {
+        return iconv('CP1251', 'UTF-8//IGNORE', $string);
+    }
 }

@@ -33,11 +33,11 @@ class Play extends Model_Bean
         'theatre_id', 'theatre', 'scene_id', 'scene',
         'title', 'key', 'link',  'price', 'image',
         'director', 'author', 'genre', 'duration', 'description',
-        'is_premiere', 'is_for_children', 'is_musical'
+        'is_premiere', 'is_for_children', 'is_musical', 'is_dance'
     ];
 
     public static $booleanFields = [
-        'is_premiere', 'is_for_children', 'is_musical'
+        'is_premiere', 'is_for_children', 'is_musical', 'is_dance'
     ];
 
     /**
@@ -65,5 +65,19 @@ class Play extends Model_Bean
                 $this->key = Helpers\Models::generateKey($this->title);
             }
         }
+    }
+
+    public function absorbDuplicate($duplicate)
+    {
+        $newTags = R::tag($duplicate);
+        R::addTags($this->bean, $newTags);
+
+        $updateShowsQuery = 'update `show` set play_id = :original_id where play_id = :duplicate_id';
+        R::exec($updateShowsQuery, [
+            'original_id' => $this->bean->id,
+            'duplicate_id' => $duplicate->id,
+        ]);
+
+        R::trash($duplicate);
     }
 }

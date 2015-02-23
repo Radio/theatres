@@ -6,7 +6,8 @@ angular.module('frontApp')
         $scope.playTypes = [
             {id: 'is_for_children', title: 'Для детей'},
             {id: 'is_for_adults', title: 'Для взрослых'},
-            {id: 'is_musical', title: 'Музыкальные'}
+            {id: 'is_musical', title: 'Музыкальные'},
+            {id: 'is_dance', title: 'Танцвальные'}
         ];
         initPlayTypesFilter($scope.playTypes);
 
@@ -44,6 +45,9 @@ angular.module('frontApp')
                         continue;
                     }
                     if (input[i].play_is_musical && filters.playTypes.is_musical === false) {
+                        continue;
+                    }
+                    if (input[i].play_is_dance && filters.playTypes.is_dance === false) {
                         continue;
                     }
                     if (input[i].play_is_for_children) {

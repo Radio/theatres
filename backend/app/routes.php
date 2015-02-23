@@ -59,6 +59,10 @@ $app->match('/api/plays/{playId}/tags', 'Theatres\\Controllers\\Api_Plays_Play_T
     ->assert('playId', '\d+|@[a-z\-_0-9]+')
     ->bind('api_plays_play_tags');
 
+$app->match('/api/plays/{playId}/duplicates', 'Theatres\\Controllers\\Api_Plays_Play_Duplicates::call')
+    ->assert('playId', '\d+|@[a-z\-_0-9]+')
+    ->bind('api_plays_play_duplicates');
+
 $app->match('/api/shows', 'Theatres\\Controllers\\Api_Shows::call')
     ->bind('api_shows');
 

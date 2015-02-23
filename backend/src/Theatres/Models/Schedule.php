@@ -38,7 +38,7 @@ class Schedule
      */
     public function saveSchedule($showsData, $month, $year)
     {
-        $this->clearSchedule($month, $year);
+        $this->clearSchedule($month, $year, $showsData);
 
         $shows = array();
         foreach ($showsData as $showData) {
@@ -115,8 +115,9 @@ class Schedule
      *
      * @param int $month
      * @param int $year
+     * @param array $showsData
      */
-    protected function clearSchedule($month, $year)
+    protected function clearSchedule($month, $year, $showsData = null)
     {
         R::exec('delete from `show` where theatre_id = ? and month (`date`) = ? and year(`date`) = ?',
             array($this->theatre->id, $month, $year));
