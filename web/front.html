@@ -30,18 +30,7 @@
         ga('send', 'pageview');
     </script>
 
-    <div id="main" class="container-fluid main-container"
-         data-ng-cloak>
-
-        <header class="main-header">
-            <h1>
-                <a href="#!/" class="first-title">{{ title.first }}</a>
-                <span data-ng-show="title.second.length">/ <span class="second-title">{{ title.second }}</span></span>
-                <span data-ng-show="title.third.length">/ <span class="third-title">{{ title.third }}</span></span>
-            </h1>
-        </header>
-        <div class="scroll-top"></div>
-
+    <div id="main" class="container-fluid main-container" data-ng-cloak>
         <div class="ctrl-view" data-ng-view></div>
     </div>
 
@@ -66,6 +55,9 @@
     <script src="/src/helper/shared/date/dateTimeDirective.js"></script>
     <script src="/src/helper/shared/calendar/calendarDirective.js"></script>
     <script src="/src/helper/shared/title/titleServices.js"></script>
+    <script src="/src/helper/shared/title/titleDirective.js"></script>
+    <script src="/src/helper/shared/filter/filterServices.js"></script>
+    <script src="/src/helper/shared/routing/routingServices.js"></script>
 
     <script src="/src/api/api.module.js"></script>
     <script src="/src/api/components/factory/factoryService.js"></script>
@@ -78,7 +70,6 @@
 
     <script src="/src/front/front.module.js"></script>
     <script src="/src/front/front.routes.js"></script>
-    <script src="/src/front/components/month/monthServices.js"></script>
     <script src="/src/front/components/month/monthController.js"></script>
     <script src="/src/front/components/month/filters/filtersController.js"></script>
     <script src="/src/front/components/play/playController.js"></script>

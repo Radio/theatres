@@ -1,10 +1,8 @@
 angular.module('helper')
-    .factory('TitleHelper', function($rootScope) {
-        $rootScope.title = {
+    .factory('TitleHelper', function() {
+        return {
             first: '',
             second: '',
             third: ''
         };
-
-        return $rootScope.title;
     });

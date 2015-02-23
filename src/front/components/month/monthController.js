@@ -1,21 +1,16 @@
 angular.module('frontApp')
-    .controller('MonthController', function ($scope, $routeParams, $timeout, TitleHelper, DateHelper, Api, Filters) {
+    .controller('MonthController', function ($scope, $rootScope, $routeParams, $timeout, $location, Api, DateHelper, FilterHelper, RoutingHelper) {
 
         var shownDay;
 
-        initTitle();
+        $scope.routing = RoutingHelper;
+
         initFilters();
         loadShows().then(function() {
             $("html, body").scrollTop(0);
             finalizeLoadingState();
         });
 
-        $scope.$watchGroup(['filter.month', 'filter.year'], function() {
-            TitleHelper.second = getTitle();
-        });
-        $scope.$watchGroup(['filter.theatre', 'filterTheatre'], function() {
-            TitleHelper.third = getSubtitle();
-        });
         $scope.$watchCollection(['title'], function() {
             fixPosterMargin();
         });
@@ -33,28 +28,10 @@ angular.module('frontApp')
 
         // Private
 
-        function initTitle() {
-            TitleHelper.first = 'Все спектакли Харькова на одной странице';
-            $scope.getTitle = getTitle;
-            $scope.getSubtitle = getSubtitle;
-        }
-
-        function getTitle() {
-            var month = DateHelper.getMonthTitle(Filters.month);
-            var year = Filters.year;
-
-            return month + (year == DateHelper.getCurrentYear() ? '' : ' ' + year);
-        }
-
-        function getSubtitle() {
-            var theatre = Filters.theatre || $scope.filterTheatre;
-            return theatre ? theatre.title : '';
-        }
-
         function loadShows()
         {
             $scope.loading = true;
-            $scope.days = DateHelper.getMonthDays(Filters.month, Filters.year);
+            $scope.days = DateHelper.getMonthDays(FilterHelper.month, FilterHelper.year);
 
             var query = buildQuery();
             return Api.shows.get(query).then(function(shows) {
@@ -73,14 +50,13 @@ angular.module('frontApp')
             var query = {
                 order: 'date',
                 populate: 'play,theatre,scene',
-                month: Filters.month,
-                year: Filters.year
+                month: FilterHelper.month,
+                year: FilterHelper.year
             };
-            if (Filters.theatre) {
-                query.theatre = Filters.theatre.id;
-            }
-            if (Filters.theatreKey) {
-                query.theatreKey = Filters.theatreKey;
+            if (FilterHelper.theatre) {
+                query.theatre = FilterHelper.theatre.id;
+            } else if (FilterHelper.theatreKey) {
+                query.theatreKey = FilterHelper.theatreKey;
             }
             return query;
         }
@@ -96,19 +72,37 @@ angular.module('frontApp')
         }
 
         function initFilters() {
-            Filters.month = DateHelper.getCurrentMonth();
-            Filters.year = DateHelper.getCurrentYear();
-            if ($routeParams.theatreKey) {
-                Filters.theatreKey = $routeParams.theatreKey;
-                Api.theatre.get('@' + $routeParams.theatreKey).then(function(theatre) {
-                    $scope.filterTheatre = theatre;
-                });
+            if ($routeParams.month) {
+                var monthYear = $routeParams.month.split('-');
+                FilterHelper.year = monthYear[0];
+                FilterHelper.month = monthYear[1];
+                if (!isValidYearAndMonth(FilterHelper.year, FilterHelper.month)) {
+                    $location.path('/');
+                    return;
+                }
             } else {
-                Filters.theatreKey = null;
-                $scope.filterTheatre = null;
+                FilterHelper.month = DateHelper.getCurrentMonth();
+                FilterHelper.year = DateHelper.getCurrentYear();
             }
 
-            $scope.filter = Filters;
+
+            if ($routeParams.theatreKey) {
+                FilterHelper.theatreKey = $routeParams.theatreKey;
+                Api.theatre.get('@' + $routeParams.theatreKey).then(function(theatre) {
+                    FilterHelper.theatre = theatre;
+                }, function() {
+                    $location.path('/');
+                });
+            } else {
+                FilterHelper.theatreKey = null;
+                FilterHelper.theatre = null;
+            }
+
+            $scope.filter = FilterHelper;
+
+            function isValidYearAndMonth(year, month) {
+                return year > 2014 && year < 3000 && month > 0 && month <= 12;
+            }
         }
 
         function scrollToDay(day) {
@@ -154,7 +148,7 @@ angular.module('frontApp')
         {
             $timeout(function() {
                 // needed for phantomjs to detect the loading finish.
-                $scope.$parent.status = 'ready';
+                $rootScope.status = 'ready';
             }, 500);
         }
 

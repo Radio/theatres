@@ -1,7 +1,7 @@
 angular.module('frontApp')
-    .controller('MonthFiltersController', function ($scope, DateHelper, Api, Filters) {
+    .controller('MonthFiltersController', function ($scope, DateHelper, Api, FilterHelper) {
 
-        $scope.filter = Filters;
+        $scope.filter = FilterHelper;
 
         $scope.playTypes = [
             {id: 'is_for_children', title: 'Для детей'},
@@ -22,14 +22,14 @@ angular.module('frontApp')
         function initPlayTypesFilter(playTypes)
         {
             angular.forEach(playTypes, function(playType) {
-                Filters.playTypes[playType.id] = true;
+                FilterHelper.playTypes[playType.id] = true;
             });
         }
 
         function initScenesFilter(scenes)
         {
             angular.forEach(scenes, function(scene) {
-                Filters.scenes[scene.id] = true;
+                FilterHelper.scenes[scene.id] = true;
             });
         }
     })

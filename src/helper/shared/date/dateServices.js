@@ -18,6 +18,15 @@ angular.module('helper')
             getCurrentYear: function() {
                 return currentDate.getFullYear();
             },
+            getNextMonth: function(currentMonth) {
+                currentMonth = currentMonth || this.getCurrentMonth();
+                return (currentMonth + 1) % 12;
+            },
+            getNextMonthYear: function(currentMonth)
+            {
+                currentMonth = currentMonth || this.getCurrentMonth();
+                return this.getCurrentYear() + (currentMonth == 12 ? 1 : 0);
+            },
             getMonthTitle: function(monthNumber, _case) {
                 return monthTitles[_case || 'nominative'][monthNumber];
             },

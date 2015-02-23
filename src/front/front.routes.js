@@ -1,14 +1,16 @@
 angular.module('frontApp')
     .config(function($routeProvider) {
+
+        var monthRoutingConfig = {
+            templateUrl: 'src/front/components/month/month.tpl.html',
+            controller: 'MonthController'
+        };
+
         $routeProvider
-            .when('/', {
-                templateUrl: 'src/front/components/month/month.tpl.html',
-                controller: 'MonthController'
-            })
-            .when('/theatre/:theatreKey', {
-                templateUrl: 'src/front/components/month/month.tpl.html',
-                controller: 'MonthController'
-            })
+            .when('/', monthRoutingConfig)
+            .when('/theatre/:theatreKey', monthRoutingConfig)
+            .when('/month/:month', monthRoutingConfig)
+            .when('/month/:month/theatre/:theatreKey', monthRoutingConfig)
             .when('/play/:playKey', {
                 templateUrl: 'src/front/components/play/play.tpl.html',
                 controller: 'PlayController'

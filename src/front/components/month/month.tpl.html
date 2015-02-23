@@ -1,36 +1,57 @@
-<div class="page-header" data-ng-class="{'with-sub-title': getSubtitle().length > 0}">
-    <h2>
-        {{ getTitle() }}
-        <span data-ng-show="getSubtitle()">&middot; {{ getSubtitle() }}</span>
-    </h2>
-</div>
-<div class="container-fluid month-container">
-    <div class="filters-col"
-         data-ng-controller="MonthFiltersController"
-         data-ng-include="'src/front/components/month/filters/filters.tpl.html'"></div>
-    <div class="poster">
-        <div class="row">
-            <div class="col-lg-10">
-                <div class="month">
-                    <div class="day row day-{{ date.getDay() }} date-{{ date.getDate() }}"
-                         data-day="{{ date.getDate() }}"
-                         data-ng-class="{'today': isToday(date)}"
-                         data-ng-repeat="date in days">
-                        <p class="day-number col-xs-2 col-xs-1-5">
-                            <span class="day-number-number">{{ date | date : 'd' }}</span>
-                            <span class="day-of-week-name">
-                                <span class="hidden-xs hidden-sm">{{ date | date : 'EEEE' }}</span>
-                                <span class="visible-xs visible-sm">{{ date | date : 'EEE' }}</span>
-                                <span class="hidden-xs" data-ng-show="isToday(date)"> (сегодня)</span>
-                            </span>
-                        </p>
-                        <div class="shows col-xs-10 col-xs-10-5">
-                            <div data-ng-repeat="show in date.shows | showsFilter:filter"
-                                 data-ng-include="'src/front/components/month/show-brief.tpl.html'"></div>
+<header class="main-header">
+    <div data-theatres-title></div>
+</header>
+<div class="scroll-top"></div>
+
+<div>
+    <div class="page-header" data-ng-class="{'with-sub-title': getSubtitle().length > 0}">
+        <h2>
+            {{ getTitle() }}
+            <span data-ng-show="getSubtitle()">&middot; {{ getSubtitle() }}</span>
+        </h2>
+    </div>
+    <div class="container-fluid month-container">
+        <div class="filters-col"
+             data-ng-controller="MonthFiltersController"
+             data-ng-include="'src/front/components/month/filters/filters.tpl.html'"></div>
+        <div class="poster">
+            <div class="row">
+                <div class="col-lg-10">
+                    <div class="month">
+                        <div class="day row day-{{ date.getDay() }} date-{{ date.getDate() }}"
+                             data-day="{{ date.getDate() }}"
+                             data-ng-class="{'today': isToday(date)}"
+                             data-ng-repeat="date in days">
+                            <p class="day-number col-xs-2 col-xs-1-5">
+                                <span class="day-number-number">{{ date | date : 'd' }}</span>
+                                <span class="day-of-week-name">
+                                    <span class="hidden-xs hidden-sm">{{ date | date : 'EEEE' }}</span>
+                                    <span class="visible-xs visible-sm">{{ date | date : 'EEE' }}</span>
+                                    <span class="hidden-xs" data-ng-show="isToday(date)"> (сегодня)</span>
+                                </span>
+                            </p>
+                            <div class="shows col-xs-10 col-xs-10-5">
+                                <div data-ng-repeat="show in date.shows | showsFilter:filter"
+                                     data-ng-include="'src/front/components/month/show-brief.tpl.html'"></div>
+                            </div>
                         </div>
                     </div>
+                    <div data-ng-show="loading" class="overlay month-overlay"></div>
                 </div>
-                <div data-ng-show="loading" class="overlay month-overlay"></div>
+            </div>
+            <div class="row footer">
+                <div class="col-xs-12">
+                    <p>
+                        95% расписания собирается автоматически с вебсайтов театров и других ресурсов.
+                        Ошибки возможны. Помогите нам исправить их &mdash; присылыайте замечания или пожелания
+                        Максиму на <a href="mailto:max@theatres.kh.ua">max@theatres.kh.ua</a>.
+                    </p>
+                    <p>
+                        Некоторых театров все еще нет здесь. Это потому, что их расписание
+                        невозможно получить автоматически. Если вы имеете отношение к такому театру
+                        и можете чем-то помочь, свяжитесь, пожалуйста с нами.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
