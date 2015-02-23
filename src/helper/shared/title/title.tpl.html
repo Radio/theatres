@@ -1,0 +1,15 @@
+<h1>
+    <a href="#!/" class="first-title">{{ title.first }}</a>
+
+    <span data-ng-show="getCurrentMonthTitle()">/
+        <a href="{{ routing.getUrl(date.getCurrentYear(), date.getCurrentMonth()) }}" class="second-title"
+           data-ng-hide="isCurrentMonth()">{{ getCurrentMonthTitle() }}</a>
+        <strong class="second-title" data-ng-show="isCurrentMonth()">{{ getCurrentMonthTitle() }}</strong>
+        —
+        <a href="{{ routing.getUrl(date.getNextMonthYear(), date.getNextMonth()) }}" class="second-subtitle"
+           data-ng-show="isCurrentMonth()">{{ getNextMonthTitle() }}</a>
+        <strong class="second-subtitle" data-ng-hide="isCurrentMonth()">{{ getNextMonthTitle() }}</strong>
+    </span>
+
+    <span data-ng-show="getTheatreTitle()">/ <span class="third-title">{{ getTheatreTitle() }}</span></span>
+</h1>

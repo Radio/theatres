@@ -38,6 +38,12 @@ class Schedule
      */
     public function saveSchedule($showsData, $month, $year)
     {
+        $currentYear = (int) date('Y');
+        $currentMonth = (int) date('m');
+        if ($year < $currentYear || ($year == $currentYear && $month < $currentMonth)) {
+            // do not edit old schedules.
+            return;
+        }
         $this->clearSchedule($month, $year, $showsData);
 
         $shows = array();
@@ -139,6 +145,7 @@ class Schedule
         if ($play->id) {
             $showData['play'] = $play;
             $show->import($showData, Show::$allowedFields);
+            $show->loadByHash($show->generateHash());
         }
 
         return $show;

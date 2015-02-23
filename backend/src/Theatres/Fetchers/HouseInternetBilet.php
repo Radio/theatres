@@ -34,18 +34,22 @@ class HouseInternetBilet extends Fetcher
         foreach($rows as $rowDomElement) {
             $show = pq($rowDomElement);
 
-            $titleLine = $show->find('a.underlined')->text();
+            $linkNode = $show->find('a.underlined');
+            $linkLine = $linkNode->attr('href');
+            $titleLine = $linkNode->text();
             $dateLine = $show->find('span')->text();
 
             $theatre = $this->parseTheatre($titleLine);
             $title = $this->parseTitle($titleLine);
             $date = $this->parseDate($dateLine);
+            $link = $this->parseLink($linkLine);
 
             if ($theatre) {
                 $play = array(
                     'theatre' => $theatre->key,
                     'date' => $date,
                     'title' => $title,
+                    'link' => $link,
                     'scene' => 'main',
                 );
 
@@ -82,6 +86,23 @@ class HouseInternetBilet extends Fetcher
         }
 
         return $date;
+    }
+
+    /**
+     * Source: http://domaktera.com.ua/shows/no-vse-taki
+     *
+     * @param string $html
+     * @return string
+     */
+    private function parseLink($html)
+    {
+        $link = null;
+
+        if ($html) {
+            $link = Helpers\Html::fixUrl($html, $this->source);
+        }
+
+        return $link;
     }
 
     /**

@@ -1,5 +1,5 @@
-angular.module('frontApp')
-    .factory('Filters', function() {
+angular.module('helper')
+    .factory('FilterHelper', function() {
         return {
             month: null,
             year: null,

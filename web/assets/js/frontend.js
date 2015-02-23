@@ -1,8 +1,6 @@
 (function($, viewport){
 
-    var $mainContainer = $('.main-container');
-    var $scrollTop = $('.scroll-top');
-    $scrollTop.click(function() {
+    $('body').on('click', '.scroll-top', function() {
         $('html, body').scrollTop(0);
     });
 
@@ -24,9 +22,9 @@
     function handelWindowScroll() {
         if (isSmallViewport()) {
             if ($(window).scrollTop() > 100) {
-                $scrollTop.show();
+                $('.scroll-top').show();
             } else {
-                $scrollTop.hide();
+                $('.scroll-top').hide();
             }
         }
     }
@@ -34,18 +32,18 @@
     function handleWindowResize()
     {
         if (isSmallViewport()) {
-            $mainContainer.addClass('small-viewport');
+            $('.main-container').addClass('small-viewport');
         } else {
-            $mainContainer.removeClass('small-viewport');
+            $('.main-container').removeClass('small-viewport');
         }
     }
 
     function setCompactState() {
-        $mainContainer.addClass('scrolled');
+        $('.main-container').addClass('scrolled');
     }
 
     function setExtendedState() {
-        $mainContainer.removeClass('scrolled');
+        $('.main-container').removeClass('scrolled');
     }
 
 })($, ResponsiveBootstrapToolkit);
