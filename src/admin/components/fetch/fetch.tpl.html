@@ -10,7 +10,7 @@
             <button type="button" class="btn btn-default" ng-click="fetchAll()">Парсить все</button>
         </div>
     </div>
-    <div class="row theatre" ng-repeat="theatre in theatres">
+    <div class="row theatre" data-ng-class="{'house': theatre.house_slug}" ng-repeat="theatre in theatres">
         <div class="col-md-4">
             <button type="button" class="fetch-theatre btn btn-default"
                     ng-click="fetchTheatre(theatre)">
