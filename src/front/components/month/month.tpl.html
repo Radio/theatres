@@ -20,7 +20,7 @@
                     <div class="month">
                         <div class="day row day-{{ date.getDay() }} date-{{ date.getDate() }}"
                              data-day="{{ date.getDate() }}"
-                             data-ng-class="{'today': isToday(date)}"
+                             data-ng-class="{'today': isToday(date), 'no-shows': !date.shows.length}"
                              data-ng-repeat="date in days">
                             <p class="day-number col-xs-2 col-xs-1-5">
                                 <span class="day-number-number">{{ date | date : 'd' }}</span>
