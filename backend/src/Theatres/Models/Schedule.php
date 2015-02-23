@@ -38,6 +38,12 @@ class Schedule
      */
     public function saveSchedule($showsData, $month, $year)
     {
+        $currentYear = (int) date('Y');
+        $currentMonth = (int) date('m');
+        if ($year < $currentYear || ($year == $currentYear && $month < $currentMonth)) {
+            // do not edit old schedules.
+            return;
+        }
         $this->clearSchedule($month, $year, $showsData);
 
         $shows = array();
