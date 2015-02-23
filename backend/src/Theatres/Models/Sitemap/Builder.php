@@ -45,17 +45,34 @@ class Sitemap_Builder
         ]];
     }
 
+    /**
+     * @return array
+     */
     protected function getTheatresLinks()
     {
         $links = [];
+
+        $today = new \DateTime();
+        $currentMonth = (int) $today->format('m');
+        $currentYear = (int) $today->format('Y');
+        $nextMonth = ($currentMonth + 1) % 12;
+        $nextMonthYear = $currentYear + ($nextMonth > 1 ? 0 : 1);
+
+        $monthParts = [
+            $currentYear . '-' . $currentMonth,
+            $nextMonthYear . '-' . $nextMonth
+        ];
+
         $theatres = new Theatres();
-        foreach ($theatres as $theatre) {
-            $links[] = [
-                'loc' => '/theatre/' . $theatre->key,
-                //'lastmod' => '',
-                'changefreq' => 'monthly',
-                'priority' => '0.5'
-            ];
+        foreach ($monthParts as $monthPart) {
+            foreach ($theatres as $theatre) {
+                $links[] = [
+                    'loc' => '/month/' . $monthPart . '/theatre/' . $theatre->key,
+                    //'lastmod' => '',
+                    'changefreq' => 'monthly',
+                    'priority' => '0.5'
+                ];
+            }
         }
 
         return $links;
