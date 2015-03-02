@@ -125,8 +125,16 @@ class Schedule
      */
     protected function clearSchedule($month, $year, $showsData = null)
     {
-        R::exec('delete from `show` where theatre_id = ? and month (`date`) = ? and year(`date`) = ?',
-            array($this->theatre->id, $month, $year));
+        $firstShow = current($showsData);
+        $firstShowDate = $firstShow['date']->format('Y-m-d');
+
+        R::exec(
+            'delete from `show` where
+               theatre_id = ?
+               and `date` > ?
+               and month (`date`) = ?
+               and year(`date`) = ?',
+            array($this->theatre->id, $firstShowDate, $month, $year));
     }
 
     /**
