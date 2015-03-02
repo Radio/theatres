@@ -19,7 +19,7 @@ angular.module('admin')
         Api.scenes.get().then(function(scenes) {
             $scope.scenes = scenes;
         });
-        Api.plays.get({populate: 'theatre', _order: 'title'}).then(function(plays) {
+        Api.plays.get({populate: 'theatre', order: 'title'}).then(function(plays) {
             $scope.plays = plays;
         });
 

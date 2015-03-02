@@ -10,7 +10,7 @@ angular.module('admin')
 
             Api.plays.get({
                 theatre: play.theatre_id,
-                _order: 'title'
+                order: 'title'
             }).then(function(plays) {
                 $scope.plays = plays;
             });
