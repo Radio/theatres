@@ -20,11 +20,11 @@
             <div class="col-md-3">
                 <select class="form-control"
                         data-ng-model="newShow.play_id" data-ng-change="setShowDefaults(newShow)"
-                        data-ng-options="play.id as play.title for play in plays">
+                        data-ng-options="play.id as play.title group by play.theatre_title for play in plays">
                 </select>
                 <p class="show-theatre">{{ getTheatreById(newShow.theatre_id).title }}</p>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <select class="form-control"
                         data-ng-model="newShow.scene_id"
                         data-ng-options="scene.id as scene.title for scene in scenes">
@@ -35,10 +35,12 @@
                        data-ng-model="newShow.price"/>
             </div>
             <div class="col-md-2">
+                <input type="text" class="form-control" placeholder="Купить билеты"
+                       data-ng-model="newShow.buy_tickets_link"/>
+            </div>
+            <div class="col-md-1">
                 <button type="button" class="btn btn-success add-show" title="Добавить"
                         data-ng-click="addShow(newShow)">+</button>
-                &nbsp;&nbsp;
-                <a href="#" class="text-success" data-ng-click="addShow(newShow)">Добавить</a>
             </div>
         </div>
     </fieldset>
@@ -59,7 +61,7 @@
             </select>
             <p class="show-theatre">{{ getTheatreById(show.theatre_id).title }}</p>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
             <select class="form-control"
                     data-ng-model="show.scene_id" data-ng-change="saveShow(show)"
                     data-ng-options="scene.id as scene.title for scene in scenes">
@@ -69,10 +71,12 @@
             <input type="text" class="form-control" placeholder="Цена"
                    data-ng-model="show.price" data-ng-blur="saveShow(show)"/>
         </div>
-        <div class="col-md-2 col-button">
+        <div class="col-md-2">
+            <input type="text" class="form-control" placeholder="Купить билеты"
+                   data-ng-model="show.buy_tickets_link" data-ng-blur="saveShow(show)"/>
+        </div>
+        <div class="col-md-1 col-button">
             <button type="button" class="btn btn-danger delete-show" data-ng-click="deleteShow(show)" title="Удалить">&times;</button>
-            &nbsp;&nbsp;
-            <a href="#" class="text-danger" data-ng-click="deleteShow(show)">Удалить</a>
         </div>
     </fieldset>
 </form>

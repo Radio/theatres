@@ -50,6 +50,7 @@ class HouseInternetBilet extends Fetcher
                     'date' => $date,
                     'title' => $title,
                     'link' => $link,
+                    'buy_tickets_link' => $link,
                     'scene' => 'main',
                 );
 

@@ -6,13 +6,14 @@
             {{ show.date | date : 'H:mm' }}
         </time>
     </div>
-    <div class="show-title col-md-11">
+    <div class="show-title col-md-11" data-ng-init="showShowDetails = false">
         <h4>
-            <a href="{{ show.play_link }}" itemprop="url">
+            <a href="" itemprop="url" content="{{ show.play_link }}"
+               data-ng-click="loadDetails(show); showShowDetails = !showShowDetails">
                 <span itemprop="name">{{ show.play_title }}</span>
             </a>
         </h4>
-        <div class="show-scene">
+        <div class="show-scene" data-ng-hide="showShowDetails">
             <div itemprop="location" itemscope itemtype="http://schema.org/PerformingArtsTheater">
                 <meta itemprop="name" content="{{ show.theatre_house_slug ? 'Дом Актера' : show.theatre_title }}"/>
                 <meta itemprop="address" content="Kharkiv, Ukraine"/>
@@ -21,24 +22,33 @@
                 <link itemprop="url" href="{{ show.theatre_link }}"/>
                 <meta itemprop="name" content="{{ show.theatre_title + (show.theatre_house_slug ? ', Дом Актера' : '') }}"/>
                 <a href="{{ routing.getUrl(filter.year, filter.month, show.theatre_key) }}"
-                   class="show-theatre-title">{{ show.theatre_title }}</a><span
-                        data-ng-show="show.theatre_house_slug">, Дом Актера</span>
+                   title="Показать афишу театра"
+                   class="show-theatre-title">{{ show.theatre_title }}</a><!--
+                   --><span data-ng-show="show.theatre_house_slug">, Дом Актера</span>
             </span>
             <span class="show-separator">&middot;</span>
             <span class="nobr">{{ show.scene_title }}</span>
             <span data-ng-if="show.price || show.buy_tickets_link"
                   itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                <link data-ng-if="show.buy_tickets_link" itemprop="url" href="{{ show.buy_tickets_link }}"/>
-                <span data-ng-if="show.price">
-                    <span class="show-separator">&middot;</span>
-                    <span class="price nobr" itemprop="price" content="{{ show.price }}">{{ show.price }}</span>
-                    <meta itemprop="priceCurrency" content="UAH"/>
-                </span>
+                <span class="show-separator">&middot;</span>
+                <meta data-ng-if="show.price" itemprop="priceCurrency" content="UAH"/>
+                <span data-ng-if="show.price && !show.buy_tickets_link"
+                      class="price nobr" itemprop="price" content="{{ show.price }}">{{ show.price }}</span>
+                <a data-ng-if="show.buy_tickets_link" title="Купить билеты"
+                   itemprop="url" href="{{ show.buy_tickets_link }}">
+                    <span data-ng-if="show.price"
+                          class="price nobr" itemprop="price" content="{{ show.price }}">{{ show.price }}</span><!--
+                    --><span data-ng-if="!show.price"
+                          class="price nobr">купить билеты</span><!--
+                --></a>
             </span>
-            <div data-ng-if="show.buy_tickets_link"
-                 itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                <link itemprop="url" href="{{ show.buy_tickets_link }}"/>
-            </div>
+            <span class="hidden-xs hidden-sm" data-ng-if="show.play_genre">
+                <span class="show-separator">&middot;</span>
+                {{ show.play_genre }}
+            </span>
         </div>
     </div>
 </div>
+<div class="row show-details"
+     data-ng-if="showShowDetails"
+     data-ng-include="'src/front/components/month/show-details.tpl.html'"></div>

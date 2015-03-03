@@ -1,0 +1,30 @@
+<div class="col-md-1 play-image-col">
+    <a class="play-image" href="{{ show.play_link }}" title="Описание на сайте театра"
+       data-ng-if="show.play_image">
+        <img class="img-responsive" data-ng-src="{{ show.play_image }}" alt="{{ show.play_title }}" src="">
+    </a>
+</div>
+<div class="col-md-11">
+    <div class="loading-show-details" data-ng-hide="show._is_extended">Загружаем...</div>
+    <div data-ng-show="show._is_extended">
+        <p data-ng-show="show.play_genre">{{ show.play_genre }}</p>
+        <p>
+            <a href="{{ show.theatre_link }}" title="Сайт театра">{{ show.theatre_title }}</a><!--
+                --><span data-ng-show="show.theatre_house_slug">, Дом Актера</span>
+            <span class="show-separator">&middot;</span>
+            <span class="nobr">{{ show.scene_title }}</span>
+            <span data-ng-if="show.price || show.buy_tickets_link">
+                <span class="show-separator">&middot;</span>
+                <span data-ng-if="show.price && !show.buy_tickets_link" class="price nobr">{{ show.price }}</span>
+                <a data-ng-if="show.buy_tickets_link" href="{{ show.buy_tickets_link }}" title="Купить билеты">
+                    <span data-ng-if="show.price" class="price nobr">{{ show.price }}</span><!--
+                    --><span data-ng-if="!show.price" class="price nobr">купить билеты</span><!--
+                --></a>
+            </span>
+        </p>
+        <p data-ng-show="show.play_director"><strong>Постановщик:</strong> {{ show.play_director }}</p>
+        <p data-ng-show="show.play_duration"><strong>Длительность:</strong> {{ show.play_duration }}</p>
+        <p class="play-description" data-ng-bind-html="show.play_description | newlines"></p>
+        <p><a href="{{ show.play_link }}">Описание на сайте театра &#8599;</a></p>
+    </div>
+</div>

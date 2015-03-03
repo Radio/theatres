@@ -159,3 +159,21 @@
         margin-top: 0;
     }
 }
+.show-details {
+    margin-top: .7em;
+    margin-bottom: 2em;
+
+    .play-image-col {
+        padding-top: .2em;
+        padding-bottom: .7em;
+        @media (min-width: 992px) {
+            @extend: 12%;
+            width: 8.33333333% + @extend;
+            margin-left: -@extend;
+        }
+    }
+
+    .play-description {
+        max-width: 700px;
+    }
+}

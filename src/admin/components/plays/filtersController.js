@@ -6,7 +6,7 @@ angular.module('admin')
         $scope.theatres = [];
         $scope.scenes = [];
 
-        Api.theatres.get().then(function(theatres) {
+        Api.theatres.get({order: 'title'}).then(function(theatres) {
             $scope.theatres = theatres;
         });
         Api.scenes.get().then(function(scenes) {

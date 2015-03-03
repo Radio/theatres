@@ -92,6 +92,14 @@
             </div>
 
             <div class="form-group">
+                <label for="play-price" class="col-sm-2 control-label">Цена</label>
+                <div class="col-sm-10">
+                    <input type="text" id="play-price" class="form-control"
+                           data-ng-model="play.price" data-ng-blur="savePlay(play)"/>
+                </div>
+            </div>
+
+            <div class="form-group">
                 <label for="play-description" class="col-sm-2 control-label">Описание</label>
                 <div class="col-sm-10">
                     <textarea id="play-description" class="form-control"
@@ -139,7 +147,7 @@
                     <div class="checkbox">
                         <label>
                             <input type="checkbox" data-ng-model="play.is_musical"
-                                   data-ng-change="savePlay(play)"> Мюзикл
+                                   data-ng-change="savePlay(play)"> Музыкальный
                         </label>
                     </div>
                 </div>
