@@ -47,6 +47,7 @@ angular.module('admin')
 
         function loadPlays()
         {
+            $scope.loading = true;
             var query = {};
             if ($scope.filter.theatre) {
                 query.theatre = $scope.filter.theatre.id;
@@ -57,6 +58,7 @@ angular.module('admin')
 
             Api.plays.get(query).then(function(plays) {
                 $scope.plays = plays;
+                $scope.loading = false;
             });
         }
 

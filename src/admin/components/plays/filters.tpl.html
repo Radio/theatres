@@ -1,4 +1,4 @@
-<div class="row options-panel" ng-controller="PlaysFiltersController">
+<div class="row options-panel" data-ng-controller="PlaysFiltersController">
     <div class="col-md-12">
         <div class="theatres-list btn-group">
             <div class="btn-group">
@@ -6,13 +6,13 @@
                     {{ filter.theatre ? filter.theatre.title : 'Все театры' }} <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" role="menu">
-                    <li ng-class="{true: 'current', false: ''}[filter.theatre == null]">
-                        <a href="#" ng-click="setTheatreFilter(null)">Все</a>
+                    <li data-ng-class="{true: 'current', false: ''}[filter.theatre == null]">
+                        <a href="#" data-ng-click="setTheatreFilter(null)">Все</a>
                     </li>
                     <li class="divider"></li>
-                    <li ng-repeat="theatre in theatres"
-                        ng-class="{true: 'current', false: ''}[filter.theatre.key == theatre.key]">
-                        <a href="#" ng-click="setTheatreFilter(theatre)">{{ theatre.title }}</a>
+                    <li data-ng-repeat="theatre in theatres"
+                        data-ng-class="{true: 'current', false: ''}[filter.theatre.key == theatre.key]">
+                        <a href="#" data-ng-click="setTheatreFilter(theatre)">{{ theatre.title }}</a>
                     </li>
                 </ul>
             </div>
@@ -23,18 +23,21 @@
                     {{ filter.scene ? filter.scene.title : 'Все сцены' }} <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" role="menu">
-                    <li ng-class="{true: 'current', false: ''}[filter.scene == null]">
-                        <a href="#" ng-click="setSceneFilter(null)">Все</a>
+                    <li data-ng-class="{true: 'current', false: ''}[filter.scene == null]">
+                        <a href="#" data-ng-click="setSceneFilter(null)">Все</a>
                     </li>
                     <li class="divider"></li>
-                    <li ng-repeat="scene in scenes"
-                        ng-class="{true: 'current', false: ''}[filter.scene.key == scene.key]">
-                        <a href="#" ng-click="setSceneFilter(scene)">{{ scene.title }}</a>
+                    <li data-ng-repeat="scene in scenes"
+                        data-ng-class="{true: 'current', false: ''}[filter.scene.key == scene.key]">
+                        <a href="#" data-ng-click="setSceneFilter(scene)">{{ scene.title }}</a>
                     </li>
                 </ul>
             </div>
         </div>
-        <div class="btn-group" ng-show="loading">
+        <div class="btn-group">
+            <input type="search" class="form-control" placeholder="Поиск" data-ng-model="filter.query"/>
+        </div>
+        <div class="btn-group" data-ng-show="loading">
             <div class="btn-group loading-text">загружаем...</div>
         </div>
     </div>
