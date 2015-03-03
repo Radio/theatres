@@ -152,6 +152,16 @@ class Schedule
 
         if ($play->id) {
             $showData['play'] = $play;
+            if (!isset($showData['price']) || !$showData['price']) {
+                $showData['price'] = $play->price;
+            }
+            if (!isset($showData['scene']) || !$showData['scene']) {
+                $showData['scene_id'] = $play->scene_id;
+            }
+            if (!isset($showData['buy_tickets_link']) || !$showData['buy_tickets_link']) {
+                $showData['buy_tickets_link'] = $play->buy_tickets_link;
+            }
+
             $show->import($showData, Show::$allowedFields);
             $show->loadByHash($show->generateHash());
         }
