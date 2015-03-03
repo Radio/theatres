@@ -185,6 +185,16 @@ class Schedule
         if (!$play->id) {
             $this->createAndSaveNewPlay($play, $showData);
             return $play;
+        } else {
+            $updateFields = [
+                'price', 'image', 'link', 'director', 'author', 'genre', 'duration', 'description',
+                'is_premiere', 'is_for_children', 'is_musical', 'is_dance'
+            ];
+            foreach ($updateFields as $prop) {
+                if (!$play->{$prop} && isset($showData[$prop])) {
+                    $play->{$prop} = $showData[$prop];
+                }
+            }
         }
         return $play;
     }
