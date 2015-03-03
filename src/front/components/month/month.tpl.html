@@ -3,84 +3,35 @@
 </header>
 <div class="scroll-top"></div>
 
-<div>
-    <div class="page-header" data-ng-class="{'with-sub-title': getSubtitle().length > 0}">
-        <h2>
-            {{ getTitle() }}
-            <span data-ng-show="getSubtitle()">&middot; {{ getSubtitle() }}</span>
-        </h2>
-    </div>
-    <div class="container-fluid month-container">
-        <div class="filters-col"
-             data-ng-controller="MonthFiltersController"
-             data-ng-include="'src/front/components/month/filters/filters.tpl.html'"></div>
-        <div class="poster">
-            <div class="row">
-                <div class="col-lg-10">
-                    <div class="month">
-                        <div class="day row day-{{ date.getDay() }} date-{{ date.getDate() }}"
-                             data-day="{{ date.getDate() }}"
-                             data-ng-class="{'today': isToday(date), 'no-shows': !date.shows.length}"
-                             data-ng-repeat="date in days">
-                            <p class="day-number col-xs-2 col-xs-1-5">
-                                <span class="day-number-number">{{ date | date : 'd' }}</span>
-                                <span class="day-of-week-name">
-                                    <span class="hidden-xs hidden-sm">{{ date | date : 'EEEE' }}</span>
-                                    <span class="visible-xs visible-sm">{{ date | date : 'EEE' }}</span>
-                                    <span class="hidden-xs" data-ng-show="isToday(date)"> (сегодня)</span>
-                                </span>
-                            </p>
-                            <div class="shows col-xs-10 col-xs-10-5">
-                                <div data-ng-repeat="show in date.shows | showsFilter:filter"
-                                     data-ng-include="'src/front/components/month/show-brief.tpl.html'"></div>
-                            </div>
+<div class="container-fluid month-container">
+    <div class="filters-col"
+         data-ng-controller="MonthFiltersController"
+         data-ng-include="'src/front/components/month/filters/filters.tpl.html'"></div>
+    <div class="poster">
+        <div class="row">
+            <div class="col-lg-10">
+                <div class="month">
+                    <div class="day row day-{{ date.getDay() }} date-{{ date.getDate() }}"
+                         data-day="{{ date.getDate() }}"
+                         data-ng-class="{'today': isToday(date), 'no-shows': !date.shows.length}"
+                         data-ng-repeat="date in days">
+                        <p class="day-number col-xs-2 col-xs-1-5">
+                            <span class="day-number-number">{{ date | date : 'd' }}</span>
+                            <span class="day-of-week-name">
+                                <span class="hidden-xs hidden-sm">{{ date | date : 'EEEE' }}</span>
+                                <span class="visible-xs visible-sm">{{ date | date : 'EEE' }}</span>
+                                <span class="hidden-xs" data-ng-show="isToday(date)"> (сегодня)</span>
+                            </span>
+                        </p>
+                        <div class="shows col-xs-10 col-xs-10-5">
+                            <div data-ng-repeat="show in date.shows | showsFilter:filter"
+                                 data-ng-include="'src/front/components/month/show-brief.tpl.html'"></div>
                         </div>
                     </div>
-                    <div data-ng-show="loading" class="overlay month-overlay"></div>
                 </div>
-            </div>
-            <div class="row footer">
-                <div class="col-xs-12">
-                    <p>
-                        95% расписания собирается автоматически с вебсайтов театров и других ресурсов.
-                        Ошибки возможны. Помогите нам исправить их &mdash; присылайте замечания или пожелания
-                        Максиму на <a href="mailto:max@theatres.kh.ua">max@theatres.kh.ua</a>.
-                    </p>
-                    <p>
-                        Некоторых театров все еще нет здесь. Это потому, что их расписание
-                        невозможно получить автоматически.
-                    </p>
-                    <p>А эти уже есть:</p>
-                    <ul>
-                        <li>Театр имени Шевченко</li>
-                        <li>Театр «PostScriptum»</li>
-                        <li>Театр имени Пушкина</li>
-                        <li>Все театры Дома Актера</li>
-                        <li>Театр «Мадригал»</li>
-                        <li>Кукольный театр</li>
-                        <li>Театр музыкальной комедии</li>
-                        <li>Театр для детей и юношества</li>
-                        <li>Оперный театр (ХАТОБ)</li>
-                    </ul>
-                    <p>В скором времени появятся:</p>
-                    <ul>
-                        <li>Театр «На Жуках»</li>
-                        <li>Филармония и Органный зал</li>
-                    </ul>
-                    <p>Под вопросом пока остаются:</p>
-                    <ul>
-                        <li>Театр «Публицист»</li>
-                        <li>Театр DADA</li>
-                        <li>Театр-студия «Ступени»</li>
-                        <li>Театр-студия «Винора»</li>
-                        <li>Харьковский драматический театр</li>
-                    </ul>
-                    <p>
-                        Если вы имеете отношение к одному из них и можете чем-то помочь, свяжитесь,
-                        пожалуйста, с нами:&nbsp;<a href="mailto:max@theatres.kh.ua">max@theatres.kh.ua</a>.
-                    </p>
-                </div>
+                <div data-ng-show="loading" class="overlay month-overlay"></div>
             </div>
         </div>
+        <div data-ng-include="'src/front/components/month/footer.tpl.html'"></div>
     </div>
 </div>

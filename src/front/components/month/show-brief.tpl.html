@@ -13,17 +13,32 @@
             </a>
         </h4>
         <div class="show-scene">
-            <span itemprop="performer">
-                <a itemprop="url" href="{{ routing.getUrl(filter.year, filter.month, show.theatre_key) }}"
+            <div itemprop="location" itemscope itemtype="http://schema.org/PerformingArtsTheater">
+                <meta itemprop="name" content="{{ show.theatre_house_slug ? 'Дом Актера' : show.theatre_title }}"/>
+                <meta itemprop="address" content="Kharkiv, Ukraine"/>
+            </div>
+            <span itemprop="performer" itemscope itemtype="http://schema.org/TheaterGroup">
+                <link itemprop="url" href="{{ show.theatre_link }}"/>
+                <meta itemprop="name" content="{{ show.theatre_title + (show.theatre_house_slug ? ', Дом Актера' : '') }}"/>
+                <a href="{{ routing.getUrl(filter.year, filter.month, show.theatre_key) }}"
                    class="show-theatre-title">{{ show.theatre_title }}</a><span
-                                data-ng-show="show.theatre_house_slug">, Дом Актера</span>
+                        data-ng-show="show.theatre_house_slug">, Дом Актера</span>
             </span>
-                        <span class="show-separator">&middot;</span>
-                        <span class="nobr">{{ show.scene_title }}</span>
-            <span data-ng-show="show.price">
-                <span class="show-separator">&middot;</span>
-                <span class="price nobr">{{ show.price }}</span>
+            <span class="show-separator">&middot;</span>
+            <span class="nobr">{{ show.scene_title }}</span>
+            <span data-ng-if="show.price || show.buy_tickets_link"
+                  itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                <link data-ng-if="show.buy_tickets_link" itemprop="url" href="{{ show.buy_tickets_link }}"/>
+                <span data-ng-if="show.price">
+                    <span class="show-separator">&middot;</span>
+                    <span class="price nobr" itemprop="price" content="{{ show.price }}">{{ show.price }}</span>
+                    <meta itemprop="priceCurrency" content="UAH"/>
+                </span>
             </span>
+            <div data-ng-if="show.buy_tickets_link"
+                 itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                <link itemprop="url" href="{{ show.buy_tickets_link }}"/>
+            </div>
         </div>
     </div>
 </div>
