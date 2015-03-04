@@ -10,7 +10,7 @@
     RewriteRule ^(.*)$ snapshots/index.php [NC,L]
 
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^(api|system|fetch) app.php [L]
+    RewriteRule ^(api|system|fetch|login) app.php [L]
 
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^admin admin.html [L]

@@ -48,25 +48,34 @@
     }
 
     .month {
-        .overlay {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(40, 164, 201, .1);
-        }
         .loading-text {
             margin-left: 10px;
             padding-left: 32px;
             background: url(/assets/img/cat.png) no-repeat scroll left center transparent;
         }
     }
+    .overlay {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: url(/assets/img/cat.png) no-repeat scroll 180px 60px  rgba(40, 164, 201, .1);
+        padding-top: 65px;
+        padding-left: 210px;
+    }
     .day {
         padding-top: 1em;
         padding-bottom: 1em;
         border-top: 1px solid #eee;
 
+        &.no-shows {
+            padding-top: .5em;
+            padding-bottom: .5em;
+            opacity: .5;
+            font-size: .8em;
+            border-top: 1px solid #ddd
+        }
         &:first-child {
             border-top: 0 none;
         }
@@ -150,5 +159,23 @@
 .small-viewport {
     .poster {
         margin-top: 0;
+    }
+}
+.show-details {
+    margin-top: .7em;
+    margin-bottom: 2em;
+
+    .play-image-col {
+        padding-top: .2em;
+        padding-bottom: .7em;
+        @media (min-width: 992px) {
+            @extend: 12%;
+            width: 8.33333333% + @extend;
+            margin-left: -@extend;
+        }
+    }
+
+    .play-description {
+        max-width: 700px;
     }
 }

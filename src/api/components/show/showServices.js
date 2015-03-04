@@ -14,14 +14,22 @@ angular.module('api')
 
         var parentPost = showsApi.post;
         showsApi.post = function(item) {
-            DateHelper.dateObjectToString(item, ['date']);
-            var promise = parentPost();
-            DateHelper.dateStringToObject(item, ['date']);
-            return promise;
+            var postItem = angular.copy(item);
+            DateHelper.dateObjectToString(postItem, ['date']);
+            return parentPost(postItem);
         };
 
         return showsApi;
     })
-    .factory('Show',  function(Factory) {
-        return Factory.item('shows/:id', {id: '@id'});
+    .factory('Show',  function(Factory, DateHelper) {
+        var showApi = Factory.item('shows/:id', {id: '@id'});
+
+        var parentPut = showApi.put;
+        showApi.put = function(id, data) {
+            var putData = angular.copy(data);
+            DateHelper.dateObjectToString(putData, ['date']);
+            return parentPut(id, putData);
+        };
+
+        return  showApi;
     });

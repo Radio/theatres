@@ -13,13 +13,13 @@ angular.module('admin')
         $scope.plays = [];
         $scope.filter = ShowsFilters;
 
-        Api.theatres.get().then(function(theatres) {
+        Api.theatres.get({order: 'title'}).then(function(theatres) {
             $scope.theatres = theatres;
         });
         Api.scenes.get().then(function(scenes) {
             $scope.scenes = scenes;
         });
-        Api.plays.get({populate: 'theatre', _order: 'title'}).then(function(plays) {
+        Api.plays.get({populate: 'theatre', order: 'title'}).then(function(plays) {
             $scope.plays = plays;
         });
 
@@ -32,6 +32,7 @@ angular.module('admin')
             if (play) {
                 show.theatre_id = play.theatre_id;
                 show.scene_id = play.scene_id;
+                show.price = play.price;
             }
         };
 
@@ -74,9 +75,13 @@ angular.module('admin')
         };
         $scope.saveShow = function(show)
         {
-            Api.show.put(show.id, show).then(function(response) {
-                setLastUpdatedId(show.id);
-            });
+            var play = $scope.getPlayById(show.play_id);
+            if (play) {
+                show.theatre_id = play.theatre_id;
+                Api.show.put(show.id, show).then(function(response) {
+                    setLastUpdatedId(show.id);
+                });
+            }
         };
 
         function loadShows()

@@ -2,11 +2,11 @@
     <a href="#!/" class="first-title">{{ title.first }}</a>
 
     <span data-ng-show="getCurrentMonthTitle()">/
-        <a href="{{ routing.getUrl(date.getCurrentYear(), date.getCurrentMonth()) }}" class="second-title"
+        <a href="{{ routing.getUrl(date.getCurrentYear(), date.getCurrentMonth()) }}" class="second-title no-print"
            data-ng-hide="isCurrentMonth()">{{ getCurrentMonthTitle() }}</a>
         <strong class="second-title" data-ng-show="isCurrentMonth()">{{ getCurrentMonthTitle() }}</strong>
-        —
-        <a href="{{ routing.getUrl(date.getNextMonthYear(), date.getNextMonth()) }}" class="second-subtitle"
+        <span class="no-print">—</span>
+        <a href="{{ routing.getUrl(date.getNextMonthYear(), date.getNextMonth()) }}" class="second-subtitle no-print"
            data-ng-show="isCurrentMonth()">{{ getNextMonthTitle() }}</a>
         <strong class="second-subtitle" data-ng-hide="isCurrentMonth()">{{ getNextMonthTitle() }}</strong>
     </span>

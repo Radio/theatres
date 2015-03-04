@@ -6,6 +6,15 @@ angular.module('admin')
         $scope.lastUpdatedId = null;
         $scope.newPlay = {};
         $scope.plays = [];
+        $scope.theatres = [];
+        $scope.scenes = [];
+
+        Api.theatres.get({order: 'title'}).then(function(theatres) {
+            $scope.theatres = theatres;
+        });
+        Api.scenes.get().then(function(scenes) {
+            $scope.scenes = scenes;
+        });
 
         $scope.filter = PlaysFilters;
 
@@ -47,6 +56,7 @@ angular.module('admin')
 
         function loadPlays()
         {
+            $scope.loading = true;
             var query = {};
             if ($scope.filter.theatre) {
                 query.theatre = $scope.filter.theatre.id;
@@ -57,6 +67,7 @@ angular.module('admin')
 
             Api.plays.get(query).then(function(plays) {
                 $scope.plays = plays;
+                $scope.loading = false;
             });
         }
 

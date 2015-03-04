@@ -125,8 +125,16 @@ class Schedule
      */
     protected function clearSchedule($month, $year, $showsData = null)
     {
-        R::exec('delete from `show` where theatre_id = ? and month (`date`) = ? and year(`date`) = ?',
-            array($this->theatre->id, $month, $year));
+        $firstShow = current($showsData);
+        $firstShowDate = $firstShow['date']->format('Y-m-d');
+
+        R::exec(
+            'delete from `show` where
+               theatre_id = ?
+               and `date` > ?
+               and month (`date`) = ?
+               and year(`date`) = ?',
+            array($this->theatre->id, $firstShowDate, $month, $year));
     }
 
     /**
@@ -144,6 +152,16 @@ class Schedule
 
         if ($play->id) {
             $showData['play'] = $play;
+            if (!isset($showData['price']) || !$showData['price']) {
+                $showData['price'] = $play->price;
+            }
+            if (!isset($showData['scene']) || !$showData['scene']) {
+                $showData['scene_id'] = $play->scene_id;
+            }
+            if (!isset($showData['buy_tickets_link']) || !$showData['buy_tickets_link']) {
+                $showData['buy_tickets_link'] = $play->buy_tickets_link;
+            }
+
             $show->import($showData, Show::$allowedFields);
             $show->loadByHash($show->generateHash());
         }
@@ -167,6 +185,16 @@ class Schedule
         if (!$play->id) {
             $this->createAndSaveNewPlay($play, $showData);
             return $play;
+        } else {
+            $updateFields = [
+                'price', 'image', 'link', 'director', 'author', 'genre', 'duration', 'description',
+                'is_premiere', 'is_for_children', 'is_musical', 'is_dance'
+            ];
+            foreach ($updateFields as $prop) {
+                if (!$play->{$prop} && isset($showData[$prop])) {
+                    $play->{$prop} = $showData[$prop];
+                }
+            }
         }
         return $play;
     }
@@ -180,7 +208,11 @@ class Schedule
     protected function createAndSaveNewPlay(\RedBean_OODBBean $play, $data)
     {
         $play->import($data, Play::$allowedFields);
+        if ((!isset($data['scene']) || !$data['scene']) && !$play->scene_id) {
+            // Play have to have scene set. Some fetchers can't define the scene so they just let it empty.
+            // The first scene is 'main' so it's id will be set.
+            $play->scene_id = R::findOne('scene')->getID();
+        }
         R::store($play);
-        R::tag($play, array($data['title']));
     }
 }

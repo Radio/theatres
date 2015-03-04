@@ -21,7 +21,7 @@ use Theatres\Core\Model_Bean;
 class Show extends Model_Bean
 {
     public static $allowedFields = [
-        'theatre_id', 'theatre', 'play_id', 'play', 'scene_id', 'scene', 'price', 'date'
+        'theatre_id', 'theatre', 'play_id', 'play', 'scene_id', 'scene', 'price', 'date', 'buy_tickets_link'
     ];
 
     public function update()

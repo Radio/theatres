@@ -20,5 +20,10 @@ $app->register(new Silex\Provider\SecurityServiceProvider(), array(
             'http' => true,
             'users' => $users,
         ),
+        'login' => array(
+            'pattern' => '^/login',
+            'http' => true,
+            'users' => $users,
+        ),
     )
 ));

@@ -7,8 +7,37 @@
 <div data-ng-include="'src/admin/components/plays/filters.tpl.html'"></div>
 
 <form id="edit-plays-form" class="admin-form" action="" method="post">
+    <fieldset class="row form-group play-row" id="play-new">
+        <div class="col-md-12" data-ng-hide="showNewRow">
+            <a href="#" data-ng-click="showNewRow = true">Добавить</a>
+        </div>
+        <div data-ng-show="showNewRow">
+            <div class="col-md-4 col-title">
+                <label for="play-title-new">+</label>
+                <input type="text" id="play-title-new" class="form-control" placeholder="Название"
+                       data-ng-model="newPlay.title"/>
+            </div>
+            <div class="col-md-3">
+                <select class="form-control"
+                        data-ng-model="newPlay.theatre_id"
+                        data-ng-options="theatre.id as theatre.title for theatre in theatres">
+                </select>
+            </div>
+            <div class="col-md-3">
+                <select class="form-control"
+                        data-ng-model="newPlay.scene_id"
+                        data-ng-options="scene.id as scene.title for scene in scenes">
+                </select>
+            </div>
+            <div class="col-md-2">
+                <button type="button" class="btn btn-success add-play" title="Добавить"
+                        data-ng-click="addPlay(newPlay)">+</button>
+            </div>
+        </div>
+    </fieldset>
+
     <fieldset class="row form-group play-row"
-              data-ng-repeat="play in plays" id="play-{{ play.key }}">
+              data-ng-repeat="play in plays | filter: filter.query" id="play-{{ play.key }}">
         <div class="col-md-4 col-title">
             <label for="play-title-{{ play.id }}">{{ play.id }}</label>
             <input type="text" id="play-title-{{ play.id }}" class="form-control" placeholder="Название"
@@ -67,20 +96,6 @@
             <span class="updated-message" data-ng-show="lastUpdatedId == play.id">
                 <span class="glyphicon glyphicon-ok"></span> Сохранено
             </span>
-        </div>
-    </fieldset>
-    <fieldset class="row form-group play-row" id="play-new">
-        <div class="col-md-4 col-title">
-            <label for="play-title-new">+</label>
-                <input type="text" id="play-title-new" class="form-control" placeholder="Название"
-                       data-ng-model="newPlay.title"/>
-            </div>
-            <div class="col-md-2">
-                <input type="text" class="form-control" placeholder="Ключ" data-ng-model="newPlay.key"/>
-            </div>
-            <div class="col-md-3">
-                <button type="button" class="btn btn-success add-play" title="Добавить"
-                    data-ng-click="addPlay(newPlay)">+</button>
         </div>
     </fieldset>
 </form>

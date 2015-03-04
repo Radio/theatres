@@ -46,6 +46,18 @@ angular.module('frontApp')
             });
         }
 
+        $scope.loadDetails = function(show)
+        {
+            if (show.play_id && !show._is_extended) {
+                Api.play.get(show.play_id).then(function(play) {
+                    ['description', 'image', 'duration', 'author', 'director'].forEach(function(prop) {
+                        show['play_' + prop]  = play[prop];
+                    });
+                    show._is_extended = true;
+                });
+            }
+        };
+
         function buildQuery() {
             var query = {
                 order: 'date',
@@ -152,4 +164,8 @@ angular.module('frontApp')
             }, 500);
         }
 
+    }).filter('newlines', function($sce) {
+        return function(text) {
+            return $sce.trustAsHtml((text || '').replace(/\n/g, '<br/>'));
+        }
     });
