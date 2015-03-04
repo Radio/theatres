@@ -159,6 +159,7 @@
                     <p class="form-control-static play-tags-list">
                         <a href="/admin/plays/play/{{ play.id }}/tags">
                             <span data-ng-repeat="tag in playTags">{{ tag.title }}<br data-ng-show="!$last" /></span>
+                            <span data-ng-if="!playTags.length">[добавить]</span>
                         </a>
                     </p>
                 </div>

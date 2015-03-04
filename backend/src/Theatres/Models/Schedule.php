@@ -208,7 +208,11 @@ class Schedule
     protected function createAndSaveNewPlay(\RedBean_OODBBean $play, $data)
     {
         $play->import($data, Play::$allowedFields);
+        if ((!isset($data['scene']) || !$data['scene']) && !$play->scene_id) {
+            // Play have to have scene set. Some fetchers can't define the scene so they just let it empty.
+            // The first scene is 'main' so it's id will be set.
+            $play->scene_id = R::findOne('scene')->getID();
+        }
         R::store($play);
-        R::tag($play, array($data['title']));
     }
 }

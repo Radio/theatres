@@ -29,6 +29,8 @@ use Theatres\Helpers;
  */
 class Play extends Model_Bean
 {
+    protected $newPlayCreated;
+
     public static $allowedFields = [
         'theatre_id', 'theatre', 'scene_id', 'scene',
         'title', 'key', 'link',  'price', 'image',
@@ -61,9 +63,17 @@ class Play extends Model_Bean
     public function update()
     {
         if (!$this->id) {
+            $this->newPlayCreated = true;
             if (!$this->key && $this->title) {
                 $this->key = Helpers\Models::generateKey($this->title);
             }
+        }
+    }
+
+    public function after_update()
+    {
+        if ($this->newPlayCreated) {
+            R::tag($this->bean, $this->title);
         }
     }
 
