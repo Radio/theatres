@@ -99,7 +99,7 @@ abstract class Controller_Rest_Collection extends Controller_Rest
     {
         $data = Api_Request::getPostData($request);
         if (!$data) {
-            throw new Exceptions\Api_EmptyRequest('Correct data was not found in request body.');
+            throw new Exceptions\Api_EmptyRequest('Correct data was not found the in request.');
         }
 
         $beanType = $this->getCollection()->getBeanType();
@@ -137,7 +137,7 @@ abstract class Controller_Rest_Collection extends Controller_Rest
     {
         $data = Api_Request::getPostData($request);
         if (!$data) {
-            throw new Exceptions\Api_EmptyRequest('Correct data was not found in request body.');
+            throw new Exceptions\Api_EmptyRequest('Correct data was not found in the request.');
         }
         // todo: implement bulk update
         throw new Exceptions\Api_NotImplemented();

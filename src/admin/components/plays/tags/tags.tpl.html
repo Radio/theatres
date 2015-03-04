@@ -1,0 +1,28 @@
+<div class="breadcrumb">
+    <a href="/admin">Панель управления</a>
+    <span class="sep">→</span>
+    <a href="/admin/plays">Спектакли</a>
+    <span class="sep">→</span>
+    <a href="/admin/plays/play/{{ play.id }}">{{ play.title }}</a>
+    <span class="sep">→</span>
+    <h2>Теги</h2>
+</div>
+
+<form id="edit-play-form" class="admin-form play-form form-horizontal" action="" method="post">
+    <fieldset class="row play-row" id="play-{{ play.key }}">
+
+        <div class="col-sm-10">
+            <div class="form-group">
+                <label for="play-title" class="col-sm-2 control-label">Теги</label>
+                <div class="col-sm-10">
+                    <textarea class="form-control" cols="50" rows="8" data-ng-model="tags"
+                              data-ng-model-options="{getterSetter: true, updateOn: 'blur'}"></textarea>
+                </div>
+            </div>
+            <button type="button" data-ng-click="updateTags()" class="btn btn-warning">Сохранить</button>
+            <span class="updated-message" data-ng-show="lastUpdatedId === play.id">
+                <span class="glyphicon glyphicon-ok"></span> Сохранено
+            </span>
+        </div>
+    </fieldset>
+</form>

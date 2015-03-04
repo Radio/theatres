@@ -7,6 +7,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Theatres\Collections\Plays_Play_Tags;
 use Theatres\Collections\Tags;
 use Theatres\Core\Controller_Rest_Collection;
+use Theatres\Core\Exceptions;
+use Theatres\Helpers\Api_Request;
+use RedBean_Facade as R;
 
 /**
  * API scenes resource controller.
@@ -45,5 +48,32 @@ class Api_Plays_Play_Tags extends Controller_Rest_Collection
         $collection->setPlayId($this->playId);
 
         return $collection;
+    }
+
+    /**
+     * Create new element
+     * POST request handler.
+     *
+     * @param Application $app Application instance.
+     * @param Request $request Request instance.
+     * @throws Exceptions\Api_OperationFailed
+     * @throws Exceptions\Api_EmptyRequest
+     * @return array
+     */
+    public function post(Application $app, Request $request)
+    {
+        $data = Api_Request::getPostData($request);
+        if (!$data || !isset($data['tags']) || !$this->playId) {
+            throw new Exceptions\Api_EmptyRequest('Correct data was not found in the request body.');
+        }
+
+        $play = R::load('play', $this->playId);
+        if ($play->getID()) {
+            $setTags = R::tag($play, $data['tags']);
+
+            return ['tags' => $setTags];
+        } else {
+            throw new Exceptions\Api_OperationFailed('Failed to load play.');
+        }
     }
 }

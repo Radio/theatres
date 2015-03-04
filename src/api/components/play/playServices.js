@@ -19,6 +19,19 @@ angular.module('api')
                 });
 
                 return deferred.promise;
+            },
+            post: function(id, tags) {
+                var deferred = $q.defer();
+                resource.save({
+                    id: id,
+                    tags: tags
+                }, function(response) {
+                    deferred.resolve(response);
+                }, function(response) {
+                    deferred.reject(response);
+                });
+
+                return deferred.promise;
             }
         };
     }])

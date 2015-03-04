@@ -60,7 +60,13 @@ abstract class Controller_Rest_Element extends Controller_Rest
      */
     public function get(Application $app, Request $request)
     {
-        return $this->element->toArray();
+        /** @var Model_Bean|null $box */
+        $box = $this->element->box();
+        if ($box) {
+            return $box->toArray();
+        } else {
+            return $this->element->export();
+        }
     }
 
     /**
