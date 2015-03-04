@@ -6,6 +6,15 @@ angular.module('admin')
         $scope.lastUpdatedId = null;
         $scope.newPlay = {};
         $scope.plays = [];
+        $scope.theatres = [];
+        $scope.scenes = [];
+
+        Api.theatres.get({order: 'title'}).then(function(theatres) {
+            $scope.theatres = theatres;
+        });
+        Api.scenes.get().then(function(scenes) {
+            $scope.scenes = scenes;
+        });
 
         $scope.filter = PlaysFilters;
 
