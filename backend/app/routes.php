@@ -5,10 +5,15 @@ use \Theatres\Controllers;
 
 // Define Routes
 
+// 0. Login
+
+$app->get('/login', 'Theatres\\Controllers\\Login::index')
+    ->bind('login');
+
 // 1. System
 
-//$app->get('/system/setup', 'Theatres\\Controllers\\System_Setup::index')
-//    ->bind('system_setup');
+$app->get('/system/setup', 'Theatres\\Controllers\\System_Setup::index')
+    ->bind('system_setup');
 
 $app->get('/system/export', 'Theatres\\Controllers\\System_Export::index')
     ->bind('system_export');
