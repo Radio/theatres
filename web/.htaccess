@@ -13,8 +13,11 @@
     RewriteRule ^(api|system|fetch|login) app.php [L]
 
     RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(theatre|month) redirect.php [L]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^admin admin.html [L]
 
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^(theatre|play) front.html [L]
+    RewriteRule ^/?$ front.html [L]
 </IfModule>
