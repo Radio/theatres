@@ -5,6 +5,7 @@ namespace Theatres\Controllers;
 use Silex\Application;
 use Theatres\Collections\Scenes;
 use Theatres\Core\Controller_Rest_Collection;
+use Theatres\Models\Scene;
 
 /**
  * API scenes resource controller.
@@ -18,10 +19,13 @@ class Api_Scenes extends Controller_Rest_Collection
         'id', 'title'
     );
 
-    /** @var array Fields that are allowed to update. */
-    protected $allowedFields = array(
-        'title', 'key'
-    );
+    /**
+     * Set allowed fields.
+     */
+    public function __construct()
+    {
+        $this->allowedFields = Scene::$allowedFields;
+    }
 
     /**
      * Get Scenes Collection.

@@ -8,6 +8,7 @@ use Theatres\Collections\Plays;
 use Theatres\Core\Collection;
 use Theatres\Core\Controller_Rest_Collection;
 use Theatres\Helpers\Api;
+use Theatres\Models\Play;
 
 /**
  * API plays resource controller.
@@ -21,10 +22,13 @@ class Api_Plays extends Controller_Rest_Collection
         'id', 'title'
     );
 
-    /** @var array Fields that are allowed to update. */
-    protected $allowedFields = array(
-        'title', 'link', 'key', 'scene_id', 'theatre_id'
-    );
+    /**
+     * Set allowed fields.
+     */
+    public function __construct()
+    {
+        $this->allowedFields = Play::$allowedFields;
+    }
 
     /**
      * Get Plays Collection.

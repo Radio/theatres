@@ -8,6 +8,7 @@ use Theatres\Collections\Theatres;
 use Theatres\Core\Collection;
 use Theatres\Core\Controller_Rest_Collection;
 use Theatres\Helpers\Api;
+use Theatres\Models\Theatre;
 
 /**
  * API theatres resource controller.
@@ -21,10 +22,13 @@ class Api_Theatres extends Controller_Rest_Collection
         'id', 'title'
     );
 
-    /** @var array Fields that are allowed to update. */
-    protected $allowedFields = array(
-        'title', 'abbr', 'link', 'has_fetcher', 'key', 'house_slug'
-    );
+    /**
+     * Set allowed fields.
+     */
+    public function __construct()
+    {
+        $this->allowedFields = Theatre::$allowedFields;
+    }
 
     /**
      * Get Theatres Collection.

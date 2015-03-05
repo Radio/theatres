@@ -8,6 +8,7 @@ use Theatres\Collections\Shows;
 use Theatres\Core\Collection;
 use Theatres\Core\Controller_Rest_Collection;
 use Theatres\Helpers\Api;
+use Theatres\Models\Show;
 
 /**
  * API shows resource controller.
@@ -21,10 +22,13 @@ class Api_Shows extends Controller_Rest_Collection
         'id', 'date'
     );
 
-    /** @var array Fields that are allowed to update. */
-    protected $allowedFields = array(
-        'theatre_id', 'play_id', 'scene_id', 'date', 'price',
-    );
+    /**
+     * Set allowed fields.
+     */
+    public function __construct()
+    {
+        $this->allowedFields = Show::$allowedFields;
+    }
 
     /**
      * Get Shows Collection.

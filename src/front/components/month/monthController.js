@@ -26,6 +26,15 @@ angular.module('frontApp')
             return DateHelper.datesAreEqual(date, DateHelper.getCurrentDate());
         };
 
+        $scope.getShowClass = function(show) {
+            return {
+                premiere: show.play_is_premiere,
+                musical: show.play_is_musical,
+                dance: show.play_is_dance,
+                for_children: show.play_is_for_children
+            };
+        };
+
         // Private
 
         function loadShows()
