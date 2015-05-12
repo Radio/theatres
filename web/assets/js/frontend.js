@@ -1,5 +1,9 @@
 (function($, viewport){
 
+    $(document).ready(function() {
+        $(".lightbox").imagelightbox();
+    });
+
     $('body').on('click', '.scroll-top', function() {
         $('html, body').scrollTop(0);
     });

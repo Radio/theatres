@@ -1,5 +1,5 @@
 <div class="col-md-1 play-image-col">
-    <a class="play-image" href="{{ show.play_link }}" title="Описание на сайте театра"
+    <a class="play-image lightbox" data-imagelightbox="a" href="{{ show.play_image }}" title="{{ show.play_title }}"
        data-ng-if="show.play_image">
         <img class="img-responsive" data-ng-src="{{ show.play_image }}" alt="{{ show.play_title }}" src="">
     </a>

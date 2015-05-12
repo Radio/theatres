@@ -76,10 +76,14 @@ module.exports = {
                 'momentjs/min/moment-with-langs.min.js',
                 'momentjs/lang/ru.js',
                 'html5shiv/dist/html5shiv.js',
-                'respond/dest/respond.min.js'
+                'respond/dest/respond.min.js',
+                'imagelightbox/dist/imagelightbox.min.js'
             ],
             css: [
-                'bootstrap/dist/css/bootstrap.min.css'
+                'bootstrap/dist/css/bootstrap.min.css',
+                'imagelightbox/dist/imagelightbox.min.css',
+                'imagelightbox/img/next_arrow.png',
+                'imagelightbox/img/prev_arrow.png'
             ],
             map: [
                 'jquery/dist/jquery.min.map',

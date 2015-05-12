@@ -47,15 +47,17 @@ class Shevchenko extends Fetcher
             $scene = $this->parseScene($detailsHtml);
             $price = $this->parsePrice($detailsHtml);
 
-            $play = array(
-                'theatre' => $this->theatreId,
-                'date' => $date,
-                'title' => $title,
-                'scene' => $scene,
-                'price' => $price,
-                'link' => $link ? $link : $this->source,
-            );
-            $schedule[] = $play;
+            if ($date) {
+                $play = array(
+                    'theatre' => $this->theatreId,
+                    'date' => $date,
+                    'title' => $title,
+                    'scene' => $scene,
+                    'price' => $price,
+                    'link' => $link ? $link : $this->source,
+                );
+                $schedule[] = $play;
+            }
         }
 
         Helpers\Schedule::sortByDate($schedule);
