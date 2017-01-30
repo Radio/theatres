@@ -12,6 +12,8 @@ require_once __DIR__ . '/bootstrap.php';
 $app = new Silex\Application();
 $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 $app->register(new Silex\Provider\SessionServiceProvider());
+$app->register(new Theatres\Service\Providers\Config());
+
 if ($secure) {
     require_once __DIR__ . '/security.php';
 }
@@ -21,9 +23,7 @@ $app['dir.root'] = realpath(__DIR__ . '/../..');
 $app['dir.config'] = $app['dir.root'] . '/backend/app/etc';
 $app['dir.resources'] = $app['dir.root'] . '/resources';
 
-$app['config'] = $app->share(function() use ($app) {
-    return new \Theatres\Core\Config($app['dir.config']);
-});
+
 
 $app['factory'] = $app->share(function() use ($app) {
     return new \Theatres\Core\Factory($app);
